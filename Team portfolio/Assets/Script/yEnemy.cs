@@ -1,0 +1,258 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class yEnemy :  yLivingEntity
+{
+    public enum STATE
+    {
+        NORMAL,     // 시작상태
+        ROAMING,    // 플레이어를 발견하기 전 Patrol 상태
+        BATTLE,     // 플레이어를 발견한 상태
+        ESCAPE      // 탈출
+    }
+    public STATE myState = STATE.NORMAL;
+
+    public LayerMask whatIsTarget; // 추적 대상 레이어
+    [SerializeField]
+    yLivingEntity targetEntity;     // 추적할 대상
+
+    public Animator myAnim;     // 애니메이터 컴포넌트
+    public NavMeshAgent myNavAgent;     // 경로계산 AI
+    public yRangeSystem myRangeSys = null;  // 플레이어 탐지 컴포넌트
+    public yAnimEvent myAnimEvent = null;   // 애니메이션 이벤트 
+
+    Vector3 RadiusPoint = Vector3.zero;     // 원의 표면상의 임의의 점
+    public float RadiusLength = 4.0f;       // 원의 길이를 조절하는 변수
+    public float Playtime = 0f;             // 플레이어 NORMAL ROAMING으로 가는 시간
+
+    public float damage = 20.0f;            // 공격력
+    public float AttackTime = 0.5f;         // 공격 딜레이 시간
+
+    Vector3 hitPoint = Vector3.zero;
+    Vector3 hitNormal = Vector3.zero;
+
+    public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
+
+    void Awake()
+    {
+        // 게임 오브젝트로부터 사용할 컴퍼넌트 가져오기;
+        myNavAgent = GetComponent<NavMeshAgent>();
+        myAnim = GetComponentInChildren<Animator>();
+        myAnimEvent = GetComponentInChildren<yAnimEvent>();
+        myRangeSys = GetComponentInChildren<yRangeSystem>();
+        // RangeSystem Sphere 범위 안에 들어오면 OnBattle 실행
+        myRangeSys.battle = OnBattle;
+        // 공격시 이벤트 실행
+        myAnimEvent.Attack1 += OnAttackTarget;
+        myAnimEvent.Attack2 += OnAttackTarget; 
+    }
+
+    // 적 AI의 초기 스펙을 결정하는 셋업 메서드
+    public void Setup(float newHealth, float newDamage, float newSpeed)
+    {
+        // 최대체력, 체력, 데미지, 스피드를 초기화한다
+        startHealth = newHealth;
+        health = newHealth;
+        damage = newDamage;
+        myNavAgent.speed = newSpeed;
+    }
+
+    void Update()
+    {
+        if(!dead)
+        {
+            StateProcess();
+        }
+    }
+
+    void OnBattle()
+    {
+        // RangeSystem의 범위에 플레이어가 들어가면 BATTLE 실행
+        ChangeState(STATE.BATTLE);
+    }
+
+    public void ChangeState(STATE s)
+    {
+        if (myState == s) return;
+        myState = s;
+
+        switch(myState)
+        {
+            case STATE.NORMAL:
+                // 초기화
+                myAnim.SetFloat("Speed", 0f);
+                Playtime = 0f;
+                myNavAgent.stoppingDistance = 0.5f;
+                myNavAgent.isStopped = true;
+                break;
+            case STATE.ROAMING:
+                RadiusPoint = Random.onUnitSphere;  // 반경1을 갖는 구의 표면상의 임의의 지점을 반환한다
+                RadiusPoint.y = 0.0f;
+                Vector3 ZombiePosition = transform.position;    // 몬스터 자신의 포지션값을 가진다
+                Vector3 desPos = ZombiePosition + RadiusPoint * RadiusLength;   // 자신의 포지션값으로부터 RadiusLength의 반경을 가진 임의의 원의값을 가져온다
+                myNavAgent.isStopped = false;
+                myNavAgent.SetDestination(desPos);  // 목표지점으로 이동시킨다
+                break;
+            case STATE.BATTLE:
+                StartCoroutine(TargetEntity());
+                // Enemy 스탑거리 조절
+                myNavAgent.isStopped = false;
+                myNavAgent.stoppingDistance = 1.2f;
+                break;
+            case STATE.ESCAPE:
+                break;
+        }
+    }
+
+    public void StateProcess()
+    {
+        switch (myState)
+        {
+            case STATE.NORMAL:
+                // 2초후 ROAMING 실행
+                Playtime += Time.deltaTime;
+                if (Playtime > 2.0f)
+                {
+                    ChangeState(STATE.ROAMING);
+                }
+                break;
+            case STATE.ROAMING:
+                // myNavAgent.speed를 나눈이유는 0 ~ 1.0으로 값을 맞추기 위해 나눴다
+                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                // 이동을 거의다 시켰으면 STATE.NORMAL로 바꿔준다
+                if (myNavAgent.remainingDistance < myNavAgent.stoppingDistance && myState == STATE.ROAMING)
+                {
+                    ChangeState(STATE.NORMAL);
+                }
+                break;
+            case STATE.BATTLE:
+                Vector3 dir = myRangeSys.Target.position - transform.position;
+                dir.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
+                dir.Normalize();
+                // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
+                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                
+                // 플레이어쪽으로 이동
+                myNavAgent.SetDestination(myRangeSys.Target.position);
+
+                // 어택 딜레이를 만든다
+                if(AttackTime > Mathf.Epsilon)
+                {
+                    AttackTime -= Time.deltaTime;
+                }
+                else
+                {
+                    OnAttack();
+                }
+                break;
+            case STATE.ESCAPE:
+                break;
+        }
+    }
+
+    void OnAttack()
+    {
+        // 거리가 짧아지면 실행
+        if (myNavAgent.remainingDistance <= myNavAgent.stoppingDistance && !dead && myState == STATE.BATTLE)
+        {
+            // 확률에따라 Attack1, Attack2 실행
+            if (Random.Range(0, 10) > 3)
+            {
+                myAnim.SetTrigger("Attack1");
+                
+            }
+            else
+            {
+                myAnim.SetTrigger("Attack2");
+            }
+            AttackTime = 1f;
+        }
+    }
+    void OnAttackTarget()
+    {
+        myRangeSys.Target.GetComponent<yLivingEntity>()?.OnDamage(damage, hitPoint, hitNormal);
+    }
+
+    IEnumerator TargetEntity()
+    {
+        while(targetEntity == null)
+        {
+            // 5유닛의 반지름을 가진 가상의 구를 그렸을 때 구와 겹치는 모든 콜라이더를 가져옴
+            // 단, whatIsTarget 레이어를 가진 콜라이더만 가져오도록 필터링 (LayerMask 사용)
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 20f, whatIsTarget);
+
+            // 모든 콜라이더를 순회하면서 살아있는 LivingEntity 찾기
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                // 콜라이더로부터 LivingEntity 컴포넌트 가져오기
+                yLivingEntity livingEntity = colliders[i].GetComponent<yLivingEntity>();
+
+                // LivingEntity 컴포넌트가 존재하며, 해당 LivingEntity가 살아 있다면
+                if (livingEntity != null && !livingEntity.dead)
+                {
+                    // 추적 대상을 해당 LivingEntity로 설정
+                    targetEntity = livingEntity;
+
+                    // for 문 루프 즉시 정지
+                    break;
+                }
+            }
+            yield return null;
+        }
+    }
+
+    public override void Die()
+    {
+        base.Die();
+
+        // 다른 AI를 방해하지 않도록 자신의 모든 콜라이더를 비활성화
+        Collider[] enemyColliders = GetComponents<Collider>();
+        for (int i = 0; i < enemyColliders.Length; i++)
+        {
+            enemyColliders[i].enabled = false;
+        }
+
+        // AI 추적을 중지하고 내비메시 컴포넌트 비활성화
+        myNavAgent.isStopped = true;
+        myNavAgent.enabled = false;
+
+        // 사망 애니메이션 재생
+        myAnim.SetTrigger("Die");
+    }
+
+    // 데미지를 입었을때 실행할 처리
+    public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    {
+        if(!dead)
+        {
+            // 공격받은 지점과 방향으로 파티클 효과 재생
+            hitEffect.transform.position = hitPoint;
+            hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
+            hitEffect.Play();
+            myAnim.SetTrigger("Damage"); // 공격 받을 시 애니메이션 재생
+        }
+
+        base.OnDamage(damage, hitPoint, hitNormal);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(!dead)
+        {
+            // 상대방의 LivingEnetity 타입 가져오기 시도
+            yLivingEntity attackTarget = other.GetComponent<yLivingEntity>();
+
+            // 상대방의 LivingEntity가 자신의 추적대상이라면 공격 실행
+            if (attackTarget != null && attackTarget == targetEntity)
+            {
+                // 상대방의 피격 위치와 피격 방향을 근사값으로 계산
+                // ClosestPoint - 콜라이더 표면에서 자신의 위치와 가장 가까운 점의 위치를 찾아 hitPoint로 사용한다
+                hitPoint = other.ClosestPoint(transform.position);
+                hitNormal = transform.position - other.transform.position;
+            }
+        }
+    }
+}
