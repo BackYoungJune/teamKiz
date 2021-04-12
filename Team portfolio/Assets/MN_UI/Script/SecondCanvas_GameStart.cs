@@ -13,6 +13,7 @@ public class SecondCanvas_GameStart : MonoBehaviour
     
     private void Awake()
     {
+        
         secondCanvas = GameObject.Find("Second");
         secondCanvas.SetActive(false);
         secondImage = secondCanvas.GetComponent<Image>();
@@ -37,6 +38,7 @@ public class SecondCanvas_GameStart : MonoBehaviour
     {
         IsOnGameStart = true;
     }
+
     IEnumerator BackgroundAlphaPlus()
     {
         Color col = secondImage.color;

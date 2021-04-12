@@ -12,12 +12,13 @@ public class Slider_Handle_Image : MonoBehaviour
     GameObject handle;
     Image myHandle_Image;
     Slider mySlider;
+    Text childText;
 
     bool StopPlus = false;
     private void Awake()
     {
         mySlider = GetComponent<Slider>();
-
+        childText = GetComponentInChildren<Text>();
         GameObject obj = GameObject.Find("Handle");
 
         myHandle_Image = obj.GetComponent<Image>();
@@ -37,6 +38,8 @@ public class Slider_Handle_Image : MonoBehaviour
         while(mySlider.value < 1f)
         {
             mySlider.value += Time.deltaTime * 0.1f;
+            float value = mySlider.value * 100f;
+            childText.text = (int)value + "%";
             yield return null;
         }
         StopPlus = true;
