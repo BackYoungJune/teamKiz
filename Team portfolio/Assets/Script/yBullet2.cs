@@ -16,15 +16,13 @@ public class yBullet2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 레이캐스트에 의한 충돌 정보를 저장하는 컨테이너
-        //RaycastHit hit;
-
         RaycastHit[] hits; //Raycast데이터 저장용 배열 설정
 
         hits = Physics.RaycastAll(transform.position, transform.forward, maxDistance, ~ignoreLayer);
 
         for (int i = 0; i < hits.Length; i++)
         {
+            // 레이캐스트에 의한 충돌 정보를 저장하는 컨테이너
             RaycastHit hit = hits[i];
 
             // 첫번째 Enemy와 충돌한 경우
@@ -63,16 +61,6 @@ public class yBullet2 : MonoBehaviour
                 Destroy(gameObject);
                 bulletAlive = false;
             }
-
-            // 나머지와 충돌하거나 아무것도 충돌 안할경우
-            //else
-            //{
-            //    // 레이가 다른 물체와 충돌하지 않았다면
-            //    // 탄알이 최대 사정거리까지 날아갔을 때의 위치를 충돌 위치로 사용
-            //    hitPosition = transform.position + transform.forward * maxDistance;
-            //    // 파괴
-            //    Destroy(gameObject, 1.0f);
-            //}
         }
 
         // 나머지와 충돌하거나 아무것도 충돌 안할경우

@@ -10,6 +10,10 @@ public class yPlayerShooter : MonoBehaviour
     yPlayerInput playerInput; // 플레이어의 입력
     public Animator playerAnimator; // 애니메이터 컴포넌트
 
+    public float aimFov = 40.0f;        // 조준시 카메라 view
+    public float defaultFov = 60.0f;    // 평소 카메라 view
+    float fovSpeed = 10.0f;     // 카메라 전환 속도
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,7 +42,7 @@ public class yPlayerShooter : MonoBehaviour
         if (playerInput.fire)
         {
             // 발사 입력 감지 시 총 발사
-            if(Riple.Fire())
+            if (Riple.Fire())
             {
                 // 발사 성공 시에만 발사 애니메이션 재생
                 playerAnimator.SetTrigger("Fire");
@@ -52,6 +56,17 @@ public class yPlayerShooter : MonoBehaviour
                 // 재장전 성공 시에만 재장전 애니메이션 재생
                 playerAnimator.SetTrigger("Reload");
             }
+        }
+
+        // 에임 조준시 카메라 뷰 조정
+        if (playerInput.aim)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, aimFov, Time.deltaTime * fovSpeed);
+        }
+        // 평소상태 카메라 뷰 조정
+        else
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, defaultFov, Time.deltaTime * fovSpeed);
         }
 
         /* 유석 - 남은 탄알 UI 갱신하기 
