@@ -90,7 +90,9 @@ public class yPlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // 플레이어가 바닥에 닿을경우 
-        if(collision.gameObject.tag == "Floor")
+        // collision.contacts[0] - 두 물체 사이의 여러 충돌 지점에서 첫 번째 충돌 지점의 정보
+        // normal.y가 1이면 위 0 이면 오른쪽 -1 이면 아래를 바라보는 방향, 0.7이면 방향은 위쪽이며 경사가 너무 급하지는 않는지 검사한다
+        if (collision.gameObject.tag == "Floor" && collision.contacts[0].normal.y > 0.7f)
         {
             // 점프 false, 점프 카운트 초기화
             isAir = false;
