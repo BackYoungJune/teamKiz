@@ -90,7 +90,7 @@ public class yPlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // 플레이어가 바닥에 닿을경우 
-        if(collision.gameObject.tag == "Default")
+        if(collision.gameObject.tag == "Floor")
         {
             // 점프 false, 점프 카운트 초기화
             isAir = false;

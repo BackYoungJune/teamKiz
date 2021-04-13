@@ -63,7 +63,7 @@ public class yRiple : MonoBehaviour
         GameObject instantBullet = Instantiate(bullet, fireTransform.position, fireTransform.rotation);
         yBullet Bullet =  bullet.GetComponent<yBullet>();
         Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
-        bulletRigid.velocity = fireTransform.forward * 1000;
+        bulletRigid.velocity = fireTransform.forward * 50;
         // 탄피 배출
         GameObject intantCase = Instantiate(bulletCase, BulletCaseTransform.position, BulletCaseTransform.rotation);
         Rigidbody CaseRigid = instantBullet.GetComponent<Rigidbody>();
