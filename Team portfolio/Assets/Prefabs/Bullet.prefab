@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8618121921667430344}
   - component: {fileID: 5799879254521840386}
   - component: {fileID: 1645590107183161879}
-  - component: {fileID: 5169247068384665496}
+  - component: {fileID: 8566387215183440688}
   - component: {fileID: 1149836878678995498}
   - component: {fileID: 3492558040405930268}
   m_Layer: 0
@@ -102,7 +102,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5169247068384665496
+--- !u!114 &8566387215183440688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,10 +111,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5439700753742635735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6fb8b83f9fb5e46a2707371981b47c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7efa58c6e09946a48a9f3958c6be0def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 50
+  maxDistance: 1000
   decalHitWall: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
   bloodEffect: {fileID: 1013274939826982, guid: ffbf169ab9dcfdc45ae14010bc82a6b2,
     type: 3}
@@ -123,6 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   hitPosition: {x: 0, y: 0, z: 0}
+  bulletAlive: 1
 --- !u!54 &1149836878678995498
 Rigidbody:
   m_ObjectHideFlags: 0
