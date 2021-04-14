@@ -1,9 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Team portfolio/Assets/MN_UI/Battle Royale UI System - FREE/Additional Packages/FPSController_Package.meta
 guid: c6195a43a0187a34e9c6be23520d3766
 folderAsset: yes
 timeCreated: 1436977287
 licenseType: Store
+=======
+guid: b40a404bb90bbdd4c86e0f8f54a90cfc
+folderAsset: yes
+>>>>>>> 54d85d725381861badb9b3c0e7a469b6b0df4185:Team portfolio/Assets/MN_UI/DualCorStudios.meta
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -61,7 +61,7 @@ public class yRiple : MonoBehaviour
     {
         // 총알 발사
         GameObject instantBullet = Instantiate(bullet, fireTransform.position, fireTransform.rotation);
-        yBullet Bullet =  bullet.GetComponent<yBullet>();
+        yBullet2 Bullet = instantBullet.GetComponent<yBullet2>();
         Rigidbody bulletRigid = instantBullet.GetComponent<Rigidbody>();
         bulletRigid.velocity = fireTransform.forward * 50;
         // 탄피 배출

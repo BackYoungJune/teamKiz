@@ -23,7 +23,6 @@ public class ySpringArm : MonoBehaviour
     public bool ControllerRotate = true;
 
     // Start is called before the first frame update
-
     void Awake()
     {
         myCam = Camera.main.transform;
@@ -42,7 +41,7 @@ public class ySpringArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1))
+        //if (Input.GetMouseButton(1))
         {
             // LookUp
             TargetRot.x += -Input.GetAxis("Mouse Y") * RotSpeed * Time.smoothDeltaTime;

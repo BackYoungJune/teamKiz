@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class yEnemy :  yLivingEntity
+public class yEnemy : yLivingEntity
 {
     public enum STATE
     {
         NORMAL,     // 시작상태
         ROAMING,    // 플레이어를 발견하기 전 Patrol 상태
+        SEARCHING,  // 좀비가 총알을 맞고 플레이어를 발견하지 못하는 상태
         BATTLE,     // 플레이어를 발견한 상태
         ESCAPE      // 탈출
     }
@@ -46,7 +47,7 @@ public class yEnemy :  yLivingEntity
         myRangeSys.battle = OnBattle;
         // 공격시 이벤트 실행
         myAnimEvent.Attack1 += OnAttackTarget;
-        myAnimEvent.Attack2 += OnAttackTarget; 
+        myAnimEvent.Attack2 += OnAttackTarget;
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
@@ -61,7 +62,7 @@ public class yEnemy :  yLivingEntity
 
     void Update()
     {
-        if(!dead)
+        if (!dead)
         {
             StateProcess();
         }
@@ -78,7 +79,7 @@ public class yEnemy :  yLivingEntity
         if (myState == s) return;
         myState = s;
 
-        switch(myState)
+        switch (myState)
         {
             case STATE.NORMAL:
                 // 초기화
@@ -95,10 +96,26 @@ public class yEnemy :  yLivingEntity
                 myNavAgent.isStopped = false;
                 myNavAgent.SetDestination(desPos);  // 목표지점으로 이동시킨다
                 break;
+            case STATE.SEARCHING:
+                StartCoroutine(TargetEntity());
+                Vector3 dir1 = targetEntity.transform.position - transform.position;
+                dir1.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
+                dir1.Normalize();
+                // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir1), 1.0f);
+                myAnim.SetTrigger("Roar");
+                if (myNavAgent.isStopped)
+                {
+                    myNavAgent.isStopped = false;
+                }
+                break;
             case STATE.BATTLE:
                 StartCoroutine(TargetEntity());
                 // Enemy 스탑거리 조절
-                myNavAgent.isStopped = false;
+                if (myNavAgent.isStopped)
+                {
+                    myNavAgent.isStopped = false;
+                }
                 myNavAgent.stoppingDistance = 1.2f;
                 break;
             case STATE.ESCAPE:
@@ -127,6 +144,13 @@ public class yEnemy :  yLivingEntity
                     ChangeState(STATE.NORMAL);
                 }
                 break;
+            case STATE.SEARCHING:
+                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+
+                // 플레이어쪽으로 이동
+                myNavAgent.SetDestination(targetEntity.transform.position);
+                //myNavAgent.destination = targetEntity.transform.position;
+                break;
             case STATE.BATTLE:
                 Vector3 dir = myRangeSys.Target.position - transform.position;
                 dir.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
@@ -134,12 +158,12 @@ public class yEnemy :  yLivingEntity
                 // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
                 myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
-                
+
                 // 플레이어쪽으로 이동
                 myNavAgent.SetDestination(myRangeSys.Target.position);
 
                 // 어택 딜레이를 만든다
-                if(AttackTime > Mathf.Epsilon)
+                if (AttackTime > Mathf.Epsilon)
                 {
                     AttackTime -= Time.deltaTime;
                 }
@@ -162,7 +186,7 @@ public class yEnemy :  yLivingEntity
             if (Random.Range(0, 10) > 3)
             {
                 myAnim.SetTrigger("Attack1");
-                
+
             }
             else
             {
@@ -173,16 +197,22 @@ public class yEnemy :  yLivingEntity
     }
     void OnAttackTarget()
     {
-        myRangeSys.Target.GetComponent<yLivingEntity>()?.OnDamage(damage, hitPoint, hitNormal);
+        // Player와 Enemy의 거리를 구함
+        float distance = Vector3.Distance(myRangeSys.Target.position, transform.position);
+        // Player가 공격을 받을 시 일정 거리 이상 멀어지면 공격을 받지 않는다
+        if (distance < 2.6f)
+            myRangeSys.Target.GetComponent<yLivingEntity>()?.OnDamage(damage, hitPoint, hitNormal);
     }
 
     IEnumerator TargetEntity()
     {
-        while(targetEntity == null)
+        if (targetEntity) yield break;
+
+        while (targetEntity == null)
         {
             // 5유닛의 반지름을 가진 가상의 구를 그렸을 때 구와 겹치는 모든 콜라이더를 가져옴
             // 단, whatIsTarget 레이어를 가진 콜라이더만 가져오도록 필터링 (LayerMask 사용)
-            Collider[] colliders = Physics.OverlapSphere(transform.position, 20f, whatIsTarget);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 200f, whatIsTarget);
 
             // 모든 콜라이더를 순회하면서 살아있는 LivingEntity 찾기
             for (int i = 0; i < colliders.Length; i++)
@@ -217,16 +247,18 @@ public class yEnemy :  yLivingEntity
 
         // AI 추적을 중지하고 내비메시 컴포넌트 비활성화
         myNavAgent.isStopped = true;
-        myNavAgent.enabled = false;
+        //myNavAgent.enabled = false;
 
         // 사망 애니메이션 재생
         myAnim.SetTrigger("Die");
+        // 스테이트 변경
+        ChangeState(STATE.ESCAPE);
     }
 
     // 데미지를 입었을때 실행할 처리
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
-        if(!dead)
+        if (!dead)
         {
             // 공격받은 지점과 방향으로 파티클 효과 재생
             hitEffect.transform.position = hitPoint;
@@ -235,24 +267,11 @@ public class yEnemy :  yLivingEntity
             myAnim.SetTrigger("Damage"); // 공격 받을 시 애니메이션 재생
         }
 
-        base.OnDamage(damage, hitPoint, hitNormal);
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(!dead)
+        if (!dead && !targetEntity)
         {
-            // 상대방의 LivingEnetity 타입 가져오기 시도
-            yLivingEntity attackTarget = other.GetComponent<yLivingEntity>();
-
-            // 상대방의 LivingEntity가 자신의 추적대상이라면 공격 실행
-            if (attackTarget != null && attackTarget == targetEntity)
-            {
-                // 상대방의 피격 위치와 피격 방향을 근사값으로 계산
-                // ClosestPoint - 콜라이더 표면에서 자신의 위치와 가장 가까운 점의 위치를 찾아 hitPoint로 사용한다
-                hitPoint = other.ClosestPoint(transform.position);
-                hitNormal = transform.position - other.transform.position;
-            }
+            ChangeState(STATE.SEARCHING);
         }
+
+        base.OnDamage(damage, hitPoint, hitNormal);
     }
 }

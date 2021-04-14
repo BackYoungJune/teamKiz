@@ -10,7 +10,7 @@ public class yPlayerInput : MonoBehaviour
     public string reloadButtonName = "Reload";      // 재장전 입력버튼 이름
     //public string hitButtonName = "Hit";          // 타격시 입력버튼 이름
     public string aimButtonName = "Aim";            // 에임 조준시 입력버튼 이름
-    
+
     // public string swap1ButtonName = "Swap1";
     // public string swap2ButtonName = "Swap2";
     // public string swap3ButtonName = "Swap3";
@@ -22,13 +22,13 @@ public class yPlayerInput : MonoBehaviour
     public bool fire { get; private set; }     // 감지된 발사 입력값
     public bool jump { get; private set; }      // 감지된 점프 입력값
     public bool aim { get; private set; }       // 감지된 에임조준 입력값
-    
+
 
     bool isDead = false;    // 나중에 게임매니저로 옮겨야댐
 
     void Update()
     {
-        if(!isDead)
+        if (!isDead)
         {
             // 좌우에 관한 입력감지
             xMove = Input.GetAxis(xAxisName);
@@ -43,7 +43,7 @@ public class yPlayerInput : MonoBehaviour
             // 점프 입력감지
             jump = Input.GetKeyDown(KeyCode.Space);
             // 에임조준 입력감지
-            //aim = Input.GetButton(aimButtonName);
+            aim = Input.GetMouseButton(1);
         }
     }
 }
