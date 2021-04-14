@@ -266,5 +266,5 @@ MonoBehaviour:
   damage: 25
   ignoreLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   hitPosition: {x: 0, y: 0, z: 0}
