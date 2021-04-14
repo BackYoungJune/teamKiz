@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8566387215183440688}
   - component: {fileID: 1149836878678995498}
   - component: {fileID: 3492558040405930268}
+  - component: {fileID: 5092320755997859820}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -109,7 +110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5439700753742635735}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7efa58c6e09946a48a9f3958c6be0def, type: 3}
   m_Name: 
@@ -246,3 +247,24 @@ TrailRenderer:
   m_MinVertexDistance: 10
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &5092320755997859820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5439700753742635735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6fb8b83f9fb5e46a2707371981b47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 1000
+  decalHitWall: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
+  bloodEffect: {fileID: 1013274939826982, guid: ffbf169ab9dcfdc45ae14010bc82a6b2,
+    type: 3}
+  damage: 25
+  ignoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  hitPosition: {x: 0, y: 0, z: 0}
