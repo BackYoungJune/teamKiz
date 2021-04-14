@@ -8,6 +8,7 @@ public class yPlayerMovement : MonoBehaviour
     public float walkSpeed = 5.0f;     // 플레이어 walk 변환속도
     public float JumpPower = 10.0f;    // 플레이어 점프 파워
     public int jumpCount = 0;          // 플레이어 점프 횟수
+    public int dodgeCount = 0;         // 플레이어 닷지 횟수
 
     yPlayerInput playerInput;   // 플레이어 입력 감지 컴포넌트
     Rigidbody rigid;            // 플레이어 리지드바디
@@ -16,7 +17,10 @@ public class yPlayerMovement : MonoBehaviour
     public Transform myHips;
     public ySpringArm myArm;
 
+    Vector3 MoveVec;      // 플레이어 프레임당 이동거리
+    Vector3 dodgeVec;     // 플레이어 닷지 이동거리
     public bool isAir { get; private set; }
+    public bool isDodge;
 
     void Awake()
     {
@@ -32,6 +36,7 @@ public class yPlayerMovement : MonoBehaviour
         Move();
         Walk();
         Jump();
+        Dodge();
 
         // 입력값에 따라 애니메이터의 Move 파라미터값 변경
         myAnim.SetFloat("x", playerInput.xMove);
@@ -53,8 +58,15 @@ public class yPlayerMovement : MonoBehaviour
         // x, y(z)축 상대적으로 움직이는 거리 계산
         Vector3 MoveXDistance = playerInput.xMove * transform.right * moveSpeed * Time.fixedDeltaTime;
         Vector3 MoveYDistance = playerInput.yMove * transform.forward * moveSpeed * Time.fixedDeltaTime;
+
+        // x y 움직인 Vector를 하나에 합친다
+        MoveVec = MoveXDistance + MoveYDistance;
+
+        if (isDodge)
+            MoveVec = dodgeVec;
+
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
-        rigid.MovePosition(rigid.position + MoveXDistance + MoveYDistance);
+        rigid.MovePosition(rigid.position + MoveVec);
 
     }
 
@@ -79,13 +91,40 @@ public class yPlayerMovement : MonoBehaviour
     void Jump()
     {
         // 점프시 로직
-        if(playerInput.jump && jumpCount < 1)
+        if (playerInput.jump && jumpCount < 1 && MoveVec == Vector3.zero)
         {
             rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
             jumpCount++;
             isAir = true;
         }
     }
+
+    void Dodge()
+    {
+        // 점프키가 눌리고 플레이어가 움직이면 닷지를 실행한다
+        if (playerInput.dodge && MoveVec != Vector3.zero && dodgeCount < 1)
+        {
+            // 닷지시 로직
+            dodgeVec = MoveVec;
+            moveSpeed *= 2;
+            //transform.LookAt(transform.position + MoveVec);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.forward), Time.smoothDeltaTime * 5.0f);
+
+            myAnim.SetTrigger("Dodge");
+            isDodge = true;
+            dodgeCount++;
+
+            Invoke("DodgeOut", 1.3f);
+        }
+    }
+
+    void DodgeOut()
+    {
+        moveSpeed *= 0.5f;
+        isDodge = false;
+        dodgeCount--;
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {
