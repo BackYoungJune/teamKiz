@@ -61,7 +61,7 @@ public class yPlayerMovement : MonoBehaviour
 
         // x y 움직인 Vector를 하나에 합친다
         MoveVec = MoveXDistance + MoveYDistance;
-
+        Debug.Log(MoveVec);
         if (isDodge)
             MoveVec = dodgeVec;
 
