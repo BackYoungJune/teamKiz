@@ -591,6 +591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7983362064671135100}
   - component: {fileID: 7983362064671135101}
+  - component: {fileID: 21416672836445562}
   m_Layer: 0
   m_Name: SpringArm
   m_TagString: Untagged
@@ -640,6 +641,23 @@ MonoBehaviour:
   LookUpArea: {x: -60, y: 80}
   ZoomArea: {x: 1, y: 5}
   ControllerRotate: 1
+--- !u!114 &21416672836445562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983362064671135102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033d13a07e82a024d96dbe996252d445, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 3
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  actionText: {fileID: 0}
 --- !u!1 &7983362064678826042
 GameObject:
   m_ObjectHideFlags: 0
