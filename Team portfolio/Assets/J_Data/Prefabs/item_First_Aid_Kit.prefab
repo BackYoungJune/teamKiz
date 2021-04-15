@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3604619914716614489}
   - component: {fileID: 3604619914716614488}
   - component: {fileID: -344017147287662448}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: item_First_Aid_Kit
   m_TagString: Item
   m_Icon: {fileID: 0}
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3604619914716614487}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.179, y: 0.40334514, z: 1.0883644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
 --- !u!33 &1072460957416217160
 MeshFilter:
   m_ObjectHideFlags: 0

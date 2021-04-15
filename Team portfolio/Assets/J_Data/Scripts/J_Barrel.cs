@@ -56,7 +56,7 @@ public class J_Barrel : MonoBehaviour
     void IndirectExplosion(Vector3 pos)
     {
         // 8번 레이어(BREAKABLE)에 해당하는 오브젝트의 콜라이더를 얻어와 colls에 저장
-        Collider[] colls = Physics.OverlapSphere(pos, explosionRadius, 1<<8);
+        Collider[] colls = Physics.OverlapSphere(pos, explosionRadius, 1<<11);
 
         // 수집한 콜라이더에 폭발 효과 적용
         foreach(var coll in colls)

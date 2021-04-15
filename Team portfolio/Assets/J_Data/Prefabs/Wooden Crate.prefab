@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3448373066652844572}
   - component: {fileID: 3448373066652844643}
   - component: {fileID: 3448373066652844642}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: Wooden Crate
   m_TagString: BREAKABLE
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3447673231449713783}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9, y: 0.051190168, z: 4.61}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
@@ -125,3 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyedVersion: {fileID: 4308875971903557050, guid: b3dc6d5c1ab8158418b2f82094975753,
     type: 3}
+  itemList:
+  - {fileID: 7620139115751571029, guid: 2800a567fac749a40aedfdb8571760e7, type: 3}
+  - {fileID: 3604619914716614487, guid: 992aeac5a51e6484d9baf975245fd0df, type: 3}
