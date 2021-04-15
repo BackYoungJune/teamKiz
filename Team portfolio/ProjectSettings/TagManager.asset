@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Floor
   - Wall
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - FireLayer
   - RangeSystem
   - MiniMap
-  - 
-  - 
+  - Breakable
+  - Item
   - 
   - 
   - 
