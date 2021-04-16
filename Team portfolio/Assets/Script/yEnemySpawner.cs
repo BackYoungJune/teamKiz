@@ -20,6 +20,9 @@ public class yEnemySpawner : MonoBehaviour
     public float speedMax = 3f; // 최대 속도
     public float speedMin = 1f; // 최소 속도
 
+    public float scoreMax = 100f; // 최대 점수
+    public float scoreMin = 80f; // 최소 점수
+
     private List<yEnemy> enemies = new List<yEnemy>(); // 생성된 적들을 담는 리스트
     private int wave; // 현재 웨이브
 
@@ -70,6 +73,7 @@ public class yEnemySpawner : MonoBehaviour
         float health = Mathf.Lerp(healthMin, healthMax, intensity);
         float damage = Mathf.Lerp(damageMin, damageMax, intensity);
         float speed = Mathf.Lerp(speedMin, speedMax, intensity);
+        float score = Mathf.Lerp(scoreMin, scoreMax, intensity);
 
         // 각 웨이브에 생성할 위치를 랜덤으로 결정
         WaveSpawn(wave);
@@ -89,7 +93,7 @@ public class yEnemySpawner : MonoBehaviour
         // 사망한 적을 10초 뒤에 파괴
         enemy.onDeath += () => Destroy(enemy.gameObject, 10f);
         // 적 사망 시 점수 상승
-        enemy.onDeath += () => yGameManager.instance.AddScore(100);
+        enemy.onDeath += () => yGameManager.instance.AddScore((int)score);
     }
 
     Transform WaveSpawn(int wave)

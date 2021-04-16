@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 1962220151113749779}
   - component: {fileID: 1962220151113749780}
   - component: {fileID: 1962220151113749784}
+  - component: {fileID: 437025640452548923}
   m_Layer: 0
   m_Name: Leonard
   m_TagString: Untagged
@@ -467,6 +468,20 @@ MonoBehaviour:
   leftHandMount: {fileID: 7983362066320922096}
   playerAnimator: {fileID: 0}
   Attack: 0
+--- !u!114 &437025640452548923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962220151113749786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1341be7288c3724ab164a89fed7e22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myWeapon: 0
+  weaponIcon: {fileID: 0}
 --- !u!1 &1962220151113749787
 GameObject:
   m_ObjectHideFlags: 0
