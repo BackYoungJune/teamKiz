@@ -25,6 +25,7 @@ public class yPlayerInput : MonoBehaviour
     public bool jump { get; private set; }      // 감지된 점프 입력값
     public bool aim { get; private set; }       // 감지된 에임조준 입력값
     public bool dodge { get; private set; }     // 감지된 점프(닷지) 입력값
+    public bool tab { get; private set; }       // 감지된 tab 입력값
 
     bool isDead = false;    // 나중에 게임매니저로 옮겨야댐
 
@@ -50,6 +51,8 @@ public class yPlayerInput : MonoBehaviour
             dodge = Input.GetKeyDown(KeyCode.Space);
             // 에임조준 입력감지
             aim = Input.GetMouseButton(1);
+            // 텝키 입력감지
+            tab = Input.GetKey(KeyCode.Tab);
         }
     }
 }
