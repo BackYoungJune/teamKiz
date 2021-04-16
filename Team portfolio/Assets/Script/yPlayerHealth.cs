@@ -10,7 +10,6 @@ public class yPlayerHealth : yLivingEntity
     public yPlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
 
     /* -유석- 체력 UI 받기*/
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +18,8 @@ public class yPlayerHealth : yLivingEntity
         playerMovement = GetComponent<yPlayerMovement>();
         playerShooter = GetComponentInChildren<yPlayerShooter>();
         /* 체력 UI 컴포넌트 가져오기*/
+        MN_UIManager.Instance.UpdatePlayerHealth(startHealth);
+
     }
 
     protected override void OnEnable()
@@ -27,6 +28,8 @@ public class yPlayerHealth : yLivingEntity
         base.OnEnable();
 
         /* 체력 UI 최대 HP = startingHealth, 현재 HP = health로 받기 */
+
+        Debug.Log(startHealth);
     }
 
     // 체력 회복
@@ -34,7 +37,6 @@ public class yPlayerHealth : yLivingEntity
     {
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
-
         /* 체력 UI갱신 */
     }
 
@@ -43,11 +45,14 @@ public class yPlayerHealth : yLivingEntity
     {
         // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
+       
 
         // 애니메이터의 Hit 트리거를 발동시켜 Hit 애니메이션 재생
         myAnim.SetTrigger("Hit");
 
         /* 체력 UI갱신 */
+
+        MN_UIManager.Instance.UpdatePlayerHealth(-damage);
     }
 
     // 사망 처리

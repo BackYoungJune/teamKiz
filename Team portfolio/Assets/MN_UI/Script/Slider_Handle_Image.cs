@@ -8,6 +8,7 @@ public class Slider_Handle_Image : MonoBehaviour
     public List<Image> ZombieImages;
     public List<Sprite> ZombieSprites;
     public float AnimationSpeed = 0.5f;
+    MN_UIManager instance;
 
     GameObject handle;
     Image myHandle_Image;
@@ -30,6 +31,7 @@ public class Slider_Handle_Image : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
        // StartCoroutine(SpriteZombie());
        
     }
