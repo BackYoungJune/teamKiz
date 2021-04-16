@@ -52,7 +52,7 @@ public class yPlayerInput : MonoBehaviour
             // 에임조준 입력감지
             aim = Input.GetMouseButton(1);
             // 텝키 입력감지
-            tab = Input.GetKeyDown(KeyCode.Tab);
+            tab = Input.GetKey(KeyCode.Tab);
         }
     }
 }
