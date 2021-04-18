@@ -48,7 +48,7 @@ public class yPlayerInput : MonoBehaviour
             // 점프 입력감지
             jump = Input.GetKeyDown(KeyCode.Space);
             // 닷지 입력감지
-            dodge = Input.GetKeyDown(KeyCode.Space);
+            dodge = Input.GetKeyDown(KeyCode.C);
             // 에임조준 입력감지
             aim = Input.GetMouseButton(1);
             // 텝키 입력감지
