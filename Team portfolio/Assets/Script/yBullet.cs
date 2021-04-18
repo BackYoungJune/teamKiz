@@ -55,6 +55,10 @@ public class yBullet : MonoBehaviour
                 // 파괴
                 Destroy(gameObject);
             }
+            else if(hit.transform.tag == "FallingObj")
+            {
+                hit.transform.GetComponent<LFallingObj>().Hit();
+            }
 
             // 나머지와 충돌한 경우
             //else

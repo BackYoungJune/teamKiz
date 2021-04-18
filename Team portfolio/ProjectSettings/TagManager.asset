@@ -10,6 +10,7 @@ TagManager:
   - Floor
   - Wall
   - Pickup
+  - FallingObj
   layers:
   - Default
   - TransparentFX
