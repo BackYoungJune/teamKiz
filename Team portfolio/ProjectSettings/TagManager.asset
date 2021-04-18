@@ -11,6 +11,7 @@ TagManager:
   - Item
   - BREAKABLE
   - Floor
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - 
   - 
   - Item
-  - 
-  - 
+  - RangeSystem
+  - FireLayer
   - 
   - 
   - 

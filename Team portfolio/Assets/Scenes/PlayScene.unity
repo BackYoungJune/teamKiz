@@ -60645,6 +60645,11 @@ PrefabInstance:
       propertyPath: JumpPower
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613412, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_LocalPosition.x
