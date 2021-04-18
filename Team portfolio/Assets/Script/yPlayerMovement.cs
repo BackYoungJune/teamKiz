@@ -92,7 +92,7 @@ public class yPlayerMovement : MonoBehaviour
     void Jump()
     {
         // 점프시 로직
-        if (playerInput.jump && jumpCount < 1)
+        if (playerInput.jump && jumpCount < 1 && MoveVec == Vector3.zero)
         {
             rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
             jumpCount++;
@@ -103,11 +103,11 @@ public class yPlayerMovement : MonoBehaviour
     void Dodge()
     {
         // 점프키가 눌리고 플레이어가 움직이면 닷지를 실행한다
-        if (playerInput.dodge && dodgeCount < 1)
+        if (playerInput.dodge && MoveVec != Vector3.zero && dodgeCount < 1)
         {
             // 닷지시 로직
             dodgeVec = MoveVec;
-            moveSpeed *= 4;
+            moveSpeed *= 2;
             //transform.LookAt(transform.position + MoveVec);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.forward), Time.smoothDeltaTime * 5.0f);
 
@@ -121,7 +121,7 @@ public class yPlayerMovement : MonoBehaviour
 
     void DodgeOut()
     {
-        moveSpeed *= 0.25f;
+        moveSpeed *= 0.5f;
         isDodge = false;
         dodgeCount--;
     }
