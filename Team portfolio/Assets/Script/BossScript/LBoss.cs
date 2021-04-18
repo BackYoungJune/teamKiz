@@ -18,6 +18,11 @@ public class LBoss : yLivingEntity
     //메시 콜라이더 업데이트부 애니메이션 재생에 따라서 콜라이더도 계속 움직여준다.
     public SkinnedMeshRenderer meshRenderer;
     public MeshCollider collider;
+    private void OnEnable()
+    {
+        startHealth = 30000f;
+        health = startHealth;
+    }
     public void UpdateCollider()
     {
         Mesh colliderMesh = new Mesh();
@@ -93,6 +98,8 @@ public class LBoss : yLivingEntity
         }
         trapTrigger.onCollision += () =>
         {
+            base.OnDamage(6000f, Vector3.zero, Vector3.zero);
+            Debug.Log(this.health);
             bossAnim.SetTrigger("Groggy");
             myFLAG = FLAG.NORMAL;
         };
@@ -104,6 +111,7 @@ public class LBoss : yLivingEntity
         };
 
         //Attack
+
         bossAnimEvent.AttackBranch += () =>
          {
              if (Vector3.Distance(this.transform.position, Player.position) < nearDistance)
@@ -180,9 +188,10 @@ public class LBoss : yLivingEntity
                     }
                     else if(myFLAG == FLAG.HEAVY)
                     {
-                        if (SelectPattern < 0.3f)
+                        if (SelectPattern < 0.5f)
                             //if (SelectPattern < 1f)
                             ChangeState(STATE.THROWING);
+                        //ChangeState(STATE.CHARGE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
@@ -365,11 +374,17 @@ public class LBoss : yLivingEntity
         //도약 끝
         if (myFLAG != FLAG.RAGE)
         {
-            //착지 위치에 데미지를 1회 가하는 장판 구현
+            if(Vector3.Distance(this.transform.position, Player.position) < 3)
+            {
+                Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
+            }
         }
         else
         {
-            //데미지가 더 높고 범위가 더 넓은 데미지 장판 구현
+            if (Vector3.Distance(this.transform.position, Player.position) < 6)
+            {
+                Player.GetComponent<yPlayerHealth>().OnDamage(60f, Vector3.zero, Vector3.zero);
+            }
         }
     }
     IEnumerator Charge()
@@ -377,12 +392,10 @@ public class LBoss : yLivingEntity
         StateStartTime = 0f;
         Vector3 OriginalPos = this.transform.position;
         Vector3 pos = Vector3.zero;
+
         while (StateStartTime < 1f + Mathf.Epsilon)
         {
-            if(collider.attachedRigidbody.tag == "Player")
-            {
-                Debug.Log("Damage");
-            }
+
             pos.x = Mathf.Lerp(OriginalPos.x, targetPos.x, StateStartTime);
             pos.z = Mathf.Lerp(OriginalPos.z, targetPos.z, StateStartTime);
             this.transform.position = pos;
@@ -393,5 +406,22 @@ public class LBoss : yLivingEntity
         bossAnim.SetBool("Charging", false);
         yield return new WaitForSeconds(0.5f);
         ChangeState(STATE.APPROACHING);
+    }
+
+    public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
+    {
+        switch (myFLAG)
+        {
+            case FLAG.NORMAL:
+                base.OnDamage(damage, hitPoint, hitNormal);
+                break;
+            case FLAG.HEAVY:
+                base.OnDamage(damage*0.1f, hitPoint, hitNormal);
+                break;
+            case FLAG.RAGE:
+                base.OnDamage(damage*2f, hitPoint, hitNormal);
+                break;
+        }
+        Debug.Log(health);
     }
 }

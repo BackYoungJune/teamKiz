@@ -60571,6 +60571,11 @@ PrefabInstance:
       propertyPath: actionText
       value: 
       objectReference: {fileID: 705138340}
+    - target: {fileID: 7983362065976613410, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: JumpPower
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67947,8 +67952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc3507ef07a14f4fa5a222181fbd9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: 0
-  weaponIcon: {fileID: 1016387978}
 --- !u!1001 &1469149254
 PrefabInstance:
   m_ObjectHideFlags: 0

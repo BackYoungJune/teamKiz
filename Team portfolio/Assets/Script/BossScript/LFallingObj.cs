@@ -21,7 +21,7 @@ public class LFallingObj : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Boss")
         {
             parent.onCollision?.Invoke();
             Destroy(this.gameObject);
