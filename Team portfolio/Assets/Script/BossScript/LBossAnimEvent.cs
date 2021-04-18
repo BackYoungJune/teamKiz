@@ -18,6 +18,7 @@ public class LBossAnimEvent : MonoBehaviour
     public VoidDelVoid PunchColliderOff;
     public VoidDelVoid PunchEnd;
     public VoidDelVoid ThrowingEnd;
+    public VoidDelVoid GroggyEnd;
 
     //Roar
     public void OnRoarEnd()
@@ -85,5 +86,10 @@ public class LBossAnimEvent : MonoBehaviour
     public void OnPunchEnd()
     {
         PunchEnd?.Invoke();
+    }
+
+    public void OnGroggyEnd()
+    {
+        GroggyEnd?.Invoke();
     }
 }
