@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class J_Barrel : MonoBehaviour
 {
-    public GameObject DestroyedBarrel;
     public GameObject explosionEffect;
-    private int hitCount;
+    //private int hitCount;
 
     private Rigidbody barrelRigid;
 
@@ -17,39 +16,14 @@ public class J_Barrel : MonoBehaviour
     {
         barrelRigid = GetComponent<Rigidbody>();
     }
-
-    // test
-    void OnMouseDown()
-    {
-        if (++hitCount == 1)
-        {
-            Explode();
-        }
-    }
-
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    // 나중에 bullet 인지 검사
-    //    {
-    //        if(++hitCount == 1)
-    //        {
-    //            Explode();
-    //        }
-    //    }
-    //}
-
-    void Explode()
+    
+    public void Explode()
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
         
         barrelRigid.mass = 5.0f;
         barrelRigid.AddForce(Vector3.up * 100.0f);
 
-        // 기존의 오브젝트 없애고 Destroy로 대체
-        Instantiate(DestroyedBarrel, transform.position, transform.rotation);
-        Destroy(gameObject);
-        // 주변 오브젝트 폭발
         IndirectExplosion(transform.position);
     }
     
