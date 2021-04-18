@@ -6,7 +6,7 @@ public delegate void Trigger(GameObject trig);
 public class LTrapTrigger : MonoBehaviour
 {
     public Trigger Trigger;
-
+    public VoidDelVoid onCollision;
 
     public void OnTrigger(GameObject trig)
     {

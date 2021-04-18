@@ -5,6 +5,7 @@ using UnityEngine;
 public class LFallingObj : MonoBehaviour
 {
     public LTrapTrigger parent;
+    public VoidDelVoid CollisionEnter;
     // Start is called before the first frame update
     void Update()
     {
@@ -16,5 +17,14 @@ public class LFallingObj : MonoBehaviour
     {
         parent.OnTrigger(this.gameObject);
         Debug.Log("Hit");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            parent.onCollision?.Invoke();
+            Destroy(this.gameObject);
+        }
     }
 }

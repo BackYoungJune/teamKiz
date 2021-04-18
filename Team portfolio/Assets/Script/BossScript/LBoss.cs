@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/*
+미구현된 항목들.
+1. 보스 데미지, 공격, 히트, 죽음
+2. 레이지 플래그(히트되서 피가 30%미만이면 발동)
+ */
 public class LBoss : yLivingEntity
 {
     public enum STATE 
@@ -37,10 +42,9 @@ public class LBoss : yLivingEntity
     public LTrapTrigger trapTrigger;
 
     public Transform[] triggers = new Transform[4];
-    public Transform CurTrigger;
+    public int CurTriggerIndex;
     public Transform CheckTrigger = null;
     public float[] triggerDist = new float[4];
-
 
     float StateStartTime;
     float PatternLength;
@@ -54,7 +58,7 @@ public class LBoss : yLivingEntity
     {
         mySTATE = STATE.CREATE;
         myFLAG = FLAG.NORMAL;
-
+        
         //AnimEvent 할당
         //Roar 애니메이션의 경우 최초 등장컷에서도 사용되므로 플래그 사용.
         bossAnimEvent.RoarEnd += () => { roarEnd = true;  };
@@ -84,8 +88,20 @@ public class LBoss : yLivingEntity
             {
                 Debug.Log("TriggerOn");
                 trig.AddComponent<Rigidbody>();
+                ChangeState(STATE.GROGGY);
             }
         }
+        trapTrigger.onCollision += () =>
+        {
+            bossAnim.SetTrigger("Groggy");
+            myFLAG = FLAG.NORMAL;
+        };
+        //Groggy
+        bossAnimEvent.GroggyEnd += () =>
+        {
+            CheckTrigger = triggers[CurTriggerIndex] = null;
+            ChangeState(STATE.APPROACHING);
+        };
 
         //Attack
         bossAnimEvent.AttackBranch += () =>
@@ -165,6 +181,7 @@ public class LBoss : yLivingEntity
                     else if(myFLAG == FLAG.HEAVY)
                     {
                         if (SelectPattern < 0.3f)
+                            //if (SelectPattern < 1f)
                             ChangeState(STATE.THROWING);
                         else
                             ChangeState(STATE.LEAPATTACK);
@@ -194,7 +211,7 @@ public class LBoss : yLivingEntity
                 }
                 if(bossNavAgent.remainingDistance < bossNavAgent.stoppingDistance+Mathf.Epsilon)
                 {
-                    CheckTrigger = CurTrigger;
+                    CheckTrigger = triggers[CurTriggerIndex];
                     bossAnim.SetFloat("Speed", 0f);
                     bossNavAgent.speed = 0.1f;
                     bossNavAgent.SetDestination(Player.position);
@@ -227,6 +244,7 @@ public class LBoss : yLivingEntity
                 break;
         }
     }
+
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //ChangeState
     public void ChangeState(STATE s)
@@ -276,6 +294,9 @@ public class LBoss : yLivingEntity
             case STATE.ROAR:
                 break;
             case STATE.GROGGY:
+                bossAnim.SetTrigger("HitCameraOn");
+                if(!bossNavAgent.isStopped)
+                    bossNavAgent.isStopped = true;
                 break;
         }
     }
@@ -303,22 +324,22 @@ public class LBoss : yLivingEntity
         if (Mathf.Min(triggerDist) == triggerDist[0])
         {
             targetPos = triggers[0].position;
-            CurTrigger = triggers[0];
+            CurTriggerIndex = 0;
         }
         else if (Mathf.Min(triggerDist) == triggerDist[1])
         {
             targetPos = triggers[1].position;
-            CurTrigger = triggers[1];
+            CurTriggerIndex = 1;
         }
         else if (Mathf.Min(triggerDist) == triggerDist[2])
         { 
             targetPos = triggers[2].position;
-            CurTrigger = triggers[2];
+            CurTriggerIndex = 2;
         }
         else if (Mathf.Min(triggerDist) == triggerDist[3])
         {
             targetPos = triggers[3].position;
-            CurTrigger = triggers[3];
+            CurTriggerIndex = 3;
         }
     }
     IEnumerator Leap()
@@ -358,10 +379,14 @@ public class LBoss : yLivingEntity
         Vector3 pos = Vector3.zero;
         while (StateStartTime < 1f + Mathf.Epsilon)
         {
+            if(collider.attachedRigidbody.tag == "Player")
+            {
+                Debug.Log("Damage");
+            }
             pos.x = Mathf.Lerp(OriginalPos.x, targetPos.x, StateStartTime);
             pos.z = Mathf.Lerp(OriginalPos.z, targetPos.z, StateStartTime);
             this.transform.position = pos;
-            StateStartTime += Time.deltaTime;
+            StateStartTime += Time.deltaTime*2;
             yield return null;
         }
         this.transform.position = targetPos;
