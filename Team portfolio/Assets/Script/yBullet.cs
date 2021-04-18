@@ -24,6 +24,7 @@ public class yBullet : MonoBehaviour
             // 첫번째 Enemy와 충돌한 경우
             if(hit.transform.tag == "Enemy")
             {
+                Debug.Log("Hit");
                 // 레이가 어떤 물체와 충돌한 경우
                 // bolldEffect를 생성시키고 파괴
                 Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -31,11 +32,13 @@ public class yBullet : MonoBehaviour
                 // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
                 IDamageable target = hit.collider.GetComponent<IDamageable>();
 
+                Debug.Log(target);
                 // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
                 if (target != null)
                 {
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hit.point, hit.normal);
+                    Debug.Log("hit");
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
                     
                 }
@@ -45,7 +48,19 @@ public class yBullet : MonoBehaviour
                 // 파괴
                 Destroy(gameObject);
             }
+            else if(hit.transform.tag == "Boss")
+            {
+                Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                IDamageable target = hit.transform.parent.GetComponent<IDamageable>();
+                if (target != null)
+                {
+                    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                    target.OnDamage(damage, hit.point, hit.normal);
 
+                    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+
+                }
+            }
             // 두번째 벽이나 바닥과 충돌한 경우
             else if(hit.transform.tag == "Floor" || hit.transform.tag == "Wall")
             {
@@ -54,6 +69,22 @@ public class yBullet : MonoBehaviour
                 hitPosition = hit.point;
                 // 파괴
                 Destroy(gameObject);
+            }
+            else if(hit.transform.tag == "FallingObj")
+            {
+                hit.transform.GetComponent<LFallingObj>().Hit();
+            }
+
+            // Barrel 을 맞췄을 때
+            else if (hit.transform.tag == "Explodable")
+            {
+                hit.transform.GetComponent<J_Barrel>().Explode();
+                hit.transform.GetComponent<J_Breakable>().DestructObject();
+            }
+            // 부술 수 있는 아이템의 경우
+            else if (hit.transform.tag == "BREAKABLE")
+            {
+                hit.transform.GetComponent<J_Breakable>().DestructObject();
             }
 
             // 나머지와 충돌한 경우
