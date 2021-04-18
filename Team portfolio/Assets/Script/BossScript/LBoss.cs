@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 /*
 미구현된 항목들.
-1. 보스 데미지, 공격, 히트, 죽음
-2. 레이지 플래그(히트되서 피가 30%미만이면 발동)
+1. 레이지 플래그(히트되서 피가 30%미만이면 발동)
  */
 public class LBoss : yLivingEntity
 {
@@ -374,14 +373,14 @@ public class LBoss : yLivingEntity
         //도약 끝
         if (myFLAG != FLAG.RAGE)
         {
-            if(Vector3.Distance(this.transform.position, Player.position) < 3)
+            if(Vector3.Distance(this.transform.position, Player.position) < 5)
             {
                 Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
             }
         }
         else
         {
-            if (Vector3.Distance(this.transform.position, Player.position) < 6)
+            if (Vector3.Distance(this.transform.position, Player.position) < 8)
             {
                 Player.GetComponent<yPlayerHealth>().OnDamage(60f, Vector3.zero, Vector3.zero);
             }
