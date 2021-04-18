@@ -4,14 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BREAKABLE
-  - Item
-  - Enemy
-  - Floor
+  - Explodable
   - Wall
-  - Pickup
-  - FallingObj
-  - Boss
+  - Ground
+  - Enemy
+  - Item
+  - BREAKABLE
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -21,12 +20,12 @@ TagManager:
   - UI
   - 
   - 
-  - FireLayer
-  - RangeSystem
-  - MiniMap
-  - Breakable
   - Item
-  - Zombie
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

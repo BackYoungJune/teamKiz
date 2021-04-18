@@ -8,6 +8,7 @@ public class J_Item : ScriptableObject
     public string itemName;
     public Sprite itemImage;
     public GameObject itemPrefab;
+    public int amount;
 
     public string weaponType;
 

@@ -44,7 +44,8 @@ public class J_ActionController : MonoBehaviour
             if(hitInfo.transform != null)
             {
                 J_Item hitItem = hitInfo.transform.GetComponent<J_ItemPickup>().item;
-                // 아이템 인벤토리에 추가(AddInventory()) or 체력회복(yLivingEntity.RestoreHealth(hitItem.hpamount))
+                // 아이템 인벤토리에 추가(AddInventory()) or 체력회복
+                //GetComponent<yPlayerHealth>().RestoreHealth(hitItem.amount);
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();

@@ -75,6 +75,18 @@ public class yBullet : MonoBehaviour
                 hit.transform.GetComponent<LFallingObj>().Hit();
             }
 
+            // Barrel 을 맞췄을 때
+            else if (hit.transform.tag == "Explodable")
+            {
+                hit.transform.GetComponent<J_Barrel>().Explode();
+                hit.transform.GetComponent<J_Breakable>().DestructObject();
+            }
+            // 부술 수 있는 아이템의 경우
+            else if (hit.transform.tag == "BREAKABLE")
+            {
+                hit.transform.GetComponent<J_Breakable>().DestructObject();
+            }
+
             // 나머지와 충돌한 경우
             //else
             //{

@@ -10,15 +10,6 @@ public class J_Breakable : MonoBehaviour
     [SerializeField]
     GameObject[] itemList;
 
-    void OnMouseDown()
-    {
-        newDestroyedVersion = Instantiate(DestroyedVersion, transform.position, transform.rotation);
-        Destroy(gameObject);
-        DestroyDebris();
-        // 아이템을 스폰
-        SpawnItem(Random.Range(0, 2));
-    }
-
     public void DestructObject()
     {
         newDestroyedVersion = Instantiate(DestroyedVersion, transform.position, transform.rotation);
@@ -28,20 +19,19 @@ public class J_Breakable : MonoBehaviour
     }
     void DestroyDebris()
     {
+        Transform[] debirs = newDestroyedVersion.GetComponentsInChildren<Transform>();
+        for (int i = 1; i < debirs.Length; i++)
+        {
+            Destroy(debirs[i].gameObject, 3.0f);
+        }
     }
 
     void SpawnItem(int random)
     {
-        switch (random)
-        {
-            case 0:
-                Instantiate(itemList[0], transform.position, transform.rotation);
-                break;
-            case 1:
-                Instantiate(itemList[1], transform.position, transform.rotation);
-                break;
-        }
+        if (itemList.Length == 0) return;
 
+        Instantiate(itemList[Random.Range(0, 2)], transform.position, transform.rotation);
+        Debug.Log("SpawnItem!!");
     }
 
     // Fracture Object의 rigidbody 전부 제거하고
