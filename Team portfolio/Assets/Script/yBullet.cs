@@ -72,7 +72,7 @@ public class yBullet : MonoBehaviour
             }
             else if(hit.transform.tag == "FallingObj")
             {
-                //hit.transform.GetComponent<LFallingObj>().Hit();
+                hit.transform.GetComponent<LFallingObj>().Hit();
             }
 
             // Barrel 을 맞췄을 때
