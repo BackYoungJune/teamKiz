@@ -203,36 +203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &18817929
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 18817930}
-  m_Layer: 11
-  m_Name: MuzzleFlash
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &18817930
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 18817929}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.024, y: 0.113, z: 0.794}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1172836157}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47591206
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,30 +964,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6497f1aac926624898c0b36f5c1116b, type: 3}
---- !u!1 &1160877587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1962220151113749786, guid: 8b15b1fb63177c44090f5854e19fceea,
-    type: 3}
-  m_PrefabInstance: {fileID: 7983362064601643087}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1160877588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160877587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa54e0f8e6a16674ba4adf57f93ae66b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1172836157 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7983362065841988834, guid: 8b15b1fb63177c44090f5854e19fceea,
-    type: 3}
-  m_PrefabInstance: {fileID: 7983362064601643087}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1190346960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,56 +1448,6 @@ PrefabInstance:
       propertyPath: actionText
       value: 
       objectReference: {fileID: 1217315457}
-    - target: {fileID: 437025640452548923, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: myWeapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749780, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 17.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 22.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Size.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Center.x
-      value: 24.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749781, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Center.z
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1962220151113749784, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7983362065841988833, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: muzzleFlashTransform
-      value: 
-      objectReference: {fileID: 18817930}
     - target: {fileID: 7983362065976613412, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_Name
