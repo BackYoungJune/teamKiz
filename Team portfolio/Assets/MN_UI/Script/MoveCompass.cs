@@ -16,6 +16,7 @@ public class MoveCompass : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("Player") as GameObject;
+       // Player = GameObject.Find("Player_1") as GameObject;
 
         canvasrenerder = GetComponent<CanvasRenderer>();
         //canvasrenerder.GetMaterial(0).SetTextureOffset("_MainTex", new Vector2(0f, 0f));
@@ -25,6 +26,10 @@ public class MoveCompass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
+        {
+            Destroy(GameObject.Find("CompassCanvas"));
+        }
         if(canvasrenerder != null && canvasrenerder.GetMaterial(0) != null)
         {
             offset = Player.transform.rotation.eulerAngles.y * 0.001388f;

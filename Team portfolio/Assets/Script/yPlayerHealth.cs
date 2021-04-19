@@ -29,7 +29,7 @@ public class yPlayerHealth : yLivingEntity
 
         /* 체력 UI 최대 HP = startingHealth, 현재 HP = health로 받기 */
 
-        Debug.Log(startHealth);
+        //Debug.Log(startHealth);
     }
 
     // 체력 회복
@@ -45,7 +45,7 @@ public class yPlayerHealth : yLivingEntity
     {
         // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
-       
+        //MN_UIManager.Instance.IsHit = true;
 
         // 애니메이터의 Hit 트리거를 발동시켜 Hit 애니메이션 재생
         myAnim.SetTrigger("Hit");

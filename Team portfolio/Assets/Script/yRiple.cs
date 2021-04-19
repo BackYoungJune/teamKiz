@@ -34,7 +34,12 @@ public class yRiple : MonoBehaviour
     {
         // 총 상태 초기화
         // 현재 탄창을 가득 채우기
+
         magAmmo = magCapacity;
+
+        // 총알 채워진거 UI로 가져오기 
+        MN_UIManager.Instance.ammo = magAmmo;
+
         // 총의 현재 상태를 총을 쏠 준비가 된 상태로 변경
         myState = STATE.READY;
         // 마지막으로 총을 쏜 시점을 초기화
@@ -73,13 +78,16 @@ public class yRiple : MonoBehaviour
 
         // 발사 이펙트 재생 시작
         StartCoroutine(ShotEffect(Bullet.hitPosition));
-
         // 남은 탄알 수를 -1
         magAmmo--;
+        MN_UIManager.Instance.ammo = magAmmo;
         if (magAmmo <= 0)
         {
             // 탄창에 남은 탄알이 없다면 총의 현재 상태를 Empty로 갱신
+            MN_UIManager.Instance.ammo = 0;
+
             myState = STATE.EMPTY;
+
         }
     }
 
@@ -104,6 +112,7 @@ public class yRiple : MonoBehaviour
         }
 
         // 재장전 처리 시작
+
         StartCoroutine(ReloadRoutine());
         return true;
     }
@@ -134,5 +143,7 @@ public class yRiple : MonoBehaviour
 
         // 총의 현재 상태를 발사 준비된 상태로 변경
         myState = STATE.READY;
+        MN_UIManager.Instance.ammo = magAmmo;
+
     }
 }

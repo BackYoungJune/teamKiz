@@ -22,39 +22,39 @@ public class MouseEvent : MonoBehaviour,
     {
         MouseClick?.Invoke(eventData);
 
-        Debug.Log("OnPointerClick");
+        //Debug.Log("OnPointerClick");
     }
     public void OnPointerDown(PointerEventData eventData)
     {
         MouseDown?.Invoke(eventData);
 
-        Debug.Log("OnPointerDown");
+        //Debug.Log("OnPointerDown");
     }
     public void OnDrag(PointerEventData eventData)
     {
         MouseDrag?.Invoke(eventData);
 
-        Debug.Log("OnDrag" + eventData.position);
+       // Debug.Log("OnDrag" + eventData.position);
 
     }
     public void OnEndDrag(PointerEventData eventData)
     {
         MouseEndDrag?.Invoke(eventData);
 
-        Debug.Log("OnEndDrag" + eventData.position);
+       // Debug.Log("OnEndDrag" + eventData.position);
 
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
         MouseEnter?.Invoke(eventData);
 
-        Debug.Log("OnPointerEnter");
+       // Debug.Log("OnPointerEnter");
 
     }
     public void OnPointerExit(PointerEventData eventData)
     {
         MouseExitExit?.Invoke(eventData);
-        Debug.Log("OnPointerExit");
+       // Debug.Log("OnPointerExit");
 
     }
 }

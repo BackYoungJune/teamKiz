@@ -6,12 +6,10 @@ public class Zombie_MiniMap_Icon : MonoBehaviour
 {
 
     SpriteRenderer zombieRenderer;
-    Color StartColor;
     private void Awake()
     {
         zombieRenderer = GetComponent<SpriteRenderer>();
 
-        StartColor = zombieRenderer.color;
 
         StartCoroutine(IConAlphaChangeFirst());
     }

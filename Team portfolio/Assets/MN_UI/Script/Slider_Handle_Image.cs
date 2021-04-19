@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Slider_Handle_Image : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Slider_Handle_Image : MonoBehaviour
             childText.text = (int)value + "%";
             yield return null;
         }
+        SceneManager.LoadScene("PlayScene");
         StopPlus = true;
     }
     IEnumerator SpriteZombie()

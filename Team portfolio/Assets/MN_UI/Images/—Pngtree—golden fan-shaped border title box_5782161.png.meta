@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: aeabb21b98f97a6408661e7fe62609e9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6333845259876241765
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_0"
+  - first:
+      213: 582490226654181337
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_1"
+  - first:
+      213: -1649027989999975717
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_2"
+  - first:
+      213: -3213724366675888195
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_3"
+  - first:
+      213: 2414164270714059911
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_4"
+  - first:
+      213: 6835638828562386317
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_5"
+  - first:
+      213: -3420111461158640073
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_6"
+  - first:
+      213: 3667047608463372150
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_7"
+  - first:
+      213: -5780688392503729000
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_8"
+  - first:
+      213: 8810285314848261212
+    second: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_9"
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_0"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 3406
+        width: 1345
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ee8c65b49a918a0800000000000000
+      internalID: -6333845259876241765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_1"
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 3406
+        width: 1345
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7fbd466cb651800800000000000000
+      internalID: 582490226654181337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_2"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 2602
+        width: 1345
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd2006fa7c97d19e0800000000000000
+      internalID: -1649027989999975717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_3"
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 2602
+        width: 1345
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7344e27be8663d0800000000000000
+      internalID: -3213724366675888195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_4"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1800
+        width: 1345
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cf9590d95d08120800000000000000
+      internalID: 2414164270714059911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_5"
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1800
+        width: 1345
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d045d3c411dde50800000000000000
+      internalID: 6835638828562386317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_6"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 998
+        width: 1345
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736a5612fb25980d0800000000000000
+      internalID: -3420111461158640073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_7"
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 998
+        width: 1345
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67fa7ecfe58f3e230800000000000000
+      internalID: 3667047608463372150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_8"
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 194
+        width: 1345
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894679fc88ed6cfa0800000000000000
+      internalID: -5780688392503729000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\u2014Pngtree\u2014golden fan-shaped border title box_5782161_9"
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 194
+        width: 1345
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c540f51a0db644a70800000000000000
+      internalID: 8810285314848261212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e671c4dd41a163d4181e7714d5c18398
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

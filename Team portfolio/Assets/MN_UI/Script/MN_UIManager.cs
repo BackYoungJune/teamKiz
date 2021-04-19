@@ -33,13 +33,14 @@ public class MN_UIManager : MonoBehaviour
     public float CurrentHealth;
     public bool OnDamage { get;  set; }
     public bool IsDead { get; set; }
-
+    public bool IsHit { get; set; }
+    public int ammo { get; set; }
     //플레이어 체력 갱신
     public void UpdatePlayerHealth(float Health)
     {
         if (Health < 0)
-            OnDamage = true;
-        Debug.Log(OnDamage);
+            IsHit = true;
+        Debug.Log(IsHit);
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
     }
