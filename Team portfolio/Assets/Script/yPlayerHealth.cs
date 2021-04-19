@@ -38,6 +38,7 @@ public class yPlayerHealth : yLivingEntity
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
         /* 체력 UI갱신 */
+        base.RestoreHealth(MN_UIManager.Instance.CurrentHealth);
     }
 
     // 데미지 처리
