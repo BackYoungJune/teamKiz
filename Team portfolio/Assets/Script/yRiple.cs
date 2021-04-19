@@ -15,7 +15,8 @@ public class yRiple : MonoBehaviour
     public STATE myState = STATE.READY;
 
     public Transform fireTransform; // 총알이 발사될 위치
-    public Transform BulletCaseTransform; // 탄피가 발사될 위치
+    public Transform BulletCaseTransform;   // 탄피가 발사될 위치
+    public Transform muzzleFlashTransform;  // 총구 화염 효과가 발사될 위치
     public GameObject muzzleFlashEffect; // 총구 화염 효과
 
     public int ammoRemain = 100; // 남은 전체 탄약
@@ -95,7 +96,7 @@ public class yRiple : MonoBehaviour
     IEnumerator ShotEffect(Vector3 hitPosition)
     {
         // 총구 화염 
-        Instantiate(muzzleFlashEffect, fireTransform.position, fireTransform.rotation);
+        Instantiate(muzzleFlashEffect, muzzleFlashTransform.position, muzzleFlashTransform.rotation);
 
         // 0.03초 동안 잠시 처리를 대기
         yield return new WaitForSeconds(0.03f);

@@ -56,9 +56,10 @@ public class yBullet : MonoBehaviour
                 {
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hit.point, hit.normal);
-
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
 
+                    // 파괴
+                    Destroy(gameObject);
                 }
             }
             // 두번째 벽이나 바닥과 충돌한 경우
@@ -73,6 +74,8 @@ public class yBullet : MonoBehaviour
             else if(hit.transform.tag == "FallingObj")
             {
                 hit.transform.GetComponent<LFallingObj>().Hit();
+                // 파괴
+                Destroy(gameObject);
             }
 
             // Barrel 을 맞췄을 때
@@ -80,12 +83,18 @@ public class yBullet : MonoBehaviour
             {
                 hit.transform.GetComponent<J_Barrel>().Explode();
                 hit.transform.GetComponent<J_Breakable>().DestructObject();
+                // 파괴
+                Destroy(gameObject);
             }
             // 부술 수 있는 아이템의 경우
             else if (hit.transform.tag == "BREAKABLE")
             {
                 hit.transform.GetComponent<J_Breakable>().DestructObject();
+                // 파괴
+                Destroy(gameObject);
             }
+
+
 
             // 나머지와 충돌한 경우
             //else
