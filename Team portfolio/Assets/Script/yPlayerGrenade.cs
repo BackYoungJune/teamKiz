@@ -5,11 +5,13 @@ using UnityEngine;
 public class yPlayerGrenade : MonoBehaviour
 {
     public GameObject Grenade; // 사용할 수류탄
+    public GameObject Grenade2;
     public Transform leftHandMount;     // 수류탄의 오른쪽 손잡이, 오른손이 위치할 지점
     public Transform rightHandMount;    // 수류탄의 오른쪽 손잡이, 오른손이 위치할 지점
 
     yPlayerInput playerInput; // 플레이어의 입력
     public Animator playerAnimator; // 애니메이터 컴포넌트
+
 
     void Awake()
     {
@@ -20,8 +22,6 @@ public class yPlayerGrenade : MonoBehaviour
 
     private void OnEnable()
     {
-        // 수류탄 Rigidbody를 끈다
-        Grenade.GetComponent<Rigidbody>().Sleep();
     }
 
     // Update is called once per frame
@@ -31,17 +31,24 @@ public class yPlayerGrenade : MonoBehaviour
         {
             
             // 수류탄 생성
-            GameObject instantGrenade = Instantiate(Grenade, rightHandMount.position, rightHandMount.rotation);
-            Rigidbody GrenadeRigid = instantGrenade.GetComponent<Rigidbody>();
-            // 수류탄 Rigidbody를 켠다
-            GrenadeRigid.WakeUp();
+            GameObject instantGrenade = Instantiate(Grenade, Grenade2.transform.position, rightHandMount.localRotation);
+            Rigidbody GrenadeRigid =  instantGrenade.GetComponent<Rigidbody>();
+            SphereCollider collider = instantGrenade.GetComponent<SphereCollider>();
+            Debug.Log(GrenadeRigid);
             // 수류탄을 발사한다
             GrenadeRigid.AddForce(Vector3.forward * 10.0f + Vector3.up * 3.0f, ForceMode.Impulse);
-
+            StartCoroutine(ThrowOut(collider));
             // 수류탄 던지는 애니메이션 실행
             playerAnimator.SetTrigger("Throw");
             //Destroy(instantGrenade.gameObject, 5f);
         }
+    }
+
+    IEnumerator ThrowOut(SphereCollider collider)
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        collider.isTrigger = false;
     }
 
     // 애니메이터의 IK 갱신

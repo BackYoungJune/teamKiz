@@ -54,10 +54,10 @@ public class yEnemy : yLivingEntity
     }
 
     // Enemy를 홣성화시 사용되는 함수
-    private void OnEnable()
+    private void Start()
     {
         // 메모리 관리를 위해 리지드바디를 끈다
-        //rigid.Sleep();
+        // rigid.Sleep();
         // 실험용 Enemy 스탯
         startHealth = 200.0f;
         health = 200.0f;
@@ -322,22 +322,25 @@ public class yEnemy : yLivingEntity
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (isGrenade)
+        if (isGrenade && !dead)
         {
             // reactVec의 크기를 정한다
             reactVec = reactVec.normalized;
             reactVec += Vector3.up * 5;
 
-            
+            // Rigidbody를 추가한다
             Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
 
             // 리지드바디를 킨다
             //rigid.WakeUp();
 
+            rigid.velocity = Vector3.zero;
+            rigid.angularVelocity = Vector3.zero;
+
             // rigidbody를 이용해 좀비를 날려보낸다
             rigid.freezeRotation = false;
             rigid.AddForce(reactVec * 10, ForceMode.Impulse);
-            rigid.AddTorque(reactVec * 25, ForceMode.Impulse);
+            rigid.AddTorque(reactVec * 10, ForceMode.Impulse);
 
             yield return new WaitForSeconds(0.5f);
 
@@ -347,6 +350,7 @@ public class yEnemy : yLivingEntity
 
             // 리지드바디를 다시 끈다
             //rigid.Sleep();
+            // 리지드바디를 제거한다
             Destroy(gameObject.GetComponent<Rigidbody>());
         }
     }
