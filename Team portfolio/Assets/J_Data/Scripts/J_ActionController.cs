@@ -19,7 +19,8 @@ public class J_ActionController : MonoBehaviour
     //필요한 컴포넌트
     [SerializeField]
     private Text actionText;
-    
+    [SerializeField]
+    private Text explodeText;
 
     // Update is called once per frame
     void Update()
@@ -34,6 +35,7 @@ public class J_ActionController : MonoBehaviour
         {
             CheckItem();
             CanPickUP();
+            CanExplodable();
         }
     }
 
@@ -52,6 +54,14 @@ public class J_ActionController : MonoBehaviour
             }
         }
     }
+    private void CanExplodable()
+    {
+        if(hitInfo.transform.tag == "Explodable")
+        {
+            Debug.Log("set bool");
+            hitInfo.transform.GetComponent<J_TimeBomb>().SetPlanted(true);
+        }
+    }
 
     private void CheckItem()
     {
@@ -60,6 +70,12 @@ public class J_ActionController : MonoBehaviour
             if (hitInfo.transform.tag == "Item")
             {
                 ItemInfoAppear();
+            }
+
+            if(hitInfo.transform.tag == "Explodable")
+            {
+                explodeText.gameObject.SetActive(true);
+                explodeText.text = "E를 눌러 기폭";
             }
         }
         else
@@ -79,5 +95,6 @@ public class J_ActionController : MonoBehaviour
     {
         pickupActivated = false;
         actionText.gameObject.SetActive(false);
+        explodeText.gameObject.SetActive(false);
     }
 }
