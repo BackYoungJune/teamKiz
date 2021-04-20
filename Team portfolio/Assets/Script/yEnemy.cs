@@ -36,7 +36,7 @@ public class yEnemy : yLivingEntity
 
     public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
-    Rigidbody rigid;    // 리지드바디 
+    //Rigidbody rigid;    // 리지드바디 
 
     void Awake()
     {
@@ -45,7 +45,7 @@ public class yEnemy : yLivingEntity
         myAnim = GetComponentInChildren<Animator>();
         myAnimEvent = GetComponentInChildren<yAnimEvent>();
         myRangeSys = GetComponentInChildren<yRangeSystem>();
-        rigid = GetComponent<Rigidbody>();
+        //rigid = GetComponent<Rigidbody>();
         // RangeSystem Sphere 범위 안에 들어오면 OnBattle 실행
         myRangeSys.battle = OnBattle;
         // 공격시 이벤트 실행
@@ -57,7 +57,7 @@ public class yEnemy : yLivingEntity
     private void OnEnable()
     {
         // 메모리 관리를 위해 리지드바디를 끈다
-        rigid.Sleep();
+        //rigid.Sleep();
         // 실험용 Enemy 스탯
         startHealth = 200.0f;
         health = 200.0f;
@@ -95,40 +95,52 @@ public class yEnemy : yLivingEntity
         {
             case STATE.NORMAL:
                 // 초기화
-                myAnim.SetFloat("Speed", 0f);
-                Playtime = 0f;
-                myNavAgent.stoppingDistance = 0.5f;
-                myNavAgent.isStopped = true;
+                if(!dead)
+                {
+                    myAnim.SetFloat("Speed", 0f);
+                    Playtime = 0f;
+                    myNavAgent.stoppingDistance = 0.5f;
+                    myNavAgent.isStopped = true;
+                }
                 break;
             case STATE.ROAMING:
-                RadiusPoint = Random.onUnitSphere;  // 반경1을 갖는 구의 표면상의 임의의 지점을 반환한다
-                RadiusPoint.y = 0.0f;
-                Vector3 ZombiePosition = transform.position;    // 몬스터 자신의 포지션값을 가진다
-                Vector3 desPos = ZombiePosition + RadiusPoint * RadiusLength;   // 자신의 포지션값으로부터 RadiusLength의 반경을 가진 임의의 원의값을 가져온다
-                myNavAgent.isStopped = false;
-                myNavAgent.SetDestination(desPos);  // 목표지점으로 이동시킨다
+                if (!dead)
+                {
+                    RadiusPoint = Random.onUnitSphere;  // 반경1을 갖는 구의 표면상의 임의의 지점을 반환한다
+                    RadiusPoint.y = 0.0f;
+                    Vector3 ZombiePosition = transform.position;    // 몬스터 자신의 포지션값을 가진다
+                    Vector3 desPos = ZombiePosition + RadiusPoint * RadiusLength;   // 자신의 포지션값으로부터 RadiusLength의 반경을 가진 임의의 원의값을 가져온다
+                    myNavAgent.isStopped = false;
+                    myNavAgent.SetDestination(desPos);  // 목표지점으로 이동시킨다
+                } 
                 break;
             case STATE.SEARCHING:
-                StartCoroutine(TargetEntity());
-                Vector3 dir1 = targetEntity.transform.position - transform.position;
-                dir1.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
-                dir1.Normalize();
-                // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir1), 1.0f);
-                myAnim.SetTrigger("Roar");
-                if (myNavAgent.isStopped)
+                if (!dead)
                 {
-                    myNavAgent.isStopped = false;
-                }
+                    StartCoroutine(TargetEntity());
+                    Vector3 dir1 = targetEntity.transform.position - transform.position;
+                    dir1.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
+                    dir1.Normalize();
+                    // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir1), 1.0f);
+                    myAnim.SetTrigger("Roar");
+                    if (myNavAgent.isStopped)
+                    {
+                        myNavAgent.isStopped = false;
+                    }
+                } 
                 break;
             case STATE.BATTLE:
-                StartCoroutine(TargetEntity());
-                // Enemy 스탑거리 조절
-                if (myNavAgent.isStopped)
+                if (!dead)
                 {
-                    myNavAgent.isStopped = false;
-                }
-                myNavAgent.stoppingDistance = 1.2f;
+                    StartCoroutine(TargetEntity());
+                    // Enemy 스탑거리 조절
+                    if (myNavAgent.isStopped)
+                    {
+                        myNavAgent.isStopped = false;
+                    }
+                    myNavAgent.stoppingDistance = 1.2f;
+                } 
                 break;
             case STATE.ESCAPE:
                 break;
@@ -271,7 +283,7 @@ public class yEnemy : yLivingEntity
 
         // AI 추적을 중지하고 내비메시 컴포넌트 비활성화
         myNavAgent.isStopped = true;
-        //myNavAgent.enabled = false;
+        myNavAgent.enabled = false;
 
         // 사망 애니메이션 재생
         myAnim.SetTrigger("Die");
@@ -316,8 +328,11 @@ public class yEnemy : yLivingEntity
             reactVec = reactVec.normalized;
             reactVec += Vector3.up * 5;
 
+            
+            Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
+
             // 리지드바디를 킨다
-            rigid.WakeUp();
+            //rigid.WakeUp();
 
             // rigidbody를 이용해 좀비를 날려보낸다
             rigid.freezeRotation = false;
@@ -331,7 +346,8 @@ public class yEnemy : yLivingEntity
             rigid.isKinematic = false;
 
             // 리지드바디를 다시 끈다
-            rigid.Sleep();
+            //rigid.Sleep();
+            Destroy(gameObject.GetComponent<Rigidbody>());
         }
     }
 }

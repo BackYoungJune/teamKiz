@@ -38,7 +38,6 @@ public class yBullet : MonoBehaviour
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hit.point, hit.normal);
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-                    
                 }
 
                 // 레이가 충돌한 위치 저장
