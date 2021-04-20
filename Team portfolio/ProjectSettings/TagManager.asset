@@ -25,10 +25,10 @@ TagManager:
   - RangeSystem
   - FireLayer
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - PlayerMiniMapIcon
+  - EnemyMinMapIcon
+  - floor
   - 
   - 
   - 
