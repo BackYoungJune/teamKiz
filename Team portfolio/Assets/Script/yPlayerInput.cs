@@ -32,6 +32,7 @@ public class yPlayerInput : MonoBehaviour
     public bool swap1 { get; private set; }     // 스왑 1
     public bool swap2 { get; private set; }     // 스왑 2
     public bool swap3 { get; private set; }     // 스왑 3
+    public bool interact { get; private set; }  // 상호작용
 
     bool isDead = false;    // 나중에 게임매니저로 옮겨야댐
 
@@ -79,6 +80,8 @@ public class yPlayerInput : MonoBehaviour
             swap2 = Input.GetKey(KeyCode.Alpha2);
             // 3번키 입력감지
             swap3 = Input.GetKey(KeyCode.Alpha3);
+            // 상호작용 키 입력감지
+            interact = Input.GetKeyDown(KeyCode.E);
         }
     }
 }
