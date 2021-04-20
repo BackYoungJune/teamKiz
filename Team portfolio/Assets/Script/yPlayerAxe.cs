@@ -45,10 +45,10 @@ public class yPlayerAxe : MonoBehaviour
     void OnAnimatorIK(int layerIndex)
     {
         // IK를 사용하여 왼손의 위치와 회전을 총의 오른쪽 손잡이에 맞춤
-        playerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
-        playerAnimator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
+        //playerAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
+        //playerAnimator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
 
-        playerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandMount.position);
-        playerAnimator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandMount.rotation);
+        //playerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandMount.position);
+        //playerAnimator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandMount.rotation);
     }
 }

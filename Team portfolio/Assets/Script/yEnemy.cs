@@ -36,6 +36,8 @@ public class yEnemy : yLivingEntity
 
     public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
+    Rigidbody rigid;
+
     void Awake()
     {
         // 게임 오브젝트로부터 사용할 컴퍼넌트 가져오기;
@@ -43,6 +45,7 @@ public class yEnemy : yLivingEntity
         myAnim = GetComponentInChildren<Animator>();
         myAnimEvent = GetComponentInChildren<yAnimEvent>();
         myRangeSys = GetComponentInChildren<yRangeSystem>();
+        rigid = GetComponent<Rigidbody>();
         // RangeSystem Sphere 범위 안에 들어오면 OnBattle 실행
         myRangeSys.battle = OnBattle;
         // 공격시 이벤트 실행
@@ -273,5 +276,34 @@ public class yEnemy : yLivingEntity
         }
 
         base.OnDamage(damage, hitPoint, hitNormal);
+    }
+
+    public void HitByGrenade(Vector3 explosionPos)
+    {
+        // 수류탄이 터진위치와 나의 위치를 빼서 react방향을 정한다
+        Vector3 reactVec = transform.position - explosionPos;
+        StartCoroutine(OnReact(reactVec, true));
+    }
+
+    IEnumerator OnReact(Vector3 reactVec, bool isGrenade)
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        if (isGrenade)
+        {
+            // reactVec의 크기를 정한다
+            reactVec = reactVec.normalized;
+            reactVec += Vector3.up * 5;
+
+            // rigidbody를 이용해 좀비를 날려보낸다
+            rigid.freezeRotation = false;
+            rigid.AddForce(reactVec * 10, ForceMode.Impulse);
+            rigid.AddTorque(reactVec * 25, ForceMode.Impulse);
+
+            yield return new WaitForSeconds(0.5f);
+
+            rigid.isKinematic = true;
+            rigid.isKinematic = false;
+        }
     }
 }

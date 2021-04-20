@@ -6,6 +6,7 @@ public class J_SwtichWeapon : MonoBehaviour
 {
     enum HOLDING_WEAPON
     {
+        FIST,
         AXE,
         GUN,
         GRENADE
@@ -24,7 +25,36 @@ public class J_SwtichWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StateProcess();
+        //StateProcess();
+        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            GetComponent<yPlayerAxe>().enabled = false;
+            GetComponent<yPlayerShooter>().enabled = false;
+            GetComponent<yPlayerGrenade>().enabled = false;
+            ChangeState(HOLDING_WEAPON.FIST);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            GetComponent<yPlayerAxe>().enabled = false;
+            GetComponent<yPlayerGrenade>().enabled = false;
+            ChangeState(HOLDING_WEAPON.GUN);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GetComponent<yPlayerShooter>().enabled = false;
+            GetComponent<yPlayerGrenade>().enabled = false;
+            ChangeState(HOLDING_WEAPON.AXE);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GetComponent<yPlayerAxe>().enabled = false;
+            GetComponent<yPlayerShooter>().enabled = false;
+            ChangeState(HOLDING_WEAPON.GRENADE);
+        }
     }
 
     void ChangeState(HOLDING_WEAPON s)
@@ -33,6 +63,8 @@ public class J_SwtichWeapon : MonoBehaviour
         myWeapon = s;
         switch(myWeapon)
         {
+            case HOLDING_WEAPON.FIST:
+                break;
             case HOLDING_WEAPON.AXE:
                 GetComponent<yPlayerAxe>().enabled = true;
                 // UI 이미지 변경
@@ -42,6 +74,7 @@ public class J_SwtichWeapon : MonoBehaviour
                 // UI 이미지 변경    
                 break;
             case HOLDING_WEAPON.GRENADE:
+                GetComponent<yPlayerGrenade>().enabled = true;
                 break;
         }
     }
