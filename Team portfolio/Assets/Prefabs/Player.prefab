@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   walkSpeed: 5
-  JumpPower: 7
+  JumpPower: 5
   jumpCount: 0
   dodgeCount: 0
   myHips: {fileID: 7983362064910970764}
