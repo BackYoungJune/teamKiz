@@ -46,6 +46,5 @@ public class yGrenade : MonoBehaviour
             
         }
         GameObject obj =  Instantiate(ExplosionEffect, transform.position, transform.rotation);
-        Debug.Log(obj);
     }
 }

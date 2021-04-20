@@ -36,7 +36,7 @@ public class yEnemy : yLivingEntity
 
     public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
-    Rigidbody rigid;
+    Rigidbody rigid;    // 리지드바디 
 
     void Awake()
     {
@@ -53,6 +53,15 @@ public class yEnemy : yLivingEntity
         myAnimEvent.Attack2 += OnAttackTarget;
     }
 
+    // Enemy를 홣성화시 사용되는 함수
+    private void OnEnable()
+    {
+        // 메모리 관리를 위해 리지드바디를 끈다
+        rigid.Sleep();
+        // 실험용 Enemy 스탯
+        startHealth = 200.0f;
+        health = 200.0f;
+    }
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
     public void Setup(float newHealth, float newDamage, float newSpeed)
     {
@@ -131,48 +140,60 @@ public class yEnemy : yLivingEntity
         switch (myState)
         {
             case STATE.NORMAL:
-                // 2초후 ROAMING 실행
-                Playtime += Time.deltaTime;
-                if (Playtime > 2.0f)
+                if (!dead)
                 {
-                    ChangeState(STATE.ROAMING);
+                    // 2초후 ROAMING 실행
+                    Playtime += Time.deltaTime;
+                    if (Playtime > 2.0f)
+                    {
+                        ChangeState(STATE.ROAMING);
+                    }
                 }
                 break;
             case STATE.ROAMING:
-                // myNavAgent.speed를 나눈이유는 0 ~ 1.0으로 값을 맞추기 위해 나눴다
-                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
-                // 이동을 거의다 시켰으면 STATE.NORMAL로 바꿔준다
-                if (myNavAgent.remainingDistance < myNavAgent.stoppingDistance && myState == STATE.ROAMING)
+                if (!dead)
                 {
-                    ChangeState(STATE.NORMAL);
+                    // myNavAgent.speed를 나눈이유는 0 ~ 1.0으로 값을 맞추기 위해 나눴다
+                    myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                    // 이동을 거의다 시켰으면 STATE.NORMAL로 바꿔준다
+                    if (myNavAgent.remainingDistance < myNavAgent.stoppingDistance && myState == STATE.ROAMING)
+                    {
+                        ChangeState(STATE.NORMAL);
+                    }
                 }
                 break;
             case STATE.SEARCHING:
-                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                if (!dead)
+                {
+                    myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
 
-                // 플레이어쪽으로 이동
-                myNavAgent.SetDestination(targetEntity.transform.position);
-                //myNavAgent.destination = targetEntity.transform.position;
+                    // 플레이어쪽으로 이동
+                    myNavAgent.SetDestination(targetEntity.transform.position);
+                    //myNavAgent.destination = targetEntity.transform.position;
+                }
                 break;
             case STATE.BATTLE:
-                Vector3 dir = myRangeSys.Target.position - transform.position;
-                dir.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
-                dir.Normalize();
-                // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
-                myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
-
-                // 플레이어쪽으로 이동
-                myNavAgent.SetDestination(myRangeSys.Target.position);
-
-                // 어택 딜레이를 만든다
-                if (AttackTime > Mathf.Epsilon)
+                if(!dead)
                 {
-                    AttackTime -= Time.deltaTime;
-                }
-                else
-                {
-                    OnAttack();
+                    Vector3 dir = myRangeSys.Target.position - transform.position;
+                    dir.y = 0;  // 평면상으로만 이동하려고 y = 0 했다
+                    dir.Normalize();
+                    // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
+                    myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+
+                    // 플레이어쪽으로 이동
+                    myNavAgent.SetDestination(myRangeSys.Target.position);
+
+                    // 어택 딜레이를 만든다
+                    if (AttackTime > Mathf.Epsilon)
+                    {
+                        AttackTime -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        OnAttack();
+                    }
                 }
                 break;
             case STATE.ESCAPE:
@@ -295,6 +316,9 @@ public class yEnemy : yLivingEntity
             reactVec = reactVec.normalized;
             reactVec += Vector3.up * 5;
 
+            // 리지드바디를 킨다
+            rigid.WakeUp();
+
             // rigidbody를 이용해 좀비를 날려보낸다
             rigid.freezeRotation = false;
             rigid.AddForce(reactVec * 10, ForceMode.Impulse);
@@ -302,8 +326,12 @@ public class yEnemy : yLivingEntity
 
             yield return new WaitForSeconds(0.5f);
 
+            // 버그 방지를 위해 물리영향을 받지않도록했다가 다시 돌린다
             rigid.isKinematic = true;
             rigid.isKinematic = false;
+
+            // 리지드바디를 다시 끈다
+            rigid.Sleep();
         }
     }
 }

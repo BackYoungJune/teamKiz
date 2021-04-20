@@ -24,7 +24,6 @@ public class yBullet : MonoBehaviour
             // 첫번째 Enemy와 충돌한 경우
             if(hit.transform.tag == "Enemy")
             {
-                Debug.Log("Hit");
                 // 레이가 어떤 물체와 충돌한 경우
                 // bolldEffect를 생성시키고 파괴
                 Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
@@ -38,7 +37,6 @@ public class yBullet : MonoBehaviour
                 {
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hit.point, hit.normal);
-                    Debug.Log("hit");
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
                     
                 }
