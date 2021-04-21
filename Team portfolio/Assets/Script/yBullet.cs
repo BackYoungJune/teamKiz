@@ -59,6 +59,21 @@ public class yBullet : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
+
+            else if (hit.transform.tag == "Head")
+            {
+                Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                IDamageable target = hit.transform.parent.GetComponent<IDamageable>();
+                if (target != null)
+                {
+                    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                    target.OnDamage(200, hit.point, hit.normal);
+                    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+
+                    // 파괴
+                    Destroy(gameObject);
+                }
+            }
             // 두번째 벽이나 바닥과 충돌한 경우
             else if(hit.transform.tag == "Floor" || hit.transform.tag == "Wall")
             {

@@ -12,6 +12,9 @@ public class yPlayerGrenade : MonoBehaviour
     yPlayerInput playerInput; // 플레이어의 입력
     public Animator playerAnimator; // 애니메이터 컴포넌트
 
+    public int GrenadeRemain = 1; // 남은 전체 수류탄 갯수
+    public int magAmmo; // 현재 남아있는 수류탄 갯수
+
     //public Transform m_Target;
     //public float m_InitialAngle = 30f; // 처음 날라가는 각도
     //private Rigidbody m_Rigidbody;
@@ -31,8 +34,6 @@ public class yPlayerGrenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if (playerInput.fire2)
         {
             //Vector3 velocity = GetVelocity(transform.position, m_Target.position, Quaternion.Euler(new Vector3(0, Camera.main.transform.forward, 0));

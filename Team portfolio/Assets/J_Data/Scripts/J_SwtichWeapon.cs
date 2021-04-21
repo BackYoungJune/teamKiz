@@ -30,10 +30,10 @@ public class J_SwtichWeapon : MonoBehaviour
     void Update()
     {
         StateProcess();
-        
 
-        
 
+
+        //Debug.Log(myWeapon);
         
 
         
@@ -68,6 +68,7 @@ public class J_SwtichWeapon : MonoBehaviour
             case HOLDING_WEAPON.FIST:
                 if (playerInput.swap0)
                 {
+                    Debug.Log("FIST");
                     GetComponent<yPlayerAxe>().enabled = false;
                     GetComponent<yPlayerShooter>().enabled = false;
                     GetComponent<yPlayerGrenade>().enabled = false;
@@ -77,6 +78,7 @@ public class J_SwtichWeapon : MonoBehaviour
             case HOLDING_WEAPON.AXE:
                 if (playerInput.swap1)
                 {
+                    Debug.Log("AXE");
                     GetComponent<yPlayerShooter>().enabled = false;
                     GetComponent<yPlayerGrenade>().enabled = false;
                     ChangeState(HOLDING_WEAPON.AXE);
@@ -85,6 +87,7 @@ public class J_SwtichWeapon : MonoBehaviour
             case HOLDING_WEAPON.GUN:
                 if (playerInput.swap2)
                 {
+                    Debug.Log("GUN");
                     GetComponent<yPlayerAxe>().enabled = false;
                     GetComponent<yPlayerGrenade>().enabled = false;
                     ChangeState(HOLDING_WEAPON.GUN);
@@ -93,6 +96,7 @@ public class J_SwtichWeapon : MonoBehaviour
             case HOLDING_WEAPON.GRENADE:
                 if (playerInput.swap3)
                 {
+                    Debug.Log("GRENADE");
                     GetComponent<yPlayerAxe>().enabled = false;
                     GetComponent<yPlayerShooter>().enabled = false;
                     ChangeState(HOLDING_WEAPON.GRENADE);
