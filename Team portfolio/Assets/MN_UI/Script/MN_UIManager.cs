@@ -30,11 +30,13 @@ public class MN_UIManager : MonoBehaviour
    // public Text scoreText; // 점수 표시용 텍스트
     //public Text waveText; // 적 웨이브 표시용 텍스트
     //public GameObject gameoverUI; // 게임 오버시 활성화할 UI 
-    public float CurrentHealth;
+    public float CurrentHealth { get; set; }
     public bool OnDamage { get;  set; }
     public bool IsDead { get; set; }
     public bool IsHit { get; set; }
     public int ammo { get; set; }
+    public int MaxAmmo { get; set;}
+
     //플레이어 체력 갱신
     public void UpdatePlayerHealth(float Health)
     {
@@ -44,6 +46,21 @@ public class MN_UIManager : MonoBehaviour
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
     }
+
+    // 한번에 맥스와 현재 창탄 수를 가져온다
+    public void UpdateAmmos(int MaxAmmo,int ammo)
+    {
+        this.ammo = ammo;
+        this.MaxAmmo = MaxAmmo;
+    }
+
+    //public void UpdatePlayerRestoreHealth(float Health)
+    //{
+    //    Debug.Log("ONRestoreHealth");
+    //    yPlayerHealth player = FindObjectOfType<yPlayerHealth>();
+
+    //    player.RestoreHealth(Health);
+    //}
     
     
     // 탄약 텍스트 갱신

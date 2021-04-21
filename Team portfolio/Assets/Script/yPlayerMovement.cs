@@ -240,7 +240,7 @@ public class yPlayerMovement : MonoBehaviour
         }
     }
 
-    void swap0()
+    public void swap0() //맨손
     {
         Swap0 = true;
         Swap1 = false;
@@ -248,7 +248,7 @@ public class yPlayerMovement : MonoBehaviour
         Swap3 = false;
     }
 
-    void swap1()
+    public void swap1() //도끼
     {
         Swap0 = false;
         Swap1 = true;
@@ -256,7 +256,7 @@ public class yPlayerMovement : MonoBehaviour
         Swap3 = false;
     }
 
-    void swap2()
+    public void swap2() //라이플
     {
         Swap0 = false;
         Swap1 = false;
@@ -264,7 +264,7 @@ public class yPlayerMovement : MonoBehaviour
         Swap3 = false;
     }
 
-    void swap3()
+    public void swap3() //수류탄
     {
         Swap0 = false;
         Swap1 = false;

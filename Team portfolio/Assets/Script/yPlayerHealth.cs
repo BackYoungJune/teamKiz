@@ -37,8 +37,9 @@ public class yPlayerHealth : yLivingEntity
     {
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
+        Debug.Log("base.health "+ base.health);
         /* 체력 UI갱신 */
-        base.RestoreHealth(MN_UIManager.Instance.CurrentHealth);
+        //UpManage.Updat()
     }
 
     // 데미지 처리
@@ -51,9 +52,9 @@ public class yPlayerHealth : yLivingEntity
         // 애니메이터의 Hit 트리거를 발동시켜 Hit 애니메이션 재생
         myAnim.SetTrigger("Hit");
 
-        /* 체력 UI갱신 */
-
+        /* 체력 UI갱신 */ //  + potion먹으면
         MN_UIManager.Instance.UpdatePlayerHealth(-damage);
+        RestoreHealth(MN_UIManager.Instance.CurrentHealth);
     }
 
     // 사망 처리

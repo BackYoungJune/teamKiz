@@ -24,7 +24,7 @@ public class GameOver : MonoBehaviour
     public void RestartButton()
     {
         //SceneManager.LoadScene("MN_StartMenu");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("MN_StartMenu");
     }
     public void QuitButton()
     {
