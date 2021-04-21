@@ -17,44 +17,26 @@ public class J_SwtichWeapon : MonoBehaviour
 
     [SerializeField]
     GameObject weaponIcon;
+
+    yPlayerInput playerInput;
+    
     // Start is called before the first frame update
     void Start()
     {
+        playerInput = GetComponentInParent<yPlayerInput>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //StateProcess();
+        StateProcess();
         
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerShooter>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.FIST);
-        }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.GUN);
-        }
+        
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            GetComponent<yPlayerShooter>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.AXE);
-        }
+        
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerShooter>().enabled = false;
-            ChangeState(HOLDING_WEAPON.GRENADE);
-        }
+        
     }
 
     void ChangeState(HOLDING_WEAPON s)
@@ -83,21 +65,38 @@ public class J_SwtichWeapon : MonoBehaviour
     {
         switch (myWeapon)
         {
-            case HOLDING_WEAPON.AXE:
-                if(Input.GetKeyDown(KeyCode.Alpha2))
+            case HOLDING_WEAPON.FIST:
+                if (playerInput.swap0)
                 {
                     GetComponent<yPlayerAxe>().enabled = false;
-                    ChangeState(HOLDING_WEAPON.GUN);
+                    GetComponent<yPlayerShooter>().enabled = false;
+                    GetComponent<yPlayerGrenade>().enabled = false;
+                    ChangeState(HOLDING_WEAPON.FIST);
                 }
                 break;
-            case HOLDING_WEAPON.GUN:
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+            case HOLDING_WEAPON.AXE:
+                if (playerInput.swap1)
                 {
                     GetComponent<yPlayerShooter>().enabled = false;
+                    GetComponent<yPlayerGrenade>().enabled = false;
                     ChangeState(HOLDING_WEAPON.AXE);
                 }
                 break;
+            case HOLDING_WEAPON.GUN:
+                if (playerInput.swap2)
+                {
+                    GetComponent<yPlayerAxe>().enabled = false;
+                    GetComponent<yPlayerGrenade>().enabled = false;
+                    ChangeState(HOLDING_WEAPON.GUN);
+                }
+                break;
             case HOLDING_WEAPON.GRENADE:
+                if (playerInput.swap3)
+                {
+                    GetComponent<yPlayerAxe>().enabled = false;
+                    GetComponent<yPlayerShooter>().enabled = false;
+                    ChangeState(HOLDING_WEAPON.GRENADE);
+                }
                 break;
         }
     }

@@ -6,29 +6,22 @@ public class J_TimeBomb : MonoBehaviour
 {
     public GameObject explosionEffect;
 
-    float timer = 10.0f;
+    float timer = 5.0f;
     bool IsPlanted = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public void SetPlanted(bool b) { this.IsPlanted = b; }
 
     // Update is called once per frame
     void Update()
     {
-        PlantBomb();
+        if(IsPlanted)
+        {
+            PlantBomb();
+        }
     }
 
     void PlantBomb()
     {
-        if (IsPlanted) return;
-
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-            StartCoroutine(SetTimer());
-        }
+        StartCoroutine(SetTimer());
     }
 
     IEnumerator SetTimer()
@@ -41,6 +34,7 @@ public class J_TimeBomb : MonoBehaviour
         else
         {
             Explosion();
+            IsPlanted = false;
         }
         yield return null;
     }
@@ -48,6 +42,8 @@ public class J_TimeBomb : MonoBehaviour
     void Explosion()
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
-
     }
+
+
+
 }
