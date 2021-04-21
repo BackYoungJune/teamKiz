@@ -75,66 +75,55 @@ public class ItemChangeButtonManager : MonoBehaviour
         {
             case STATE.HAND:
                 NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
+                axe.enabled = false;
+                rifle.enabled = false;
+                granade.enabled = false;
+
                 //if (playerInput.swap0)
                 //{
-                    
                 //}
                 //playerMovement.swap0();
                 //NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
-                //axe.enabled = false;
-                //rifle.enabled = false;
-                //granade.enabled = false;
                 break;
             case STATE.RIFLE:
                 NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
+                axe.enabled = false;
+                rifle.enabled = true;
+                granade.enabled = false;
+                
                 //if (playerInput.swap2)
                 //{
-                    
                 //}
                 //playerMovement.swap1();
-
                 //NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
-                //axe.enabled = false;
-                //rifle.enabled = true;
-                //granade.enabled = false;
-
                 break;
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
+                axe.enabled = true;
+                rifle.enabled = false;
+                granade.enabled = false;
+                
                 //if (playerInput.swap1)
                 //{
-                    
                 //}
                 //playerMovement.swap2();
-
                 //NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
-                //axe.enabled = true;
-                //rifle.enabled = false;
-                //granade.enabled = false;
-
-
                 break;
             case STATE.GRENADE:
                 NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
                 AmmoText.text = "";
+                axe.enabled = false;
+                rifle.enabled = false;
+                granade.enabled = true;
+
                 //if (playerInput.swap3)
                 //{
-                    
                 //}
                 //playerMovement.swap3();
-
                 //NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
                 //AmmoText.text = "";
-
-                //axe.enabled = false;
-                //rifle.enabled = false;
-                //granade.enabled = true;
-
-
                 break;
             case STATE.POTION:
-
-               
 
                 break;
         }
