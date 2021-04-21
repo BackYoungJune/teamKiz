@@ -10,6 +10,7 @@ public class yPlayerHealth : yLivingEntity
     public yPlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
 
     /* -유석- 체력 UI 받기*/
+    /* -유석- 보호막 UI 받기*/
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class yPlayerHealth : yLivingEntity
         base.OnEnable();
 
         /* 체력 UI 최대 HP = startingHealth, 현재 HP = health로 받기 */
+        /* 보호막 UI 최대 Shield = startingShield, 현재 HP = shield로 받기 */
 
         //Debug.Log(startHealth);
     }
@@ -42,6 +44,16 @@ public class yPlayerHealth : yLivingEntity
         //UpManage.Updat()
     }
 
+    // 보호막 갯수증가
+    public override void RestoreShield(int newShield)
+    {
+        // LivingEntity의 RestoreShield() 실행 (보호막 갯수 증가)
+        base.RestoreHealth(newShield);
+
+        /* 보호막 UI갱신 */
+        //UpManage.Updat()
+    }
+
     // 데미지 처리
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
@@ -53,8 +65,9 @@ public class yPlayerHealth : yLivingEntity
         myAnim.SetTrigger("Hit");
 
         /* 체력 UI갱신 */ //  + potion먹으면
-        MN_UIManager.Instance.UpdatePlayerHealth(-damage);
-        RestoreHealth(MN_UIManager.Instance.CurrentHealth);
+        /* 보호막 UI갱신 */
+        //MN_UIManager.Instance.UpdatePlayerHealth(-damage);
+        //RestoreHealth(MN_UIManager.Instance.CurrentHealth);
     }
 
     // 사망 처리
@@ -64,6 +77,7 @@ public class yPlayerHealth : yLivingEntity
         base.Die();
 
         /* 체력 UI비활성화 */
+        /* 보호막 UI비활성화 */
 
         // 애니메이터의 Die 트리거를 발동시켜 사망 애니메이션 재생
         myAnim.SetTrigger("Die");

@@ -10,8 +10,8 @@ public class yLivingEntity : MonoBehaviour, IDamageable
     public bool dead { get; protected set; }    // 사망 상태
     public event Action onDeath;    // 사망 시 발동할 이벤트
 
-    //public float startShield = 100f;     // 시작 보호막
-    //public float shield { get; protected set; } // 현재 보호막
+    public int startShield = 3;     // 시작 보호막 갯수
+    public int shield { get; protected set; } // 현재 보호막 갯수
 
     // 생명체가 활성화될때 상태를 리셋
     protected virtual void OnEnable()
@@ -20,13 +20,27 @@ public class yLivingEntity : MonoBehaviour, IDamageable
         dead = false;
         // 체력을 시작 체력으로 초기화
         health = startHealth;
+        // 보호막을 시작 보호막으로 초기화
+        shield = startShield;
     }
 
     // 데미지를 입는 기능
     public virtual void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
-        // 데미지만큼 체력 감소
-        health -= damage;
+        // 쉴드가 존재하면
+        if(shield > 0)
+        {
+            // 데미지의 반만큼 체력 감소
+            health -= damage / 2;
+            // 보호막 -1
+            shield--;
+        }
+        // 쉴드가 존재하지 않으면
+        else
+        {
+            // 데미지만큼 체력 감소
+            health -= damage;
+        }
 
         /* 나중에 쉴드 여기에 추가처리 */
 
@@ -44,10 +58,20 @@ public class yLivingEntity : MonoBehaviour, IDamageable
         if (dead) return;
 
         // 체력 추가
-        //health += newHealth;
+        health += newHealth;
 
         // 유석_수정 : ui manager의 current health를 불러옴
-        health = newHealth;
+        //health = newHealth;
+    }
+
+    // 보호막 갯수 증가시키는 기능
+    public virtual void RestoreShield(int newShield)
+    {
+        // 이미 사망한 경우 리턴한다
+        if (dead) return;
+
+        // 보호막 갯수 증가
+        shield += newShield;
     }
 
     // 사망 처리
