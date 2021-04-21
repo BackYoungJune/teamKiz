@@ -240,6 +240,38 @@ public class yPlayerMovement : MonoBehaviour
         }
     }
 
+    void swap0()
+    {
+        Swap0 = true;
+        Swap1 = false;
+        Swap2 = false;
+        Swap3 = false;
+    }
+
+    void swap1()
+    {
+        Swap0 = false;
+        Swap1 = true;
+        Swap2 = false;
+        Swap3 = false;
+    }
+
+    void swap2()
+    {
+        Swap0 = false;
+        Swap1 = false;
+        Swap2 = true;
+        Swap3 = false;
+    }
+
+    void swap3()
+    {
+        Swap0 = false;
+        Swap1 = false;
+        Swap2 = false;
+        Swap3 = true;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         // 플레이어가 바닥에 닿을경우 

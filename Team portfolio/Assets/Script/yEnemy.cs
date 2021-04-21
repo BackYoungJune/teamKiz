@@ -326,7 +326,7 @@ public class yEnemy : yLivingEntity
         {
             // reactVec의 크기를 정한다
             reactVec = reactVec.normalized;
-            reactVec += Vector3.up * 5;
+            reactVec += Vector3.up * 10;
 
             // Rigidbody를 추가한다
             Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
@@ -339,13 +339,16 @@ public class yEnemy : yLivingEntity
 
             // rigidbody를 이용해 좀비를 날려보낸다
             rigid.freezeRotation = false;
+            rigid.mass = 0.5f;
             rigid.AddForce(reactVec * 10, ForceMode.Impulse);
-            rigid.AddTorque(reactVec * 10, ForceMode.Impulse);
+            rigid.AddTorque(reactVec * 25, ForceMode.Impulse);
 
             yield return new WaitForSeconds(0.5f);
 
             // 버그 방지를 위해 물리영향을 받지않도록했다가 다시 돌린다
             rigid.isKinematic = true;
+
+            yield return new WaitForSeconds(0.5f);
             rigid.isKinematic = false;
 
             // 리지드바디를 다시 끈다
