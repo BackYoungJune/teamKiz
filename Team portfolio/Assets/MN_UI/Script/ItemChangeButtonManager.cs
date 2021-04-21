@@ -74,10 +74,11 @@ public class ItemChangeButtonManager : MonoBehaviour
         switch (myState)
         {
             case STATE.HAND:
-                if(playerInput.swap0)
-                {
-                    NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
-                }
+                NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
+                //if (playerInput.swap0)
+                //{
+                    
+                //}
                 //playerMovement.swap0();
                 //NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 //axe.enabled = false;
@@ -85,10 +86,11 @@ public class ItemChangeButtonManager : MonoBehaviour
                 //granade.enabled = false;
                 break;
             case STATE.RIFLE:
-                if (playerInput.swap2)
-                {
-                    NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
-                }
+                NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
+                //if (playerInput.swap2)
+                //{
+                    
+                //}
                 //playerMovement.swap1();
 
                 //NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
@@ -98,10 +100,11 @@ public class ItemChangeButtonManager : MonoBehaviour
 
                 break;
             case STATE.AXE:
-                if (playerInput.swap1)
-                {
-                    NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
-                }
+                NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
+                //if (playerInput.swap1)
+                //{
+                    
+                //}
                 //playerMovement.swap2();
 
                 //NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
@@ -112,11 +115,12 @@ public class ItemChangeButtonManager : MonoBehaviour
 
                 break;
             case STATE.GRENADE:
-                if (playerInput.swap3)
-                {
-                    NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
-                    AmmoText.text = "";
-                }
+                NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
+                AmmoText.text = "";
+                //if (playerInput.swap3)
+                //{
+                    
+                //}
                 //playerMovement.swap3();
 
                 //NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
