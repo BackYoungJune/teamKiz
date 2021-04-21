@@ -52,7 +52,7 @@ public class yRiple : MonoBehaviour
     {
         // 현재 상태가 발사 가능한 상태
         // && 마지막 총 발사 시점에서 timeBetFire 이상의 시간이 지남
-        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire)
+        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && ammoRemain > 0)
         {
             // 마지막 총 발사 시점 갱신
             lastFireTime = Time.time;
