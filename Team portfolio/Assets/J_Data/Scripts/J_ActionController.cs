@@ -10,6 +10,8 @@ public class J_ActionController : MonoBehaviour
 
     private bool pickupActivated = false;   // 습득 가능할 시 true
 
+    private bool ignitionActivated = false;
+
     private RaycastHit hitInfo;     // 충돌체 정보 저장
 
     // 아이템 레이어에만 반응하도록 레이어 마스크를 설정
@@ -22,6 +24,13 @@ public class J_ActionController : MonoBehaviour
     [SerializeField]
     private Text explodeText;
 
+    yPlayerInput playerInput;
+
+    private void Start()
+    {
+        playerInput = GetComponentInParent<yPlayerInput>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +40,7 @@ public class J_ActionController : MonoBehaviour
 
     private void Action()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(playerInput.interact)
         {
             CheckItem();
             CanPickUP();
@@ -46,8 +55,12 @@ public class J_ActionController : MonoBehaviour
             if(hitInfo.transform != null)
             {
                 J_Item hitItem = hitInfo.transform.GetComponent<J_ItemPickup>().item;
-                // 아이템 인벤토리에 추가(AddInventory()) or 체력회복
-                //GetComponent<yPlayerHealth>().RestoreHealth(hitItem.amount);
+                hitItem.amount++;       // 아이템 갯수 증가
+                // 아이템이 총알일 경우에는 바로 Use 할 수 있도록
+                if(hitItem.itemType == J_Item.ItemType.Ammo)
+                {
+                    //hitInfo.transform.GetComponent<J_ItemPickup>().Use(this.gameObject);
+                }
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
@@ -56,7 +69,7 @@ public class J_ActionController : MonoBehaviour
     }
     private void CanExplodable()
     {
-        if(hitInfo.transform.tag == "Explodable")
+        if(ignitionActivated)
         {
             Debug.Log("set bool");
             hitInfo.transform.GetComponent<J_TimeBomb>().SetPlanted(true);
