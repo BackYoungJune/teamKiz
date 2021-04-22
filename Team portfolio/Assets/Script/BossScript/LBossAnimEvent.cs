@@ -17,6 +17,7 @@ public class LBossAnimEvent : MonoBehaviour
     public VoidDelVoid PunchColliderOn;
     public VoidDelVoid PunchColliderOff;
     public VoidDelVoid PunchEnd;
+    public VoidDelVoid ThrowObj;
     public VoidDelVoid ThrowingEnd;
     public VoidDelVoid GroggyEnd;
 
@@ -50,6 +51,10 @@ public class LBossAnimEvent : MonoBehaviour
     }
 
     //Throwing
+    public void OnThrowObj()
+    {
+        ThrowObj?.Invoke();
+    }    
     public void OnThrowingEnd()
     {
         ThrowingEnd?.Invoke();

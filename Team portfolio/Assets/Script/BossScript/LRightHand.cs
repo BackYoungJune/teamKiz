@@ -5,6 +5,7 @@ using UnityEngine;
 public class LRightHand : MonoBehaviour
 {
     public LBossAnimEvent myAnimEvent;
+    public Transform Player;
     public float Damage = 10.0f;
     private void Awake()
     {
@@ -16,6 +17,14 @@ public class LRightHand : MonoBehaviour
         {
             this.GetComponent<CapsuleCollider>().enabled = false;
         };
+        myAnimEvent.ThrowObj += () =>
+         {
+             GameObject throwObj = Instantiate(Resources.Load("BossThrowObj")) as GameObject;
+             throwObj.transform.position = this.transform.position;
+             throwObj.GetComponent<LBossThrowObj>().Player = Player;
+             throwObj.GetComponent<LBossThrowObj>().Initiate();
+
+         };
     }
     void Update()
     {
