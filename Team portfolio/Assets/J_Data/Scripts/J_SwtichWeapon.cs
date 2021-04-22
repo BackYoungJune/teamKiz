@@ -20,6 +20,8 @@ public class J_SwtichWeapon : MonoBehaviour
 
     yPlayerInput playerInput;
     
+    public HOLDING_WEAPON GetWeapon() { return myWeapon; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class J_SwtichWeapon : MonoBehaviour
     void Update()
     {
         StateProcess();
-        Debug.Log(myWeapon);
+        //Debug.Log(myWeapon);
         //if (playerInput.swap0)
         //{
         //    ChangeState(HOLDING_WEAPON.FIST);
