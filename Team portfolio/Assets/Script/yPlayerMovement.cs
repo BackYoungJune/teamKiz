@@ -63,9 +63,9 @@ public class yPlayerMovement : MonoBehaviour
         Dodge();
         Swap();
         //StopToWall();
-
+        //Debug.Log(SwtichWeapon.GetWeapon());
         // 입력값에 따라 애니메이터의 Move 파라미터값 변경
-        if(Swap0 || SwtichWeapon.myWeapon == J_SwtichWeapon.HOLDING_WEAPON.FIST)
+        if(Swap0 || SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.FIST)
         {
             //Debug.Log("FIST");
             myAnim.SetBool("Fist", true);
@@ -78,7 +78,7 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("y", playerInput.yMove);
         }
         
-        else if(Swap1 || SwtichWeapon.myWeapon == J_SwtichWeapon.HOLDING_WEAPON.AXE)
+        else if(Swap1 || SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.AXE)
         {
             //Debug.Log("FIST");
             myAnim.SetBool("Fist", false);
@@ -91,7 +91,7 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("yAxe", playerInput.yMove);
         }
 
-        else if (Swap2 || SwtichWeapon.myWeapon == J_SwtichWeapon.HOLDING_WEAPON.GUN)
+        else if (Swap2 || SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GUN)
         {
             //Debug.Log("FIST");
             myAnim.SetBool("Fist", false);
@@ -104,7 +104,7 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("yRiple", playerInput.yMove);
         }
 
-        else if (Swap3 || SwtichWeapon.myWeapon == J_SwtichWeapon.HOLDING_WEAPON.GRENADE)
+        else if (Swap3 || SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GRENADE)
         {
             //Debug.Log("FIST");
             myAnim.SetBool("Fist", false);
@@ -130,7 +130,6 @@ public class yPlayerMovement : MonoBehaviour
             rot.x = myArm.transform.rotation.eulerAngles.x;
             myHips.rotation = Quaternion.Euler(rot);
         }
-        
     }
 
     void Move()
