@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Grenade
   itemImage: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 3669595131189651336, guid: 424b4b096c65e5f4f856d9bd6d24a293,
+    type: 3}
   amount: 0
   restore: 0
   weaponType: 
-  itemType: 2
+  itemType: 3

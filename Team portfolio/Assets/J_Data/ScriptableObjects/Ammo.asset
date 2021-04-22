@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Ammo
   itemImage: {fileID: 0}
-  itemPrefab: {fileID: 0}
-  amount: 0
+  itemPrefab: {fileID: 7199034811801660433, guid: 442e632bc51841144aaaba8221badc6d,
+    type: 3}
+  amount: 1
   restore: 30
   weaponType: 
   itemType: 1
