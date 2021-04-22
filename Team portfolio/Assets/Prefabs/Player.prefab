@@ -1823,7 +1823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1005420359803045614
 Transform:
   m_ObjectHideFlags: 0
@@ -2844,6 +2844,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   actionText: {fileID: 0}
+  explodeText: {fileID: 0}
 --- !u!1 &6556004163866690782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,6 +2859,7 @@ GameObject:
   - component: {fileID: 8996263938664789899}
   - component: {fileID: 7656706302696105864}
   - component: {fileID: 895623568659751882}
+  - component: {fileID: 1101030253}
   m_Layer: 11
   m_Name: Leonard
   m_TagString: Untagged
@@ -2965,11 +2967,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4f440f3dafc6545abc0d20620c49f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grenade: {fileID: 3669595131189651336, guid: c714ea9d7d43c714e835b80f1549c518, type: 3}
-  Grenade2: {fileID: 4238515848222655392}
+  myState: 0
+  ThrowGrenade: {fileID: 3669595131189651336, guid: c714ea9d7d43c714e835b80f1549c518,
+    type: 3}
+  Grenade: {fileID: 4238515848222655392}
   leftHandMount: {fileID: 7961078740582022758}
   rightHandMount: {fileID: 2701764276605439606}
   playerAnimator: {fileID: 0}
+  GrenadeRemain: 2
+  timeBetFire: 0.12
+  throwTime: 1
+--- !u!114 &1101030253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556004163866690782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fd84a42abfe9d48a29197641958985, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6699339520205186757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4231,6 +4250,7 @@ MonoBehaviour:
   Swap1: 0
   Swap2: 0
   Swap3: 0
+  SwtichWeapon: {fileID: 0}
 --- !u!114 &8913030573871491984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,6 +4267,7 @@ MonoBehaviour:
   myAnim: {fileID: 0}
   playerMovement: {fileID: 0}
   playerShooter: {fileID: 0}
+  startShield: 3
 --- !u!114 &628524240595605821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4259,7 +4280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e112fec7aa2b4742a8bfb2d430e3761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 0
 --- !u!114 &990138119128335763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4272,7 +4292,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e112fec7aa2b4742a8bfb2d430e3761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 0
 --- !u!1 &9183214517682595972
 GameObject:
   m_ObjectHideFlags: 0

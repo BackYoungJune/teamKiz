@@ -67,7 +67,6 @@ public class yPlayerMovement : MonoBehaviour
         // 입력값에 따라 애니메이터의 Move 파라미터값 변경
         if(SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.FIST)
         {
-            Debug.Log("FIST");
             myAnim.SetBool("Fist", true);
             myAnim.SetBool("Rifle", false);
             myAnim.SetBool("Axe", false);
@@ -80,7 +79,6 @@ public class yPlayerMovement : MonoBehaviour
         
         else if(SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.AXE)
         {
-            Debug.Log("AXE");
             myAnim.SetBool("Fist", false);
             myAnim.SetBool("Rifle", false);
             myAnim.SetBool("Axe", true);
@@ -93,7 +91,7 @@ public class yPlayerMovement : MonoBehaviour
 
         else if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GUN)
         {
-            Debug.Log("GUN");
+
             myAnim.SetBool("Fist", false);
             myAnim.SetBool("Rifle", true);
             myAnim.SetBool("Axe", false);
@@ -106,7 +104,6 @@ public class yPlayerMovement : MonoBehaviour
 
         else if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GRENADE)
         {
-            Debug.Log("GRENADE");
             myAnim.SetBool("Fist", false);
             myAnim.SetBool("Rifle", false);
             myAnim.SetBool("Axe", false);
