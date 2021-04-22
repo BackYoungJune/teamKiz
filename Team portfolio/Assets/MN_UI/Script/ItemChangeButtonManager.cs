@@ -103,7 +103,7 @@ public class ItemChangeButtonManager : MonoBehaviour
                 axe.enabled = false;
                 rifle.enabled = true;
                 granade.enabled = false;
-                AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
+               // AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
 
                 //if (playerInput.swap2)
                 //{
@@ -113,7 +113,7 @@ public class ItemChangeButtonManager : MonoBehaviour
                 break;
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
-                AmmoText.text = "";
+                //AmmoText.text = "";
 
                 axe.enabled = true;
                 rifle.enabled = false;
@@ -127,7 +127,8 @@ public class ItemChangeButtonManager : MonoBehaviour
                 break;
             case STATE.GRENADE:
                 NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
-                AmmoText.text = "";
+                //AmmoText.text = Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
+
                 axe.enabled = false;
                 rifle.enabled = false;
                 granade.enabled = true;
@@ -158,13 +159,13 @@ public class ItemChangeButtonManager : MonoBehaviour
                 //Debug.Log("RIFLE");
                 break;
             case STATE.AXE:
-                AmmoText.text = "";
                 //Debug.Log("AXE");
+                AmmoText.text = "";
 
                 break;
             case STATE.GRENADE:
                 //Debug.Log("GRENADE");
-                AmmoText.text = "";
+                AmmoText.text = Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
 
                 break;
             case STATE.POTION:
