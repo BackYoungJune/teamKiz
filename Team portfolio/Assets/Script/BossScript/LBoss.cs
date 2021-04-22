@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /*
-미구현된 항목들.
-1. 레이지 플래그(히트되서 피가 30%미만이면 발동)
  */
 public class LBoss : yLivingEntity
 {
@@ -118,6 +116,7 @@ public class LBoss : yLivingEntity
             }
             else
             {
+                bossAnim.SetTrigger("HitCameraOn");
                 Debug.Log(this.health);
             }
             
@@ -210,19 +209,19 @@ public class LBoss : yLivingEntity
                     float SelectPattern = Random.Range(0f, 1.0f);
                     if(myFLAG == FLAG.RAGE)
                     {
-                        if (SelectPattern < 0.4f)
+                        if (SelectPattern < 0.35f)
                             ChangeState(STATE.CHARGE);
-                        else if (SelectPattern < 0.8f)
+                        else if (SelectPattern < 0.7f)
                             ChangeState(STATE.LEAPATTACK);
                         else
                             ChangeState(STATE.THROWING);
                     }
                     else if(myFLAG == FLAG.HEAVY)
                     {
-                        //if (SelectPattern < 0.5f)
-                            if (SelectPattern < 1f)
-                            //ChangeState(STATE.THROWING);
-                        ChangeState(STATE.DIE);
+                        if (SelectPattern < 0.5f)
+                            ChangeState(STATE.THROWING);
+                        //if (SelectPattern < 1f)
+                        //ChangeState(STATE.DIE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
