@@ -21,6 +21,10 @@ public class LBoss : yLivingEntity
     {
         startHealth = 30000f;
         health = startHealth;
+
+        // 보스체력 매니져에서 가져옴
+        MN_UIManager.Instance.Boss_MaxHealth = startHealth;
+        MN_UIManager.Instance.Boss_CurrentHealth = startHealth;
     }
     public void UpdateCollider()
     {
@@ -96,7 +100,7 @@ public class LBoss : yLivingEntity
         //Throwing Trigger Check
         TriggerCount = 4;
         trapTrigger.Trigger += OnTrap;
-
+        
         void OnTrap(GameObject trig)
         {
             if (CheckTrigger == trig.transform.parent)
@@ -108,7 +112,11 @@ public class LBoss : yLivingEntity
         trapTrigger.onCollision += () =>
         {
             base.OnDamage(6000f, Vector3.zero, Vector3.zero);
-            if(health>0)
+
+            MN_UIManager.Instance.UpdateBossHealth(6000f);
+
+
+            if (health>0)
             {
                 Debug.Log(this.health);
                 bossAnim.SetTrigger("Groggy");
@@ -165,6 +173,7 @@ public class LBoss : yLivingEntity
             StateProcess();
         }
 
+        //Debug.Log("BossHealth" + MN_UIManager.Instance.Boss_CurrentHealth);
     }
     //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     //StateProcess
@@ -498,12 +507,17 @@ public class LBoss : yLivingEntity
         {
             case FLAG.NORMAL:
                 base.OnDamage(60f, hitPoint, hitNormal);
+                MN_UIManager.Instance.UpdateBossHealth(60f);
                 break;
             case FLAG.HEAVY:
                 base.OnDamage(10f, hitPoint, hitNormal);
+                MN_UIManager.Instance.UpdateBossHealth(10f);
+
                 break;
             case FLAG.RAGE:
                 base.OnDamage(180f, hitPoint, hitNormal);
+                MN_UIManager.Instance.UpdateBossHealth(180f);
+
                 break;
         }
         Debug.Log(health);
