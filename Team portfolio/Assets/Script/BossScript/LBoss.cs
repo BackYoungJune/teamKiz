@@ -71,7 +71,7 @@ public class LBoss : yLivingEntity
 
     void Awake()
     {
-        myCamera.SetActive(false);
+        //myCamera.SetActive(false);
         mySTATE = STATE.CREATE;
         myFLAG = FLAG.NORMAL;
         
@@ -375,6 +375,7 @@ public class LBoss : yLivingEntity
             case STATE.DIE:
                 firstCamera.SetActive(false);
                 myCamera.SetActive(true);
+                Camera.SetupCurrent(myCamera.GetComponent<Camera>());
                 if (bossNavAgent.isStopped)
                     bossNavAgent.isStopped = false;
                 bossNavAgent.speed = bossSpeed * 2f;
