@@ -343,7 +343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &160784079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 415236258}
   - component: {fileID: 415236257}
   - component: {fileID: 415236256}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 1985678503}
   - component: {fileID: 1985678502}
   - component: {fileID: 1985678501}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Wall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1385,7 +1385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985678500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.24, y: 6.36, z: 5.24}
+  m_LocalPosition: {x: -13.24, y: 5, z: 5.24}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1536,6 +1536,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1870922436230151342, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1073782547
+      objectReference: {fileID: 0}
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_RootOrder

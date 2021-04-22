@@ -24,18 +24,8 @@ public class yPlayerMovement : MonoBehaviour
     Vector3 dodgeVec;     // 플레이어 닷지 이동거리
     public bool isAir { get; private set; }
     public bool isDodge { get; private set; }
-    //public bool Border = false;
-    //public bool isBorder
-    //{
-    //    get
-    //    {
-    //        return Border;
-    //    }
-    //    set
-    //    {
-    //        Border = value;
-    //    }
-    //}
+    public bool isBorder { get; private set; }
+
 
     public bool Swap0 = true;
     public bool Swap1 = false;
@@ -61,11 +51,32 @@ public class yPlayerMovement : MonoBehaviour
         Walk();
         Jump();
         Dodge();
-        Swap();
+        //Swap();
         //StopToWall();
-        //Debug.Log(J_SwtichWeapon.HOLDING_WEAPON.AXE);
         // 입력값에 따라 애니메이터의 Move 파라미터값 변경
-        if(SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.FIST)
+        AnimationMove();
+        
+        myAnim.SetBool("isAir", isAir);
+
+        Debug.Log(isBorder);
+    }
+
+
+    private void LateUpdate()
+    {
+        if(!isDodge)
+        {
+            // 닷지 상태가 아닐 시 카메라의 방향에 따라 상체가 움직인다
+            Vector3 rot = myHips.rotation.eulerAngles;
+            rot.x = myArm.transform.rotation.eulerAngles.x;
+            myHips.rotation = Quaternion.Euler(rot);
+        }
+    }
+
+    void AnimationMove()
+    {
+        // 무기가 FIST일 때
+        if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.FIST)
         {
             myAnim.SetBool("Fist", true);
             myAnim.SetBool("Rifle", false);
@@ -76,8 +87,9 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("x", playerInput.xMove);
             myAnim.SetFloat("y", playerInput.yMove);
         }
-        
-        else if(SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.AXE)
+
+        // 무기가 AXE일 때
+        else if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.AXE)
         {
             myAnim.SetBool("Fist", false);
             myAnim.SetBool("Rifle", false);
@@ -89,6 +101,7 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("yAxe", playerInput.yMove);
         }
 
+        // 무기가 RIFLE일 때
         else if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GUN)
         {
 
@@ -102,6 +115,7 @@ public class yPlayerMovement : MonoBehaviour
             myAnim.SetFloat("yRiple", playerInput.yMove);
         }
 
+        // 무기가 GRENADE일 때
         else if (SwtichWeapon.GetWeapon() == J_SwtichWeapon.HOLDING_WEAPON.GRENADE)
         {
             myAnim.SetBool("Fist", false);
@@ -112,20 +126,6 @@ public class yPlayerMovement : MonoBehaviour
             // 수류탄을 든 상태의 move파라미터 값을 나타낸다
             myAnim.SetFloat("xGrenade", playerInput.xMove);
             myAnim.SetFloat("yGrenade", playerInput.yMove);
-        }
-        myAnim.SetBool("isAir", isAir);
-    }
-
-   
-
-    private void LateUpdate()
-    {
-        if(!isDodge)
-        {
-            // 닷지 상태가 아닐 시 카메라의 방향에 따라 상체가 움직인다
-            Vector3 rot = myHips.rotation.eulerAngles;
-            rot.x = myArm.transform.rotation.eulerAngles.x;
-            myHips.rotation = Quaternion.Euler(rot);
         }
     }
 
@@ -141,6 +141,9 @@ public class yPlayerMovement : MonoBehaviour
         // Dodge시에는 dodgeVec로 움직인다
         if (isDodge)
             MoveVec = dodgeVec;
+
+        if (isBorder)
+            MoveVec = Vector3.zero;
 
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
         rigid.MovePosition(rigid.position + MoveVec);
@@ -204,11 +207,10 @@ public class yPlayerMovement : MonoBehaviour
         dodgeCount--;
     }
 
-    //void StopToWall()
-    //{
-    //    Border = Physics.Raycast(transform.position, transform.forward, 2, Layer);
-    //    Debug.Log(isBorder);
-    //}
+    void StopToWall()
+    {
+        isBorder = Physics.Raycast(transform.position, Camera.main.transform.forward, 5, LayerMask.GetMask("Wall"));
+    }
 
     void Swap()
     {
@@ -244,37 +246,7 @@ public class yPlayerMovement : MonoBehaviour
         }
     }
 
-    public void swap0() //맨손
-    {
-        Swap0 = true;
-        Swap1 = false;
-        Swap2 = false;
-        Swap3 = false;
-    }
-
-    public void swap1() //도끼
-    {
-        Swap0 = false;
-        Swap1 = true;
-        Swap2 = false;
-        Swap3 = false;
-    }
-
-    public void swap2() //라이플
-    {
-        Swap0 = false;
-        Swap1 = false;
-        Swap2 = true;
-        Swap3 = false;
-    }
-
-    public void swap3() //수류탄
-    {
-        Swap0 = false;
-        Swap1 = false;
-        Swap2 = false;
-        Swap3 = true;
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
