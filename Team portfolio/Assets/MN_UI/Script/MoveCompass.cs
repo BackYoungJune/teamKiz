@@ -28,7 +28,7 @@ public class MoveCompass : MonoBehaviour
     {
         if(MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
         {
-            Destroy(GameObject.Find("CompassCanvas"));
+            Destroy(GameObject.Find("Compass_Canvas"));
         }
         if(canvasrenerder != null && canvasrenerder.GetMaterial(0) != null)
         {
