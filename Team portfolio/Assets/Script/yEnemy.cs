@@ -36,8 +36,6 @@ public class yEnemy : yLivingEntity
 
     public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
-    //Rigidbody rigid;    // 리지드바디 
-
     void Awake()
     {
         // 게임 오브젝트로부터 사용할 컴퍼넌트 가져오기;
