@@ -29,24 +29,26 @@ public class yBullet : MonoBehaviour
                 Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
 
                 // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
+
                 IDamageable target = hit.collider.GetComponent<IDamageable>();
+                //IDamageable target = hit.collider.GetComponent<IDamageable>();
 
                 Debug.Log(target);
                 // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
                 if (target != null)
                 {
-                    if (hit.point.y > 1.87)
-                    {
-                        // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
-                        target.OnDamage(damage * 8, hit.point, hit.normal);
-                        // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-                    }
-                    else
-                    {
+                    //if (hit.point.y > 1.87)
+                    //{
+                    //    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                    //    target.OnDamage(damage * 8, hit.point, hit.normal);
+                    //    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+                    //}
+                    //else
+                    //{
                         // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                         target.OnDamage(damage, hit.point, hit.normal);
                         // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-                    }
+                    //}
 
 
                 }
@@ -66,18 +68,18 @@ public class yBullet : MonoBehaviour
                 // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
                 if (target != null)
                 {
-                    if (hit.point.y > 1.87)
-                    {
-                        // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
-                        target.OnDamage(damage * 8, hit.point, hit.normal);
-                        // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-                    }
-                    else
-                    {
+                    //if (hit.point.y > 1.87)
+                    //{
+                    //    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                    //    target.OnDamage(damage * 8, hit.point, hit.normal);
+                    //    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+                    //}
+                    //else
+                    //{
                         // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                         target.OnDamage(damage, hit.point, hit.normal);
                         // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-                    }
+                    //}
 
 
                 }

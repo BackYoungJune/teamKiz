@@ -9,6 +9,9 @@ public class yPlayerHealth : yLivingEntity
     public yPlayerMovement playerMovement; // 플레이어 움직임 컴포넌트
     public yPlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
 
+    public int startShield = 3;     // 시작 보호막 갯수
+    public int shield { get; protected set; } // 현재 보호막 갯수
+
     /* -유석- 체력 UI 받기*/
     /* -유석- 보호막 UI 받기*/
     // Start is called before the first frame update
@@ -28,6 +31,9 @@ public class yPlayerHealth : yLivingEntity
         // LivingEntity의 OnEnable() 실행 (상태 초기화)
         base.OnEnable();
 
+        // 보호막을 시작 보호막으로 초기화
+        shield = startShield;
+
         /* 체력 UI 최대 HP = startingHealth, 현재 HP = health로 받기 */
         /* 보호막 UI 최대 Shield = startingShield, 현재 HP = shield로 받기 */
 
@@ -44,19 +50,34 @@ public class yPlayerHealth : yLivingEntity
         //UpManage.Updat()
     }
 
-    // 보호막 갯수증가
-    public override void RestoreShield(int newShield)
+    // 보호막 갯수 증가시키는 기능
+    public void RestoreShield(int newShield)
     {
-        // LivingEntity의 RestoreShield() 실행 (보호막 갯수 증가)
-        base.RestoreHealth(newShield);
+        // 이미 사망한 경우 리턴한다
+        if (dead) return;
 
-        /* 보호막 UI갱신 */
-        //UpManage.Updat()
+        // 보호막 갯수 증가
+        shield += newShield;
     }
 
     // 데미지 처리
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
+        // 쉴드가 존재하면
+        if (shield > 0)
+        {
+            // 데미지의 반만큼 체력 감소
+            health -= damage / 2;
+            // 보호막 -1
+            shield--;
+        }
+        // 쉴드가 존재하지 않으면
+        else
+        {
+            // 데미지만큼 체력 감소
+            health -= damage;
+        }
+
         // LivingEntity의 OnDamage() 실행(데미지 적용)
         base.OnDamage(damage, hitPoint, hitDirection);
         //MN_UIManager.Instance.IsHit = true;
