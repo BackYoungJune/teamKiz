@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5a545697b5b48b741ae671db9281c9de
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
+  - ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
+  - grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

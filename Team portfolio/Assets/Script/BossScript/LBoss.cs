@@ -11,13 +11,15 @@ public class LBoss : yLivingEntity
 {
     public enum STATE 
     { 
-        CREATE, FLEX, APPROACHING, LEAPATTACK, THROWING, ATTACK, CHARGE, ROAR, GROGGY
+        CREATE, FLEX, APPROACHING, LEAPATTACK, THROWING, ATTACK, CHARGE, ROAR, GROGGY,DIE
     }
 
+    public GameObject firstCamera;
+    public GameObject myCamera;
     //메시 콜라이더 업데이트부 애니메이션 재생에 따라서 콜라이더도 계속 움직여준다.
     public SkinnedMeshRenderer meshRenderer;
     public MeshCollider collider;
-    private void OnEnable()
+    protected override void OnEnable()
     {
         startHealth = 30000f;
         health = startHealth;
@@ -49,6 +51,15 @@ public class LBoss : yLivingEntity
     public int CurTriggerIndex;
     public Transform CheckTrigger = null;
     public float[] triggerDist = new float[4];
+    public int TriggerCount;
+
+    //BossDie
+    public Transform DiePos;
+    public Transform BossLeftHand;
+    public GameObject WeaponObj;
+    public GameObject CollapsObj;
+    bool DieFlag = false;
+    bool CollapsOn = true;
 
     float StateStartTime;
     float PatternLength;
@@ -60,6 +71,7 @@ public class LBoss : yLivingEntity
 
     void Awake()
     {
+        myCamera.SetActive(false);
         mySTATE = STATE.CREATE;
         myFLAG = FLAG.NORMAL;
         
@@ -84,31 +96,44 @@ public class LBoss : yLivingEntity
         };
 
         //Throwing Trigger Check
+        TriggerCount = 4;
         trapTrigger.Trigger += OnTrap;
 
         void OnTrap(GameObject trig)
         {
             if (CheckTrigger == trig.transform.parent)
             {
-                Debug.Log("TriggerOn");
-                trig.AddComponent<Rigidbody>();
-                ChangeState(STATE.GROGGY);
+                    trig.AddComponent<Rigidbody>();
+                    ChangeState(STATE.GROGGY);
             }
         }
         trapTrigger.onCollision += () =>
         {
             base.OnDamage(6000f, Vector3.zero, Vector3.zero);
-            Debug.Log(this.health);
-            bossAnim.SetTrigger("Groggy");
-            myFLAG = FLAG.NORMAL;
+            if(health>0)
+            {
+                Debug.Log(this.health);
+                bossAnim.SetTrigger("Groggy");
+                myFLAG = FLAG.NORMAL;
+            }
+            else
+            {
+                Debug.Log(this.health);
+            }
+            
         };
         //Groggy
         bossAnimEvent.GroggyEnd += () =>
         {
+            TriggerCount--;
             CheckTrigger = triggers[CurTriggerIndex] = null;
-            ChangeState(STATE.APPROACHING);
+            if (TriggerCount > 1)
+                ChangeState(STATE.APPROACHING);
+            else if (TriggerCount == 1)
+                ChangeState(STATE.ROAR);
+            else
+                ChangeState(STATE.DIE);
         };
-
         //Attack
 
         bossAnimEvent.AttackBranch += () =>
@@ -165,6 +190,11 @@ public class LBoss : yLivingEntity
                 패턴이 지속되는 동안 플래이어에게 접근함.
                 패턴이 지속되는 동안 거리 안쪽으로 들어오면 근접 공격을 함.
                  */
+                if (health < 3000)
+                {
+                    ChangeState(STATE.DIE);
+                    break;
+                }
                 StateStartTime += Time.deltaTime;
                 bossNavAgent.SetDestination(Player.position);
                 bossAnim.SetFloat("Speed", 1f);
@@ -180,23 +210,25 @@ public class LBoss : yLivingEntity
                     float SelectPattern = Random.Range(0f, 1.0f);
                     if(myFLAG == FLAG.RAGE)
                     {
-                        if (SelectPattern < 0.5f)
+                        if (SelectPattern < 0.4f)
                             ChangeState(STATE.CHARGE);
-                        else
+                        else if (SelectPattern < 0.8f)
                             ChangeState(STATE.LEAPATTACK);
+                        else
+                            ChangeState(STATE.THROWING);
                     }
                     else if(myFLAG == FLAG.HEAVY)
                     {
-                        if (SelectPattern < 0.5f)
-                            //if (SelectPattern < 1f)
-                            ChangeState(STATE.THROWING);
-                        //ChangeState(STATE.CHARGE);
+                        //if (SelectPattern < 0.5f)
+                            if (SelectPattern < 1f)
+                            //ChangeState(STATE.THROWING);
+                        ChangeState(STATE.DIE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
                     else if(myFLAG == FLAG.NORMAL)
                     {
-                        if (SelectPattern < 0.3f)
+                        if (SelectPattern < 0.4f)
                             ChangeState(STATE.FLEX);
                         else
                             ChangeState(STATE.LEAPATTACK);
@@ -247,8 +279,40 @@ public class LBoss : yLivingEntity
                 }
                 break;
             case STATE.ROAR:
+                if(roarEnd)
+                {
+                    roarEnd = false;
+                    myFLAG = FLAG.RAGE;
+                    ChangeState(STATE.APPROACHING);
+                }
                 break;
             case STATE.GROGGY:
+                break;
+            case STATE.DIE:
+                if(bossNavAgent.remainingDistance<bossNavAgent.stoppingDistance)
+                {
+                    bossNavAgent.SetDestination(Player.position);
+                    bossAnim.SetFloat("Speed", 0f);
+                    bossAnim.SetTrigger("Attack");
+
+                }
+                if(DieFlag)
+                {
+                    bossNavAgent.speed = 0.1f;
+                    bossAnim.SetTrigger("Roar");
+                    StateStartTime = 0.0f;
+                    DieFlag = false;
+                }
+                if (StateStartTime < 1f)
+                    StateStartTime += Time.deltaTime;
+                else if (StateStartTime > 0.2f)
+                {
+                    if (CollapsOn)
+                    {
+                        CollapsObj.GetComponent<LCollapsObj>().RigidOn();
+                        CollapsOn = false;
+                    }
+                }
                 break;
         }
     }
@@ -300,11 +364,32 @@ public class LBoss : yLivingEntity
                 bossAnim.SetTrigger("Roar");
                 break;
             case STATE.ROAR:
+                bossNavAgent.speed = 0.1f;
+                bossAnim.SetTrigger("Roar");
                 break;
             case STATE.GROGGY:
                 bossAnim.SetTrigger("HitCameraOn");
                 if(!bossNavAgent.isStopped)
                     bossNavAgent.isStopped = true;
+                break;
+            case STATE.DIE:
+                firstCamera.SetActive(false);
+                myCamera.SetActive(true);
+                if (bossNavAgent.isStopped)
+                    bossNavAgent.isStopped = false;
+                bossNavAgent.speed = bossSpeed * 2f;
+                bossNavAgent.SetDestination(DiePos.position);
+                bossAnim.SetFloat("Speed", 1f);
+                StateStartTime = -30f;
+                bossAnimEvent.AttackColliderOff += () =>
+                {
+                    WeaponObj.transform.SetParent(BossLeftHand);
+                    WeaponObj.transform.localPosition = new Vector3(-0.5f, 0.2f, 0.35f);
+                };
+                bossAnimEvent.AttackEnd += () =>
+                {
+                    DieFlag = true;
+                };
                 break;
         }
     }
@@ -373,14 +458,14 @@ public class LBoss : yLivingEntity
         //도약 끝
         if (myFLAG != FLAG.RAGE)
         {
-            if(Vector3.Distance(this.transform.position, Player.position) < 5)
+            if(Player.position.y < 0.1f)
             {
                 Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
             }
         }
         else
         {
-            if (Vector3.Distance(this.transform.position, Player.position) < 8)
+            if (Player.position.y < 0.1f)
             {
                 Player.GetComponent<yPlayerHealth>().OnDamage(60f, Vector3.zero, Vector3.zero);
             }
@@ -412,13 +497,13 @@ public class LBoss : yLivingEntity
         switch (myFLAG)
         {
             case FLAG.NORMAL:
-                base.OnDamage(damage, hitPoint, hitNormal);
+                base.OnDamage(60f, hitPoint, hitNormal);
                 break;
             case FLAG.HEAVY:
-                base.OnDamage(damage*0.1f, hitPoint, hitNormal);
+                base.OnDamage(10f, hitPoint, hitNormal);
                 break;
             case FLAG.RAGE:
-                base.OnDamage(damage*2f, hitPoint, hitNormal);
+                base.OnDamage(180f, hitPoint, hitNormal);
                 break;
         }
         Debug.Log(health);
