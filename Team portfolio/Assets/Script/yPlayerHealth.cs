@@ -10,7 +10,7 @@ public class yPlayerHealth : yLivingEntity
     public yPlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
 
     public int startShield = 3;     // 시작 보호막 갯수
-    public int shield { get; protected set; } // 현재 보호막 갯수
+    public int shield { get; private set; } // 현재 보호막 갯수
 
     /* -유석- 체력 UI 받기*/
     /* -유석- 보호막 UI 받기*/

@@ -13,7 +13,7 @@ public class J_SwtichWeapon : MonoBehaviour
     }
 
     [SerializeField]
-    public HOLDING_WEAPON myWeapon = HOLDING_WEAPON.AXE;
+    public HOLDING_WEAPON myWeapon = HOLDING_WEAPON.FIST;
 
     [SerializeField]
     GameObject weaponIcon;
@@ -29,78 +29,82 @@ public class J_SwtichWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StateProcess();
-
-        if (playerInput.swap0)
-        {
-            Debug.Log("FIST");
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerShooter>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.FIST);
-        }
-        if (playerInput.swap1)
-        {
-            Debug.Log("AXE");
-            GetComponent<yPlayerShooter>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.AXE);
-        }
-        if (playerInput.swap2)
-        {
-            Debug.Log("GUN");
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerGrenade>().enabled = false;
-            ChangeState(HOLDING_WEAPON.GUN);
-        }
-        if (playerInput.swap3)
-        {
-            Debug.Log("GRENADE");
-            GetComponent<yPlayerAxe>().enabled = false;
-            GetComponent<yPlayerShooter>().enabled = false;
-            ChangeState(HOLDING_WEAPON.GRENADE);
-        }
+        StateProcess();
+        Debug.Log(myWeapon);
+        //if (playerInput.swap0)
+        //{
+        //    ChangeState(HOLDING_WEAPON.FIST);
+        //}
+        //if (playerInput.swap1)
+        //{
+        //    ChangeState(HOLDING_WEAPON.AXE);
+        //}
+        //if (playerInput.swap2)
+        //{
+        //    ChangeState(HOLDING_WEAPON.GUN);
+        //}
+        //if (playerInput.swap3)
+        //{
+        //    ChangeState(HOLDING_WEAPON.GRENADE);
+        //}
 
     }
 
-    void ChangeState(HOLDING_WEAPON s)
+    public void ChangeState(HOLDING_WEAPON s)
     {
         if (myWeapon == s) return;
         myWeapon = s;
         switch(myWeapon)
         {
             case HOLDING_WEAPON.FIST:
+                GetComponent<yPlayerAxe>().enabled = false;
+                GetComponent<yPlayerShooter>().enabled = false;
+                GetComponent<yPlayerGrenade>().enabled = false;
                 break;
             case HOLDING_WEAPON.AXE:
+                GetComponent<yPlayerShooter>().enabled = false;
+                GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerAxe>().enabled = true;
                 // UI 이미지 변경
                 break;
             case HOLDING_WEAPON.GUN:
+                GetComponent<yPlayerAxe>().enabled = false;
+                GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = true;
                 // UI 이미지 변경    
                 break;
             case HOLDING_WEAPON.GRENADE:
+                GetComponent<yPlayerAxe>().enabled = false;
+                GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = true;
                 break;
         }
     }
 
-    //void StateProcess()
-    //{
-    //    switch (myWeapon)
-    //    {
-    //        case HOLDING_WEAPON.FIST:
-                
-    //            break;
-    //        case HOLDING_WEAPON.AXE:
-                
-    //            break;
-    //        case HOLDING_WEAPON.GUN:
-                
-    //            break;
-    //        case HOLDING_WEAPON.GRENADE:
-                
-    //            break;
-    //    }
-    //}
+    void StateProcess()
+    {
+        switch (myWeapon)
+        {
+            case HOLDING_WEAPON.FIST:
+                if (playerInput.swap1)  { ChangeState(HOLDING_WEAPON.AXE); }
+                if (playerInput.swap2)  { ChangeState(HOLDING_WEAPON.GUN); }
+                if (playerInput.swap3)  { ChangeState(HOLDING_WEAPON.GRENADE); }
+                break;
+            case HOLDING_WEAPON.AXE:
+                if (playerInput.swap0)  { ChangeState(HOLDING_WEAPON.FIST); }
+                if (playerInput.swap2) { ChangeState(HOLDING_WEAPON.GUN); }
+                if (playerInput.swap3) { ChangeState(HOLDING_WEAPON.GRENADE); }
+                break;
+            case HOLDING_WEAPON.GUN:
+                if (playerInput.swap0) { ChangeState(HOLDING_WEAPON.FIST); }
+                if (playerInput.swap1) { ChangeState(HOLDING_WEAPON.AXE); }
+                if (playerInput.swap3) { ChangeState(HOLDING_WEAPON.GRENADE); }
+                break;
+            case HOLDING_WEAPON.GRENADE:
+                if (playerInput.swap0) { ChangeState(HOLDING_WEAPON.FIST); }
+                if (playerInput.swap1) { ChangeState(HOLDING_WEAPON.AXE); }
+                if (playerInput.swap2) { ChangeState(HOLDING_WEAPON.GUN); }
+                break;
+        }
+    }
 }

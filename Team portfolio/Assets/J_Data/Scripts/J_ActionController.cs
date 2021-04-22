@@ -26,9 +26,12 @@ public class J_ActionController : MonoBehaviour
 
     yPlayerInput playerInput;
 
+    J_ItemManager itemManager;
+
     private void Start()
     {
         playerInput = GetComponentInParent<yPlayerInput>();
+        itemManager = FindObjectOfType<J_ItemManager>();
     }
 
     // Update is called once per frame
@@ -64,6 +67,10 @@ public class J_ActionController : MonoBehaviour
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
+
+                Debug.Log("포션: " + itemManager.GetPotionAmount());
+                Debug.Log("총알: " + itemManager.GetAmmoAmount());
+                Debug.Log("수류탄: " + itemManager.GetGrenadeAmount());
             }
         }
     }
