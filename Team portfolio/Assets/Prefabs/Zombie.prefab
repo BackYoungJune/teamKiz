@@ -1230,7 +1230,7 @@ GameObject:
   - component: {fileID: 6548974401307827229}
   - component: {fileID: 6548974401307827228}
   m_Layer: 12
-  m_Name: Zombie (2)
+  m_Name: Zombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1276,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6548974401307827231}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.24
+  m_Radius: 0.2
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
