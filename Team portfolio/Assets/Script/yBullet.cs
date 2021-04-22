@@ -21,8 +21,39 @@ public class yBullet : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, ~ignoreLayer))
         {
-            // 첫번째 Enemy와 충돌한 경우
-            if(hit.transform.tag == "Enemy")
+            if (hit.transform.tag == "Head")
+            {
+                Debug.Log("Head");
+                // 레이가 어떤 물체와 충돌한 경우
+                // bolldEffect를 생성시키고 파괴
+                Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
+
+                // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
+                IDamageable target = hit.collider.GetComponent<IDamageable>();
+
+                Debug.Log(target);
+                // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
+                if (target != null)
+                {
+                    if (hit.point.y > 1.87)
+                    {
+                        // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                        target.OnDamage(damage * 8, hit.point, hit.normal);
+                        // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+                    }
+                    else
+                    {
+                        // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                        target.OnDamage(damage, hit.point, hit.normal);
+                        // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+                    }
+
+
+                }
+            }
+
+            // Enemy와 충돌한 경우
+            else if (hit.transform.tag == "Enemy")
             {
                 // 레이가 어떤 물체와 충돌한 경우
                 // bolldEffect를 생성시키고 파괴
@@ -35,7 +66,7 @@ public class yBullet : MonoBehaviour
                 // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
                 if (target != null)
                 {
-                    if(hit.point.y > 1.87)
+                    if (hit.point.y > 1.87)
                     {
                         // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                         target.OnDamage(damage * 8, hit.point, hit.normal);
@@ -56,7 +87,7 @@ public class yBullet : MonoBehaviour
                 // 파괴
                 Destroy(gameObject);
             }
-            else if(hit.transform.tag == "Boss")
+            else if (hit.transform.tag == "Boss")
             {
                 Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 IDamageable target = hit.transform.parent.GetComponent<IDamageable>();
@@ -71,24 +102,8 @@ public class yBullet : MonoBehaviour
                 }
             }
 
-            else if (hit.transform.tag == "Head")
-            {
-                Debug.Log("Head");
-                Instantiate(bloodEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                IDamageable target = hit.transform.parent.GetComponent<IDamageable>();
-                if (target != null)
-                {
-                    Debug.Log("HeadTarget");
-                    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
-                    target.OnDamage(200, hit.point, hit.normal);
-                    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
-
-                    // 파괴
-                    Destroy(gameObject);
-                }
-            }
             // 두번째 벽이나 바닥과 충돌한 경우
-            else if(hit.transform.tag == "Floor" || hit.transform.tag == "Wall")
+            else if (hit.transform.tag == "Floor" || hit.transform.tag == "Wall")
             {
                 Instantiate(decalHitWall, hit.point + hit.normal, Quaternion.LookRotation(hit.normal));
                 // 레이가 충돌한 위치 저장
@@ -96,7 +111,7 @@ public class yBullet : MonoBehaviour
                 // 파괴
                 Destroy(gameObject);
             }
-            else if(hit.transform.tag == "FallingObj")
+            else if (hit.transform.tag == "FallingObj")
             {
                 hit.transform.GetComponent<LFallingObj>().Hit();
                 // 파괴

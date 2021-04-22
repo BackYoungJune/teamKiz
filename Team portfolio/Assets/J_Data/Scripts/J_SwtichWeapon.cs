@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class J_SwtichWeapon : MonoBehaviour
 {
-    enum HOLDING_WEAPON
+    public enum HOLDING_WEAPON
     {
         FIST,
         AXE,
@@ -13,7 +13,7 @@ public class J_SwtichWeapon : MonoBehaviour
     }
 
     [SerializeField]
-    HOLDING_WEAPON myWeapon = HOLDING_WEAPON.AXE;
+    public HOLDING_WEAPON myWeapon = HOLDING_WEAPON.AXE;
 
     [SerializeField]
     GameObject weaponIcon;

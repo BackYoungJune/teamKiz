@@ -74,6 +74,7 @@ public class yEnemy : yLivingEntity
 
     void Update()
     {
+        Debug.Log("health : " + health);
         if (!dead)
         {
             StateProcess();
