@@ -26,13 +26,17 @@ public class Map_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(myState == STATE.NORMAL && Input.GetKeyDown(KeyCode.M))
-        //{
-        //    ChangeState(STATE.ON);         
-        //}
-        if (Input.GetKeyDown(KeyCode.M))
+
+        if (Input.GetKey(KeyCode.M))
         {
-            ChangeState(STATE.ON);
+            Map_Background.SetActive(true);
+
+        }
+        else
+        {
+            Map_Background.SetActive(false);
+
+
         }
         StateProcess();
 

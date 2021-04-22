@@ -30,15 +30,21 @@ public class MN_UIManager : MonoBehaviour
    // public Text scoreText; // 점수 표시용 텍스트
     //public Text waveText; // 적 웨이브 표시용 텍스트
     //public GameObject gameoverUI; // 게임 오버시 활성화할 UI 
+    
+    // 보스 관련
+    public float Boss_CurrentHealth { get; set; }
+    public float Boss_MaxHealth { get; set; }
+    public bool IsHitBox { get; set; }
+
+
+    // 플레이어 관련
     public float CurrentHealth { get; set; }
     public bool OnDamage { get;  set; }
     public bool IsDead { get; set; }
     public bool IsHit { get; set; }
     public int ammo { get; set; }
     public int MaxAmmo { get; set;}
-
     public int Potions { get; set; }
-
     public int Granade { get; set; }
 
     //플레이어 체력 갱신
@@ -56,6 +62,14 @@ public class MN_UIManager : MonoBehaviour
     {
         this.ammo = ammo;
         this.MaxAmmo = MaxAmmo;
+    }
+
+    public void UpdateBossHealth(float damage)
+    {
+        if (damage > 5000f)
+            IsHitBox = true;
+
+        this.Boss_CurrentHealth -= damage;
     }
 
     //public void UpdatePlayerRestoreHealth(float Health)
