@@ -18,7 +18,7 @@ public class BloodEffect_UI : MonoBehaviour
     {
         myImage = GetComponent<Image>();
         myImage.color = new Color(0f, 0f, 0f, 0f);
-        panel = GameObject.Find("BloodPanel") as GameObject;
+        panel = GameObject.Find("BloodPanel");
         panel.SetActive(false);
     }
 

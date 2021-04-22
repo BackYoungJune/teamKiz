@@ -66,7 +66,7 @@ public class yPlayerHealth : yLivingEntity
 
         /* 체력 UI갱신 */ //  + potion먹으면
         /* 보호막 UI갱신 */
-        //MN_UIManager.Instance.UpdatePlayerHealth(-damage);
+        MN_UIManager.Instance.UpdatePlayerHealth(-damage);
         //RestoreHealth(MN_UIManager.Instance.CurrentHealth);
     }
 

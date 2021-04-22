@@ -41,7 +41,9 @@ public class yPlayerGrenade : MonoBehaviour
         playerAnimEvent = GetComponent<yPlayerAnimEvent>();
 
         // 수류탄 던지는 동작중에 던지는 프레임까지 오면 이벤트를 실행한다
-        playerAnimEvent.shoot = OnShoot;
+        //playerAnimEvent.shoot = OnShoot;
+
+        MN_UIManager.Instance.Granade = GrenadeRemain;
     }
 
     private void OnEnable()
@@ -118,6 +120,7 @@ public class yPlayerGrenade : MonoBehaviour
         /* 유석 
          UI 수류탄 갯수 갱신
         */
+        MN_UIManager.Instance.Granade = GrenadeRemain;
 
         // 애니메이션 실행되는 시간 이후로 GrenadeThrowOut를 발동시킨다
         Invoke("GrenadeThrowOut", throwTime);

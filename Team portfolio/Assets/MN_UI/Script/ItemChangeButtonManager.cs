@@ -19,6 +19,9 @@ public class ItemChangeButtonManager : MonoBehaviour
     [SerializeField]
     List<GameObject> ItemImages;
 
+    Text Granade_Text;
+    Text Potion_Text;
+
     bool IsRifle = true;
     private void Awake()
     {
@@ -33,10 +36,20 @@ public class ItemChangeButtonManager : MonoBehaviour
         ItemButtons = GameObject.Find("ItemButtons");
         NowWeaponImage = GameObject.Find("NowWeapon_Image").GetComponent<Image>();
         AmmoText = GameObject.Find("AmmoText").GetComponent<Text>();
-        if (myState == STATE.AXE)
-            AmmoText.text = "";
-        else
-            AmmoText.text = MN_UIManager.Instance.ammo.ToString()+" / 25";
+
+        //if (myState == STATE.AXE)
+        //    AmmoText.text = "";
+        //else
+        //    AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
+
+        Granade_Text = GameObject.Find("Granade_Text").GetComponent<Text>();
+        Potion_Text = GameObject.Find("Potion_Text").GetComponent<Text>();
+
+        //수류탄 개수에 사용할 변수
+        Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
+
+        //포션 개수에 사용할 변수
+        Potion_Text.text = "";
 
         ItemButtons.SetActive(false);
     }
@@ -90,7 +103,8 @@ public class ItemChangeButtonManager : MonoBehaviour
                 axe.enabled = false;
                 rifle.enabled = true;
                 granade.enabled = false;
-                
+                AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
+
                 //if (playerInput.swap2)
                 //{
                 //}
@@ -99,6 +113,8 @@ public class ItemChangeButtonManager : MonoBehaviour
                 break;
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
+                AmmoText.text = "";
+
                 axe.enabled = true;
                 rifle.enabled = false;
                 granade.enabled = false;
