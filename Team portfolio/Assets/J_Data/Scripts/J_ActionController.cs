@@ -68,9 +68,10 @@ public class J_ActionController : MonoBehaviour
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
 
-                Debug.Log("포션: " + itemManager.GetPotionAmount());
-                Debug.Log("총알: " + itemManager.GetAmmoAmount());
-                Debug.Log("수류탄: " + itemManager.GetGrenadeAmount());
+                Debug.Log(FindObjectOfType<J_ItemManager>().remainPotion);
+                //Debug.Log("포션: " + itemManager.GetPotionAmount());
+                //Debug.Log("총알: " + itemManager.GetAmmoAmount());
+                //Debug.Log("수류탄: " + itemManager.GetGrenadeAmount());
             }
         }
     }

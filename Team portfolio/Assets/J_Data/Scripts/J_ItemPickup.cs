@@ -22,6 +22,9 @@ public class J_ItemPickup : MonoBehaviour, J_IItem
 
             if (item.itemType == J_Item.ItemType.Ammo)
             {
+                //J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
+                //Debug.Log(itemManager.remainAmmo);
+                //itemManager.remainAmmo += 30;
                 yRiple playerRiple = GameObject.Find("Ak-47").GetComponent<yRiple>();
                 Debug.Log("기존 잔여 탄약: " + playerRiple.ammoRemain);
                 playerRiple.ammoRemain += item.restore;     // 남은 전체 탄약 추가
