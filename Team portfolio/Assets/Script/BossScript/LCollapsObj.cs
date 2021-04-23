@@ -10,7 +10,7 @@ public class LCollapsObj : MonoBehaviour
     bool collapsFlag;
     void Awake()
     {
-        collapsFlag = false;
+        collapsFlag = true;
     }
 
     // Update is called once per frame
@@ -21,19 +21,19 @@ public class LCollapsObj : MonoBehaviour
 
     public void RigidOn()
     {
-        this.gameObject.AddComponent<Rigidbody>();
+        Rigidbody myRigid = this.gameObject.AddComponent<Rigidbody>();
+
+        myRigid.AddForce(Boss.position - this.transform.position,ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "Boss")
+        if (other.gameObject.tag == "Boss" && collapsFlag)
         {
             bossAnim.SetTrigger("Groggy");
-            Boss.parent.GetComponent<LBoss>().OnDamage(30000f, Vector3.zero, Vector3.zero);
+            Boss.GetComponent<LBoss>().OnDamage(30000f, Vector3.zero, Vector3.zero);
+            Destroy(this.gameObject);
         }
-
-
     }
 
 }
