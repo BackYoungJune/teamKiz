@@ -113,7 +113,7 @@ public class yPlayerGrenade : MonoBehaviour
 
         // 던지는 수류탄을 발사한다
         GrenadeRigid.AddForce(Camera.main.transform.forward * 10.0f + Vector3.up * 3.0f, ForceMode.Impulse);
-        StartCoroutine(ThrowOut(collider));
+        //StartCoroutine(ThrowOut(collider));
 
         // 던지는 수류탄을 파괴한다
         Destroy(instantGrenade.gameObject, 5f);
@@ -147,12 +147,12 @@ public class yPlayerGrenade : MonoBehaviour
         }
     }
 
-    IEnumerator ThrowOut(SphereCollider collider)
-    {
-        yield return new WaitForSeconds(0.5f);
+    //IEnumerator ThrowOut(SphereCollider collider)
+    //{
+    //    yield return new WaitForSeconds(0.5f);
 
-        collider.isTrigger = false;
-    }
+    //    collider.isTrigger = false;
+    //}
 
     //public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
     //{

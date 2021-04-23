@@ -110,6 +110,8 @@ public class yEnemy : yLivingEntity
                     Vector3 desPos = ZombiePosition + RadiusPoint * RadiusLength;   // 자신의 포지션값으로부터 RadiusLength의 반경을 가진 임의의 원의값을 가져온다
                     myNavAgent.isStopped = false;
                     myNavAgent.SetDestination(desPos);  // 목표지점으로 이동시킨다
+
+                    StartCoroutine(Searching());
                 } 
                 break;
             case STATE.SEARCHING:
@@ -354,5 +356,28 @@ public class yEnemy : yLivingEntity
             // 리지드바디를 제거한다
             Destroy(gameObject.GetComponent<Rigidbody>());
         }
+    }
+
+    IEnumerator Searching()
+    {
+        // SphereCastAll - 구체 모양의 레이캐스팅(모든 오브젝트)
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10, Vector3.up, 0, LayerMask.GetMask("Enemy"));
+
+        foreach (RaycastHit hit in rayHits)
+        {
+            // 첫번째 Enemy와 충돌한 경우
+            if (hit.transform.gameObject.tag == "Enemy")
+            {
+                // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
+                yEnemy target = hit.collider.GetComponent<yEnemy>();
+
+                if (target.myState == yEnemy.STATE.SEARCHING || target.myState == yEnemy.STATE.BATTLE)
+                {
+                    ChangeState(STATE.SEARCHING);
+                }
+            }
+        }
+
+        yield return new WaitForSeconds(1.0f);
     }
 }

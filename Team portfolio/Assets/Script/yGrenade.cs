@@ -5,7 +5,8 @@ using UnityEngine;
 public class yGrenade : MonoBehaviour
 {
     public float damage = 100.0f;        // 수류탄 데미지
-    public GameObject ExplosionEffect;      // 수류탄이 터졌을 때 이펙트
+    public GameObject ExplosionEffect;   // 수류탄이 터졌을 때 이펙트
+    public Vector3 LastPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -46,5 +47,6 @@ public class yGrenade : MonoBehaviour
             
         }
         GameObject obj =  Instantiate(ExplosionEffect, transform.position, transform.rotation);
+        LastPosition = transform.position;
     }
 }
