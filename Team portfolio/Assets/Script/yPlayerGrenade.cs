@@ -28,9 +28,9 @@ public class yPlayerGrenade : MonoBehaviour
     public float throwTime = 1.0f;    // 던지는 소요 시간
     float lastFireTime; // 수류탄을 마지막으로 발사한 시점
 
-    //public Transform m_Target;
-    //public float m_InitialAngle = 30f; // 처음 날라가는 각도
-    //private Rigidbody m_Rigidbody;
+    public Transform m_Target;
+    public float m_InitialAngle = 30f; // 처음 날라가는 각도
+    private Rigidbody m_Rigidbody;
 
     J_ItemManager itemManager;
 
@@ -113,7 +113,6 @@ public class yPlayerGrenade : MonoBehaviour
 
         // 던지는 수류탄을 발사한다
         GrenadeRigid.AddForce(Camera.main.transform.forward * 10.0f + Vector3.up * 3.0f, ForceMode.Impulse);
-        //StartCoroutine(ThrowOut(collider));
 
         // 던지는 수류탄을 파괴한다
         Destroy(instantGrenade.gameObject, 5f);
@@ -147,35 +146,42 @@ public class yPlayerGrenade : MonoBehaviour
         }
     }
 
-    //IEnumerator ThrowOut(SphereCollider collider)
-    //{
-    //    yield return new WaitForSeconds(0.5f);
+    public void Line()
+    {
+        //Plane playerPlane = new Plane(Vector3.up, transform.position);
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //float hitdist = 0;
+        
 
-    //    collider.isTrigger = false;
-    //}
+        //if(playerPlane.Raycast(ray, out hitdist))
+        //{
+        //    Vector3 targetPoint = ray.GetPoint;
+        //    Vector3 center = (transform.position + targetPo)
+        //}
+    }
 
-    //public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
-    //{
-    //    float gravity = Physics.gravity.magnitude;
-    //    float angle = initialAngle * Mathf.Deg2Rad;
+    public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
+    {
+        float gravity = Physics.gravity.magnitude;
+        float angle = initialAngle * Mathf.Deg2Rad;
 
-    //    Vector3 planarTarget = new Vector3(target.x, 0, target.z);
-    //    Vector3 planarPosition = new Vector3(player.x, 0, player.z);
+        Vector3 planarTarget = new Vector3(target.x, 0, target.z);
+        Vector3 planarPosition = new Vector3(player.x, 0, player.z);
 
-    //    float distance = Vector3.Distance(planarTarget, planarPosition);
-    //    float yOffset = player.y - target.y;
+        float distance = Vector3.Distance(planarTarget, planarPosition);
+        float yOffset = player.y - target.y;
 
-    //    float initialVelocity
-    //        = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
+        float initialVelocity
+            = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
 
-    //    Vector3 velocity
-    //        = new Vector3(0f, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
+        Vector3 velocity
+            = new Vector3(0f, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
 
-    //    float angleBetweenObjects
-    //        = Vector3.Angle(Vector3.forward, planarTarget - planarPosition) * (target.x > player.x ? 1 : -1);
-    //    Vector3 finalVelocity
-    //        = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
+        float angleBetweenObjects
+            = Vector3.Angle(Vector3.forward, planarTarget - planarPosition) * (target.x > player.x ? 1 : -1);
+        Vector3 finalVelocity
+            = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
 
-    //    return finalVelocity;
-    //}
+        return finalVelocity;
+    }
 }
