@@ -228,10 +228,10 @@ public class LBoss : yLivingEntity
                     else if(myFLAG == FLAG.HEAVY)
                     {
                         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                        //if (SelectPattern < 0.5f)
-                        //    ChangeState(STATE.THROWING);
-                        if (SelectPattern < 1f)
-                            ChangeState(STATE.DIE);
+                        if (SelectPattern < 0.5f)
+                            ChangeState(STATE.THROWING);
+                        //if (SelectPattern < 1f)
+                        //    ChangeState(STATE.DIE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
@@ -403,7 +403,7 @@ public class LBoss : yLivingEntity
                 bossAnimEvent.Groggy += () =>
                 {
                     MN_UIManager.Instance.WinGame = true;
-                    Debug.Log("MN_UIManager.Instance.WinGame" + MN_UIManager.Instance.WinGame);
+                    //Debug.Log("MN_UIManager.Instance.WinGame" + MN_UIManager.Instance.WinGame);
                 };
                 break;
         }
