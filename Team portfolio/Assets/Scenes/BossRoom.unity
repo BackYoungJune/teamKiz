@@ -1563,7 +1563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 395603213}
   - component: {fileID: 395603214}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1808,6 +1808,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3310428038525720367, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310428038525720367, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3310428038525720367, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9109240618937927078, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_Name
@@ -2033,7 +2048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894499002}
   - component: {fileID: 894499003}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2320,7 +2335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1158424327}
   - component: {fileID: 1158424328}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2850,7 +2865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1672183222}
   - component: {fileID: 1672183223}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
