@@ -409,7 +409,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 268, y: -44}
-  m_SizeDelta: {x: 235.1, y: 86.49396}
+  m_SizeDelta: {x: 216.63, y: 86.49396}
   m_Pivot: {x: 0.4078907, y: 0.1592229}
 --- !u!222 &4473404895845946135
 CanvasRenderer:
@@ -451,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 30 / 100
+  m_Text: 30 / 300
 --- !u!1 &4473404895867911921
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 4473404896743943177}
   - component: {fileID: 4473404896743943176}
   m_Layer: 5
-  m_Name: ItemCanvas
+  m_Name: Item_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

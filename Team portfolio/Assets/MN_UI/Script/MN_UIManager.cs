@@ -35,6 +35,7 @@ public class MN_UIManager : MonoBehaviour
     public float Boss_CurrentHealth { get; set; }
     public float Boss_MaxHealth { get; set; }
     public bool IsHitBox { get; set; }
+    public bool WinGame { get; set; }
 
 
     // 플레이어 관련

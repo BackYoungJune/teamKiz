@@ -20,6 +20,7 @@ public class LBossAnimEvent : MonoBehaviour
     public VoidDelVoid ThrowObj;
     public VoidDelVoid ThrowingEnd;
     public VoidDelVoid GroggyEnd;
+    public VoidDelVoid Groggy;
 
     //Roar
     public void OnRoarEnd()
@@ -96,5 +97,9 @@ public class LBossAnimEvent : MonoBehaviour
     public void OnGroggyEnd()
     {
         GroggyEnd?.Invoke();
+    }
+    public void OnGroggy()
+    {
+        Groggy?.Invoke();
     }
 }

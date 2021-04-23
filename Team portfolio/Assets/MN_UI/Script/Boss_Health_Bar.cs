@@ -13,9 +13,9 @@ public class Boss_Health_Bar : MonoBehaviour
     public float Value;
     public enum STATE
     {
-        START,NORMAL,PLAY
+        FIRST,START,NORMAL,PLAY
     }
-    public STATE myState = STATE.START;
+    public STATE myState = STATE.FIRST;
 
 
     private void Awake()
@@ -24,23 +24,26 @@ public class Boss_Health_Bar : MonoBehaviour
 
         Debug.Log("BossHealthBar");
         Boss_Slider = GetComponent<Slider>();
+        Boss_Slider.value = 0f;
 
-        Boss_Slider.value = MN_UIManager.Instance.Boss_MaxHealth * 0.00003f;
+        //Boss_Slider.value = MN_UIManager.Instance.Boss_MaxHealth * 0.00003f;
         IsBoxHit = false;
         Boss_fill_Image = GameObject.Find("Boss_Fill").GetComponent<Image>();
 
+        ChangeState(STATE.START);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Boss_Slider.value = MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
+        //Boss_Slider.value = MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
 
         if (IsBoxHit)
         {
             ChangeState(STATE.PLAY);
 
         }
+        StateProcess();
     }
 
     void ChangeState(STATE s)
@@ -50,10 +53,16 @@ public class Boss_Health_Bar : MonoBehaviour
 
         switch (myState)
         {
+            case STATE.FIRST:
+                break;
+
             case STATE.START:
+
                 StartCoroutine(ChargingBar());
                 break;
             case STATE.NORMAL:
+                Boss_Slider.value = MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
+
                 break;
             case STATE.PLAY:
                 StartCoroutine(ChangeAlphaFirst());
@@ -68,24 +77,28 @@ public class Boss_Health_Bar : MonoBehaviour
             case STATE.START:
                 break;
             case STATE.NORMAL:
+                Boss_Slider.value = MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
+
                 break;
             case STATE.PLAY:
+                Boss_Slider.value = MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
+
                 break;
         }
     }
+
     IEnumerator ChargingBar()
     {
         float value = Boss_Slider.value;
 
         while(value < 1f)
         {
-            value += MN_UIManager.Instance.Boss_CurrentHealth * 0.00003333f;
+            value += Time.deltaTime * 0.5f;
             Boss_Slider.value = value;
 
             yield return null;
         }
-        //ChangeState(STATE.NORMAL);
-        Value = Boss_Slider.value;
+        ChangeState(STATE.NORMAL);
     }
 
     IEnumerator ChangeAlphaFirst()
@@ -114,8 +127,8 @@ public class Boss_Health_Bar : MonoBehaviour
             yield return null;
 
         }
-        //ChangeState(STATE.NORMAL);
         MN_UIManager.Instance.IsHitBox = false;
         Debug.Log(MN_UIManager.Instance.IsHit);
+        ChangeState(STATE.NORMAL);
     }
 }

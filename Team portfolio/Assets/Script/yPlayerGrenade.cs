@@ -45,7 +45,7 @@ public class yPlayerGrenade : MonoBehaviour
         // 수류탄 던지는 동작중에 던지는 프레임까지 오면 이벤트를 실행한다
         playerAnimEvent.shoot = OnShoot;
 
-        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
+        //MN_UIManager.Instance.Granade = itemManager.remainGrenade;
     }
 
     private void OnEnable()
