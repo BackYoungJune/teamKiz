@@ -12,6 +12,7 @@ public class yCameraMove : MonoBehaviour
     public float ShakeAmount = 0.3f;
     public float ShakeTime = 1.0f;
     Vector3 InitPoint;
+    Coroutine coroutine;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,8 @@ public class yCameraMove : MonoBehaviour
         CameraAnim = GetComponent<Animator>();
         Input = FindObjectOfType<yPlayerInput>();
         playerGrenade = FindObjectOfType<yPlayerGrenade>();
+
+        
 
         // 초기 위치를 현재 위치로 초기화한다
         InitPoint = transform.position;
@@ -46,29 +49,49 @@ public class yCameraMove : MonoBehaviour
 
     void Shake()
     {
-        if(playerGrenade.myState == yPlayerGrenade.STATE.SHOOT)
+        if (playerGrenade.myState == yPlayerGrenade.STATE.SHOOT)
         {
-            Greande = FindObjectOfType<yGrenade>();
-            Invoke("Distance", 2.0f);
-        }
+            RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10, Vector3.up, 10.0f);
 
-       
+            foreach (RaycastHit hit in rayHits)
+            {
+                // 첫번째 Enemy와 충돌한 경우
+                if (hit.transform.gameObject.tag == "Grenade")
+                {
+                    
+                    // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
+                    yGrenade target = hit.collider.GetComponent<yGrenade>();
+                    if(target.LastPosition != Vector3.zero)
+                    {
+                        Debug.Log("Grenade");
+                        StartCoroutine(Distance());
+                    }
+
+                }
+            }
+        }
     }
 
-    void Distance()
+    IEnumerator Distance()
     {
-        float dist = Vector3.Distance(Greande.LastPosition, transform.position);
-        //Debug.Log(dist);
-        Debug.Log(transform.position);
-        if (dist < 20.0f && ShakeTime > Mathf.Epsilon)
+        while (ShakeTime >= Mathf.Epsilon)
         {
-            transform.position = (Vector3)Random.insideUnitSphere * ShakeAmount + InitPoint;
-            ShakeTime -= Time.deltaTime;
+            float dist = Vector3.Distance(Greande.LastPosition, transform.position);
+            Debug.Log("Greande.LastPosition : " + Greande.LastPosition);
+            Debug.Log("dist : " + dist);
+            if (dist < 20.0f && ShakeTime > Mathf.Epsilon)
+            {
+                transform.position = (Vector3)Random.insideUnitSphere * ShakeAmount + InitPoint;
+                ShakeTime -= Time.deltaTime;
+            }
+            Debug.Log("ShakeTime : " + ShakeTime);
+            yield return null;
         }
-        else
-        {
-            ShakeTime = 0f;
-            transform.position = InitPoint;
-        }
+
+        
+
+        //transform.position = InitPoint;
+        //ShakeTime = 1.0f;
+        
     }
 }
