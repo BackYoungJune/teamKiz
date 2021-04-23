@@ -7,28 +7,24 @@ public class J_ItemPickup : MonoBehaviour, J_IItem
 {
     public J_Item item;
 
-    // ItemChangeButtonManager.ChangeState() 내에서 처리
     public void Use(GameObject target)
     {
         if(item.amount != 0)
         {
-            if (item.itemType == J_Item.ItemType.Used)
-            {
-                yPlayerHealth playerHealth = target.GetComponentInParent<yPlayerHealth>();
-                playerHealth.RestoreHealth(item.restore);
-                //target.GetComponentInParent<yPlayerHealth>().RestoreHealth(item.amount);
-                Debug.Log("아이템 사용");
-            }
+            // 포션은 J_ItemManager 에서 따로 처리
+            //if (item.itemType == J_Item.ItemType.Used)
+            //{
+            //    yPlayerHealth playerHealth = target.GetComponentInParent<yPlayerHealth>();
+            //    playerHealth.RestoreHealth(item.restore);
+            //    //target.GetComponentInParent<yPlayerHealth>().RestoreHealth(item.amount);
+            //    Debug.Log("아이템 사용");
+            //}
 
             if (item.itemType == J_Item.ItemType.Ammo)
             {
-                //J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
-                //Debug.Log(itemManager.remainAmmo);
-                //itemManager.remainAmmo += 30;
-                yRiple playerRiple = GameObject.Find("Ak-47").GetComponent<yRiple>();
-                Debug.Log("기존 잔여 탄약: " + playerRiple.ammoRemain);
-                playerRiple.ammoRemain += item.restore;     // 남은 전체 탄약 추가
-                Debug.Log("획득 후 잔여 탄약: " + playerRiple.ammoRemain);
+                J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
+                itemManager.ammoRemain += item.restore;     // 남은 전체 탄약 추가
+                MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);     // 아이템 획득 시 UI 갱신
             }
 
             if (item.itemType == J_Item.ItemType.Equiment)

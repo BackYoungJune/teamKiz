@@ -62,7 +62,7 @@ public class J_ActionController : MonoBehaviour
                 // 아이템이 총알일 경우에는 바로 Use 할 수 있도록
                 if(hitItem.itemType == J_Item.ItemType.Ammo)
                 {
-                    //hitInfo.transform.GetComponent<J_ItemPickup>().Use(this.gameObject);
+                    hitInfo.transform.GetComponent<J_ItemPickup>().Use(this.gameObject);
                 }
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);

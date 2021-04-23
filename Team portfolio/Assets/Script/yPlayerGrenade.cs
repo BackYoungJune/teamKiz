@@ -22,7 +22,7 @@ public class yPlayerGrenade : MonoBehaviour
     public Animator playerAnimator; // 애니메이터 컴포넌트
     yPlayerAnimEvent playerAnimEvent;   // 애니메이션 이벤트
 
-    public int GrenadeRemain = 2; // 남은 전체 수류탄 갯수
+    //public int GrenadeRemain = 2; // 남은 전체 수류탄 갯수
 
     public float timeBetFire = 0.12f; // 총알 발사 간격
     public float throwTime = 1.0f;    // 던지는 소요 시간
@@ -32,6 +32,7 @@ public class yPlayerGrenade : MonoBehaviour
     //public float m_InitialAngle = 30f; // 처음 날라가는 각도
     //private Rigidbody m_Rigidbody;
 
+    J_ItemManager itemManager;
 
     void Awake()
     {
@@ -39,11 +40,12 @@ public class yPlayerGrenade : MonoBehaviour
         playerInput = GetComponentInParent<yPlayerInput>();
         playerAnimator = GetComponent<Animator>();
         playerAnimEvent = GetComponent<yPlayerAnimEvent>();
+        itemManager = GetComponent<J_ItemManager>();
 
         // 수류탄 던지는 동작중에 던지는 프레임까지 오면 이벤트를 실행한다
         playerAnimEvent.shoot = OnShoot;
 
-        MN_UIManager.Instance.Granade = GrenadeRemain;
+        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
     }
 
     private void OnEnable()
@@ -59,7 +61,7 @@ public class yPlayerGrenade : MonoBehaviour
         /* 유석 
          UI 처음 수류탄 갯수 갱신 (GrenadeRemain)
         */
-        MN_UIManager.Instance.Granade = GrenadeRemain;
+        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
 
     }
 
@@ -81,7 +83,7 @@ public class yPlayerGrenade : MonoBehaviour
     {
         // 현재 상태가 발사 가능한 상태
         // && 마지막 수류탄 발사 시점에서 timeBetFire 이상의 시간이 지남
-        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && GrenadeRemain > 0)
+        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && itemManager.remainGrenade > 0)
         {
             // 마지막 총 발사 시점 갱신
             lastFireTime = Time.time;
@@ -117,12 +119,12 @@ public class yPlayerGrenade : MonoBehaviour
         Destroy(instantGrenade.gameObject, 5f);
 
         // 남은 수류탄 갯수를 -1
-        GrenadeRemain--;
+        itemManager.remainGrenade--;
 
         /* 유석 
          UI 수류탄 갯수 갱신
         */
-        MN_UIManager.Instance.Granade = GrenadeRemain;
+        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
 
         // 애니메이션 실행되는 시간 이후로 GrenadeThrowOut를 발동시킨다
         Invoke("GrenadeThrowOut", throwTime);
@@ -131,13 +133,13 @@ public class yPlayerGrenade : MonoBehaviour
     void GrenadeThrowOut()
     {
         // 남아있는 수류탄의 갯수가 0개라면
-        if (GrenadeRemain <= 0)
+        if (itemManager.remainGrenade <= 0)
         {
             myState = STATE.EMPTY;
         }
 
         // 남아있는 수류탄의 갯수가 1개 이상이라면
-        if (GrenadeRemain > 0)
+        if (itemManager.remainGrenade > 0)
         {
             // 모형 수류탄을 활성화한다
             Grenade.gameObject.SetActive(true);

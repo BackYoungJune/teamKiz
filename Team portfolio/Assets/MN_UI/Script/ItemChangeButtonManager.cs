@@ -23,6 +23,7 @@ public class ItemChangeButtonManager : MonoBehaviour
     Text Potion_Text;
 
     J_SwtichWeapon swtichWeapon;
+    J_ItemManager itemManager;
 
     bool IsRifle = true;
     private void Awake()
@@ -57,6 +58,7 @@ public class ItemChangeButtonManager : MonoBehaviour
 
         // 무기 스위칭에 사용할 변수
         swtichWeapon = FindObjectOfType<J_SwtichWeapon>();
+        itemManager = FindObjectOfType<J_ItemManager>();
     }
     // Update is called once per frame
     void Update()
@@ -151,6 +153,9 @@ public class ItemChangeButtonManager : MonoBehaviour
                 //AmmoText.text = "";
                 break;
             case STATE.POTION:
+                // 포션 사용
+                itemManager.Use(GameObject.Find("Player"));
+                // itemManager.remainPotion 으로 남은 포션 개수 받아옴
                 break;
         }
     }
