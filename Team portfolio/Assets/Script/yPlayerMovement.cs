@@ -57,8 +57,6 @@ public class yPlayerMovement : MonoBehaviour
         AnimationMove();
         
         myAnim.SetBool("isAir", isAir);
-
-        Debug.Log(isBorder);
     }
 
 

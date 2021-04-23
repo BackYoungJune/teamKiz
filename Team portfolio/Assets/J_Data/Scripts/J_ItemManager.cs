@@ -52,6 +52,7 @@ public class J_ItemManager : MonoBehaviour, J_IItem
         {
             yPlayerHealth playerHealth = target.GetComponentInParent<yPlayerHealth>();
             playerHealth.RestoreHealth(potionInfo.restore);
+           // playerHealth.RestoreHealth(20f);
             remainPotion--;
             Debug.Log("포션 사용");
             Debug.Log("잔여 포션: " + remainPotion);
@@ -72,7 +73,8 @@ public class J_ItemManager : MonoBehaviour, J_IItem
         magCapacity = 25;
         remainGrenade = 2;
         remainPotion = 5;
-        potionInfo.amount = 5;
+        potionInfo.restore = 20;
+        //potionInfo.amount = 5;
 
         //ammoInfo.amount = 100;        // 총알 수
         //potionInfo.amount = 10;     // 포션 수
@@ -82,6 +84,6 @@ public class J_ItemManager : MonoBehaviour, J_IItem
 
     private void Update()
     {
-        remainPotion = potionInfo.amount;
+        //remainPotion = potionInfo.amount;
     }
 }

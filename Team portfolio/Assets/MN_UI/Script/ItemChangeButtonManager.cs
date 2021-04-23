@@ -152,11 +152,7 @@ public class ItemChangeButtonManager : MonoBehaviour
                 //NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
                 //AmmoText.text = "";
                 break;
-            case STATE.POTION:
-                // 포션 사용
-                itemManager.Use(GameObject.Find("Player"));
-                // itemManager.remainPotion 으로 남은 포션 개수 받아옴
-                break;
+
         }
     }
     void StateProcess()
@@ -182,11 +178,7 @@ public class ItemChangeButtonManager : MonoBehaviour
                 AmmoText.text = Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
 
                 break;
-            case STATE.POTION:
-                AmmoText.text = "";
 
-                // Debug.Log("Potion");
-                break;
         }
     }
     public void Rifle_Button()
@@ -207,5 +199,10 @@ public class ItemChangeButtonManager : MonoBehaviour
         ChangeState(STATE.POTION);
 
         //Debug.Log("Drink Potion!!");
+    }
+    public void OnbuttonClickPotion()
+    {
+        itemManager.Use(GameObject.Find("Player"));
+
     }
 }
