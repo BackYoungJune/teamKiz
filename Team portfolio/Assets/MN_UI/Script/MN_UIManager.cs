@@ -70,6 +70,7 @@ public class MN_UIManager : MonoBehaviour
         if (damage > 5000f)
             IsHitBox = true;
 
+        Debug.Log("IsHitBox : " + IsHitBox);
         this.Boss_CurrentHealth -= damage;
     }
 
