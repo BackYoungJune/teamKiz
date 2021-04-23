@@ -203,6 +203,6 @@ public class ItemChangeButtonManager : MonoBehaviour
     public void OnbuttonClickPotion()
     {
         itemManager.Use(GameObject.Find("Player"));
-
+        Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
     }
 }

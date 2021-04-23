@@ -30,7 +30,7 @@ public class J_Breakable : MonoBehaviour
     {
         if (itemList.Length == 0) return;
 
-        Instantiate(itemList[Random.Range(0, 2)], transform.position, transform.rotation);
+        Instantiate(itemList[Random.Range(0, 4)], transform.position, transform.rotation);
         Debug.Log("SpawnItem!!");
     }
 

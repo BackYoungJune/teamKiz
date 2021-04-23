@@ -59,16 +59,26 @@ public class J_ActionController : MonoBehaviour
             {
                 J_Item hitItem = hitInfo.transform.GetComponent<J_ItemPickup>().item;
                 hitItem.amount++;       // 아이템 갯수 증가
-                // 아이템이 총알일 경우에는 바로 Use 할 수 있도록
+                // pick ammo
                 if(hitItem.itemType == J_Item.ItemType.Ammo)
                 {
                     hitInfo.transform.GetComponent<J_ItemPickup>().Use(this.gameObject);
                 }
+                // pick armour
+                if(hitItem.itemType == J_Item.ItemType.Equiment)
+                {
+                    GetComponentInParent<yPlayerHealth>().RestoreShield(1);
+                }
+                // pick money
+                if(hitItem.itemType == J_Item.ItemType.Etc)
+                {
+                    J_ItemManager.instance.remainMoney += hitItem.restore;                
+                }
+
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
 
-                Debug.Log(FindObjectOfType<J_ItemManager>().remainPotion);
                 //Debug.Log("포션: " + itemManager.GetPotionAmount());
                 //Debug.Log("총알: " + itemManager.GetAmmoAmount());
                 //Debug.Log("수류탄: " + itemManager.GetGrenadeAmount());

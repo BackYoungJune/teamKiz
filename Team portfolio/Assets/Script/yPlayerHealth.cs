@@ -9,8 +9,8 @@ public class yPlayerHealth : yLivingEntity
     public yPlayerMovement playerMovement; // 플레이어 움직임 컴포넌트
     public yPlayerShooter playerShooter; // 플레이어 슈터 컴포넌트
 
-    public int startShield = 3;     // 시작 보호막 갯수
-    public int shield { get; private set; } // 현재 보호막 갯수
+    //public int startShield = 3;     // 시작 보호막 갯수
+    //public int shield { get; private set; } // 현재 보호막 갯수
 
     /* -유석- 체력 UI 받기*/
     /* -유석- 보호막 UI 받기*/
@@ -23,7 +23,6 @@ public class yPlayerHealth : yLivingEntity
         playerShooter = GetComponentInChildren<yPlayerShooter>();
         /* 체력 UI 컴포넌트 가져오기*/
         MN_UIManager.Instance.UpdatePlayerHealth(startHealth);
-
     }
 
     protected override void OnEnable()
@@ -31,8 +30,8 @@ public class yPlayerHealth : yLivingEntity
         // LivingEntity의 OnEnable() 실행 (상태 초기화)
         base.OnEnable();
 
-        // 보호막을 시작 보호막으로 초기화
-        shield = startShield;
+        // 보호막을 시작 보호막으로 초기화 
+        //shield = startShield; -> J_ItemManager에서 초기화
 
         /* 체력 UI 최대 HP = startingHealth, 현재 HP = health로 받기 */
         /* 보호막 UI 최대 Shield = startingShield, 현재 HP = shield로 받기 */
@@ -57,19 +56,19 @@ public class yPlayerHealth : yLivingEntity
         if (dead) return;
 
         // 보호막 갯수 증가
-        shield += newShield;
+        J_ItemManager.instance.remainAmour += newShield;
     }
 
     // 데미지 처리
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
         // 쉴드가 존재하면
-        if (shield > 0)
+        if (J_ItemManager.instance.remainAmour > 0)
         {
             // 데미지의 반만큼 체력 감소
             health -= damage / 2;
             // 보호막 -1
-            shield--;
+            J_ItemManager.instance.remainAmour--;
         }
         // 쉴드가 존재하지 않으면
         else
