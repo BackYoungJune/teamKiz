@@ -413,9 +413,6 @@ MonoBehaviour:
   BulletCaseTransform: {fileID: 6579960330827059593}
   muzzleFlashTransform: {fileID: 6850821865662908354}
   muzzleFlashEffect: {fileID: 199458, guid: 6e66cfad8a92e0241b4a46214fb0d191, type: 3}
-  ammoRemain: 100
-  magCapacity: 25
-  magAmmo: 0
   timeBetFire: 0.3
   reloadTime: 1.8
   bullet: {fileID: 5439700753742635735, guid: fed8efe5938401143bc2bdc2522f2da4, type: 3}
@@ -2953,7 +2950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1341be7288c3724ab164a89fed7e22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: 1
+  myWeapon: 0
   weaponIcon: {fileID: 0}
 --- !u!114 &895623568659751882
 MonoBehaviour:
@@ -2974,7 +2971,6 @@ MonoBehaviour:
   leftHandMount: {fileID: 7961078740582022758}
   rightHandMount: {fileID: 2701764276605439606}
   playerAnimator: {fileID: 0}
-  GrenadeRemain: 2
   timeBetFire: 0.12
   throwTime: 1
 --- !u!114 &1101030253
@@ -3819,6 +3815,8 @@ GameObject:
   - component: {fileID: 3058225566552262372}
   - component: {fileID: 1870922436230151342}
   - component: {fileID: 2336406700161195468}
+  - component: {fileID: 1959493707}
+  - component: {fileID: 1959493708}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3872,7 +3870,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 40723
+    m_Bits: 1073782547
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3892,6 +3890,37 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8615092176455469442}
   m_Enabled: 1
+--- !u!95 &1959493707
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615092176455469442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c2dddc1db67b8d4189a685b4f0befce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1959493708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615092176455469442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8652601330073207134
 GameObject:
   m_ObjectHideFlags: 0
