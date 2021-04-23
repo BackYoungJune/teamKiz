@@ -2857,6 +2857,7 @@ GameObject:
   - component: {fileID: 7656706302696105864}
   - component: {fileID: 895623568659751882}
   - component: {fileID: 1101030253}
+  - component: {fileID: 1633854236}
   m_Layer: 11
   m_Name: Leonard
   m_TagString: Untagged
@@ -2950,7 +2951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1341be7288c3724ab164a89fed7e22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myWeapon: 0
+  myWeapon: 1
   weaponIcon: {fileID: 0}
 --- !u!114 &895623568659751882
 MonoBehaviour:
@@ -2985,6 +2986,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd84a42abfe9d48a29197641958985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1633854236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556004163866690782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a545697b5b48b741ae671db9281c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
+  ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
+  grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
 --- !u!1 &6699339520205186757
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,8 +4291,8 @@ MonoBehaviour:
   Layer:
     serializedVersion: 2
     m_Bits: 0
-  Swap0: 1
-  Swap1: 0
+  Swap0: 0
+  Swap1: 1
   Swap2: 0
   Swap3: 0
   SwtichWeapon: {fileID: 0}
