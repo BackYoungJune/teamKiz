@@ -39,7 +39,7 @@ public class yRiple : MonoBehaviour
         // 현재 탄창을 가득 채우기
 
         itemManager = FindObjectOfType<J_ItemManager>();
-        itemManager.magAmmo = itemManager.magCapacity;
+        //itemManager.magAmmo = itemManager.magCapacity;
 
         // 총알 채워진거 UI로 가져오기 
         MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);

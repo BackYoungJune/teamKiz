@@ -15183,6 +15183,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 290580360}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &295170500 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1979250366377273501, guid: 49c9bb591e7671a44afccb5067db8330,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638141748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &295714721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42041,6 +42053,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 890497683}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &890577470 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3453126693841992749, guid: 49c9bb591e7671a44afccb5067db8330,
+    type: 3}
+  m_PrefabInstance: {fileID: 1638141748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &890709702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76222,6 +76246,8 @@ MonoBehaviour:
   potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
   ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
   grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
+  Granade_Text: {fileID: 890577470}
+  Potion_Text: {fileID: 295170500}
 --- !u!1001 &1634648797
 PrefabInstance:
   m_ObjectHideFlags: 0
