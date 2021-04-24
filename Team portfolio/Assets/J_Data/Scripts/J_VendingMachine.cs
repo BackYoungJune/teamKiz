@@ -8,6 +8,8 @@ public class J_VendingMachine : MonoBehaviour
     {
         // 상점 여는 코드 추가
         Debug.Log("Open Store");
+        StoreController store = FindObjectOfType<StoreController>();
+        store.ChangeState(StoreController.STATE.NORAML);
     }
     void CloseStore()
     {

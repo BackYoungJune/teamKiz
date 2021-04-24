@@ -49,6 +49,9 @@ public class MN_UIManager : MonoBehaviour
     public int Granade { get; set; }
 
     //플레이어 체력 갱신
+
+
+    public bool Inventory { get; set; }
     public void UpdatePlayerHealth(float Health)
     {
         if (Health < 0)

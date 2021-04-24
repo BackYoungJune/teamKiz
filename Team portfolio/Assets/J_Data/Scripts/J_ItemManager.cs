@@ -53,7 +53,7 @@ public class J_ItemManager : MonoBehaviour, J_IItem
     // money
     public int remainMoney { get; set; }
 
-
+    
     public void Use(GameObject target)
     {
         if(remainPotion > 0)

@@ -16,7 +16,13 @@ public class StoreController : MonoBehaviour
     GameObject NoMoney_Text;
     GameObject NoItem_Text;
     GameObject Sell_UI;
+    GameObject StoreOn;
     Slider Sell_Slider;
+
+    GameObject Main_Canvas;
+    GameObject Item_Canvas;
+
+    
 
     int GrandePrice = 20;
     int PotionPrice = 20;
@@ -29,9 +35,10 @@ public class StoreController : MonoBehaviour
     bool IsAssecpt = false;
     public enum STATE
     {
-        NORAML, ARMOR, POTION, GRANADE, BULLET
+        NOT,NORAML, ARMOR, POTION, GRANADE, BULLET
     }
-    STATE myState = STATE.NORAML;
+    STATE myState = STATE.NOT;
+
     private void Awake()
     {
         Sell_Slider = GameObject.Find("Sell_Slider").GetComponent<Slider>();
@@ -47,6 +54,9 @@ public class StoreController : MonoBehaviour
 
 
         Sell_UI = GameObject.Find("Sell_UI");
+        StoreOn = GameObject.Find("StoreOn");
+        Main_Canvas = GameObject.Find("MainCanvas");
+        Item_Canvas = GameObject.Find("Item_Canvas");
 
 
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
@@ -63,16 +73,16 @@ public class StoreController : MonoBehaviour
         Sell_UI.SetActive(false);
 
         // StartCoroutine(NoMoney());
-        this.gameObject.SetActive(false);
+        StoreOn.SetActive(false);   
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("I"))
+        Debug.Log(myState);
+        if(Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log(1);
-            this.gameObject.SetActive(true);
+            ChangeState(STATE.NORAML);
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
         myArmor.text = J_ItemManager.instance.remainArmor.ToString();
@@ -84,14 +94,19 @@ public class StoreController : MonoBehaviour
         StateProcess();
     }
 
-    void ChangeState(STATE s)
+    public void ChangeState(STATE s)
     {
         if (s == myState) return;
         myState = s;
 
         switch (myState)
         {
+            case STATE.NOT:
+                break;
             case STATE.NORAML:
+                Main_Canvas.SetActive(false);
+                Item_Canvas.SetActive(false);
+                StoreOn.SetActive(true);
                 break;
             case STATE.ARMOR:
                 changeValue = 1f / J_ItemManager.instance.remainArmor;
@@ -393,7 +408,10 @@ public class StoreController : MonoBehaviour
     }
     public void StoreEXITButton()
     {
-        this.gameObject.SetActive(false);
+        Main_Canvas.SetActive(true);
+        Item_Canvas.SetActive(true);
+        StoreOn.SetActive(false);
+        ChangeState(STATE.NOT);
     }
 }
 

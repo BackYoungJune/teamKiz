@@ -2824,6 +2824,8 @@ MonoBehaviour:
   LookUpArea: {x: -60, y: 80}
   ZoomArea: {x: 1, y: 5}
   ControllerRotate: 1
+  ShakeAmount: 0.3
+  ShakeTime: 10
 --- !u!114 &7294550087048080043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,17 +2833,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6524706628421254923}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 033d13a07e82a024d96dbe996252d445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
+  storeOpened: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 4096
-  actionText: {fileID: 0}
-  explodeText: {fileID: 0}
+    m_Bits: 1
 --- !u!1 &6556004163866690782
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,7 +3837,6 @@ GameObject:
   - component: {fileID: 1870922436230151342}
   - component: {fileID: 2336406700161195468}
   - component: {fileID: 1959493707}
-  - component: {fileID: 1959493708}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3887,7 +3887,7 @@ Camera:
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1073782547
@@ -3929,19 +3929,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1959493708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8615092176455469442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShakeAmount: 0.3
 --- !u!1 &8652601330073207134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,7 +4187,6 @@ GameObject:
   - component: {fileID: 5311243810109625939}
   - component: {fileID: 8913030573871491984}
   - component: {fileID: 628524240595605821}
-  - component: {fileID: 990138119128335763}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -4318,18 +4304,6 @@ MonoBehaviour:
   playerMovement: {fileID: 0}
   playerShooter: {fileID: 0}
 --- !u!114 &628524240595605821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9109240618937927078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e112fec7aa2b4742a8bfb2d430e3761, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &990138119128335763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
