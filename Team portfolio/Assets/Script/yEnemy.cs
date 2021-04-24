@@ -371,7 +371,7 @@ public class yEnemy : yLivingEntity
                 // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
                 yEnemy target = hit.collider.GetComponent<yEnemy>();
 
-                if (target.myState == yEnemy.STATE.SEARCHING || target.myState == yEnemy.STATE.BATTLE)
+                if (target.myState == STATE.SEARCHING || target.myState == STATE.BATTLE || target.myState == STATE.ESCAPE)
                 {
                     ChangeState(STATE.SEARCHING);
                 }
