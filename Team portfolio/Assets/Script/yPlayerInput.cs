@@ -33,7 +33,7 @@ public class yPlayerInput : MonoBehaviour
     public bool swap2 { get; private set; }     // 스왑 2
     public bool swap3 { get; private set; }     // 스왑 3
     public bool interact { get; private set; }  // 상호작용
-
+    public bool inventory { get; private set; } // 인벤토리
     bool isDead = false;    // 나중에 게임매니저로 옮겨야댐
 
     void Update()
@@ -82,6 +82,8 @@ public class yPlayerInput : MonoBehaviour
             swap3 = Input.GetKey(KeyCode.Alpha3);
             // 상호작용 키 입력감지
             interact = Input.GetKeyDown(KeyCode.E);
+            // 인벤토리 키 입력감지
+            inventory = Input.GetKeyDown(KeyCode.I);
         }
     }
 }

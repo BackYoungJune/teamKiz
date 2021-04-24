@@ -147,16 +147,16 @@ public class yPlayerGrenade : MonoBehaviour
 
     public void Line()
     {
-        //Plane playerPlane = new Plane(Vector3.up, transform.position);
-        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //float hitdist = 0;
-        
+        Plane playerPlane = new Plane(Vector3.up, transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        float hitdist = 0;
 
-        //if(playerPlane.Raycast(ray, out hitdist))
-        //{
-        //    Vector3 targetPoint = ray.GetPoint;
-        //    Vector3 center = (transform.position + targetPo)
-        //}
+
+        if (playerPlane.Raycast(ray, out hitdist))
+        {
+            //Vector3 targetPoint = ray.GetPoint;
+            //Vector3 center = (transform.position + targetPo)
+        }
     }
 
     public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
