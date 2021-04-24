@@ -6,23 +6,24 @@ using UnityEngine.UI;
 public class J_ActionController : MonoBehaviour
 {
     [SerializeField]
-    private float range;    // 습득 가능한 최대 거리
+    private float range;                    // 습득 가능한 최대 거리
 
     private bool pickupActivated = false;   // 습득 가능할 시 true
 
-    private bool ignitionActivated = false;
+    private bool ignitionActivated = false; // 폭파 가능할 시 ture
 
-    private RaycastHit hitInfo;     // 충돌체 정보 저장
+    private bool storeActivated = false;    // 상점을 열 수 있을 시 true
+    public bool storeOpened = false;        // 상점이 열리면 true
+
+
+    private RaycastHit hitInfo;             // 충돌체 정보 저장
 
     // 아이템 레이어에만 반응하도록 레이어 마스크를 설정
     [SerializeField]
     private LayerMask layerMask;
 
-    //필요한 컴포넌트
-    [SerializeField]
-    private Text actionText;
-    [SerializeField]
-    private Text explodeText;
+    //[SerializeField]
+    //private Text actionText;
 
     yPlayerInput playerInput;
 
@@ -78,13 +79,20 @@ public class J_ActionController : MonoBehaviour
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();
-
-                //Debug.Log("포션: " + itemManager.GetPotionAmount());
-                //Debug.Log("총알: " + itemManager.GetAmmoAmount());
-                //Debug.Log("수류탄: " + itemManager.GetGrenadeAmount());
+            }
+        }
+        else if(storeActivated)
+        {
+            // 상점이 열려있지 않을 때
+            if(!storeOpened)
+            {
+                hitInfo.transform.GetComponent<J_VendingMachine>().OpenStore();     // 상점 열기
+                InfoDisappear();
+                storeOpened = true;
             }
         }
     }
+
     private void CanExplodable()
     {
         if(ignitionActivated)
@@ -105,8 +113,12 @@ public class J_ActionController : MonoBehaviour
 
             if(hitInfo.transform.tag == "Explodable")
             {
-                explodeText.gameObject.SetActive(true);
-                explodeText.text = "E를 눌러 기폭";
+                ExplodableInfo();
+            }
+
+            if (hitInfo.transform.tag == "VendingMachine" && !storeOpened)
+            {
+                InteractVMachine();
             }
         }
         else
@@ -118,14 +130,28 @@ public class J_ActionController : MonoBehaviour
     private void ItemInfoAppear()
     {
         pickupActivated = true;
-        actionText.gameObject.SetActive(true);
-        actionText.text = hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 " + "<color=yellow>" + "E" + "</color>";
+        //actionText.gameObject.SetActive(true);
+        //actionText.text = hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 " + "<color=yellow>" + "E" + "</color>";
+    }
+
+    private void ExplodableInfo()
+    {
+        ignitionActivated = true;
+        //actionText.gameObject.SetActive(true);
+        //actionText.text = "기폭(E)";
+    }
+    private void InteractVMachine()
+    {
+        storeActivated = true;
+        //actionText.gameObject.SetActive(true);
+        //actionText.text = "상점열기(E)";
     }
 
     private void InfoDisappear()
     {
         pickupActivated = false;
-        actionText.gameObject.SetActive(false);
-        explodeText.gameObject.SetActive(false);
+        ignitionActivated = false;
+        storeActivated = false;
+        //actionText.gameObject.SetActive(false);
     }
 }

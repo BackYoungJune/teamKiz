@@ -12,6 +12,9 @@ public class J_Barrel : MonoBehaviour
     public float explosionRadius = 10.0f;
     public float damage = 200.0f;
 
+    [SerializeField]
+    private LayerMask applyLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,8 @@ public class J_Barrel : MonoBehaviour
     
     void IndirectExplosion(Vector3 pos)
     {
-        // 8번 레이어(BREAKABLE)에 해당하는 오브젝트의 콜라이더를 얻어와 colls에 저장
-        Collider[] colls = Physics.OverlapSphere(pos, explosionRadius, 1<<11);
+        // applyLayer 에 해당하는 오브젝트의 콜라이더를 얻어와 colls에 저장
+        Collider[] colls = Physics.OverlapSphere(pos, explosionRadius, applyLayer);
 
         // 수집한 콜라이더에 폭발 효과 적용
         foreach (var coll in colls)
@@ -39,7 +42,7 @@ public class J_Barrel : MonoBehaviour
             var _rb = coll.GetComponent<Rigidbody>();
             _rb.mass = 1.0f;
             _rb.AddExplosionForce(700.0f, pos, explosionRadius, 100.0f);
-            _rb.mass = 20.0f;
+            _rb.mass = 10.0f;
 
             if (coll.gameObject.tag == "BREAKABLE")
             {

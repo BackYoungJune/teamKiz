@@ -43,7 +43,4 @@ public class J_TimeBomb : MonoBehaviour
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
     }
-
-
-
 }
