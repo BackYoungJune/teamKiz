@@ -109,7 +109,6 @@ public class yPlayerGrenade : MonoBehaviour
         // 던지는 수류탄 생성
         GameObject instantGrenade = Instantiate(ThrowGrenade, Grenade.transform.position, Quaternion.LookRotation(Camera.main.transform.forward));
         Rigidbody GrenadeRigid = instantGrenade.GetComponent<Rigidbody>();
-        SphereCollider collider = instantGrenade.GetComponent<SphereCollider>();
 
         // 던지는 수류탄을 발사한다
         GrenadeRigid.AddForce(Camera.main.transform.forward * 10.0f + Vector3.up * 3.0f, ForceMode.Impulse);

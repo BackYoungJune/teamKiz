@@ -12115,11 +12115,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1959493708, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
       propertyPath: ShakeTime
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1959493708, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
       propertyPath: ShakeAmount
       value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072692192096323117, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: ShakeTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072692192096323117, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: ShakeAmount
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
