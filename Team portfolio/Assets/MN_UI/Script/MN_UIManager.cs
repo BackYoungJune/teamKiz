@@ -112,4 +112,26 @@ public class MN_UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    // 숨긴 커서 다시 보이기
+    public void MouseCursorActive()
+    {
+        
+        // Mouse Lock
+        Cursor.lockState = CursorLockMode.None;
+
+        // Cursor visible
+        Cursor.visible = true;
+    }
+
+    // 전체화면 혹은 게임 실행시 마우스 커서 숨기기 코드
+    public void MouseCursorDeactivate()
+    {
+        
+        // Mouse Lock
+        Cursor.lockState = CursorLockMode.Locked;
+
+        // Cursor visible
+        Cursor.visible = false;
+    }
 }

@@ -80,7 +80,6 @@ public class Map_Controller : MonoBehaviour
             case STATE.OFF:
 
                 break;
-
         }
     }
 }
