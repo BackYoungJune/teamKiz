@@ -24,6 +24,7 @@ public class yGrenade : MonoBehaviour
 
         foreach (RaycastHit hit in rayHits)
         {
+
             // 첫번째 Enemy와 충돌한 경우
             if (hit.transform.gameObject.tag == "Enemy")
             {

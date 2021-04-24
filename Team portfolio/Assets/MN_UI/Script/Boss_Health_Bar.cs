@@ -122,7 +122,7 @@ public class Boss_Health_Bar : MonoBehaviour
         float alpha = 1f;
         while (alpha > 0.2f)
         {
-            alpha -= Time.deltaTime *2f;
+            alpha -= Time.deltaTime * 2f;
             Boss_fill_Image.color = new Color(1f, 0f, 0f, alpha);
 
             yield return null;

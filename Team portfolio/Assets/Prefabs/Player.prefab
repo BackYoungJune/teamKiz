@@ -2789,8 +2789,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6524706628421254923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 1.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3000002, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3058225566552262372}
@@ -2974,6 +2974,8 @@ MonoBehaviour:
   playerAnimator: {fileID: 0}
   timeBetFire: 0.12
   throwTime: 1
+  m_Target: {fileID: 0}
+  m_InitialAngle: 30
 --- !u!114 &1101030253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3001,6 +3003,8 @@ MonoBehaviour:
   potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
   ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
   grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
+  Granade_Text: {fileID: 0}
+  Potion_Text: {fileID: 0}
 --- !u!1 &6699339520205186757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3851,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8615092176455469442}
-  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0.043619405, y: -0, z: -0, w: 0.9990483}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3937,6 +3941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShakeAmount: 0.3
 --- !u!1 &8652601330073207134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4312,7 +4317,6 @@ MonoBehaviour:
   myAnim: {fileID: 0}
   playerMovement: {fileID: 0}
   playerShooter: {fileID: 0}
-  startShield: 3
 --- !u!114 &628524240595605821
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -56,19 +56,19 @@ public class yPlayerHealth : yLivingEntity
         if (dead) return;
 
         // 보호막 갯수 증가
-        J_ItemManager.instance.remainAmour += newShield;
+        J_ItemManager.instance.remainArmor += newShield;
     }
 
     // 데미지 처리
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitDirection)
     {
         // 쉴드가 존재하면
-        if (J_ItemManager.instance.remainAmour > 0)
+        if (J_ItemManager.instance.remainArmor > 0)
         {
             // 데미지의 반만큼 체력 감소
             health -= damage / 2;
             // 보호막 -1
-            J_ItemManager.instance.remainAmour--;
+            J_ItemManager.instance.remainArmor--;
         }
         // 쉴드가 존재하지 않으면
         else

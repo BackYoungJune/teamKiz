@@ -48,7 +48,7 @@ public class J_ItemManager : MonoBehaviour, J_IItem
     public int remainGrenade { get; set; }
 
     // amour(shield), yPlayerHealth.cs
-    public int remainAmour { get; set; }
+    public int remainArmor { get; set; }
 
     // money
     public int remainMoney { get; set; }
@@ -84,7 +84,9 @@ public class J_ItemManager : MonoBehaviour, J_IItem
         remainGrenade = 2;
         remainPotion = 5;
         potionInfo.amount = 5;
-        remainAmour = 3;
+        remainArmor = 3;
+        //유석 추가
+        remainMoney = 1000;
 
         if (Potion_Text != null && Granade_Text != null)
         {
@@ -101,6 +103,8 @@ public class J_ItemManager : MonoBehaviour, J_IItem
 
     private void Update()
     {
-        remainPotion = potionInfo.amount;
+       
+       // remainPotion = potionInfo.amount;
+
     }
 }
