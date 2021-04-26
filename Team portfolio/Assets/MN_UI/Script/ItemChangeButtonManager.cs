@@ -26,8 +26,13 @@ public class ItemChangeButtonManager : MonoBehaviour
     J_ItemManager itemManager;
 
     bool IsRifle = true;
+
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+
         // ItemImage를 resources에서 불러오기
         ItemImages.Add(Resources.Load("Rifle_Image") as GameObject);
         ItemImages.Add(Resources.Load("AXE_Image") as GameObject);
@@ -65,12 +70,20 @@ public class ItemChangeButtonManager : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Tab))
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
+
             ItemButtons.SetActive(true);
             Time.timeScale = 0.2f;
 
         }
         else
         {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
+
             Time.timeScale = 1f;
 
             ItemButtons.SetActive(false);

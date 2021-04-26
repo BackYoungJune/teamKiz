@@ -41,6 +41,10 @@ public class StoreController : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+
         Sell_Slider = GameObject.Find("Sell_Slider").GetComponent<Slider>();
 
         MyMoney = GameObject.Find("MyMoney").GetComponent<Text>();
@@ -79,10 +83,12 @@ public class StoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(myState);
-        if(Input.GetKeyDown(KeyCode.I))
+        Debug.Log(Cursor.visible);
+        if (Input.GetKeyDown(KeyCode.I))
         {
             ChangeState(STATE.NORAML);
+
+
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
         myArmor.text = J_ItemManager.instance.remainArmor.ToString();
@@ -104,6 +110,9 @@ public class StoreController : MonoBehaviour
             case STATE.NOT:
                 break;
             case STATE.NORAML:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+
                 Main_Canvas.SetActive(false);
                 Item_Canvas.SetActive(false);
                 StoreOn.SetActive(true);
@@ -408,6 +417,10 @@ public class StoreController : MonoBehaviour
     }
     public void StoreEXITButton()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+
         Main_Canvas.SetActive(true);
         Item_Canvas.SetActive(true);
         StoreOn.SetActive(false);
