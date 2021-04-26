@@ -339,7 +339,7 @@ public class yEnemy : yLivingEntity
 
             // rigidbody를 이용해 좀비를 날려보낸다
             rigid.freezeRotation = false;
-            rigid.mass = 0.5f;
+            rigid.mass = 1.0f;
             rigid.AddForce(reactVec * 10, ForceMode.Impulse);
             rigid.AddTorque(reactVec * 25, ForceMode.Impulse);
 
