@@ -47,7 +47,12 @@ public class yGrenade : MonoBehaviour
             }
             
         }
-        GameObject obj =  Instantiate(ExplosionEffect, transform.position, transform.rotation);
+        explosionEffect();
+    }
+
+    public void explosionEffect()
+    {
+        Instantiate(ExplosionEffect, transform.position, transform.rotation);
         LastPosition = transform.position;
     }
 }

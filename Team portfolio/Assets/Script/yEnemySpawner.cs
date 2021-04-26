@@ -94,6 +94,7 @@ public class yEnemySpawner : MonoBehaviour
         enemy.onDeath += () => Destroy(enemy.gameObject, 10f);
         // 적 사망 시 점수 상승
         enemy.onDeath += () => yGameManager.instance.AddScore((int)score);
+        /* 좀비 죽었을 경우 유석 UI 추가하기*/
     }
 
     Transform WaveSpawn(int wave)

@@ -6,7 +6,7 @@ public class yCameraMove : MonoBehaviour
 {
     Animator CameraAnim;
     yPlayerInput Input;
-
+    yGrenade Grenade;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class yCameraMove : MonoBehaviour
     void Update()
     {
         Aim();
+        Explosion();
     }
 
     void Aim()
@@ -34,5 +35,25 @@ public class yCameraMove : MonoBehaviour
         }
     }
 
-    
+    void Explosion()
+    {
+
+    }
+
+    IEnumerator GrenadeSearching()
+    {
+        if (Grenade) yield break;
+        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10, Vector3.up, 0, LayerMask.GetMask("Grenade"));
+
+        foreach (RaycastHit hit in rayHits)
+        {
+            if (hit.transform.gameObject.tag == "Grenade")
+            {
+                Grenade = hit.collider.GetComponent<yGrenade>();
+            }
+        }
+
+       yield return new WaitForSeconds(1.0f);
+    }
+
 }
