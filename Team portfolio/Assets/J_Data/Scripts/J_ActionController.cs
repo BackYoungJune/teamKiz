@@ -23,7 +23,7 @@ public class J_ActionController : MonoBehaviour
     private LayerMask layerMask;
 
     [SerializeField]
-    //private Text actionText;
+    private Text actionText;
 
     yPlayerInput playerInput;
 
@@ -130,21 +130,21 @@ public class J_ActionController : MonoBehaviour
     private void ItemInfoAppear()
     {
         pickupActivated = true;
-        //actionText.gameObject.SetActive(true);
-        //actionText.text = hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 " + "<color=yellow>" + "E" + "</color>";
+        actionText.gameObject.SetActive(true);
+        actionText.text = hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 " + "<color=yellow>" + "E" + "</color>";
     }
 
     private void ExplodableInfo()
     {
         ignitionActivated = true;
-        //actionText.gameObject.SetActive(true);
-        //actionText.text = "기폭(E)";
+        actionText.gameObject.SetActive(true);
+        actionText.text = "기폭(E)";
     }
     private void InteractVMachine()
     {
         storeActivated = true;
-        //actionText.gameObject.SetActive(true);
-        //actionText.text = "상점열기(E)";
+        actionText.gameObject.SetActive(true);
+        actionText.text = "상점열기(E)";
     }
 
     private void InfoDisappear()
@@ -152,6 +152,6 @@ public class J_ActionController : MonoBehaviour
         pickupActivated = false;
         ignitionActivated = false;
         storeActivated = false;
-        //actionText.gameObject.SetActive(false);
+        actionText.gameObject.SetActive(false);
     }
 }
