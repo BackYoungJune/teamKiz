@@ -22,7 +22,7 @@ public class J_ActionController : MonoBehaviour
     [SerializeField]
     private LayerMask layerMask;
 
-    //[SerializeField]
+    [SerializeField]
     //private Text actionText;
 
     yPlayerInput playerInput;
