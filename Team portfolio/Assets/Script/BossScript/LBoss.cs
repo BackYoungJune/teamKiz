@@ -228,10 +228,10 @@ public class LBoss : yLivingEntity
                     else if(myFLAG == FLAG.HEAVY)
                     {
                         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                        if (SelectPattern < 0.5f)
-                            ChangeState(STATE.THROWING);
-                        //if (SelectPattern < 1f)
-                        //    ChangeState(STATE.DIE);
+                        //if (SelectPattern < 0.5f)
+                        //    ChangeState(STATE.THROWING);
+                        if (SelectPattern < 1f)
+                            ChangeState(STATE.DIE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
@@ -506,9 +506,13 @@ public class LBoss : yLivingEntity
         yield return new WaitForSeconds(0.5f);
         ChangeState(STATE.APPROACHING);
     }
-
     public override void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
+        if(mySTATE == STATE.DIE)
+        {
+            base.OnDamage(damage, hitPoint, hitNormal);
+            MN_UIManager.Instance.UpdateBossHealth(damage);
+        }
         switch (myFLAG)
         {
             case FLAG.NORMAL:
