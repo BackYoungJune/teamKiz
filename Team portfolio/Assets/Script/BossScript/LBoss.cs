@@ -17,6 +17,7 @@ public class LBoss : yLivingEntity
     //메시 콜라이더 업데이트부 애니메이션 재생에 따라서 콜라이더도 계속 움직여준다.
     public SkinnedMeshRenderer meshRenderer;
     public MeshCollider collider;
+    Mesh colliderMesh;
     protected override void OnEnable()
     {
         startHealth = 30000f;
@@ -28,7 +29,9 @@ public class LBoss : yLivingEntity
     }
     public void UpdateCollider()
     {
-        Mesh colliderMesh = new Mesh();
+        if(colliderMesh != null)
+            Destroy(colliderMesh);
+        colliderMesh = new Mesh();
         meshRenderer.BakeMesh(colliderMesh);
         collider.sharedMesh = null;
         collider.sharedMesh = colliderMesh;
@@ -228,10 +231,10 @@ public class LBoss : yLivingEntity
                     else if(myFLAG == FLAG.HEAVY)
                     {
                         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-                        //if (SelectPattern < 0.5f)
-                        //    ChangeState(STATE.THROWING);
-                        if (SelectPattern < 1f)
-                            ChangeState(STATE.DIE);
+                        if (SelectPattern < 0.5f)
+                            ChangeState(STATE.THROWING);
+                        //if (SelectPattern < 1f)
+                        //    ChangeState(STATE.DIE);
                         else
                             ChangeState(STATE.LEAPATTACK);
                     }
