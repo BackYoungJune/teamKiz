@@ -83,7 +83,7 @@ public class StoreController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Cursor.visible);
+        //Debug.Log(Cursor.visible);
         if (Input.GetKeyDown(KeyCode.I))
         {
             ChangeState(STATE.NORAML);

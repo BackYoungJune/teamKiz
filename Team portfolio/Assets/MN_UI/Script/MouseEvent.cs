@@ -48,7 +48,7 @@ public class MouseEvent : MonoBehaviour,
     {
         MouseEnter?.Invoke(eventData);
 
-       // Debug.Log("OnPointerEnter");
+       //Debug.Log("OnPointerEnter");
 
     }
     public void OnPointerExit(PointerEventData eventData)

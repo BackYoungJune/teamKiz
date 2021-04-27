@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BossStage_UI_Manager : MonoBehaviour
 {
+    MouseEvent mouseEvent;
 
     GameObject GameOverUI;
     GameObject GameWin;
@@ -59,6 +60,9 @@ public class BossStage_UI_Manager : MonoBehaviour
                 break;
             case STATE.PLAYER_DEAD:
                 {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
                     GameObject allclose1 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
                     ItemCanvas.SetActive(false);
@@ -71,6 +75,9 @@ public class BossStage_UI_Manager : MonoBehaviour
                 break;
             case STATE.BOSS_DEAD:
                 {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+
                     GameObject allclose2 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
                     ItemCanvas.SetActive(false);
