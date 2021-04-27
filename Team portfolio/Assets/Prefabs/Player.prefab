@@ -2842,7 +2842,7 @@ MonoBehaviour:
   storeOpened: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 2147485953
+    m_Bits: 2147483905
   actionText: {fileID: 0}
 --- !u!1 &6556004163866690782
 GameObject:

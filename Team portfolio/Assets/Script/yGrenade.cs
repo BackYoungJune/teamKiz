@@ -50,9 +50,10 @@ public class yGrenade : MonoBehaviour
         explosionEffect();
     }
 
-    public void explosionEffect()
+    public bool explosionEffect()
     {
         Instantiate(ExplosionEffect, transform.position, transform.rotation);
         LastPosition = transform.position;
+        return true;
     }
 }
