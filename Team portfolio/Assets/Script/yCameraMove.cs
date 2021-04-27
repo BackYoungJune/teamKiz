@@ -40,7 +40,13 @@ public class yCameraMove : MonoBehaviour
                 break;
             case STATE.Shake:
                 CameraAnim.SetTrigger("Shake");
+                ChangeState(STATE.NORMAL);
                 break;
         }
+    }
+
+    void Invoke()
+    {
+        ChangeState(STATE.NORMAL);
     }
 }

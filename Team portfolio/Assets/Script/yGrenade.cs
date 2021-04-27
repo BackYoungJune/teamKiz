@@ -68,7 +68,7 @@ public class yGrenade : MonoBehaviour
 
     public bool explosionEffect()
     {
-        Instantiate(ExplosionEffect, transform.position, transform.rotation);
+        Instantiate(ExplosionEffect, transform.position + Vector3.up, transform.rotation);
         LastPosition = transform.position;
         return true;
     }
