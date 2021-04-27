@@ -3961,8 +3961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetFire: 0.12
-  throwTime: 3
   myState: 0
 --- !u!1 &8652601330073207134
 GameObject:
