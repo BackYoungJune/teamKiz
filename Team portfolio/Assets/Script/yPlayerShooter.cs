@@ -9,6 +9,7 @@ public class yPlayerShooter : MonoBehaviour
 
     yPlayerInput playerInput; // 플레이어의 입력
     public Animator playerAnimator; // 애니메이터 컴포넌트
+    yCameraMove CameraMove;     // 플레이어 카메라 움직임
 
     public float aimFov = 40.0f;        // 조준시 카메라 view
     public float defaultFov = 60.0f;    // 평소 카메라 view
@@ -20,6 +21,7 @@ public class yPlayerShooter : MonoBehaviour
         // 사용할 컴포넌트들을 가져오기
         playerInput = GetComponentInParent<yPlayerInput>();
         playerAnimator = GetComponent<Animator>();
+        CameraMove = FindObjectOfType<yCameraMove>();
     }
 
     void OnEnable()
@@ -39,7 +41,7 @@ public class yPlayerShooter : MonoBehaviour
     {
         //입력을 감지하고 총 발사하거나 재장전
         //입력을 감지하고 총을 발사하거나 재장전
-        if (playerInput.fire)
+        if (playerInput.fire && !playerInput.tab)
         {
             // 발사 입력 감지 시 총 발사
             if (Riple.Fire())
@@ -62,11 +64,13 @@ public class yPlayerShooter : MonoBehaviour
         if (playerInput.aim)
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, aimFov, Time.deltaTime * fovSpeed);
+            CameraMove.ChangeState(yCameraMove.STATE.AIM);
         }
         // 평소상태 카메라 뷰 조정
         else
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, defaultFov, Time.deltaTime * fovSpeed);
+            CameraMove.ChangeState(yCameraMove.STATE.NORMAL);
         }
 
         /* 유석 - 남은 탄알 UI 갱신하기 

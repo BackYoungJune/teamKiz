@@ -965,11 +965,6 @@ PrefabInstance:
       propertyPath: actionText
       value: 
       objectReference: {fileID: 1460723219}
-    - target: {fileID: 7294550087048080043, guid: 8b15b1fb63177c44090f5854e19fceea,
-        type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 2147483905
-      objectReference: {fileID: 0}
     - target: {fileID: 9109240618937927078, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_Name
