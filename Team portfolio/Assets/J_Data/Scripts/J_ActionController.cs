@@ -15,6 +15,7 @@ public class J_ActionController : MonoBehaviour
     private bool storeActivated = false;    // 상점을 열 수 있을 시 true
     public bool storeOpened = false;        // 상점이 열리면 true
 
+    private bool isHolding = false;
 
     private RaycastHit hitInfo;             // 충돌체 정보 저장
 
@@ -28,6 +29,7 @@ public class J_ActionController : MonoBehaviour
     yPlayerInput playerInput;
 
     J_ItemManager itemManager;
+
 
     private void Start()
     {
@@ -48,7 +50,8 @@ public class J_ActionController : MonoBehaviour
         {
             CheckItem();
             CanPickUP();
-            CanExplodable();
+            CanHolding();
+            SetTimeBomb();
         }
     }
 
@@ -93,12 +96,35 @@ public class J_ActionController : MonoBehaviour
         }
     }
 
-    private void CanExplodable()
+    private void CanHolding()
     {
-        if(ignitionActivated)
+        if(hitInfo.transform != null && !isHolding)
         {
-            Debug.Log("set bool");
-            hitInfo.transform.GetComponent<J_TimeBomb>().SetPlanted(true);
+            //Debug.Log("set bool");
+            //hitInfo.transform.GetComponent<J_TimeBomb>().SetPlanted(true);
+
+            isHolding = true;
+            Transform parent = GameObject.Find("holdPos").GetComponent<Transform>();
+            GameObject child = hitInfo.transform.gameObject;
+            Rigidbody rb = hitInfo.transform.GetComponent<Rigidbody>();
+            //rb.useGravity = false;
+            rb.isKinematic = true;  
+            child.transform.parent = parent;
+            child.transform.position = parent.position;
+            rb.freezeRotation = true;
+        }
+    }
+
+    private void SetTimeBomb()
+    {
+        if(isHolding && hitInfo.transform.tag == "Wall")
+        {
+            Transform parent = GameObject.Find("T_Position").GetComponent<Transform>();
+            GameObject child = GameObject.Find("TimeBomb");
+            // 평면화 버그
+            child.transform.parent = parent;
+            child.transform.position = parent.position;
+            //child.GetComponent<J_TimeBomb>().SetPlanted(true);
         }
     }
 
@@ -113,12 +139,17 @@ public class J_ActionController : MonoBehaviour
 
             if(hitInfo.transform.tag == "Explodable")
             {
-                ExplodableInfo();
+                HoldInfo();
             }
 
             if (hitInfo.transform.tag == "VendingMachine" && !storeOpened)
             {
                 InteractVMachine();
+            }
+
+            if(hitInfo.transform.tag == "Wall" && isHolding)
+            {
+                SetTimeBombInfo();
             }
         }
         else
@@ -134,12 +165,19 @@ public class J_ActionController : MonoBehaviour
         actionText.text = hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 " + "<color=yellow>" + "E" + "</color>";
     }
 
-    private void ExplodableInfo()
+    private void HoldInfo()
+    {
+        actionText.gameObject.SetActive(true);
+        actionText.text = "Hold(E)";
+    }
+
+    private void SetTimeBombInfo()
     {
         ignitionActivated = true;
         actionText.gameObject.SetActive(true);
-        actionText.text = "기폭(E)";
+        actionText.text = "폭탄설치(E)";
     }
+
     private void InteractVMachine()
     {
         storeActivated = true;
