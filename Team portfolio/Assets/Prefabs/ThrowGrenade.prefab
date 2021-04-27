@@ -102,6 +102,9 @@ MonoBehaviour:
   damage: 100
   ExplosionEffect: {fileID: 100002, guid: 6890a03af913b874092fbb1e8337747d, type: 3}
   LastPosition: {x: 0, y: 0, z: 0}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 6144
 --- !u!135 &6823620636967713895
 SphereCollider:
   m_ObjectHideFlags: 0

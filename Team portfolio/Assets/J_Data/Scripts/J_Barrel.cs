@@ -15,10 +15,13 @@ public class J_Barrel : MonoBehaviour
     [SerializeField]
     private LayerMask applyLayer;
 
+    yCameraMove CameraMove;
+
     // Start is called before the first frame update
     void Start()
     {
         barrelRigid = GetComponent<Rigidbody>();
+        CameraMove = FindObjectOfType<yCameraMove>();
     }
     
     public void Explode()
@@ -66,6 +69,8 @@ public class J_Barrel : MonoBehaviour
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hitColliders[i].ClosestPoint(transform.position), transform.position - hitColliders[i].transform.position);
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+                    // 카메라를 진동시킨다
+                    CameraMove.ChangeState(yCameraMove.STATE.Shake);
                 }
             }
 
