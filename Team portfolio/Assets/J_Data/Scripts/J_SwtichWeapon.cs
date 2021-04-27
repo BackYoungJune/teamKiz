@@ -32,6 +32,7 @@ public class J_SwtichWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         StateProcess();
         //Debug.Log(myWeapon);
         //if (playerInput.swap0)
@@ -60,30 +61,33 @@ public class J_SwtichWeapon : MonoBehaviour
         switch(myWeapon)
         {
             case HOLDING_WEAPON.FIST:
+                myAnim.SetTrigger("Swap");
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
-                myAnim.SetTrigger("Swap");
+                
                 break;
             case HOLDING_WEAPON.AXE:
+                myAnim.SetTrigger("Swap");
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerAxe>().enabled = true;
-                myAnim.SetTrigger("Swap");
+                
                 // UI 이미지 변경
                 break;
             case HOLDING_WEAPON.GUN:
+                myAnim.SetTrigger("Swap");
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = true;
-                myAnim.SetTrigger("Swap");
+                
                 // UI 이미지 변경    
                 break;
             case HOLDING_WEAPON.GRENADE:
+                myAnim.SetTrigger("Swap");
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = true;
-                myAnim.SetTrigger("Swap");
                 break;
         }
     }

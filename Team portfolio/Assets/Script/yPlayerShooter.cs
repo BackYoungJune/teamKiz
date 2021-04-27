@@ -41,7 +41,7 @@ public class yPlayerShooter : MonoBehaviour
     {
         //입력을 감지하고 총 발사하거나 재장전
         //입력을 감지하고 총을 발사하거나 재장전
-        if (playerInput.fire)
+        if (playerInput.fire && !playerInput.tab)
         {
             // 발사 입력 감지 시 총 발사
             if (Riple.Fire())
