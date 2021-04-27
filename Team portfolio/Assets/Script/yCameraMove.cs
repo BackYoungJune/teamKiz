@@ -6,54 +6,47 @@ public class yCameraMove : MonoBehaviour
 {
     Animator CameraAnim;
     yPlayerInput Input;
-    yGrenade Grenade;
+
+    J_Barrel Barrel;
+
+    public enum STATE
+    {
+        NORMAL, AIM, Shake
+    }
+    public STATE myState = STATE.NORMAL;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
         // 사용할 컴포넌트들을 가져오기
         CameraAnim = GetComponent<Animator>();
         Input = FindObjectOfType<yPlayerInput>();
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeState(STATE s)
     {
-        Aim();
-        Explosion();
-    }
+        if (myState == s) return;
+        myState = s;
 
-    void Aim()
-    {
-        if (Input.aim)
+        switch(myState)
         {
-            CameraAnim.SetBool("aim", true);
-        }
-        else
-        {
-            CameraAnim.SetBool("aim", false);
+            case STATE.NORMAL:
+                CameraAnim.SetBool("aim", false);
+                break;
+            case STATE.AIM:
+                CameraAnim.SetBool("aim", true);
+                break;
+            case STATE.Shake:
+                CameraAnim.SetTrigger("Shake");
+                ChangeState(STATE.NORMAL);
+                break;
         }
     }
 
-    void Explosion()
+    void Invoke()
     {
-
+        ChangeState(STATE.NORMAL);
     }
-
-    IEnumerator GrenadeSearching()
-    {
-        if (Grenade) yield break;
-        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 10, Vector3.up, 0, LayerMask.GetMask("Grenade"));
-
-        foreach (RaycastHit hit in rayHits)
-        {
-            if (hit.transform.gameObject.tag == "Grenade")
-            {
-                Grenade = hit.collider.GetComponent<yGrenade>();
-            }
-        }
-
-       yield return new WaitForSeconds(1.0f);
-    }
-
 }

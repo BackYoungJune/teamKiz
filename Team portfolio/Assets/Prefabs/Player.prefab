@@ -2842,7 +2842,7 @@ MonoBehaviour:
   storeOpened: 0
   layerMask:
     serializedVersion: 2
-    m_Bits: 2147485953
+    m_Bits: 2147483905
   actionText: {fileID: 0}
 --- !u!1 &6556004163866690782
 GameObject:
@@ -3856,6 +3856,7 @@ GameObject:
   - component: {fileID: 1870922436230151342}
   - component: {fileID: 2336406700161195468}
   - component: {fileID: 1959493707}
+  - component: {fileID: 869757543}
   m_Layer: 11
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3948,6 +3949,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &869757543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615092176455469442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myState: 0
 --- !u!1 &8652601330073207134
 GameObject:
   m_ObjectHideFlags: 0

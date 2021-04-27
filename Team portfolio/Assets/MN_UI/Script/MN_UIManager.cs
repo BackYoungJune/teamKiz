@@ -51,6 +51,9 @@ public class MN_UIManager : MonoBehaviour
     //플레이어 체력 갱신
 
 
+    // 좀비 킬
+    public bool IsZombieKill { get; set; }
+
     public bool Inventory { get; set; }
     public void UpdatePlayerHealth(float Health)
     {

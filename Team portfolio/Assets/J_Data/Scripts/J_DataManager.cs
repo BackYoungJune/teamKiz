@@ -59,4 +59,7 @@ public class ItemData
     public int s_remainGrenade;
     public int s_remainArmor;
     public int s_remainMoney;
+
+    // Spawn Trigger List 추가
+    // 특정 Spawn Trigger 가 한 번 활성화 되었으면 false로 변경해서 작동하지 않도록?
 }
