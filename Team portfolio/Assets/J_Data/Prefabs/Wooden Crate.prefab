@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3448373066652844572}
   - component: {fileID: 3448373066652844643}
   - component: {fileID: 3448373066652844642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wooden Crate
   m_TagString: BREAKABLE
   m_Icon: {fileID: 0}

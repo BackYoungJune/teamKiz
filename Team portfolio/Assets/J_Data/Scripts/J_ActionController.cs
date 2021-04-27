@@ -6,30 +6,25 @@ using UnityEngine.UI;
 public class J_ActionController : MonoBehaviour
 {
     [SerializeField]
-    private float range;                    // 습득 가능한 최대 거리
+    private float range;                    // 상호작용 가능한 최대 거리
+    
+    [SerializeField]
+    private LayerMask layerMask;            // 아이템 레이어에만 반응하도록 레이어 마스크를 설정
 
-    private bool pickupActivated = false;   // 습득 가능할 시 true
-
-    private bool ignitionActivated = false; // 폭파 가능할 시 ture
-
-    private bool storeActivated = false;    // 상점을 열 수 있을 시 true
-    public bool storeOpened = false;        // 상점이 열리면 true
-
-    private bool isHolding = false;
+    [SerializeField]
+    private Text actionText;                // info text
 
     private RaycastHit hitInfo;             // 충돌체 정보 저장
 
-    // 아이템 레이어에만 반응하도록 레이어 마스크를 설정
-    [SerializeField]
-    private LayerMask layerMask;
-
-    [SerializeField]
-    private Text actionText;
+    private bool pickupActivated = false;   // 습득 가능할 시 true
+    private bool ignitionActivated = false; // 폭파 가능할 시 ture
+    private bool storeActivated = false;    // 상점을 열 수 있을 시 true
+    public bool storeOpened = false;        // 상점이 열리면 true
+    private bool holdActivated = false;     // 들 수 있을 때 true
+    private bool isHolding = false;         // 들고 있으면 true
 
     yPlayerInput playerInput;
-
     J_ItemManager itemManager;
-
 
     private void Start()
     {
@@ -62,7 +57,12 @@ public class J_ActionController : MonoBehaviour
             if(hitInfo.transform != null)
             {
                 J_Item hitItem = hitInfo.transform.GetComponent<J_ItemPickup>().item;
-                hitItem.amount++;       // 아이템 갯수 증가
+                //hitItem.amount++;       // 아이템 갯수 증가
+                // pick potion
+                if(hitItem.itemType == J_Item.ItemType.Used)
+                {
+                    J_ItemManager.instance.remainPotion++;
+                }
                 // pick ammo
                 if(hitItem.itemType == J_Item.ItemType.Ammo)
                 {
@@ -73,11 +73,17 @@ public class J_ActionController : MonoBehaviour
                 {
                     GetComponentInParent<yPlayerHealth>().RestoreShield(1);
                 }
+                // pick grenade
+                if (hitItem.itemType == J_Item.ItemType.Grenade)
+                {
+                    J_ItemManager.instance.remainGrenade++;
+                }
                 // pick money
-                if(hitItem.itemType == J_Item.ItemType.Etc)
+                if (hitItem.itemType == J_Item.ItemType.Etc)
                 {
                     J_ItemManager.instance.remainMoney += hitItem.restore;                
                 }
+                
 
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
@@ -98,12 +104,8 @@ public class J_ActionController : MonoBehaviour
 
     private void CanHolding()
     {
-        if(hitInfo.transform != null && !isHolding)
+        if(hitInfo.transform != null && holdActivated)
         {
-            //Debug.Log("set bool");
-            //hitInfo.transform.GetComponent<J_TimeBomb>().SetPlanted(true);
-
-            isHolding = true;
             Transform parent = GameObject.Find("holdPos").GetComponent<Transform>();
             GameObject child = hitInfo.transform.gameObject;
             Rigidbody rb = hitInfo.transform.GetComponent<Rigidbody>();
@@ -112,19 +114,30 @@ public class J_ActionController : MonoBehaviour
             child.transform.parent = parent;
             child.transform.position = parent.position;
             rb.freezeRotation = true;
+            isHolding = true;
         }
     }
 
     private void SetTimeBomb()
     {
-        if(isHolding && hitInfo.transform.tag == "Wall")
+        if(ignitionActivated && hitInfo.transform.tag == "Wall")
         {
+            // ScriptedObj/TNTPOS 에 설치
             Transform parent = GameObject.Find("T_Position").GetComponent<Transform>();
             GameObject child = GameObject.Find("TimeBomb");
-            // 평면화 버그
             child.transform.parent = parent;
-            child.transform.position = parent.position;
-            //child.GetComponent<J_TimeBomb>().SetPlanted(true);
+            child.transform.localPosition = new Vector3(0.6f, 0.0f, 0.0f);
+            child.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            child.GetComponent<J_TimeBomb>().SetPlanted(true);
+            isHolding = false;
+            
+            /*
+            Destroy(GameObject.Find("TimeBomb"));
+            GameObject bomb = GameObject.Find("T_Position").transform.Find("SetTimeBomb").gameObject;
+            bomb.SetActive(true);
+            bomb.GetComponent<J_TimeBomb>().SetPlanted(true);
+            isHolding = false;
+            */
         }
     }
 
@@ -137,7 +150,7 @@ public class J_ActionController : MonoBehaviour
                 ItemInfoAppear();
             }
 
-            if(hitInfo.transform.tag == "Explodable")
+            if(hitInfo.transform.tag == "Explodable" && !isHolding)
             {
                 HoldInfo();
             }
@@ -167,6 +180,7 @@ public class J_ActionController : MonoBehaviour
 
     private void HoldInfo()
     {
+        holdActivated = true;
         actionText.gameObject.SetActive(true);
         actionText.text = "Hold(E)";
     }
@@ -188,6 +202,7 @@ public class J_ActionController : MonoBehaviour
     private void InfoDisappear()
     {
         pickupActivated = false;
+        holdActivated = false;
         ignitionActivated = false;
         storeActivated = false;
         actionText.gameObject.SetActive(false);

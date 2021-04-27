@@ -42,6 +42,7 @@ public class J_TimeBomb : MonoBehaviour
     void Explosion()
     {
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        GetComponent<J_Explode>().IndirectExplosion(transform.position);
         Destroy(gameObject);
     }
 }

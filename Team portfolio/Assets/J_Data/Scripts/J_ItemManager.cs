@@ -62,7 +62,6 @@ public class J_ItemManager : MonoBehaviour, J_IItem
             playerHealth.RestoreHealth(potionInfo.restore);
            // playerHealth.RestoreHealth(20f);
             remainPotion--;
-            potionInfo.amount--;
             Debug.Log("포션 사용");
             Debug.Log("잔여 포션: " + remainPotion);
         }
@@ -83,7 +82,6 @@ public class J_ItemManager : MonoBehaviour, J_IItem
         magAmmo = magCapacity;
         remainGrenade = 2;
         remainPotion = 5;
-        potionInfo.amount = 5;
         remainArmor = 3;
         //유석 추가
         remainMoney = 1000;
@@ -93,18 +91,11 @@ public class J_ItemManager : MonoBehaviour, J_IItem
             Potion_Text.text = remainPotion.ToString();
             Granade_Text.text = remainGrenade.ToString();
         }
-        
-        //ammoInfo.amount = 100;        // 총알 수
-        //potionInfo.amount = 10;     // 포션 수
-        //grenadeInfo.amount = 3;     // 수류탄 수 
-        //remainPotion = 5;
 
     }
 
     private void Update()
     {
-       
-       // remainPotion = potionInfo.amount;
 
     }
 }
