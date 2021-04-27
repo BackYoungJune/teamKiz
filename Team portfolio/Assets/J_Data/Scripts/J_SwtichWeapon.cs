@@ -19,13 +19,14 @@ public class J_SwtichWeapon : MonoBehaviour
     GameObject weaponIcon;
 
     yPlayerInput playerInput;
-    
+    Animator myAnim;
     public HOLDING_WEAPON GetWeapon() { return myWeapon; }
 
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponentInParent<yPlayerInput>();
+        myAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -62,23 +63,27 @@ public class J_SwtichWeapon : MonoBehaviour
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
+                myAnim.SetTrigger("Swap");
                 break;
             case HOLDING_WEAPON.AXE:
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerAxe>().enabled = true;
+                myAnim.SetTrigger("Swap");
                 // UI 이미지 변경
                 break;
             case HOLDING_WEAPON.GUN:
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = true;
+                myAnim.SetTrigger("Swap");
                 // UI 이미지 변경    
                 break;
             case HOLDING_WEAPON.GRENADE:
                 GetComponent<yPlayerAxe>().enabled = false;
                 GetComponent<yPlayerShooter>().enabled = false;
                 GetComponent<yPlayerGrenade>().enabled = true;
+                myAnim.SetTrigger("Swap");
                 break;
         }
     }
