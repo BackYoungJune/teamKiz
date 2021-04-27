@@ -48,7 +48,7 @@ public class yGrenade : MonoBehaviour
                 }
             }
 
-            else if(hit.transform.gameObject.tag == "Player")
+            if(hit.transform.gameObject.tag == "Player")
             {
                 Debug.Log("Player");
 
