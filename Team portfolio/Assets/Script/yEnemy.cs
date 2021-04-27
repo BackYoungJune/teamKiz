@@ -289,6 +289,9 @@ public class yEnemy : yLivingEntity
         myAnim.SetTrigger("Die");
         // 스테이트 변경
         ChangeState(STATE.ESCAPE);
+
+        MN_UIManager.Instance.IsZombieKill = true;
+        Debug.Log("Zombie Kill");
     }
 
     // 데미지를 입었을때 실행할 처리

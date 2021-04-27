@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class WeaponChangeUI : MonoBehaviour
 {
-    MouseEvent mouseEvent;
+    public MouseEvent mouseEvent;
     //public float AlphaThreshold = 0.1f;
 
     public enum STATE
@@ -26,18 +26,29 @@ public class WeaponChangeUI : MonoBehaviour
     
     // Start is called before the first frame update
     bool IsClick;
-    void Start()
+
+    private void Awake()
     {
         myImage = GetComponent<Image>();
         Vector3 startScale = this.transform.localScale;
         Vector3 scale = new Vector3(4.5f, 9f, 1f);
 
-        mouseEvent = GetComponent<MouseEvent>();
-        mouseEvent.MouseEnter += (PointerEventData data) => { this.transform.localScale = scale; };
-        mouseEvent.MouseExitExit += (PointerEventData data) => { this.transform.localScale = startScale; ; };
+        mouseEvent = GetComponent<MouseEvent>();        
+        mouseEvent.MouseEnter += (PointerEventData data) => { this.transform.localScale = scale;  };
+        mouseEvent.MouseExitExit += (PointerEventData data) => { this.transform.localScale = startScale; };
+    }
 
+    void Start()
+    {
+    
+        //int a = 0;
         //mouseEvent.MouseDown += (PointerEventData data) => { IsClick = true; };
     }
+
+    //public void OnPointerEnter(PointerEventData eventData)
+    //{
+    //    Debug.Log("OnPointerEnter");
+    //}
 
     // Update is called once per frame
     void Update()
