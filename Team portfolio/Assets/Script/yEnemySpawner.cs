@@ -37,21 +37,13 @@ public class yEnemySpawner : MonoBehaviour
         {
             return;
         }
-
-        // 적을 모두 물리친 경우 다음 스폰 실행
-        if (ChangedWave)
-        {
-            SpawnWave();
-        }
-
-        /* wave UI 갱신 */
     }
+    
 
-
-    void SpawnWave()
+    public void SpawnWave()
     {
-        // 추가 생성을 막기위해 SpawnWave를 막는다
-        ChangedWave = false;
+        wave++;
+
         // 현재 웨이브 * 1.5를 반올림한 수만큼 적 생성
         // RoundToInt는 float 값을 입력받고 입력값을 반올림한 정수를 반환한다.
         int spawnCount = Mathf.RoundToInt(wave * 2.5f);
