@@ -10,7 +10,7 @@ public class J_Barrel : MonoBehaviour
     private Rigidbody barrelRigid;
 
     public float explosionRadius = 10.0f;
-    public float damage = 100.0f;
+    public float damage = 75.0f;
 
     [SerializeField]
     private LayerMask applyLayer;

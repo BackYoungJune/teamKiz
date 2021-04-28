@@ -14,17 +14,16 @@ public class yEnemySpawner : MonoBehaviour
     public float damageMax = 40f; // 최대 공격력
     public float damageMin = 20f; // 최소 공격력
 
-    public float healthMax = 200f; // 최대 체력
-    public float healthMin = 100f; // 최소 체력
+    public float health1 = 100f; // 최소 체력
 
-    public float speedMax = 3f; // 최대 속도
+    public float speedMax = 10f; // 최대 속도
     public float speedMin = 1f; // 최소 속도
 
     public float scoreMax = 100f; // 최대 점수
     public float scoreMin = 80f; // 최소 점수
 
     public List<yEnemy> enemies = new List<yEnemy>(); // 생성된 적들을 담는 리스트
-    private int wave; // 현재 웨이브
+    public int wave; // 현재 웨이브
 
     Transform spawnPoint;   // 스폰 포인트 결정
     public bool ChangedWave = true;    // 웨이브 생성 조건
@@ -46,7 +45,7 @@ public class yEnemySpawner : MonoBehaviour
 
         // 현재 웨이브 * 1.5를 반올림한 수만큼 적 생성
         // RoundToInt는 float 값을 입력받고 입력값을 반올림한 정수를 반환한다.
-        int spawnCount = Mathf.RoundToInt(wave * 4.5f);
+        int spawnCount = Mathf.RoundToInt(wave * 4.5f + 15);
 
         // spawnCount만큼 적 생성
         for (int i = 0; i < spawnCount; i++)
@@ -62,7 +61,7 @@ public class yEnemySpawner : MonoBehaviour
     private void CreateEnemy(float intensity)
     {
         // intensity를 기반으로 적의 능력치 결정
-        float health = Mathf.Lerp(healthMin, healthMax, intensity);
+        float health = health1;
         float damage = Mathf.Lerp(damageMin, damageMax, intensity);
         float speed = Mathf.Lerp(speedMin, speedMax, intensity);
         float score = Mathf.Lerp(scoreMin, scoreMax, intensity);
@@ -76,9 +75,11 @@ public class yEnemySpawner : MonoBehaviour
         // 생성한 적의 능력치와 추적 대상 설정
         enemy.Setup(health, damage, speed);
 
+        enemy.ChangeState(yEnemy.STATE.SEARCHING);
+
         // 생성한 적을 리스트에 추가
         enemies.Add(enemy);
-        
+
         // 적의 onDeath 이벤트에 익명 메서드 등록
         // 사망한 적을 리스트에서 제거
         enemy.onDeath += () => enemies.Remove(enemy);
