@@ -59,7 +59,7 @@ public class StoreController : MonoBehaviour
 
         Sell_UI = GameObject.Find("Sell_UI");
         StoreOn = GameObject.Find("StoreOn");
-        Main_Canvas = GameObject.Find("MainCanvas");
+        Main_Canvas = GameObject.Find("Main_Canvas");
         Item_Canvas = GameObject.Find("Item_Canvas");
 
 
@@ -209,9 +209,7 @@ public class StoreController : MonoBehaviour
                         J_ItemManager.instance.remainMoney += (int)takeMoney;
                         Sell_UI.SetActive(false);
                         IsAssecpt = false;
-
                     }
-
                 }
 
                 break;
