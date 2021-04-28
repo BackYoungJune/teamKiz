@@ -106,13 +106,13 @@ public class yEnemySpawner : MonoBehaviour
                 spawnPoint = Wave1spawnPoints[Random.Range(0, Wave1spawnPoints.Length)];
                 break;
             case 2:
-                spawnPoint = Wave1spawnPoints[Random.Range(0, Wave1spawnPoints.Length)];
+                spawnPoint = Wave2spawnPoints[Random.Range(0, Wave2spawnPoints.Length)];
                 break;
             case 3:
-                spawnPoint = Wave1spawnPoints[Random.Range(0, Wave1spawnPoints.Length)];
+                spawnPoint = Wave3spawnPoints[Random.Range(0, Wave3spawnPoints.Length)];
                 break;
             case 4:
-                spawnPoint = Wave1spawnPoints[Random.Range(0, Wave1spawnPoints.Length)];
+                spawnPoint = Wave4spawnPoints[Random.Range(0, Wave4spawnPoints.Length)];
                 break;
         }
         return spawnPoint;

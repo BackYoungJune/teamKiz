@@ -22,14 +22,6 @@ public class ySpringArm : MonoBehaviour
 
     public bool ControllerRotate = true;
 
-    yGrenade Grenade;
-    yPlayerGrenade playerGrenade;
-
-    public float ShakeAmount = 0.3f;
-    public float ShakeTime = 10.0f;
-    Vector3 InitPoint;
-    Coroutine coroutine;
-
     int count = 0;
 
     // Start is called before the first frame update
@@ -46,19 +38,12 @@ public class ySpringArm : MonoBehaviour
         {
             TargetRot = transform.rotation.eulerAngles;
         }
-
-        playerGrenade = FindObjectOfType<yPlayerGrenade>();
-
-
-
-        // 초기 위치를 현재 위치로 초기화한다
-        InitPoint = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
         {
             // LookUp
             TargetRot.x += -Input.GetAxis("Mouse Y") * RotSpeed * Time.smoothDeltaTime;
@@ -110,67 +95,5 @@ public class ySpringArm : MonoBehaviour
         {
             myCam.position = transform.position + (-transform.forward * CurDist);
         }
-
-        //Shake();
-        
-    }
-
-    void Shake()
-    {
-        if (playerGrenade.myState == yPlayerGrenade.STATE.SHOOT && count < 1)
-        {
-            InitPoint = transform.localPosition;
-            count++;
-            StartCoroutine(Distance());
-
-            //ShakeTime = 1.0f;
-            transform.localPosition = InitPoint;
-            ShakeTime = 3f;
-        }
-        Debug.Log("transform.localPosition : " + transform.localPosition);
-        Debug.Log("InitPoint : " + InitPoint);
-    }
-
-    IEnumerator Distance()
-    {
-        yield return new WaitForSeconds(1.5f);
-        RaycastHit[] rayHits = Physics.SphereCastAll(transform.position, 20, Vector3.up, 20.0f);
-
-        foreach (RaycastHit hit in rayHits)
-        {
-            if (hit.transform.gameObject.tag == "Grenade")
-            {
-                // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
-                Grenade = hit.collider.GetComponent<yGrenade>();
-            }
-        }
-        //Debug.Log(Grenade);
-
-        yield return new WaitForSeconds(3.0f);
-
-        //Debug.Log("Greande.LastPosition : " + Greande.LastPosition);
-        float dist = Vector3.Distance(Grenade.LastPosition, transform.position);
-        //Debug.Log("dist : " + dist);
-        if (Grenade.LastPosition != Vector3.zero)
-        {
-            //Debug.Log("first");
-            //Debug.Log("ShakeTime : " + ShakeTime);
-            while (ShakeTime >= Mathf.Epsilon)
-            {
-                //Debug.Log("second");
-                if (dist < 20.0f)
-                {
-                    //Debug.Log("third");
-                    //Debug.Log("transform.position : " + transform.position);
-                    transform.localPosition = (Vector3)Random.insideUnitSphere * ShakeAmount + InitPoint;
-                    ShakeTime -= Time.deltaTime;
-                    //Debug.Log("ShakeTime : " + ShakeTime);
-                }
-
-                //yield return null;
-            }
-        }
-        count--;
-        
     }
 }

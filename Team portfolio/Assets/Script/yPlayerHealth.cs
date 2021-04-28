@@ -66,15 +66,9 @@ public class yPlayerHealth : yLivingEntity
         if (J_ItemManager.instance.remainArmor > 0)
         {
             // 데미지의 반만큼 체력 감소
-            health -= damage / 2;
+            damage -= damage / 2;
             // 보호막 -1
             J_ItemManager.instance.remainArmor--;
-        }
-        // 쉴드가 존재하지 않으면
-        else
-        {
-            // 데미지만큼 체력 감소
-            health -= damage;
         }
 
         // LivingEntity의 OnDamage() 실행(데미지 적용)

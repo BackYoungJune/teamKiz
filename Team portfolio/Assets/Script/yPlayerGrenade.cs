@@ -30,9 +30,13 @@ public class yPlayerGrenade : MonoBehaviour
 
     public Transform m_Target;
     public float m_InitialAngle = 30f; // 처음 날라가는 각도
-    private Rigidbody m_Rigidbody;
+    //private Rigidbody m_Rigidbody;
 
     J_ItemManager itemManager;
+    LayerMask ClickMask;
+    float time;
+    Vector3 V0;
+    //Rigidbody rigid;
 
     void Awake()
     {
@@ -41,6 +45,7 @@ public class yPlayerGrenade : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerAnimEvent = GetComponent<yPlayerAnimEvent>();
         itemManager = GetComponent<J_ItemManager>();
+        //rigid = GetComponent<Rigidbody>();
 
         // 수류탄 던지는 동작중에 던지는 프레임까지 오면 이벤트를 실행한다
         playerAnimEvent.shoot = OnShoot;
@@ -62,6 +67,8 @@ public class yPlayerGrenade : MonoBehaviour
          UI 처음 수류탄 갯수 갱신 (GrenadeRemain)
         */
         MN_UIManager.Instance.Granade = itemManager.remainGrenade;
+
+        //V0 = rigid.velocity;
 
     }
 
@@ -145,42 +152,95 @@ public class yPlayerGrenade : MonoBehaviour
         }
     }
 
-    public void Line()
-    {
-        Plane playerPlane = new Plane(Vector3.up, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        float hitdist = 0;
+    //public void Line()
+    //{
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    RaycastHit hit;
+    //    Vector3 Target;
+
+    //    if (Physics.Raycast(ray, out hit, 999.0f))
+    //    {
+    //        Target = hit.transform.position;
+    //    }
+        
+        
+    //    float gravity = Physics.gravity.magnitude;
+    //    time = Time.time;
+    //    Vector3 velocity = rigid.velocity;
+    //    velocity.x = gravity * time + V0.x;
+    //    rigid.velocity = velocity;
 
 
-        if (playerPlane.Raycast(ray, out hitdist))
-        {
-            //Vector3 targetPoint = ray.GetPoint;
-            //Vector3 center = (transform.position + targetPo)
-        }
-    }
+        
 
-    public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
-    {
-        float gravity = Physics.gravity.magnitude;
-        float angle = initialAngle * Mathf.Deg2Rad;
 
-        Vector3 planarTarget = new Vector3(target.x, 0, target.z);
-        Vector3 planarPosition = new Vector3(player.x, 0, player.z);
 
-        float distance = Vector3.Distance(planarTarget, planarPosition);
-        float yOffset = player.y - target.y;
+    //    Plane playerPlane = new Plane(Vector3.up, transform.position);
+    //    float hitdist = 0;
 
-        float initialVelocity
-            = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
 
-        Vector3 velocity
-            = new Vector3(0f, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
+    //    if (playerPlane.Raycast(ray, out hitdist))
+    //    {
+    //        //Vector3 targetPoint = ray.GetPoint;
+    //        //Vector3 center = (transform.position + targetPo)
+    //    }
+    //}
 
-        float angleBetweenObjects
-            = Vector3.Angle(Vector3.forward, planarTarget - planarPosition) * (target.x > player.x ? 1 : -1);
-        Vector3 finalVelocity
-            = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
+    //public Vector3 GetDisplacement(float t, float gravity, Vector3 v0, Vector3 x0)
+    //{
 
-        return finalVelocity;
-    }
+
+
+    //    Vector3 Displacement = Vector3.zero;
+    //    Displacement.x = gravity * (0.5f * Mathf.Pow(t, 2)) + v0.x * t + 0;
+    //    return Displacement;
+    //}
+
+    //private void setTrajectoryPoints(Vector3 pStartPosition, Vector3 pVelocity) // 시작 위치, addForce에 들어는 
+    //{
+    //    float velocity = Mathf.Sqrt((pVelocity.x * pVelocity.x) + (pVelocity.y * pVelocity.y)); // 속도 구하기
+    //    float angle = Mathf.Rad2Deg * (Mathf.Atan2(pVelocity.y, pVelocity.x));  // 각도 구하기
+    //    float fTime = 0;
+    //    int tragectoryNum = 10; // 궤도 개수
+    //    List<Vector3> trajectoryPoints = new List<Vector3>();
+
+    //    fTime += 0.1f;
+    //    for (int i = 0; i < tragectoryNum; i++)
+    //    {
+    //        float dx = velocity * fTime * Mathf.Cos(angle * Mathf.Deg2Rad);
+    //        float dy = velocity * fTime * Mathf.Sin(angle * Mathf.Deg2Rad) - (Physics2D.gravity.magnitude * fTime * fTime / 2.0f);
+    //        Vector3 pos = new Vector3(pStartPosition.x + dx, pStartPosition.y + dy, -2);
+    //        trajectoryPoints[i].transform.position = pos;
+    //        trajectoryPoints[i].gameObject.SetActive(true);
+    //        trajectoryPoints[i].transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2(pVelocity.y - (Physics.gravity.magnitude) * fTime, pVelocity.x) * Mathf.Rad2Deg); // 보고있는 각도 계산
+    //        fTime += 0.1f;
+    //    }
+    //}
+
+    //public Vector3 GetVelocity(Vector3 player, Vector3 target, float initialAngle)
+    //{
+    //    float gravity = Physics.gravity.magnitude;
+    //    float angle = initialAngle * Mathf.Deg2Rad;
+
+    //    Vector3 planarTarget = new Vector3(target.x, 0, target.z);
+    //    Vector3 planarPosition = new Vector3(player.x, 0, player.z);
+
+    //    float distance = Vector3.Distance(planarTarget, planarPosition);
+    //    float yOffset = player.y - target.y;
+
+    //    float initialVelocity
+    //        = (1 / Mathf.Cos(angle)) * Mathf.Sqrt((0.5f * gravity * Mathf.Pow(distance, 2)) / (distance * Mathf.Tan(angle) + yOffset));
+
+    //    Vector3 velocity
+    //        = new Vector3(0f, initialVelocity * Mathf.Sin(angle), initialVelocity * Mathf.Cos(angle));
+
+    //    float angleBetweenObjects
+    //        = Vector3.Angle(Vector3.forward, planarTarget - planarPosition) * (target.x > player.x ? 1 : -1);
+    //    Vector3 finalVelocity
+    //        = Quaternion.AngleAxis(angleBetweenObjects, Vector3.up) * velocity;
+
+    //    return finalVelocity;
+    //}
+
+
 }
