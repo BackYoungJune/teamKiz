@@ -26,14 +26,10 @@ public class yPlayerMovement : MonoBehaviour
     public bool isDodge { get; private set; }
     public bool isBorder { get; private set; }
 
-
-    public bool Swap0 = true;
-    public bool Swap1 = false;
-    public bool Swap2 = false;
-    public bool Swap3 = false;
-
     [SerializeField]
     J_SwtichWeapon SwtichWeapon;
+
+    public GameObject RifleLeftHandle;
 
     void Awake()
     {
@@ -209,42 +205,6 @@ public class yPlayerMovement : MonoBehaviour
     {
         isBorder = Physics.Raycast(transform.position, Camera.main.transform.forward, 5, LayerMask.GetMask("Wall"));
     }
-
-    void Swap()
-    {
-        if(playerInput.swap0)
-        {
-            Swap0 = true;
-            Swap1 = false;
-            Swap2 = false;
-            Swap3 = false;
-        }
-        if(playerInput.swap1)
-        {
-            Swap0 = false;
-            Swap1 = true;
-            Swap2 = false;
-            Swap3 = false;
-        }
-
-        else if(playerInput.swap2)
-        {
-            Swap0 = false;
-            Swap1 = false;
-            Swap2 = true;
-            Swap3 = false;
-        }
-        
-        else if(playerInput.swap3)
-        {
-            Swap0 = false;
-            Swap1 = false;
-            Swap2 = false;
-            Swap3 = true;
-        }
-    }
-
-    
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -39,6 +39,28 @@ public class yPlayerShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+        // 에임 조준시 카메라 뷰 조정
+        if (playerInput.aim)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, aimFov, Time.deltaTime * fovSpeed);
+            CameraMove.ChangeState(yCameraMove.STATE.AIM);
+        }
+        // 평소상태 카메라 뷰 조정
+        else
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, defaultFov, Time.deltaTime * fovSpeed);
+            CameraMove.ChangeState(yCameraMove.STATE.NORMAL);
+        }
+
+        /* 유석 - 남은 탄알 UI 갱신하기 
+         ex) yRiple.magAmmo, yRiple.ammoRemain
+         */
+    }
+
+    private void LateUpdate()
+    {
         //입력을 감지하고 총 발사하거나 재장전
         //입력을 감지하고 총을 발사하거나 재장전
         if (playerInput.fire && !playerInput.tab)
@@ -59,23 +81,6 @@ public class yPlayerShooter : MonoBehaviour
                 playerAnimator.SetTrigger("Reload");
             }
         }
-
-        // 에임 조준시 카메라 뷰 조정
-        if (playerInput.aim)
-        {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, aimFov, Time.deltaTime * fovSpeed);
-            CameraMove.ChangeState(yCameraMove.STATE.AIM);
-        }
-        // 평소상태 카메라 뷰 조정
-        else
-        {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, defaultFov, Time.deltaTime * fovSpeed);
-            CameraMove.ChangeState(yCameraMove.STATE.NORMAL);
-        }
-
-        /* 유석 - 남은 탄알 UI 갱신하기 
-         ex) yRiple.magAmmo, yRiple.ammoRemain
-         */
     }
 
     // 애니메이터의 IK 갱신
