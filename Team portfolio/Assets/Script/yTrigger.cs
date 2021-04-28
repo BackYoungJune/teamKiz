@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class yTrigger : MonoBehaviour
 {
+    
+    public yEnemySpawner mySpawner;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        mySpawner = this.GetComponentInParent<yEnemySpawner>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("Trigger Enter");
+            mySpawner.SpawnWave();
+            Destroy(this);
+        }
     }
 }
