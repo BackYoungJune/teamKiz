@@ -478,14 +478,26 @@ public class LBoss : yLivingEntity
         {
             if(Player.position.y < 0.1f)
             {
-                Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
+                if(Vector3.Distance(Player.position,this.transform.position)<3)
+                    Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
+                else if(Vector3.Distance(Player.position, this.transform.position) < 5)
+                    Player.GetComponent<yPlayerHealth>().OnDamage(10f, Vector3.zero, Vector3.zero);
+                else
+                    Player.GetComponent<yPlayerHealth>().OnDamage(0f, Vector3.zero, Vector3.zero);
             }
         }
         else
         {
             if (Player.position.y < 0.1f)
             {
-                Player.GetComponent<yPlayerHealth>().OnDamage(60f, Vector3.zero, Vector3.zero);
+                if (Vector3.Distance(Player.position, this.transform.position) < 3)
+                    Player.GetComponent<yPlayerHealth>().OnDamage(60f, Vector3.zero, Vector3.zero);
+                else if (Vector3.Distance(Player.position, this.transform.position) < 5)
+                    Player.GetComponent<yPlayerHealth>().OnDamage(30f, Vector3.zero, Vector3.zero);
+                else if (Vector3.Distance(Player.position, this.transform.position) < 7)
+                    Player.GetComponent<yPlayerHealth>().OnDamage(10f, Vector3.zero, Vector3.zero);
+                else
+                    Player.GetComponent<yPlayerHealth>().OnDamage(0f, Vector3.zero, Vector3.zero);
             }
         }
     }
