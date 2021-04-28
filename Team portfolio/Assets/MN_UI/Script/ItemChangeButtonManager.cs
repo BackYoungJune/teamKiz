@@ -151,7 +151,7 @@ public class ItemChangeButtonManager : MonoBehaviour
             case STATE.HAND:
 
                 AmmoText.text = "";
-                Debug.Log("Hand");
+                //Debug.Log("Hand");
 
                 break;
             case STATE.RIFLE:
@@ -160,7 +160,7 @@ public class ItemChangeButtonManager : MonoBehaviour
                 Debug.Log("RIFLE");
                 break;
             case STATE.AXE:
-                Debug.Log("AXE");
+               // Debug.Log("AXE");
                 AmmoText.text = ""; 
 
                 break;
