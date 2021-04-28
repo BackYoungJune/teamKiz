@@ -122,12 +122,11 @@ public class J_ActionController : MonoBehaviour
     {
         if(ignitionActivated && hitInfo.transform.tag == "Wall")
         {
-            // ScriptedObj/TNTPOS 에 설치
-            Transform parent = GameObject.Find("T_Position").GetComponent<Transform>();
+            Transform parent = GameObject.Find("tntPos").GetComponent<Transform>();
             GameObject child = GameObject.Find("TimeBomb");
             child.transform.parent = parent;
-            child.transform.localPosition = new Vector3(0.6f, 0.0f, 0.0f);
-            child.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            child.transform.position = parent.transform.position;
+            child.transform.rotation = Quaternion.Euler(0.0f, 206.0f, 0.0f);
             child.GetComponent<J_TimeBomb>().SetPlanted(true);
             isHolding = false;
             

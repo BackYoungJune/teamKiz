@@ -170,11 +170,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1530145462668421528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 983bd34f768465e44ac28dfd2dd688ea, type: 3}
+  m_Script: {fileID: 11500000, guid: cb9a3adf431d5094ab82eda87a3f4c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRadius: 10
-  damage: 50
+  damage: 100
   applyLayer:
     serializedVersion: 2
     m_Bits: 6400

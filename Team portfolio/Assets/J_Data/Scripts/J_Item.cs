@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item/item")]
 public class J_Item : ScriptableObject
 {
-    public string itemName;     // y 쪽으로 넘기도록
+    public string itemName;     
     public Sprite itemImage;
     public GameObject itemPrefab;
     public int amount;
