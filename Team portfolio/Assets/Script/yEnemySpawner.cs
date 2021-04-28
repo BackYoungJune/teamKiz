@@ -46,7 +46,7 @@ public class yEnemySpawner : MonoBehaviour
 
         // 현재 웨이브 * 1.5를 반올림한 수만큼 적 생성
         // RoundToInt는 float 값을 입력받고 입력값을 반올림한 정수를 반환한다.
-        int spawnCount = Mathf.RoundToInt(wave * 2.5f);
+        int spawnCount = Mathf.RoundToInt(wave * 4.5f);
 
         // spawnCount만큼 적 생성
         for (int i = 0; i < spawnCount; i++)
@@ -82,8 +82,6 @@ public class yEnemySpawner : MonoBehaviour
         // 적의 onDeath 이벤트에 익명 메서드 등록
         // 사망한 적을 리스트에서 제거
         enemy.onDeath += () => enemies.Remove(enemy);
-        // 사망한 적을 10초 뒤에 파괴
-        enemy.onDeath += () => Destroy(enemy.gameObject, 10f);
         // 적 사망 시 점수 상승
         enemy.onDeath += () => yGameManager.instance.AddScore((int)score);
         /* 좀비 죽었을 경우 유석 UI 추가하기*/

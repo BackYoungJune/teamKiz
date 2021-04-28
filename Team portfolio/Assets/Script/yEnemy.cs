@@ -292,6 +292,9 @@ public class yEnemy : yLivingEntity
 
         MN_UIManager.Instance.IsZombieKill = true;
         Debug.Log("Zombie Kill");
+        
+        // 좀비가 죽을 경우 10초후에 사라진다.
+        Destroy(gameObject, 10.0f);
     }
 
     // 데미지를 입었을때 실행할 처리

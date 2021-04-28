@@ -11,6 +11,10 @@ public class yTrigger : MonoBehaviour
     public bool Enabled = true;
     void Awake()
     {
+        if(Enabled == false)
+        {
+            this.GetComponent<BoxCollider>().enabled = false;
+        }
         mySpawner = this.GetComponentInParent<yEnemySpawner>();
     }
 
