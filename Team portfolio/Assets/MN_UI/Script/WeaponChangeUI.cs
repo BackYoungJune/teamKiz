@@ -41,16 +41,9 @@ public class WeaponChangeUI : MonoBehaviour
     void Start()
     {
     
-        //int a = 0;
-        //mouseEvent.MouseDown += (PointerEventData data) => { IsClick = true; };
     }
 
-    //public void OnPointerEnter(PointerEventData eventData)
-    //{
-    //    Debug.Log("OnPointerEnter");
-    //}
 
-    // Update is called once per frame
     void Update()
     {
 

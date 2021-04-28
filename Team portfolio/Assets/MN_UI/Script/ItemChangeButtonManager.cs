@@ -25,6 +25,13 @@ public class ItemChangeButtonManager : MonoBehaviour
     J_SwtichWeapon swtichWeapon;
     J_ItemManager itemManager;
 
+    int MyMoney;
+    int myArmor;
+    int myPotion;
+    int myGranade;
+    int myBullet;
+
+
     bool IsRifle = true;
 
     private void Awake()
@@ -63,13 +70,23 @@ public class ItemChangeButtonManager : MonoBehaviour
 
         // 무기 스위칭에 사용할 변수
         swtichWeapon = FindObjectOfType<J_SwtichWeapon>();
-        itemManager = FindObjectOfType<J_ItemManager>();
+        //itemManager = FindObjectOfType<J_ItemManager>();
     }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Tab))
+
+
+        if (Input.GetKey(KeyCode.Tab))
         {
+            MyMoney = J_ItemManager.instance.remainMoney;
+            myArmor = J_ItemManager.instance.remainArmor;
+            myPotion = J_ItemManager.instance.remainPotion;
+            myGranade = J_ItemManager.instance.remainGrenade;
+            myBullet = J_ItemManager.instance.ammoRemain;
+
+
+
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
@@ -98,72 +115,28 @@ public class ItemChangeButtonManager : MonoBehaviour
     {
         if (s == myState) return;
         myState = s;
-        //yPlayerAxe axe = FindObjectOfType<yPlayerAxe>();
-        //yPlayerShooter rifle = FindObjectOfType<yPlayerShooter>();
-        //yPlayerGrenade granade = FindObjectOfType<yPlayerGrenade>();
-        //yPlayerMovement playerMovement = FindObjectOfType<yPlayerMovement>();
-        //yPlayerInput playerInput = FindObjectOfType<yPlayerInput>();
-
         switch (myState)
         {
             case STATE.HAND:
                 NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.FIST);
-                //axe.enabled = false;
-                //rifle.enabled = false;
-                //granade.enabled = false;
 
-                //if (playerInput.swap0)
-                //{
-                //}
-                //playerMovement.swap0();
-                //NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 break;
             case STATE.RIFLE:
                 NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.GUN);
-                //axe.enabled = false;
-                //rifle.enabled = true;
-                //granade.enabled = false;
-                // AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
 
-                //if (playerInput.swap2)
-                //{
-                //}
-                //playerMovement.swap1();
-                //NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
                 break;
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.AXE);
 
-                //AmmoText.text = "";
 
-                //axe.enabled = true;
-                //rifle.enabled = false;
-                //granade.enabled = false;
-
-                //if (playerInput.swap1)
-                //{
-                //}
-                //playerMovement.swap2();
-                //NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
                 break;
             case STATE.GRENADE:
                 NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.GRENADE);
-                //AmmoText.text = Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
 
-                //axe.enabled = false;
-                //rifle.enabled = false;
-                //granade.enabled = true;
-
-                //if (playerInput.swap3)
-                //{
-                //}
-                //playerMovement.swap3();
-                //NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
-                //AmmoText.text = "";
                 break;
 
         }
@@ -177,18 +150,18 @@ public class ItemChangeButtonManager : MonoBehaviour
 
                 break;
             case STATE.RIFLE:
-                AmmoText.text = MN_UIManager.Instance.ammo.ToString() + " / " + MN_UIManager.Instance.MaxAmmo.ToString();
+                AmmoText.text = J_ItemManager.instance.magAmmo.ToString() + " / " + J_ItemManager.instance.ammoRemain.ToString();
 
                 //Debug.Log("RIFLE");
                 break;
             case STATE.AXE:
                 //Debug.Log("AXE");
-                AmmoText.text = "";
+                AmmoText.text = ""; 
 
                 break;
             case STATE.GRENADE:
                 //Debug.Log("GRENADE");
-                AmmoText.text = Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
+                AmmoText.text = J_ItemManager.instance.remainGrenade.ToString();
 
                 break;
 

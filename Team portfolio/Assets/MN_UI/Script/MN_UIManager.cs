@@ -48,6 +48,7 @@ public class MN_UIManager : MonoBehaviour
     public int Potions { get; set; }
     public int Granade { get; set; }
 
+   
     //플레이어 체력 갱신
 
 
@@ -55,6 +56,7 @@ public class MN_UIManager : MonoBehaviour
     public bool IsZombieKill { get; set; }
 
     public bool Inventory { get; set; }
+
     public void UpdatePlayerHealth(float Health)
     {
         if (Health < 0)
@@ -80,6 +82,7 @@ public class MN_UIManager : MonoBehaviour
         this.Boss_CurrentHealth -= damage;
     }
 
+
     //public void UpdatePlayerRestoreHealth(float Health)
     //{
     //    Debug.Log("ONRestoreHealth");
@@ -87,8 +90,8 @@ public class MN_UIManager : MonoBehaviour
 
     //    player.RestoreHealth(Health);
     //}
-    
-    
+
+
     // 탄약 텍스트 갱신
     //public void UpdateAmmoText(int magAmmo, int remainAmmo)
     //{
