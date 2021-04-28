@@ -22,6 +22,7 @@ public class J_ActionController : MonoBehaviour
     public bool storeOpened = false;        // 상점이 열리면 true
     private bool holdActivated = false;     // 들 수 있을 때 true
     private bool isHolding = false;         // 들고 있으면 true
+    private bool bombSet = false;
 
     yPlayerInput playerInput;
     J_ItemManager itemManager;
@@ -129,14 +130,9 @@ public class J_ActionController : MonoBehaviour
             child.transform.rotation = Quaternion.Euler(0.0f, 206.0f, 0.0f);
             child.GetComponent<J_TimeBomb>().SetPlanted(true);
             isHolding = false;
-            
-            /*
-            Destroy(GameObject.Find("TimeBomb"));
-            GameObject bomb = GameObject.Find("T_Position").transform.Find("SetTimeBomb").gameObject;
-            bomb.SetActive(true);
-            bomb.GetComponent<J_TimeBomb>().SetPlanted(true);
-            isHolding = false;
-            */
+            bombSet = true;
+
+            InfoDisappear();
         }
     }
 
@@ -149,7 +145,7 @@ public class J_ActionController : MonoBehaviour
                 ItemInfoAppear();
             }
 
-            if(hitInfo.transform.tag == "Explodable" && !isHolding)
+            if(hitInfo.transform.tag == "Explodable" && !isHolding && !bombSet)
             {
                 HoldInfo();
             }

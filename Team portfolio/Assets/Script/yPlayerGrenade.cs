@@ -90,7 +90,7 @@ public class yPlayerGrenade : MonoBehaviour
     {
         // 현재 상태가 발사 가능한 상태
         // && 마지막 수류탄 발사 시점에서 timeBetFire 이상의 시간이 지남
-        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && itemManager.remainGrenade > 0 && !playerInput.tab)
+        if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && J_ItemManager.instance.remainGrenade > 0 && !playerInput.tab)
         {
             // 마지막 총 발사 시점 갱신
             lastFireTime = Time.time;
@@ -124,12 +124,12 @@ public class yPlayerGrenade : MonoBehaviour
         Destroy(instantGrenade.gameObject, 5f);
 
         // 남은 수류탄 갯수를 -1
-        itemManager.remainGrenade--;
+        //itemManager.remainGrenade--;
 
         /* 유석 
          UI 수류탄 갯수 갱신
         */
-        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
+        //MN_UIManager.Instance.Granade = itemManager.remainGrenade;
 
         // 애니메이션 실행되는 시간 이후로 GrenadeThrowOut를 발동시킨다
         Invoke("GrenadeThrowOut", throwTime);
@@ -138,13 +138,13 @@ public class yPlayerGrenade : MonoBehaviour
     void GrenadeThrowOut()
     {
         // 남아있는 수류탄의 갯수가 0개라면
-        if (itemManager.remainGrenade <= 0)
+        if (J_ItemManager.instance.remainGrenade <= 0)
         {
             myState = STATE.EMPTY;
         }
 
         // 남아있는 수류탄의 갯수가 1개 이상이라면
-        if (itemManager.remainGrenade > 0)
+        if ((J_ItemManager.instance.remainGrenade > 0))
         {
             // 모형 수류탄을 활성화한다
             Grenade.gameObject.SetActive(true);

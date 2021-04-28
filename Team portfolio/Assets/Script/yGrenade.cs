@@ -15,6 +15,7 @@ public class yGrenade : MonoBehaviour
     {
         CameraMove = FindObjectOfType<yCameraMove>();
         StartCoroutine(Explosion());
+        J_ItemManager.instance.remainGrenade--;
     }
 
     // Update is called once per frame
