@@ -84,7 +84,8 @@ public class ItemChangeButtonManager : MonoBehaviour
             myPotion = J_ItemManager.instance.remainPotion;
             myGranade = J_ItemManager.instance.remainGrenade;
             myBullet = J_ItemManager.instance.ammoRemain;
-
+            Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
+            Granade_Text.text = J_ItemManager.instance.remainGrenade.ToString();
 
 
             Cursor.visible = true;
@@ -118,6 +119,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         switch (myState)
         {
             case STATE.HAND:
+
                 NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.FIST);
 
@@ -130,6 +132,7 @@ public class ItemChangeButtonManager : MonoBehaviour
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.AXE);
+                Debug.Log(swtichWeapon.myWeapon);
 
 
                 break;
@@ -146,21 +149,23 @@ public class ItemChangeButtonManager : MonoBehaviour
         switch (myState)
         {
             case STATE.HAND:
+
                 AmmoText.text = "";
+                Debug.Log("Hand");
 
                 break;
             case STATE.RIFLE:
                 AmmoText.text = J_ItemManager.instance.magAmmo.ToString() + " / " + J_ItemManager.instance.ammoRemain.ToString();
 
-                //Debug.Log("RIFLE");
+                Debug.Log("RIFLE");
                 break;
             case STATE.AXE:
-                //Debug.Log("AXE");
+                Debug.Log("AXE");
                 AmmoText.text = ""; 
 
                 break;
             case STATE.GRENADE:
-                //Debug.Log("GRENADE");
+                Debug.Log("GRENADE");
                 AmmoText.text = J_ItemManager.instance.remainGrenade.ToString();
 
                 break;
@@ -189,6 +194,6 @@ public class ItemChangeButtonManager : MonoBehaviour
     public void OnbuttonClickPotion()
     {
         itemManager.Use(GameObject.Find("Player"));
-        Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
+        //Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
     }
 }
