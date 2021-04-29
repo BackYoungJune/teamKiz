@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class J_ItemManager : MonoBehaviour, J_IItem
+public class J_ItemManager : MonoBehaviour
 {
     #region
     [SerializeField]
@@ -54,13 +54,14 @@ public class J_ItemManager : MonoBehaviour, J_IItem
     public int remainMoney { get; set; }
 
     
-    public void Use(GameObject target)
+    public void Use(yPlayerHealth target)
     {
         if(remainPotion > 0)
         {
             yPlayerHealth playerHealth = target.GetComponentInParent<yPlayerHealth>();
             playerHealth.RestoreHealth(potionInfo.restore);
            // playerHealth.RestoreHealth(20f);
+           //J_ItemManager.instance.
             remainPotion--;
             Debug.Log("포션 사용");
             Debug.Log("잔여 포션: " + remainPotion);

@@ -51,15 +51,6 @@ public class yEnemy : yLivingEntity
         myAnimEvent.Attack2 += OnAttackTarget;
     }
 
-    // Enemy를 홣성화시 사용되는 함수
-    private void Start()
-    {
-        // 메모리 관리를 위해 리지드바디를 끈다
-        // rigid.Sleep();
-        // 실험용 Enemy 스탯
-        startHealth = 200.0f;
-        health = 200.0f;
-    }
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
     public void Setup(float newHealth, float newDamage, float newSpeed)
     {

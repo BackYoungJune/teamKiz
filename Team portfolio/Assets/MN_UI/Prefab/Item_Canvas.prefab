@@ -1,5 +1,83 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &665924658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 665924659}
+  - component: {fileID: 665924661}
+  - component: {fileID: 665924660}
+  m_Layer: 5
+  m_Name: Armor_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &665924659
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665924658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4473404896743943180}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -108.5, y: -466}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &665924661
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665924658}
+  m_CullTransparentMesh: 0
+--- !u!114 &665924660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665924658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 105
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!1 &4473404894954169229
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseEvent: {fileID: 0}
   myState: 1
   buttonName: 0
 --- !u!114 &4473404896101403206
@@ -778,6 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseEvent: {fileID: 0}
   myState: 1
   buttonName: 2
 --- !u!114 &4473404896457599345
@@ -880,6 +960,7 @@ RectTransform:
   - {fileID: 4473404895283598800}
   - {fileID: 4473404895867911926}
   - {fileID: 5416980742600370590}
+  - {fileID: 665924659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -907,7 +988,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &4473404896743943182
 MonoBehaviour:
@@ -1054,6 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseEvent: {fileID: 0}
   myState: 1
   buttonName: 3
 --- !u!114 &4473404896825625951
@@ -1213,6 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseEvent: {fileID: 0}
   myState: 1
   buttonName: 1
 --- !u!114 &4473404896877476372

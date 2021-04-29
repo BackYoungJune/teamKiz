@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class yAxe : MonoBehaviour
 {
-    public float damage = 30.0f;        // 도끼 데미지
+    public float damage = 200.0f;        // 도끼 데미지
     public GameObject bloodEffect;      // 도끼가 Enemy에 박혔을 때 Effect
     public Vector3 hitPosition = Vector3.zero;  // 도끼를 맞앗을 때 맞은위치
 

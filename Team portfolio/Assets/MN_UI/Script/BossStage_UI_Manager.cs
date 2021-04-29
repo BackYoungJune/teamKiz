@@ -24,6 +24,7 @@ public class BossStage_UI_Manager : MonoBehaviour
         GameWin.SetActive(false);
         GameOverUI.SetActive(false);
         GameObject playerMiniMap = GameObject.Find("Player");
+       
 
         //StateChange(STATE.PLAYER_DEAD);
         
@@ -32,14 +33,14 @@ public class BossStage_UI_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+  
         if (MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
         {
             StateChange(STATE.PLAYER_DEAD);
 
         }
 
-        if(MN_UIManager.Instance.WinGame)
+        if (MN_UIManager.Instance.WinGame)
         {
             StateChange(STATE.BOSS_DEAD);
 
@@ -70,6 +71,7 @@ public class BossStage_UI_Manager : MonoBehaviour
                     allclose1.SetActive(false);
 
                     GameOverUI.SetActive(true);
+                    //GameObject Item_Canvas = GameObject.Find("Item_Canvas");
 
                 }
                 break;
@@ -80,7 +82,7 @@ public class BossStage_UI_Manager : MonoBehaviour
 
                     GameObject allclose2 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
-                    ItemCanvas.SetActive(false);
+                    //ItemCanvas.SetActive(false);
                     allclose2.SetActive(false);
 
                     GameWin.SetActive(true);
