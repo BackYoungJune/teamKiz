@@ -15,11 +15,6 @@ public class yEnemyHead : MonoBehaviour
             Collider[] enemyColliders = GetComponents<Collider>();
             for (int i = 0; i < enemyColliders.Length; i++)
             {
-                //유석 추가 
-                //J_ItemManager.instance.remainScore += 100;
-                J_ItemManager.instance.IsHeadShotKill = true;
-                Debug.Log("HeadShot!!!!");
-
                 enemyColliders[i].enabled = false;
             }
         }
