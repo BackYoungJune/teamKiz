@@ -79,6 +79,10 @@ public class ItemChangeButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(MN_UIManager.Instance.IsDead)
+        {
+            Destroy(this.gameObject);
+        }
         Armor_Text.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
 
 
@@ -194,7 +198,7 @@ public class ItemChangeButtonManager : MonoBehaviour
     {
         //Debug.Log("Drink Potion!!");
         
-        if(J_ItemManager.instance.remainPotion >0)
+        if(J_ItemManager.instance.remainPotion >0 && !MN_UIManager.Instance.IsDead)
         {
             if (MN_UIManager.Instance.CurrentHealth <= 180)
             {

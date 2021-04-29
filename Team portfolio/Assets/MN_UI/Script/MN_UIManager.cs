@@ -64,6 +64,30 @@ public class MN_UIManager : MonoBehaviour
         Debug.Log(IsHit);
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
+<<<<<<< HEAD
+=======
+        if(CurrentHealth < Mathf.Epsilon)
+        {
+            IsDead = true;
+        }
+    }
+    public void UsePotion(float heal)
+    {
+        Debug.Log("IsDead" + IsDead);
+        if (IsDead) return;
+        Debug.Log("포션 마심1");
+
+        if (CurrentHealth >= 180)
+        {
+            Debug.Log("체력오버");
+
+            CurrentHealth = 200;
+        }
+        else
+            CurrentHealth += heal;
+        Debug.Log("Player Health = " + CurrentHealth);
+
+>>>>>>> d595ada92d4aa0777f964b063a128b3c0a8023df
     }
 
     // 한번에 맥스와 현재 창탄 수를 가져온다
