@@ -13,13 +13,17 @@ public class BloodEffect_UI : MonoBehaviour
 
     public STATE myState = STATE.NORMAL;
     GameObject panel;
-
+    GameObject BloodPanel;
     private void Awake()
     {
+        BloodPanel = GameObject.Find("BloodPanel");
+
         myImage = GetComponent<Image>();
         myImage.color = new Color(0f, 0f, 0f, 0f);
         panel = GameObject.Find("BloodEffect");
         panel.SetActive(false);
+
+        BloodPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,6 +70,7 @@ public class BloodEffect_UI : MonoBehaviour
     }
     IEnumerator ChangeAlphaFirst()
     {
+        BloodPanel.SetActive(true);
         float alpha = 0f;
 
         while (alpha < 0.8f)
@@ -87,8 +92,11 @@ public class BloodEffect_UI : MonoBehaviour
             alpha -= Time.deltaTime;
             myImage.color = new Color(1f, 0f, 0f, alpha);
 
-            yield return null;
 
+            if(alpha <= 0.4f)
+                BloodPanel.SetActive(false);
+
+            yield return null;
         }
         ChangeState(STATE.STOP);
         MN_UIManager.Instance.IsHit = false;
