@@ -51,7 +51,7 @@ public class yEnemy : yLivingEntity
         // 공격시 이벤트 실행
         myAnimEvent.Attack1 += OnAttackTarget;
         myAnimEvent.Attack2 += OnAttackTarget;
-        myNavAgent.speed = NavSpeed = 4.0f;
+        //myNavAgent.speed = NavSpeed = 4.0f;
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
