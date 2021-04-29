@@ -156,6 +156,7 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &197617462
+<<<<<<< HEAD
 =======
 --- !u!1001 &22448383
 PrefabInstance:
@@ -329,6 +330,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &166472712
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -342,6 +345,7 @@ PrefabInstance:
       value: Item_Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+<<<<<<< HEAD
 =======
     - target: {fileID: 5383608264322517319, guid: 20a54c0a97b2f9b4f850153ff8266d02,
         type: 3}
@@ -355,6 +359,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
         type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2708,9 +2714,12 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 6b08163f3fb501042857418b11411088, type: 3}
 --- !u!1 &508659878
+<<<<<<< HEAD
 =======
 --- !u!1 &395603212
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2718,7 +2727,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
   - component: {fileID: 508659881}
   - component: {fileID: 508659880}
   - component: {fileID: 508659879}
@@ -3319,8 +3331,11 @@ MonoBehaviour:
 <<<<<<< Updated upstream
   firstCamera: {fileID: 1339770735}
   myCamera: {fileID: 508659878}
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
   meshRenderer: {fileID: 1764959519}
   collider: {fileID: 215098149}
   mySTATE: 0
@@ -3532,7 +3547,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c9057ac51c84fa0d16da2365fb79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 --- !u!1 &971257912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,7 +4099,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 --- !u!4 &1527016556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -4860,7 +4881,10 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898328351}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 --- !u!114 &2088254673 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 38734738003282156, guid: ba69a52f713f2b34fb116d3b1fe390dd,
@@ -4873,8 +4897,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 --- !u!4 &2142625587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013041734426, guid: d803e729730d97a4e89edf13b602b3f4,
