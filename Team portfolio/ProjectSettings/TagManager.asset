@@ -11,11 +11,14 @@ TagManager:
   - Item
   - BREAKABLE
   - Floor
+<<<<<<< Updated upstream
   - Pickup
   - FxTemporaire
   - Head
   - Grenade
   - VendingMachine
+=======
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -26,6 +29,7 @@ TagManager:
   - 
   - 
   - Item
+<<<<<<< Updated upstream
   - RangeSystem
   - FireLayer
   - Player
@@ -33,6 +37,18 @@ TagManager:
   - PlayerMiniMapIcon
   - EnemyMinMapIcon
   - floor
+=======
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> Stashed changes
   - 
   - 
   - 

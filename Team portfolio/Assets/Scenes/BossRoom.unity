@@ -121,6 +121,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 32997defaa8c57c40965ee0d8b7b104c, type: 2}
+<<<<<<< Updated upstream
 --- !u!1 &52781514
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,123 +156,392 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &197617462
+=======
+--- !u!1001 &22448383
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851117, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243258851121, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_Name
+      value: MainCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243426923938, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243450717918, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243450717918, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987243839759860, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987244113490055, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987244113490055, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987244113490055, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987244204456629, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615987244623239896, guid: 81ae9565e5dc27948ac28182aa62e75e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81ae9565e5dc27948ac28182aa62e75e, type: 3}
+--- !u!4 &82592330 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+    type: 3}
+  m_PrefabInstance: {fileID: 684906468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &166472712
+>>>>>>> Stashed changes
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943179, guid: 49c9bb591e7671a44afccb5067db8330,
         type: 3}
       propertyPath: m_Name
       value: Item_Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517319, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+        type: 3}
+      propertyPath: m_Name
+      value: CompassCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383608264322517319, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_Pivot.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
         type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 4473404896743943180, guid: 49c9bb591e7671a44afccb5067db8330,
+=======
+    - target: {fileID: 5383608264322517339, guid: 20a54c0a97b2f9b4f850153ff8266d02,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: 49c9bb591e7671a44afccb5067db8330, type: 3}
 --- !u!1 &213446001 stripped
 GameObject:
@@ -293,6 +563,9 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 6b08163f3fb501042857418b11411088, type: 3}
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 20a54c0a97b2f9b4f850153ff8266d02, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &215098144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -303,47 +576,83 @@ PrefabInstance:
     - target: {fileID: -9160076672010932235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -39.740616
+=======
+      value: -51.584084
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9160076672010932235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 9.825629
+=======
+      value: 0.9671931
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9160076672010932235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 17.05309
+=======
+      value: -19.567307
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9061056755950536901, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -3.6950755
+=======
+      value: -17.946308
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9061056755950536901, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 12.923327
+=======
+      value: 5.5021253
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9061056755950536901, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 0.708011
+=======
+      value: 5.071124
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9060497430412823467, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -10.88213
+=======
+      value: -27.419233
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9060497430412823467, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 20.134153
+=======
+      value: 21.471794
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -9060497430412823467, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 9.699172
+=======
+      value: 15.242243
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
@@ -418,377 +727,677 @@ PrefabInstance:
     - target: {fileID: -8462840038416567696, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -0.5187861
+=======
+      value: -1.6265858
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8462840038416567696, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 4.2734456
+=======
+      value: 6.018708
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8462840038416567696, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 11.691628
+=======
+      value: 12.510625
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8286931143383454865, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 53.962566
+=======
+      value: 69.570045
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8286931143383454865, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 1.6359773
+=======
+      value: -118.40793
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8286931143383454865, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 13.398168
+=======
+      value: -112.32457
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8199767266883947498, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 9.63228
+=======
+      value: 0.9298584
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8199767266883947498, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 5.496698
+=======
+      value: 1.8283154
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8199767266883947498, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 24.124968
+=======
+      value: 3.8398023
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7861831855079945968, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -21.825594
+=======
+      value: -47.79368
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7861831855079945968, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -1.2996563
+=======
+      value: -0.045009136
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7861831855079945968, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 1.2164861
+=======
+      value: 0.14880753
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7639649679995256078, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -5.007961
+=======
+      value: -2.1488101
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7639649679995256078, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 11.00713
+=======
+      value: 3.1418102
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7639649679995256078, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -36.758034
+=======
+      value: -12.357439
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7602547869943928848, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -0.6821335
+=======
+      value: -6.0391183
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7602547869943928848, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 4.877799
+=======
+      value: 15.874947
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7602547869943928848, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 24.838488
+=======
+      value: 16.614323
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7233488141585323529, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -3.524712
+=======
+      value: -4.285723
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7233488141585323529, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -0.9670381
+=======
+      value: 0.95084476
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -7233488141585323529, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 9.683662
+=======
+      value: 8.260678
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6599538733376268243, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -6.5143375
+=======
+      value: 8.755476
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6599538733376268243, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 22.564356
+=======
+      value: 14.028111
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6599538733376268243, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 19.725023
+=======
+      value: 13.537615
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6182788573997361266, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 7.2341475
+=======
+      value: -7.4662457
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6182788573997361266, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 5.595652
+=======
+      value: -1.4866191
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6182788573997361266, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 20.929495
+=======
+      value: -17.82322
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6085886658039450303, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 19.388622
+=======
+      value: 7.515172
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6085886658039450303, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -0.38265213
+=======
+      value: 0.6664979
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6085886658039450303, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -1.4764621
+=======
+      value: 0.38335234
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6065666439576628248, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 3.4334254
+=======
+      value: -28.112259
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6065666439576628248, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 1.9565076
+=======
+      value: 2.4170103
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -6065666439576628248, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 0.50455284
+=======
+      value: -6.6597543
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5546308942785753259, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -41.14687
+=======
+      value: -76.067535
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5546308942785753259, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -1.3602191
+=======
+      value: 91.10681
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5546308942785753259, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -20.305082
+=======
+      value: -76.97918
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5517167078318476068, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -13.137115
+=======
+      value: -6.0388536
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5517167078318476068, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -1.2226727
+=======
+      value: -15.874523
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5517167078318476068, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -34.12596
+=======
+      value: -16.616093
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5116897903442120805, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -21.613487
+=======
+      value: -14.333084
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5116897903442120805, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -64.69582
+=======
+      value: -25.019056
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -5116897903442120805, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -4.4819393
+=======
+      value: -12.545824
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4484447017270756465, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 1.2618518
+=======
+      value: -1.6276486
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4484447017270756465, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -4.059767
+=======
+      value: -6.019668
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4484447017270756465, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -19.503231
+=======
+      value: -12.513203
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4078783318710176218, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -29.498154
+=======
+      value: 10.082977
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4078783318710176218, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 13.238623
+=======
+      value: 34.391113
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -4078783318710176218, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 24.867546
+=======
+      value: 35.207184
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -3570864772355295989, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -12.929357
+=======
+      value: 7.901144
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -3570864772355295989, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 6.192667
+=======
+      value: -0.22454715
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -3570864772355295989, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 1.1554477
+=======
+      value: -6.9606705
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2692475052227210105, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -2.2241206
+=======
+      value: -3.1683078
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2692475052227210105, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -3.0732007
+=======
+      value: -2.1132326
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2692475052227210105, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 27.721521
+=======
+      value: 25.670687
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2223233092441017123, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 5.0539474
+=======
+      value: -6.3982835
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2223233092441017123, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -7.770089
+=======
+      value: 0.961353
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -2223233092441017123, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 11.844876
+=======
+      value: -15.165681
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1824824446595371411, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -7.962646
+=======
+      value: 17.371561
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1824824446595371411, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 6.430582
+=======
+      value: 15.901593
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1824824446595371411, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -8.427431
+=======
+      value: -12.100283
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1735401098737855792, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -1.8501009
+=======
+      value: -3.2359905
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1735401098737855792, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 6.16462
+=======
+      value: 8.044089
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1735401098737855792, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -9.310397
+=======
+      value: -5.6346164
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1360067204897070883, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -4.9535375
+=======
+      value: -4.288822
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1360067204897070883, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 3.0864916
+=======
+      value: -0.9510131
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1360067204897070883, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -16.978722
+=======
+      value: -8.26858
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1070232985009656329, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -49.96084
+=======
+      value: 9.065792
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1070232985009656329, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 11.667147
+=======
+      value: -7.261484
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -1070232985009656329, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 0.18893737
+=======
+      value: 13.851672
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -415919170949790895, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 15.715919
+=======
+      value: 20.475323
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -415919170949790895, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -0.22870499
+=======
+      value: -0.96164703
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -415919170949790895, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -1.525073
+=======
+      value: -1.4693824
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -194866829705419514, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -5.2822027
+=======
+      value: -3.8077304
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -194866829705419514, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 15.381373
+=======
+      value: 1.947633
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -194866829705419514, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -35.924614
+=======
+      value: -26.642855
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 572617754110402786, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
@@ -808,17 +1417,29 @@ PrefabInstance:
     - target: {fileID: 572617754110402786, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 1.8646135
+=======
+      value: 44.710285
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 572617754110402786, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 1.326633
+=======
+      value: -4.598779
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 572617754110402786, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 0.9854419
+=======
+      value: 1.7698364
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
@@ -833,17 +1454,29 @@ PrefabInstance:
     - target: {fileID: 943223448204509391, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -25.947832
+=======
+      value: 8.19219
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 943223448204509391, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -5.810051
+=======
+      value: -21.256895
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 943223448204509391, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -35.69547
+=======
+      value: -35.899784
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1096695464039504049, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
@@ -853,337 +1486,601 @@ PrefabInstance:
     - target: {fileID: 1435505983912520668, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -8.396399
+=======
+      value: -7.465405
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1435505983912520668, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -11.003894
+=======
+      value: 1.4891516
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1435505983912520668, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -7.864408
+=======
+      value: 17.823074
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1449892060111206466, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 57.882614
+=======
+      value: 47.975456
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1449892060111206466, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -9.73172
+=======
+      value: -20.080143
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1449892060111206466, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -24.002073
+=======
+      value: 33.15106
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1603680305262938555, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 12.044098
+=======
+      value: 15.445509
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1603680305262938555, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -0.28124386
+=======
+      value: 1.07842
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 1603680305262938555, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -1.5451901
+=======
+      value: 0.23925996
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2021840117075985472, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -2.5602927
+=======
+      value: -3.4101033
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2021840117075985472, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -6.024675
+=======
+      value: -2.198557
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2021840117075985472, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 18.668564
+=======
+      value: 12.343586
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2648842872445173533, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 3.662658
+=======
+      value: 1.222348
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2648842872445173533, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -0.49280074
+=======
+      value: 0.41090634
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2648842872445173533, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 19.058355
+=======
+      value: 10.227094
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2757530958044238258, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 3.0455585
+=======
+      value: 0.9293763
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2757530958044238258, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -16.075684
+=======
+      value: -1.8283961
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2757530958044238258, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -33.308308
       objectReference: {fileID: 0}
     - target: {fileID: 3103283877742750325, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+=======
+      value: -3.8389034
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3317271055017726729, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -11.565066
+=======
+      value: -54.163017
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3317271055017726729, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -2.6796756
+=======
+      value: -6.853366
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3317271055017726729, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -8.347481
+=======
+      value: 11.946205
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3803487098948666854, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 28.656744
+=======
+      value: -12.761369
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3803487098948666854, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 6.381689
+=======
+      value: 6.848736
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 3803487098948666854, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -10.923841
+=======
+      value: 24.518982
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4182528418855643633, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 49.099735
+=======
+      value: 60.243187
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4182528418855643633, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -10.4693165
+=======
+      value: 57.066635
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4182528418855643633, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -12.6261425
+=======
+      value: 39.861797
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4324715832187312414, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 19.448345
+=======
+      value: 2.242682
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4324715832187312414, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 19.39326
+=======
+      value: -11.418463
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4324715832187312414, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -2.8828642
+=======
+      value: -16.403765
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4829243326412957001, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 5.4921055
+=======
+      value: 1.2220883
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4829243326412957001, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 0.47352898
+=======
+      value: -0.41076887
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4829243326412957001, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -27.425272
+=======
+      value: -10.229708
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4900070947724302188, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 9.075352
+=======
+      value: -12.764085
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4900070947724302188, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -19.853014
+=======
+      value: -6.849271
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 4900070947724302188, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 3.473737
+=======
+      value: -24.524899
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5159696336426417506, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -31.548721
+=======
+      value: -27.417706
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5159696336426417506, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -22.137877
+=======
+      value: -21.469599
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5159696336426417506, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -17.523804
+=======
+      value: -15.243725
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6280950661766918508, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 18.019447
+=======
+      value: 2.9849687
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6280950661766918508, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -14.055253
+=======
+      value: 7.2369065
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6280950661766918508, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 3.9247782
+=======
+      value: 8.862374
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6362979770440338300, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -6.41188
+=======
+      value: -9.718379
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6362979770440338300, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 3.5815573
+=======
+      value: -8.936455
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6362979770440338300, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 22.980042
+=======
+      value: 2.3757746
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6434778373997938463, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -8.129669
+=======
+      value: -9.716488
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6434778373997938463, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -10.148924
+=======
+      value: 8.937585
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6434778373997938463, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -14.080364
+=======
+      value: -2.3728826
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6953493533992467321, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -6.9549108
+=======
+      value: 8.757259
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6953493533992467321, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -24.146519
+=======
+      value: -14.028196
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 6953493533992467321, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -14.201139
+=======
+      value: -13.5372715
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7072540356585855878, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 54.759693
+=======
+      value: 47.97371
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7072540356585855878, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -8.761234
+=======
+      value: 20.080488
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7072540356585855878, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 9.1958885
+=======
+      value: -33.152252
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7703312209536813535, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -10.760751
+=======
+      value: -3.235551
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7703312209536813535, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 2.533818
+=======
+      value: -8.044215
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7703312209536813535, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 1.3636107
+=======
+      value: 5.635757
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8258049116927310235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -5.3506045
+=======
+      value: -14.991852
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8258049116927310235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: -9.746888
+=======
+      value: -1.8078759
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8258049116927310235, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -11.496029
+=======
+      value: -0.37554145
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8604454021593408753, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: 1.8748817
+=======
+      value: -6.3990927
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8604454021593408753, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 0.70214796
+=======
+      value: -0.96212876
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 8604454021593408753, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: -21.646914
+=======
+      value: 15.169069
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 9210449349698052208, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
+<<<<<<< Updated upstream
       value: -3.6332335
+=======
+      value: -26.047298
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 9210449349698052208, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+<<<<<<< Updated upstream
       value: 53.33153
+=======
+      value: 11.930521
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 9210449349698052208, guid: 93c5bf403953bf743889ca7f54747e74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+<<<<<<< Updated upstream
       value: 16.629847
+=======
+      value: 12.966294
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93c5bf403953bf743889ca7f54747e74, type: 3}
@@ -1260,6 +2157,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+<<<<<<< Updated upstream
 --- !u!1001 &231868371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1347,6 +2245,9 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6b08163f3fb501042857418b11411088, type: 3}
 --- !u!1 &283441011
+=======
+--- !u!1 &276691431
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1354,21 +2255,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 283441012}
   - component: {fileID: 283441013}
   m_Layer: 0
   m_Name: ThrowingBeacon3
   m_TagString: Untagged
+=======
+  - component: {fileID: 276691432}
+  - component: {fileID: 276691435}
+  - component: {fileID: 276691434}
+  - component: {fileID: 276691433}
+  - component: {fileID: 276691436}
+  m_Layer: 0
+  m_Name: DropObj
+  m_TagString: FallingObj
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &283441012
+=======
+--- !u!4 &276691432
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 283441011}
   m_LocalRotation: {x: 0.000000015454306, y: 0.7071066, z: -0.000000015454317, w: 0.70710707}
   m_LocalPosition: {x: -9.5, y: 1, z: 1}
@@ -1380,10 +2297,175 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &283441013
 BoxCollider:
+=======
+  m_GameObject: {fileID: 276691431}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1719788615}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &276691433
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276691431}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &276691434
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276691431}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8486936951020155453, guid: 7377b0db5602e464d94d2880427f4a1b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &276691435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276691431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &276691436
+MonoBehaviour:
+>>>>>>> Stashed changes
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+  m_GameObject: {fileID: 283441011}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &289124969
+=======
+  m_GameObject: {fileID: 276691431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5141245d8df0d498a16c2cd5d6b53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 954132033}
+--- !u!1 &283441011
+>>>>>>> Stashed changes
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< Updated upstream
+  - component: {fileID: 289124970}
+  - component: {fileID: 289124971}
+  - component: {fileID: 289124972}
+  m_Layer: 9
+  m_Name: LeftHit
+=======
+  - component: {fileID: 283441012}
+  - component: {fileID: 283441013}
+  m_Layer: 0
+  m_Name: ThrowingBeacon3
+>>>>>>> Stashed changes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< Updated upstream
+--- !u!4 &289124970
+=======
+--- !u!4 &283441012
+>>>>>>> Stashed changes
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+  m_GameObject: {fileID: 289124969}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1566541188}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!136 &289124971
+CapsuleCollider:
+=======
+  m_GameObject: {fileID: 283441011}
+  m_LocalRotation: {x: 0.000000015454306, y: 0.7071066, z: -0.000000015454317, w: 0.70710707}
+  m_LocalPosition: {x: -11, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1482852352}
+  m_Father: {fileID: 954132032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &283441013
+BoxCollider:
+>>>>>>> Stashed changes
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+  m_GameObject: {fileID: 289124969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &289124972
+MonoBehaviour:
+=======
   m_GameObject: {fileID: 283441011}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -1411,11 +2493,21 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &289124970
 Transform:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289124969}
+<<<<<<< Updated upstream
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae31979750118e4d9d42f922d4396e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimEvent: {fileID: 215098148}
+  Damage: 10
+=======
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1446,11 +2538,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 289124969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae31979750118e4d9d42f922d4396e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ad3f014fc22279b4eaa1454b2ed547fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myAnimEvent: {fileID: 215098148}
-  Damage: 10
+  Damage: 30
+>>>>>>> Stashed changes
 --- !u!1 &331250155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,6 +2636,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!4 &365314675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -1614,6 +2708,9 @@ MeshCollider:
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 6b08163f3fb501042857418b11411088, type: 3}
 --- !u!1 &508659878
+=======
+--- !u!1 &395603212
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1621,6 +2718,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 508659881}
   - component: {fileID: 508659880}
   - component: {fileID: 508659879}
@@ -1710,6 +2808,64 @@ GameObject:
   m_Layer: 9
   m_Name: RightHit
   m_TagString: Untagged
+=======
+  - component: {fileID: 395603213}
+  - component: {fileID: 395603214}
+  m_Layer: 0
+  m_Name: InvisibleWalls
+  m_TagString: Wall
+>>>>>>> Stashed changes
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+<<<<<<< Updated upstream
+--- !u!4 &536406272
+=======
+--- !u!4 &395603213
+>>>>>>> Stashed changes
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+  m_GameObject: {fileID: 395603212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 5, z: -6.5}
+  m_LocalScale: {x: 38, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4000011990747231}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &395603214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395603212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &536406271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536406272}
+  - component: {fileID: 536406273}
+  - component: {fileID: 536406274}
+  m_Layer: 9
+  m_Name: RightHit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1720,6 +2876,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 536406271}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1751,6 +2908,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 536406271}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 9ccb53b5e80a9f245bf922faec3139e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1758,10 +2916,19 @@ MonoBehaviour:
   Player: {fileID: 1339770743}
   Damage: 10
 --- !u!1001 &559694286
+=======
+  m_Script: {fileID: 11500000, guid: 2ecbe3e7180809d4ebcc18b49cf48b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myAnimEvent: {fileID: 215098148}
+  Damage: 20
+--- !u!1001 &684906468
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+<<<<<<< Updated upstream
     m_TransformParent: {fileID: 1429706421}
     m_Modifications:
     - target: {fileID: 135264, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
@@ -1866,40 +3033,110 @@ PrefabInstance:
       value: -14.87
       objectReference: {fileID: 0}
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 437025640452548923, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962220151113749780, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962220151113749784, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613412, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2634919995502586880, guid: 8b15b1fb63177c44090f5854e19fceea,
+=======
+    - target: {fileID: 7983362065976613438, guid: 8b15b1fb63177c44090f5854e19fceea,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 3310428038525720367, guid: 8b15b1fb63177c44090f5854e19fceea,
         type: 3}
       propertyPath: m_Constraints
@@ -1947,6 +3184,10 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 6b08163f3fb501042857418b11411088, type: 3}
+=======
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &686259852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,10 +3213,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686259852}
   m_LocalRotation: {x: 0.000000015454306, y: 0.7071066, z: -0.000000015454317, w: 0.70710707}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 13.5, y: 1, z: 1.0000114}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 919297680}
+=======
+  m_LocalPosition: {x: 15, y: 1, z: 1.0000114}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1570802968}
+>>>>>>> Stashed changes
   m_Father: {fileID: 954132032}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2003,7 +3251,11 @@ GameObject:
   - component: {fileID: 716225134}
   - component: {fileID: 716225136}
   - component: {fileID: 716225135}
+<<<<<<< Updated upstream
   m_Layer: 12
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: BossMonster
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -2039,7 +3291,11 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 3600
+<<<<<<< Updated upstream
   m_StoppingDistance: 1
+=======
+  m_StoppingDistance: 2
+>>>>>>> Stashed changes
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2060,13 +3316,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 30000
+<<<<<<< Updated upstream
   firstCamera: {fileID: 1339770735}
   myCamera: {fileID: 508659878}
+=======
+>>>>>>> Stashed changes
   meshRenderer: {fileID: 1764959519}
   collider: {fileID: 215098149}
   mySTATE: 0
   myFLAG: 0
+<<<<<<< Updated upstream
   Player: {fileID: 1339770743}
+=======
+  Player: {fileID: 82592330}
+>>>>>>> Stashed changes
   bossNavAgent: {fileID: 716225135}
   bossSpeed: 3.5
   bossAnim: {fileID: 215098147}
@@ -2084,11 +3347,14 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+<<<<<<< Updated upstream
   TriggerCount: 0
   DiePos: {fileID: 1367927565}
   BossLeftHand: {fileID: 864782206}
   WeaponObj: {fileID: 5096615191912104575}
   CollapsObj: {fileID: 5030754113568269280}
+=======
+>>>>>>> Stashed changes
   nearDistance: 3.5
 --- !u!1 &766864543
 GameObject:
@@ -2144,17 +3410,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 766864543}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 8caf890efb02620488c1623953cdeb20, type: 3}
+=======
+  m_Script: {fileID: 11500000, guid: 68da444b429e70447b4a4cb91cc0e60a, type: 3}
+>>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
   myAnim: {fileID: 215098147}
   Damage: 20
+<<<<<<< Updated upstream
 --- !u!4 &864782206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -1070232985009656329, guid: 93c5bf403953bf743889ca7f54747e74,
     type: 3}
   m_PrefabInstance: {fileID: 215098144}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &894499001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2165,7 +3438,11 @@ GameObject:
   m_Component:
   - component: {fileID: 894499002}
   - component: {fileID: 894499003}
+<<<<<<< Updated upstream
   m_Layer: 30
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2199,12 +3476,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!4 &919297680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057,
     type: 3}
   m_PrefabInstance: {fileID: 1865660134}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &954132031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +3532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db7c9057ac51c84fa0d16da2365fb79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
 --- !u!1 &971257912
 GameObject:
   m_ObjectHideFlags: 0
@@ -2416,6 +3697,8 @@ PrefabInstance:
       objectReference: {fileID: 954132033}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1096039170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2524,7 +3807,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1158424327}
   - component: {fileID: 1158424328}
+<<<<<<< Updated upstream
   m_Layer: 30
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2558,6 +3845,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1161661977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 165582, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -2591,6 +3879,9 @@ Transform:
   m_PrefabInstance: {fileID: 621910485}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367927564
+=======
+--- !u!1 &1187709109
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2598,20 +3889,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1367927565}
   m_Layer: 0
   m_Name: triggerPoint
   m_TagString: Untagged
+=======
+  - component: {fileID: 1187709110}
+  - component: {fileID: 1187709113}
+  - component: {fileID: 1187709112}
+  - component: {fileID: 1187709111}
+  - component: {fileID: 1187709114}
+  m_Layer: 0
+  m_Name: DropObj
+  m_TagString: FallingObj
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &1367927565
+=======
+--- !u!4 &1187709110
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1367927564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.9294996, y: -1.9619999, z: -0.90499973}
@@ -2628,10 +3935,70 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1415327772
 MeshCollider:
+=======
+  m_GameObject: {fileID: 1187709109}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1429706421}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1187709111
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187709109}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1187709112
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187709109}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8486936951020155453, guid: 7377b0db5602e464d94d2880427f4a1b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1187709113
+BoxCollider:
+>>>>>>> Stashed changes
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1415327768}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2640,6 +4007,28 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 6b08163f3fb501042857418b11411088, type: 3}
+=======
+  m_GameObject: {fileID: 1187709109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1187709114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187709109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5141245d8df0d498a16c2cd5d6b53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 954132033}
+>>>>>>> Stashed changes
 --- !u!1 &1429706420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2665,10 +4054,17 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429706420}
   m_LocalRotation: {x: 0.000000015454306, y: 0.7071066, z: -0.000000015454317, w: 0.70710707}
+<<<<<<< Updated upstream
   m_LocalPosition: {x: 2, y: 1, z: 17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1527016556}
+=======
+  m_LocalPosition: {x: 2, y: 1, z: 17.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1187709110}
+>>>>>>> Stashed changes
   m_Father: {fileID: 954132032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2685,6 +4081,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!4 &1527016556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475434, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -2704,6 +4101,8 @@ Transform:
   m_PrefabInstance: {fileID: 231868371}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1589109407
+=======
+--- !u!1 &1482852351
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2711,22 +4110,153 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+  - component: {fileID: 1482852352}
+  - component: {fileID: 1482852355}
+  - component: {fileID: 1482852354}
+  - component: {fileID: 1482852353}
+  - component: {fileID: 1482852356}
+  m_Layer: 0
+  m_Name: DropObj
+  m_TagString: FallingObj
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482852352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482852351}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 283441012}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1482852353
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482852351}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1482852354
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482852351}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8486936951020155453, guid: 7377b0db5602e464d94d2880427f4a1b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1482852355
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482852351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1482852356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482852351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5141245d8df0d498a16c2cd5d6b53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 954132033}
+--- !u!4 &1566541188 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9210449349698052208, guid: 93c5bf403953bf743889ca7f54747e74,
+    type: 3}
+  m_PrefabInstance: {fileID: 215098144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1570802967
+>>>>>>> Stashed changes
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1589109410}
   - component: {fileID: 1589109409}
   - component: {fileID: 1589109408}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
+=======
+  - component: {fileID: 1570802968}
+  - component: {fileID: 1570802969}
+  - component: {fileID: 1570802971}
+  - component: {fileID: 1570802970}
+  - component: {fileID: 1570802972}
+  m_Layer: 0
+  m_Name: DropObj
+  m_TagString: FallingObj
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!114 &1589109408
 MonoBehaviour:
+=======
+--- !u!4 &1570802968
+Transform:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1589109407}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2742,10 +4272,36 @@ MonoBehaviour:
   m_ForceModuleActive: 0
 --- !u!114 &1589109409
 MonoBehaviour:
+=======
+  m_GameObject: {fileID: 1570802967}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 9, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 686259853}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1570802969
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570802967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1570802970
+MeshRenderer:
+>>>>>>> Stashed changes
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1589109407}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2757,10 +4313,48 @@ MonoBehaviour:
   m_DragThreshold: 10
 --- !u!4 &1589109410
 Transform:
+=======
+  m_GameObject: {fileID: 1570802967}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 8486936951020155453, guid: 7377b0db5602e464d94d2880427f4a1b, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1570802971
+MeshFilter:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1589109407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -2948,6 +4542,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba69a52f713f2b34fb116d3b1fe390dd, type: 3}
+=======
+  m_GameObject: {fileID: 1570802967}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1570802972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570802967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5141245d8df0d498a16c2cd5d6b53d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 954132033}
+>>>>>>> Stashed changes
 --- !u!4 &1660996589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5116897903442120805, guid: 93c5bf403953bf743889ca7f54747e74,
@@ -2964,7 +4575,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1672183222}
   - component: {fileID: 1672183223}
+<<<<<<< Updated upstream
   m_Layer: 30
+=======
+  m_Layer: 0
+>>>>>>> Stashed changes
   m_Name: InvisibleWalls
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2998,6 +4613,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1696544957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 165582, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -3018,6 +4634,8 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300006, guid: 6b08163f3fb501042857418b11411088, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1719788614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,7 +4664,11 @@ Transform:
   m_LocalPosition: {x: 2.00001, y: 1, z: -15.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+<<<<<<< Updated upstream
   - {fileID: 1584600670}
+=======
+  - {fileID: 276691432}
+>>>>>>> Stashed changes
   m_Father: {fileID: 954132032}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3063,6 +4685,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1725466130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 119618, guid: 7d5fac0efe938994aba24a88ba9c3057,
@@ -3083,6 +4706,8 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 6b08163f3fb501042857418b11411088, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!137 &1764959519 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3103283877742750325, guid: 93c5bf403953bf743889ca7f54747e74,
@@ -3095,6 +4720,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 215098144}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1865660134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3161,6 +4787,8 @@ PrefabInstance:
       objectReference: {fileID: 954132033}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d5fac0efe938994aba24a88ba9c3057, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1898328351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3232,6 +4860,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1898328351}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!114 &2088254673 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 38734738003282156, guid: ba69a52f713f2b34fb116d3b1fe390dd,
@@ -3244,6 +4873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> Stashed changes
 --- !u!4 &2142625587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013041734426, guid: d803e729730d97a4e89edf13b602b3f4,
@@ -3305,7 +4936,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< Updated upstream
   - {fileID: 2100000, guid: c138f8f96e7469e418dc8b733dd1373d, type: 2}
+=======
+  - {fileID: 2100000, guid: 77f3a08522dc91f448f892c47b330e97, type: 2}
+>>>>>>> Stashed changes
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3347,6 +4982,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 37.533947, y: 12.41729, z: 14.710617}
   m_Center: {x: -1.0105934, y: 6.2091484, z: 0.97418976}
+<<<<<<< Updated upstream
 --- !u!64 &4985491503132860860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3550,3 +5186,5 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+=======
+>>>>>>> Stashed changes
