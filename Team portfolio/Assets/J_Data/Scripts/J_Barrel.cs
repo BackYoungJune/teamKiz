@@ -63,14 +63,22 @@ public class J_Barrel : MonoBehaviour
             else if (hitColliders[i].gameObject.tag == "Player")
             {
                 // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
-                IDamageable target = hitColliders[i].GetComponent<IDamageable>();
+                yPlayerHealth target = hitColliders[i].GetComponent<yPlayerHealth>();
+                yPlayerMovement target2 = hitColliders[i].GetComponent<yPlayerMovement>();
+               
                 if (target != null)
                 {
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hitColliders[i].ClosestPoint(transform.position), transform.position - hitColliders[i].transform.position);
+                    
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
                     // 카메라를 진동시킨다
                     CameraMove.ChangeState(yCameraMove.STATE.Shake);
+                }
+
+                if(target2 != null)
+                {
+                    target2.jumpCount = 1;
                 }
             }
 
