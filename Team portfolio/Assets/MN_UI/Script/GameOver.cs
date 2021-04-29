@@ -16,19 +16,21 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
+        if(MN_UIManager.Instance.IsDead)
         {
+            myPanel.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-
-
-            myPanel.SetActive(true);
         }
     }
     public void RestartButton()
     {
-        //SceneManager.LoadScene("MN_StartMenu");
+        SceneManager.LoadScene("PlayScene");
+    }
+    public void HomeButton()
+    {
         SceneManager.LoadScene("MN_StartMenu");
+
     }
     public void QuitButton()
     {
