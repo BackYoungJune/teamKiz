@@ -4305,16 +4305,15 @@ MonoBehaviour:
   moveSpeed: 5
   walkSpeed: 5
   swapSpeed: 5
-  JumpPower: 7
+  JumpPower: 5
   jumpCount: 0
   dodgeCount: 0
   myHips: {fileID: 1612373471144098291}
   myArm: {fileID: 1072692192096323117}
-  Layer:
-    serializedVersion: 2
-    m_Bits: 0
   SwtichWeapon: {fileID: 0}
   RifleLeftHandle: {fileID: 0}
+  bgm: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!114 &8913030573871491984
 MonoBehaviour:
   m_ObjectHideFlags: 0
