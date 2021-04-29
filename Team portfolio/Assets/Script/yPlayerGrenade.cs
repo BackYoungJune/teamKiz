@@ -83,6 +83,13 @@ public class yPlayerGrenade : MonoBehaviour
             //Vector3 velocity = GetVelocity(transform.position, m_Target.position, Quaternion.Euler(new Vector3(0, Camera.main.transform.forward, 0));
             //m_Rigidbody.velocity = velocity;
         }
+
+        if(myState == STATE.EMPTY && J_ItemManager.instance.remainGrenade > 0)
+        {
+            // 모형 수류탄을 활성화한다
+            Grenade.gameObject.SetActive(true);
+            myState = STATE.READY;
+        }
     }
 
     // 발사 시도

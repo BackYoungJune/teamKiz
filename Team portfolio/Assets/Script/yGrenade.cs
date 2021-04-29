@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class yGrenade : MonoBehaviour
 {
-    public float damage = 100.0f;        // 수류탄 데미지
+    public float damage = 75.0f;        // 수류탄 데미지
     public GameObject ExplosionEffect;   // 수류탄이 터졌을 때 이펙트
     public Vector3 LastPosition = Vector3.zero;
 

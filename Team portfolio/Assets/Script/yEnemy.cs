@@ -51,15 +51,6 @@ public class yEnemy : yLivingEntity
         myAnimEvent.Attack2 += OnAttackTarget;
     }
 
-    // Enemy를 홣성화시 사용되는 함수
-    private void Start()
-    {
-        // 메모리 관리를 위해 리지드바디를 끈다
-        // rigid.Sleep();
-        // 실험용 Enemy 스탯
-        startHealth = 200.0f;
-        health = 200.0f;
-    }
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
     public void Setup(float newHealth, float newDamage, float newSpeed)
     {
@@ -292,6 +283,9 @@ public class yEnemy : yLivingEntity
 
         MN_UIManager.Instance.IsZombieKill = true;
         Debug.Log("Zombie Kill");
+        
+        // 좀비가 죽을 경우 10초후에 사라진다.
+        Destroy(gameObject, 10.0f);
     }
 
     // 데미지를 입었을때 실행할 처리
