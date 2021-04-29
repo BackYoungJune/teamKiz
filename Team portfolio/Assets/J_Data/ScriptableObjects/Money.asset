@@ -17,6 +17,6 @@ MonoBehaviour:
   itemPrefab: {fileID: 1146633853591992746, guid: df5c0fc2899bda34ba34ee3858418251,
     type: 3}
   amount: 0
-  restore: 20
+  restore: 1000
   weaponType: 
   itemType: 4

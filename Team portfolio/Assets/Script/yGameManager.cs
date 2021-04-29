@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class yGameManager : MonoBehaviour
 {
@@ -25,8 +26,14 @@ public class yGameManager : MonoBehaviour
     private int score = 0; // 현재 게임 점수
     public bool isGameover { get; private set; } // 게임 오버 상태
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
         if (instance != this)
         {
@@ -60,5 +67,16 @@ public class yGameManager : MonoBehaviour
         isGameover = true;
         
         /* 게임오버 UI 활성화 */
+    }
+
+    public void LoadBossScene()
+    {
+        SceneManager.LoadScene("BossRoom");
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    { 
+        J_DataManager.instance.LoadItemDataFromJson();
+        Debug.Log("SceneLoaded");
     }
 }

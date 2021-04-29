@@ -16,6 +16,7 @@ TagManager:
   - Head
   - Grenade
   - VendingMachine
+  - BossRoom
   layers:
   - Default
   - TransparentFX

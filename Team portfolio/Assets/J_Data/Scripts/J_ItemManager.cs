@@ -100,6 +100,8 @@ public class J_ItemManager : MonoBehaviour
             Granade_Text.text = remainGrenade.ToString();
         }
 
+        J_DataManager.instance.SaveItemDataToJson();
+
     }
 
     private void Update()
