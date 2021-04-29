@@ -80,11 +80,11 @@ public class ItemChangeButtonManager : MonoBehaviour
     void Update()
     {
         Armor_Text.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
-
+        
 
         if (Input.GetKey(KeyCode.Tab))
         {
-           // Debug.Log(Armor_Text.text);
+            // Debug.Log(Armor_Text.text);
 
             MyMoney = J_ItemManager.instance.remainMoney;
             myArmor = J_ItemManager.instance.remainArmor;
