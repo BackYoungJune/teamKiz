@@ -17,6 +17,7 @@ TagManager:
   - Grenade
   - VendingMachine
   - BossRoom
+  - TNTPos
   layers:
   - Default
   - TransparentFX

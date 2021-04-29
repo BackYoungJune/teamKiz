@@ -2703,6 +2703,36 @@ Transform:
   m_Father: {fileID: 5343242917776204445}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6157336206092717466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3054146248384242214}
+  m_Layer: 11
+  m_Name: holdPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3054146248384242214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6157336206092717466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.034, y: 1.195, z: 1.025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2634919995502586880}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6458456075731565620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2839,7 +2869,7 @@ MonoBehaviour:
   range: 3
   layerMask:
     serializedVersion: 2
-    m_Bits: 2147483905
+    m_Bits: 3221225729
   actionText: {fileID: 0}
   storeOpened: 0
 --- !u!1 &6556004163866690782
@@ -2857,8 +2887,6 @@ GameObject:
   - component: {fileID: 7656706302696105864}
   - component: {fileID: 895623568659751882}
   - component: {fileID: 1101030253}
-  - component: {fileID: 1633854236}
-  - component: {fileID: 6687759913464163048}
   m_Layer: 11
   m_Name: Leonard
   m_TagString: Untagged
@@ -2989,40 +3017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43fd84a42abfe9d48a29197641958985, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1633854236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556004163866690782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a545697b5b48b741ae671db9281c9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
-  ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
-  grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
-  Granade_Text: {fileID: 0}
-  Potion_Text: {fileID: 0}
---- !u!114 &6687759913464163048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556004163866690782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a545697b5b48b741ae671db9281c9de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
-  ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
-  grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
-  Granade_Text: {fileID: 0}
-  Potion_Text: {fileID: 0}
 --- !u!1 &6699339520205186757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3908,7 +3902,7 @@ Camera:
   m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1073782547
+    m_Bits: 3758137107
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -4239,6 +4233,7 @@ Transform:
   - {fileID: 2735389749660765196}
   - {fileID: 3849137236193288084}
   - {fileID: 4953822192064784129}
+  - {fileID: 3054146248384242214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

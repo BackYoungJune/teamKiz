@@ -36,6 +36,11 @@ public class J_Explode : MonoBehaviour
                 hitColliders[i].GetComponent<J_Breakable>().Invoke("DestructObject", 1.0f);
             }
 
+            else if(hitColliders[i].gameObject.tag == "TNTPos")
+            {
+                Destroy(hitColliders[i].gameObject);
+            }
+
             else if (hitColliders[i].gameObject.tag == "Player")
             {
                 // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도

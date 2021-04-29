@@ -122,7 +122,7 @@ public class J_ActionController : MonoBehaviour
 
     private void SetTimeBomb()
     {
-        if(ignitionActivated && hitInfo.transform.tag == "Wall")
+        if(ignitionActivated && hitInfo.transform.tag == "TNTPos")
         {
             Transform parent = GameObject.Find("tntPos").GetComponent<Transform>();
             GameObject child = GameObject.Find("TimeBomb");
@@ -166,7 +166,7 @@ public class J_ActionController : MonoBehaviour
                 InteractVMachine();
             }
 
-            if(hitInfo.transform.tag == "Wall" && isHolding)
+            if(hitInfo.transform.tag == "TNTPos" && isHolding)
             {
                 SetTimeBombInfo();
             }
