@@ -64,27 +64,6 @@ public class MN_UIManager : MonoBehaviour
         Debug.Log(IsHit);
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
-        if(CurrentHealth <Mathf.Epsilon)
-        {
-            IsDead = true;
-        }
-    }
-    public void UsePotion(float heal)
-    {
-        Debug.Log("IsDead" + IsDead);
-        if (IsDead) return;
-        Debug.Log("포션 마심1");
-
-        if (CurrentHealth >= 180)
-        {
-            Debug.Log("체력오버");
-
-            CurrentHealth = 200;
-        }
-        else
-            CurrentHealth += heal;
-        Debug.Log("Player Health = " + CurrentHealth);
-
     }
 
     // 한번에 맥스와 현재 창탄 수를 가져온다
@@ -138,30 +117,30 @@ public class MN_UIManager : MonoBehaviour
     //}
 
     // 게임 재시작
-    //public void GameRestart()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    //}
+    public void GameRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     // 숨긴 커서 다시 보이기
-    //public void MouseCursorActive()
-    //{
+    public void MouseCursorActive()
+    {
         
-    //    // Mouse Lock
-    //    Cursor.lockState = CursorLockMode.None;
+        // Mouse Lock
+        Cursor.lockState = CursorLockMode.None;
 
-    //    // Cursor visible
-    //    Cursor.visible = true;
-    //}
+        // Cursor visible
+        Cursor.visible = true;
+    }
 
-    //// 전체화면 혹은 게임 실행시 마우스 커서 숨기기 코드
-    //public void MouseCursorDeactivate()
-    //{
+    // 전체화면 혹은 게임 실행시 마우스 커서 숨기기 코드
+    public void MouseCursorDeactivate()
+    {
         
-    //    // Mouse Lock
-    //    Cursor.lockState = CursorLockMode.Locked;
+        // Mouse Lock
+        Cursor.lockState = CursorLockMode.Locked;
 
-    //    // Cursor visible
-    //    Cursor.visible = false;
-    //}
+        // Cursor visible
+        Cursor.visible = false;
+    }
 }
