@@ -28,7 +28,12 @@ public class GameOver : MonoBehaviour
     public void RestartButton()
     {
         //SceneManager.LoadScene("MN_StartMenu");
+        SceneManager.LoadScene("PlayScene");
+    }
+    public void HomeButton()
+    {
         SceneManager.LoadScene("MN_StartMenu");
+
     }
     public void QuitButton()
     {
