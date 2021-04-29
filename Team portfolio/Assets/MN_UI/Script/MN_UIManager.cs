@@ -64,8 +64,6 @@ public class MN_UIManager : MonoBehaviour
         Debug.Log(IsHit);
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
-<<<<<<< HEAD
-=======
         if(CurrentHealth < Mathf.Epsilon)
         {
             IsDead = true;
@@ -87,7 +85,6 @@ public class MN_UIManager : MonoBehaviour
             CurrentHealth += heal;
         Debug.Log("Player Health = " + CurrentHealth);
 
->>>>>>> d595ada92d4aa0777f964b063a128b3c0a8023df
     }
 
     // 한번에 맥스와 현재 창탄 수를 가져온다
