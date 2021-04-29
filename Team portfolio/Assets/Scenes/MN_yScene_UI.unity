@@ -150,8 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d156fdd7fbd1c74ca51f60422e39766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4149451839953932169, guid: d6497f1aac926624898c0b36f5c1116b,
-    type: 3}
+  enemyPrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Wave1spawnPoints:
   - {fileID: 1381978219}
   - {fileID: 47591207}
@@ -1417,7 +1419,7 @@ PrefabInstance:
     - target: {fileID: 3573486658265825684, guid: a4eabf8cf675f9d4ca9fb44e89c7ec71,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 3573486658265825684, guid: a4eabf8cf675f9d4ca9fb44e89c7ec71,
         type: 3}
