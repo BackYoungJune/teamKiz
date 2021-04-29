@@ -53,7 +53,11 @@ public class J_ItemManager : MonoBehaviour
     // money
     public int remainMoney { get; set; }
 
-    
+    // 유석 추가 
+    // score
+    public int remainScore { get; set; }
+    public bool IsHeadShotKill { get; set; }
+    //public int PlusScore { get; set; }
     public void Use(yPlayerHealth target)
     {
         if(remainPotion > 0)
@@ -85,7 +89,10 @@ public class J_ItemManager : MonoBehaviour
         remainPotion = 5;
         remainArmor = 3;
         //유석 추가
+        //PlusScore = 100;
         remainMoney = 1000;
+        remainScore = 0;
+        IsHeadShotKill = false;
 
         if (Potion_Text != null && Granade_Text != null)
         {

@@ -48,21 +48,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 294d23b540775a94b90b43b2725cac6b, type: 3}
+        m_Texture: {fileID: 2800000, guid: bf309ec138c044944a97b537f028716f, type: 3}
         m_Scale: {x: 0.5, y: 1}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        m_Offset: {x: 0.2832421, y: 0}
-=======
-        m_Offset: {x: 0.10226889, y: 0}
->>>>>>> parent of a2cdf9e (4/29(4))
-=======
-        m_Offset: {x: 0.10226889, y: 0}
->>>>>>> parent of a2cdf9e (4/29(4))
-=======
-        m_Offset: {x: 0.15226424, y: 0}
->>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
+        m_Offset: {x: 0.3756357, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}

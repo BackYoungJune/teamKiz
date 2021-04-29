@@ -91,7 +91,7 @@ public class StoreController : MonoBehaviour
 
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
-        myArmor.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
+        //myArmor.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
         myPotion.text = J_ItemManager.instance.remainPotion.ToString();
         myGranade.text = J_ItemManager.instance.remainGrenade.ToString();
         myBullet.text = J_ItemManager.instance.ammoRemain.ToString();
@@ -151,7 +151,7 @@ public class StoreController : MonoBehaviour
                     float howmany = J_ItemManager.instance.remainArmor * Sell_Slider.value;
                     int changeInt = (int)howmany;
 
-                    HowMany.text = changeInt.ToString() + " 개";
+                    HowMany.text = changeInt.ToString();
 
                     PlusMoney.text = " + " + (changeInt * ArmorPrice * 0.5).ToString();
                     myMax.text = J_ItemManager.instance.remainArmor.ToString();
@@ -174,7 +174,7 @@ public class StoreController : MonoBehaviour
                     float howmany = J_ItemManager.instance.remainPotion * Sell_Slider.value;
                     int changeInt = (int)howmany;
 
-                    HowMany.text = changeInt.ToString() + " 개";
+                    HowMany.text = changeInt.ToString();
 
                     PlusMoney.text = " + " + (changeInt * PotionPrice * 0.5).ToString();
                     myMax.text = J_ItemManager.instance.remainPotion.ToString();
@@ -197,7 +197,7 @@ public class StoreController : MonoBehaviour
                     float howmany = J_ItemManager.instance.remainGrenade * Sell_Slider.value;
                     int changeInt = (int)howmany;
 
-                    HowMany.text = changeInt.ToString() + " 개";
+                    HowMany.text = changeInt.ToString();
 
                     PlusMoney.text = " + " + (changeInt * GrandePrice * 0.5).ToString();
                     myMax.text = J_ItemManager.instance.remainGrenade.ToString();
@@ -219,7 +219,7 @@ public class StoreController : MonoBehaviour
                     int changeInt = (int)howmany;
                     float takeMoney = changeInt * OneBulletPrice * 0.5f;
 
-                    HowMany.text = changeInt.ToString() + " 개";
+                    HowMany.text = changeInt.ToString();
 
                     PlusMoney.text = " + " + ((int)takeMoney).ToString();
                     myMax.text = J_ItemManager.instance.ammoRemain.ToString();

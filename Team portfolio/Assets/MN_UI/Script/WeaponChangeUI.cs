@@ -23,33 +23,29 @@ public class WeaponChangeUI : MonoBehaviour
     public BUTTON_NAME buttonName;
     Image myImage;
 
-    Vector3 scale;
-    Vector3 startScale;
+    
     // Start is called before the first frame update
+    bool IsClick;
 
     private void Awake()
     {
         myImage = GetComponent<Image>();
-        //startScale = this.transform.localScale;
-        startScale = this.transform.localScale;
-        scale = new Vector3(4.5f, 9f, 1f);
+        Vector3 startScale = this.transform.localScale;
+        Vector3 scale = new Vector3(4.5f, 9f, 1f);
 
         mouseEvent = GetComponent<MouseEvent>();        
         mouseEvent.MouseEnter += (PointerEventData data) => { this.transform.localScale = scale;  };
         mouseEvent.MouseExitExit += (PointerEventData data) => { this.transform.localScale = startScale; };
     }
 
+    void Start()
+    {
+    
+    }
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            this.transform.localScale = startScale;
-        }
-      //  else
-           // this.transform.localScale = scale;
-
 
         ////이미지에 맞게 버튼의 클릭가능 크기 변경
         ////this.GetComponent<Image>().alphaHitTestMinimumThreshold = AlphaThreshold;

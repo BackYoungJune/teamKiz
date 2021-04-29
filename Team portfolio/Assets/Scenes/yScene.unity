@@ -150,10 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d156fdd7fbd1c74ca51f60422e39766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemyPrefab: {fileID: 4149451839953932169, guid: d6497f1aac926624898c0b36f5c1116b,
+    type: 3}
   Wave1spawnPoints:
   - {fileID: 1381978219}
   - {fileID: 47591207}
@@ -180,16 +178,12 @@ MonoBehaviour:
   - {fileID: 798045497}
   damageMax: 40
   damageMin: 20
-  health1: 100
+  healthMax: 200
+  healthMin: 100
   speedMax: 3
   speedMin: 1
   scoreMax: 100
   scoreMin: 80
-<<<<<<< Updated upstream
-  enemies: []
-  wave: 0
-=======
->>>>>>> Stashed changes
   ChangedWave: 1
 --- !u!4 &15766215
 Transform:
@@ -449,7 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146e9fedc2ca7854bb128aa928cc8d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myState: 0
 --- !u!1 &262008788
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,16 +944,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< Updated upstream
     - target: {fileID: 6548974400770962983, guid: 2028b14499f96d34db285b8e246e8338,
-=======
-    - target: {fileID: 4149451839711143650, guid: d6497f1aac926624898c0b36f5c1116b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4149451839953932170, guid: d6497f1aac926624898c0b36f5c1116b,
->>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0314422
@@ -1045,25 +1029,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.0007910217
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 6548974400793692321, guid: 2028b14499f96d34db285b8e246e8338,
-=======
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6497f1aac926624898c0b36f5c1116b, type: 3}
---- !u!1001 &1089024250
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4149451839711143650, guid: d6497f1aac926624898c0b36f5c1116b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4149451839953932170, guid: d6497f1aac926624898c0b36f5c1116b,
->>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.w
       value: -0.7808123
@@ -1133,73 +1099,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: -0.62097794
       objectReference: {fileID: 0}
-<<<<<<< Updated upstream
     - target: {fileID: 6548974400896241818, guid: 2028b14499f96d34db285b8e246e8338,
-=======
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6497f1aac926624898c0b36f5c1116b, type: 3}
---- !u!1 &1160877587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1962220151113749786, guid: 8b15b1fb63177c44090f5854e19fceea,
-    type: 3}
-  m_PrefabInstance: {fileID: 7983362064601643087}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1160877588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160877587}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa54e0f8e6a16674ba4adf57f93ae66b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1190346960
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1190346961}
-  m_Layer: 0
-  m_Name: Wave2Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1190346961
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1190346960}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 15766215}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1207414053
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4149451839711143650, guid: d6497f1aac926624898c0b36f5c1116b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4149451839953932170, guid: d6497f1aac926624898c0b36f5c1116b,
->>>>>>> Stashed changes
         type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.025988804
@@ -1558,11 +1458,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
@@ -3496,11 +3391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5294,11 +5184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
@@ -7123,11 +7008,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
@@ -9109,11 +8989,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -10908,11 +10783,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6548974401315881610, guid: 2028b14499f96d34db285b8e246e8338,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -12261,7 +12131,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< Updated upstream
     - target: {fileID: 1959493708, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
       propertyPath: ShakeTime
       value: 10
@@ -14016,14 +13885,6 @@ PrefabInstance:
       value: -0.20010614
       objectReference: {fileID: 0}
     - target: {fileID: 9109240618937927078, guid: 8b15b1fb63177c44090f5854e19fceea,
-=======
-    - target: {fileID: 4149451839711143650, guid: d6497f1aac926624898c0b36f5c1116b,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4149451839953932170, guid: d6497f1aac926624898c0b36f5c1116b,
->>>>>>> Stashed changes
         type: 3}
       propertyPath: m_Name
       value: Player
@@ -14166,11 +14027,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6548974401307827231, guid: 2028b14499f96d34db285b8e246e8338,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2028b14499f96d34db285b8e246e8338, type: 3}

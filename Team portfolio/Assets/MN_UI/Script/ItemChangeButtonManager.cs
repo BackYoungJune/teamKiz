@@ -68,6 +68,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         //Armor_Text.text = "aaaaaaaaa";
         //포션 개수에 사용할 변수
         Potion_Text.text = "";
+        Armor_Text.text = "X " + J_ItemManager.instance.remainArmor.ToString();
 
         ItemButtons.SetActive(false);
 
@@ -78,17 +79,12 @@ public class ItemChangeButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< HEAD
         Armor_Text.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
-        
-=======
-        //Armor_Text.text = J_ItemManager.instance.remainArmor.ToString();
 
->>>>>>> parent of ed72457 (Merge branch 'main' of https://github.com/BackYoungJune/teamKiz into main)
 
         if (Input.GetKey(KeyCode.Tab))
         {
-            // Debug.Log(Armor_Text.text);
+           // Debug.Log(Armor_Text.text);
 
             MyMoney = J_ItemManager.instance.remainMoney;
             myArmor = J_ItemManager.instance.remainArmor;
