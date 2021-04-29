@@ -51,7 +51,11 @@ Material:
         m_Texture: {fileID: 2800000, guid: 294d23b540775a94b90b43b2725cac6b, type: 3}
         m_Scale: {x: 0.5, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
         m_Offset: {x: 0.2832421, y: 0}
+=======
+        m_Offset: {x: 0.10226889, y: 0}
+>>>>>>> parent of a2cdf9e (4/29(4))
 =======
         m_Offset: {x: 0.10226889, y: 0}
 >>>>>>> parent of a2cdf9e (4/29(4))
