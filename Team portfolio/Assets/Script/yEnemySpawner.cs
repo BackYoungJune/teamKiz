@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class yEnemySpawner : MonoBehaviour
 {
-    public yEnemy enemyPrefab; // 생성할 적 AI들
+    public yEnemy[] enemyPrefab; // 생성할 적 AI들
 
     public Transform[] Wave1spawnPoints; // 적 AI를 소환할 위치들
     public Transform[] Wave2spawnPoints; // 적 AI를 소환할 위치들
@@ -68,9 +68,9 @@ public class yEnemySpawner : MonoBehaviour
 
         // 각 웨이브에 생성할 위치를 랜덤으로 결정
         WaveSpawn(wave);
-
+        Debug.Log(Random.Range(0, 2));
         // 적 프리팹으로부터 적 생성
-        yEnemy enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        yEnemy enemy = Instantiate(Random.Range(0, 2) == 0 ? enemyPrefab[0] : enemyPrefab[1], spawnPoint.position, spawnPoint.rotation);
 
         // 생성한 적의 능력치와 추적 대상 설정
         enemy.Setup(health, damage, speed);

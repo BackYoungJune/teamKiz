@@ -91,7 +91,7 @@ public class StoreController : MonoBehaviour
 
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
-        //myArmor.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
+        myArmor.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
         myPotion.text = J_ItemManager.instance.remainPotion.ToString();
         myGranade.text = J_ItemManager.instance.remainGrenade.ToString();
         myBullet.text = J_ItemManager.instance.ammoRemain.ToString();

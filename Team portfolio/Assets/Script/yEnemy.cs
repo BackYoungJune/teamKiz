@@ -34,7 +34,7 @@ public class yEnemy : yLivingEntity
     Vector3 hitPoint = Vector3.zero;
     Vector3 hitNormal = Vector3.zero;
 
-    public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
+    //public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
     float NavSpeed;
 
@@ -51,6 +51,7 @@ public class yEnemy : yLivingEntity
         // 공격시 이벤트 실행
         myAnimEvent.Attack1 += OnAttackTarget;
         myAnimEvent.Attack2 += OnAttackTarget;
+        //myNavAgent.speed = NavSpeed = 4.0f;
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
@@ -301,10 +302,10 @@ public class yEnemy : yLivingEntity
     {
         if (!dead)
         {
-            // 공격받은 지점과 방향으로 파티클 효과 재생
-            hitEffect.transform.position = hitPoint;
-            hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
-            hitEffect.Play();
+            //// 공격받은 지점과 방향으로 파티클 효과 재생
+            //hitEffect.transform.position = hitPoint;
+            //hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
+            //hitEffect.Play();
             myAnim.SetTrigger("Damage"); // 공격 받을 시 애니메이션 재생
         }
 
