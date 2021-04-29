@@ -64,7 +64,7 @@ public class MN_UIManager : MonoBehaviour
         Debug.Log(IsHit);
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
-        if(CurrentHealth < Mathf.Epsilon)
+        if(CurrentHealth <Mathf.Epsilon)
         {
             IsDead = true;
         }
