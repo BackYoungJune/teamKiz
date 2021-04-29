@@ -127,9 +127,6 @@ public class yPlayerGrenade : MonoBehaviour
         // 던지는 수류탄을 발사한다
         GrenadeRigid.AddForce(Camera.main.transform.forward * 10.0f + Vector3.up * 3.0f, ForceMode.Impulse);
 
-        // 던지는 수류탄을 파괴한다
-        Destroy(instantGrenade.gameObject, 5f);
-
         // 남은 수류탄 갯수를 -1
         //itemManager.remainGrenade--;
 

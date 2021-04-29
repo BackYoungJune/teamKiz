@@ -75,6 +75,7 @@ public class yGrenade : MonoBehaviour
     {
         Instantiate(ExplosionEffect, transform.position + Vector3.up, transform.rotation);
         LastPosition = transform.position;
+        Destroy(gameObject);
         return true;
     }
 }

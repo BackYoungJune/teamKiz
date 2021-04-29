@@ -79,6 +79,10 @@ public class ItemChangeButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Destroy(this.gameObject);
+        }
         Armor_Text.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
 
 
@@ -192,38 +196,14 @@ public class ItemChangeButtonManager : MonoBehaviour
     }
     public void POTION_Button()
     {
-        //Debug.Log("Drink Potion!!");
-        
-        if(J_ItemManager.instance.remainPotion >0)
+        if(J_ItemManager.instance.remainPotion > 0)
         {
-            if (MN_UIManager.Instance.CurrentHealth <= 180)
-            {
-                Debug.Log("포션 마심1");
-                MN_UIManager.Instance.UpdatePlayerHealth(20f);
-                J_ItemManager.instance.remainPotion--;
-            }
-            else if(MN_UIManager.Instance.CurrentHealth > 180)
-            {
-                Debug.Log("포션 마심2");
-                MN_UIManager.Instance.CurrentHealth = 200f;
-                J_ItemManager.instance.remainPotion--;
-
-            }
-            else
-            {
-                Debug.Log("체력 만땅");
-            }
+            MN_UIManager.Instance.UsePotion(20f);
+            J_ItemManager.instance.remainPotion--;
         }
         else
         {
             Debug.Log("포션부족");
         }
-
-
-    }
-    public void OnbuttonClickPotion()
-    {
-        //itemManager.Use(GameObject.Find("Player"));
-        //Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
     }
 }
