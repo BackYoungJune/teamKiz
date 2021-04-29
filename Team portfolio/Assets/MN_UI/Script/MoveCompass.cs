@@ -15,19 +15,22 @@ public class MoveCompass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.Find("Player") as GameObject;
+        Player = GameObject.Find("Player");
        // Player = GameObject.Find("Player_1") as GameObject;
 
         canvasrenerder = GetComponent<CanvasRenderer>();
         //canvasrenerder.GetMaterial(0).SetTextureOffset("_MainTex", new Vector2(0f, 0f));
-
+        //Vector2 vec = canvasrenerder.GetMaterial(0).GetTextureOffset("_MainTex");
+        Vector2 vec = new Vector2(0f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
+        if(MN_UIManager.Instance.IsDead)
         {
+            //canvasrenerder.GetMaterial(0).SetTextureOffset("_MainTex", vec);
+
             Destroy(GameObject.Find("Compass_Canvas"));
         }
         if(canvasrenerder != null && canvasrenerder.GetMaterial(0) != null)

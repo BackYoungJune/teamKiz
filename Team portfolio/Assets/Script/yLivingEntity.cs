@@ -39,7 +39,7 @@ public class yLivingEntity : MonoBehaviour, IDamageable
         if (dead) return;
 
         // 체력 추가
-        health += newHealth;
+        health = newHealth;
 
         // 유석_수정 : ui manager의 current health를 불러옴
         //health = newHealth;

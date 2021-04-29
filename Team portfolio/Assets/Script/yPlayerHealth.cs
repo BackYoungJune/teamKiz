@@ -17,6 +17,7 @@ public class yPlayerHealth : yLivingEntity
     // Start is called before the first frame update
     void Start()
     {
+        health = MN_UIManager.Instance.CurrentHealth;
         // 사용할 컴포넌트를 가져오기
         myAnim = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<yPlayerMovement>();
@@ -46,7 +47,8 @@ public class yPlayerHealth : yLivingEntity
         base.RestoreHealth(newHealth);
         Debug.Log("base.health "+ base.health);
         /* 체력 UI갱신 */
-        //UpManage.Updat()
+
+       
     }
 
     // 보호막 갯수 증가시키는 기능

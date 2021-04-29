@@ -60,6 +60,7 @@ public class MN_UIManager : MonoBehaviour
     private void Awake()
     {
         IsDead = false;
+
     }
 
     public void UpdatePlayerHealth(float Health)
@@ -68,7 +69,7 @@ public class MN_UIManager : MonoBehaviour
             IsHit = true;
         Debug.Log(IsHit);
         CurrentHealth += Health;
-        Debug.Log("Player Health = " + CurrentHealth);
+        //Debug.Log("Player Health = " + CurrentHealth);
 
         if (CurrentHealth < Mathf.Epsilon)
         {
@@ -107,7 +108,14 @@ public class MN_UIManager : MonoBehaviour
         this.Boss_CurrentHealth -= damage;
     }
 
- 
+    private void Update()
+    {
+        yPlayerHealth yplayer_ = FindObjectOfType<yPlayerHealth>();
+
+        yplayer_.RestoreHealth(CurrentHealth);
+
+    }
+
 
     //public void UpdatePlayerRestoreHealth(float Health)
     //{
