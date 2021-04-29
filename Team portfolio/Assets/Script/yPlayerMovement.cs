@@ -18,7 +18,7 @@ public class yPlayerMovement : MonoBehaviour
     public Transform myHips;    // 플레이어 상체
     public ySpringArm myArm;    // 카메라 스프링 암
 
-    public LayerMask Layer;
+    //public LayerMask Layer;
         
     Vector3 MoveVec;      // 플레이어 프레임당 이동거리
     Vector3 dodgeVec;     // 플레이어 닷지 이동거리
@@ -30,6 +30,9 @@ public class yPlayerMovement : MonoBehaviour
     J_SwtichWeapon SwtichWeapon;
 
     public GameObject RifleLeftHandle;
+
+    public AudioClip bgm;
+    public AudioClip fireSound;
 
     void Awake()
     {
