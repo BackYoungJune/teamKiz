@@ -79,7 +79,8 @@ public class ItemChangeButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        
+        if(MN_UIManager.Instance.IsDead)
         {
             Destroy(this.gameObject);
         }

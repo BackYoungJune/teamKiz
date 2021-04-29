@@ -57,6 +57,11 @@ public class MN_UIManager : MonoBehaviour
 
     public bool Inventory { get; set; }
 
+    private void Awake()
+    {
+        IsDead = false;
+    }
+
     public void UpdatePlayerHealth(float Health)
     {
         if (Health < 0)
@@ -102,6 +107,7 @@ public class MN_UIManager : MonoBehaviour
         this.Boss_CurrentHealth -= damage;
     }
 
+ 
 
     //public void UpdatePlayerRestoreHealth(float Health)
     //{
@@ -145,7 +151,7 @@ public class MN_UIManager : MonoBehaviour
     //// 숨긴 커서 다시 보이기
     //public void MouseCursorActive()
     //{
-        
+
     //    // Mouse Lock
     //    Cursor.lockState = CursorLockMode.None;
 
@@ -156,7 +162,7 @@ public class MN_UIManager : MonoBehaviour
     //// 전체화면 혹은 게임 실행시 마우스 커서 숨기기 코드
     //public void MouseCursorDeactivate()
     //{
-        
+
     //    // Mouse Lock
     //    Cursor.lockState = CursorLockMode.Locked;
 
