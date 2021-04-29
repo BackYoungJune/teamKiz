@@ -6,14 +6,18 @@ public class yEnemyHead : MonoBehaviour
 {
     public yEnemy enemy;
 
-    private void Update()
-    {
-    }
-
     public void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         enemy.OnDamage(damage, hitPoint, hitNormal);
-    }
 
+        if (enemy.dead)
+        {
+            Collider[] enemyColliders = GetComponents<Collider>();
+            for (int i = 0; i < enemyColliders.Length; i++)
+            {
+                enemyColliders[i].enabled = false;
+            }
+        }
+    }
 
 }

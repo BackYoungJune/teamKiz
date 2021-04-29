@@ -36,6 +36,8 @@ public class yEnemy : yLivingEntity
 
     public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
 
+    float NavSpeed;
+
     void Awake()
     {
         // 게임 오브젝트로부터 사용할 컴퍼넌트 가져오기;
@@ -59,6 +61,7 @@ public class yEnemy : yLivingEntity
         health = newHealth;
         damage = newDamage;
         myNavAgent.speed = newSpeed;
+        NavSpeed = newSpeed;
     }
 
     void Update()
@@ -158,6 +161,8 @@ public class yEnemy : yLivingEntity
                 {
                     // myNavAgent.speed를 나눈이유는 0 ~ 1.0으로 값을 맞추기 위해 나눴다
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                    // 애니메이션 스피드 맞춰준다
+                    myAnim.speed = NavSpeed / 3;
                     // 이동을 거의다 시켰으면 STATE.NORMAL로 바꿔준다
                     if (myNavAgent.remainingDistance < myNavAgent.stoppingDistance && myState == STATE.ROAMING)
                     {
@@ -169,7 +174,8 @@ public class yEnemy : yLivingEntity
                 if (!dead)
                 {
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
-
+                    // 애니메이션 스피드 맞춰준다
+                    myAnim.speed = NavSpeed / 3;
                     // 플레이어쪽으로 이동
                     myNavAgent.SetDestination(targetEntity.transform.position);
                     //myNavAgent.destination = targetEntity.transform.position;
@@ -184,7 +190,7 @@ public class yEnemy : yLivingEntity
                     // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
-
+                    
                     // 플레이어쪽으로 이동
                     myNavAgent.SetDestination(myRangeSys.Target.position);
 
@@ -276,6 +282,8 @@ public class yEnemy : yLivingEntity
         myNavAgent.isStopped = true;
         myNavAgent.enabled = false;
 
+        // 애니메이션 스피드 초기화
+        myAnim.speed = 1;
         // 사망 애니메이션 재생
         myAnim.SetTrigger("Die");
         // 스테이트 변경
