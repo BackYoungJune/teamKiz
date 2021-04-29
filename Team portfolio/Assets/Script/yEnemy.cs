@@ -31,12 +31,12 @@ public class yEnemy : yLivingEntity
     public float damage = 20.0f;            // 공격력
     public float AttackTime = 0.5f;         // 공격 딜레이 시간
 
-    Vector3 hitPoint = Vector3.zero;
-    Vector3 hitNormal = Vector3.zero;
+    Vector3 hitPoint = Vector3.zero;        // 데미지 입은 위치
+    Vector3 hitNormal = Vector3.zero;       // 데미지 입은 표면
 
-    //public ParticleSystem hitEffect; // 피격시 재생할 파티클 효과
+    float NavSpeed;     // 네브메시 스피드
 
-    float NavSpeed;
+    bool isGrenade = false;
 
     void Awake()
     {
@@ -293,7 +293,9 @@ public class yEnemy : yLivingEntity
 
         MN_UIManager.Instance.IsZombieKill = true;
         Debug.Log("Zombie Kill");
+
         
+
         // 좀비가 죽을 경우 10초후에 사라진다.
         Destroy(gameObject, 10.0f);
     }
@@ -303,10 +305,6 @@ public class yEnemy : yLivingEntity
     {
         if (!dead)
         {
-            // 공격받은 지점과 방향으로 파티클 효과 재생
-            //hitEffect.transform.position = hitPoint;
-            //hitEffect.transform.rotation = Quaternion.LookRotation(hitNormal);
-            //hitEffect.Play();
             myAnim.SetTrigger("Damage"); // 공격 받을 시 애니메이션 재생
         }
 
@@ -327,6 +325,7 @@ public class yEnemy : yLivingEntity
 
     IEnumerator OnReact(Vector3 reactVec, bool isGrenade)
     {
+        isGrenade = true;
         yield return new WaitForSeconds(0.1f);
 
         if (isGrenade && !dead)
@@ -357,7 +356,7 @@ public class yEnemy : yLivingEntity
 
             yield return new WaitForSeconds(0.5f);
             rigid.isKinematic = false;
-
+            
             // 리지드바디를 다시 끈다
             //rigid.Sleep();
             // 리지드바디를 제거한다
@@ -386,5 +385,14 @@ public class yEnemy : yLivingEntity
         }
 
         yield return new WaitForSeconds(1.0f);
+    }
+
+    IEnumerator Gravity()
+    {
+        Rigidbody rigid = gameObject.AddComponent<Rigidbody>();
+        rigid.useGravity = true;
+        yield return new WaitForSeconds(4.0f);
+
+        Destroy(gameObject.GetComponent<Rigidbody>());
     }
 }
