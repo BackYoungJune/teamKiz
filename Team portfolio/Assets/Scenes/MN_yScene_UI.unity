@@ -184,6 +184,7 @@ MonoBehaviour:
   speedMin: 1
   scoreMax: 100
   scoreMin: 80
+  enemies: []
   ChangedWave: 1
 --- !u!4 &15766215
 Transform:
@@ -970,7 +971,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 252778120, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8b15b1fb63177c44090f5854e19fceea, type: 3}
 --- !u!1 &990862735
 GameObject:
