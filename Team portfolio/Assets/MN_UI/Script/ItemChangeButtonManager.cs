@@ -192,14 +192,22 @@ public class ItemChangeButtonManager : MonoBehaviour
     }
     public void POTION_Button()
     {
-        Debug.Log("Drink Potion!!");
+        //Debug.Log("Drink Potion!!");
         
         if(J_ItemManager.instance.remainPotion >0)
         {
-            if (MN_UIManager.Instance.CurrentHealth < 200)
+            if (MN_UIManager.Instance.CurrentHealth <= 180)
             {
-                MN_UIManager.Instance.CurrentHealth += 20;
+                Debug.Log("포션 마심1");
+                MN_UIManager.Instance.UpdatePlayerHealth(20f);
                 J_ItemManager.instance.remainPotion--;
+            }
+            else if(MN_UIManager.Instance.CurrentHealth > 180)
+            {
+                Debug.Log("포션 마심2");
+                MN_UIManager.Instance.CurrentHealth = 200f;
+                J_ItemManager.instance.remainPotion--;
+
             }
             else
             {
