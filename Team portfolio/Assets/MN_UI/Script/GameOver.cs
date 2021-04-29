@@ -18,11 +18,9 @@ public class GameOver : MonoBehaviour
     {
         if(MN_UIManager.Instance.CurrentHealth < Mathf.Epsilon)
         {
+            myPanel.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-
-
-            myPanel.SetActive(true);
         }
     }
     public void RestartButton()
