@@ -5,11 +5,5 @@
     "s_magAmmo": 25,
     "s_remainGrenade": 2,
     "s_remainArmor": 3,
-    "s_remainMoney": 1000,
-    "s_wave": 0,
-    "s_spawnTriggers": [
-        false,
-        true,
-        true
-    ]
+    "s_remainMoney": 1000
 }

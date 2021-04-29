@@ -23,6 +23,7 @@ public class J_ActionController : MonoBehaviour
     private bool holdActivated = false;     // 들 수 있을 때 true
     private bool isHolding = false;         // 들고 있으면 true
     private bool bombSet = false;
+    private bool moveScene = false;
 
     yPlayerInput playerInput;
     J_ItemManager itemManager;
@@ -48,6 +49,7 @@ public class J_ActionController : MonoBehaviour
             CanPickUP();
             CanHolding();
             SetTimeBomb();
+            EnterBossRoom();
         }
     }
 
@@ -102,7 +104,6 @@ public class J_ActionController : MonoBehaviour
             }
         }
     }
-
     private void CanHolding()
     {
         if(hitInfo.transform != null && holdActivated)
@@ -136,6 +137,16 @@ public class J_ActionController : MonoBehaviour
         }
     }
 
+    private void EnterBossRoom()
+    {
+        if(moveScene)
+        {
+            if (J_DataManager.instance != null)
+            J_DataManager.instance.SaveItemDataToJson();
+            yGameManager.instance.LoadBossScene();
+        }
+    }
+
     private void CheckItem()
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hitInfo, range, layerMask))
@@ -158,6 +169,11 @@ public class J_ActionController : MonoBehaviour
             if(hitInfo.transform.tag == "Wall" && isHolding)
             {
                 SetTimeBombInfo();
+            }
+
+            if(hitInfo.transform.tag == "BossRoom")
+            {
+                BossRoomInfo();
             }
         }
         else
@@ -193,6 +209,12 @@ public class J_ActionController : MonoBehaviour
         actionText.gameObject.SetActive(true);
         actionText.text = "상점열기(E)";
     }
+    private void BossRoomInfo()
+    {
+        moveScene = true;
+        actionText.gameObject.SetActive(true);
+        actionText.text = "입장(E)";
+    }
 
     private void InfoDisappear()
     {
@@ -200,6 +222,10 @@ public class J_ActionController : MonoBehaviour
         holdActivated = false;
         ignitionActivated = false;
         storeActivated = false;
-        actionText.gameObject.SetActive(false);
+        moveScene = false;
+        if(actionText != null)
+        {
+            actionText.gameObject.SetActive(false);
+        }
     }
 }
