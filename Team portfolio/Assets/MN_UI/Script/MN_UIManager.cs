@@ -65,6 +65,21 @@ public class MN_UIManager : MonoBehaviour
         CurrentHealth += Health;
         Debug.Log("Player Health = " + CurrentHealth);
     }
+    public void UsePotion(float heal)
+    {
+        Debug.Log("포션 마심1");
+
+        if (CurrentHealth >= 180)
+        {
+            Debug.Log("체력오버");
+
+            CurrentHealth = 200;
+        }
+        else
+            CurrentHealth += heal;
+        Debug.Log("Player Health = " + CurrentHealth);
+
+    }
 
     // 한번에 맥스와 현재 창탄 수를 가져온다
     public void UpdateAmmos(int MaxAmmo,int ammo)

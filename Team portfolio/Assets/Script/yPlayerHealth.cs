@@ -66,7 +66,7 @@ public class yPlayerHealth : yLivingEntity
         if (J_ItemManager.instance.remainArmor > 0)
         {
             // 데미지의 반만큼 체력 감소
-            damage -= damage / 2;
+            damage = damage / 2;
             // 보호막 -1
             J_ItemManager.instance.remainArmor--;
         }
@@ -82,6 +82,7 @@ public class yPlayerHealth : yLivingEntity
         /* 보호막 UI갱신 */
         MN_UIManager.Instance.UpdatePlayerHealth(-damage);
         //RestoreHealth(MN_UIManager.Instance.CurrentHealth);
+        Debug.Log("health : " + health);
     }
 
     // 사망 처리
