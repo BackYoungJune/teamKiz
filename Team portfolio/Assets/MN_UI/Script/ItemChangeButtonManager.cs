@@ -21,6 +21,7 @@ public class ItemChangeButtonManager : MonoBehaviour
 
     Text Granade_Text;
     Text Potion_Text;
+    Text Armor_Text;
 
     J_SwtichWeapon swtichWeapon;
     J_ItemManager itemManager;
@@ -59,10 +60,12 @@ public class ItemChangeButtonManager : MonoBehaviour
 
         Granade_Text = GameObject.Find("Granade_Text").GetComponent<Text>();
         Potion_Text = GameObject.Find("Potion_Text").GetComponent<Text>();
+        Armor_Text = GameObject.Find("Armor_Text").GetComponent<Text>();
 
         //수류탄 개수에 사용할 변수
         Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
-
+        //아머 개수에 사용할 변수
+        //Armor_Text.text = "aaaaaaaaa";
         //포션 개수에 사용할 변수
         Potion_Text.text = "";
 
@@ -75,10 +78,13 @@ public class ItemChangeButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Armor_Text.text = J_ItemManager.instance.remainArmor.ToString();
 
 
         if (Input.GetKey(KeyCode.Tab))
         {
+           // Debug.Log(Armor_Text.text);
+
             MyMoney = J_ItemManager.instance.remainMoney;
             myArmor = J_ItemManager.instance.remainArmor;
             myPotion = J_ItemManager.instance.remainPotion;
@@ -119,7 +125,6 @@ public class ItemChangeButtonManager : MonoBehaviour
         switch (myState)
         {
             case STATE.HAND:
-
                 NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.FIST);
 
@@ -157,15 +162,15 @@ public class ItemChangeButtonManager : MonoBehaviour
             case STATE.RIFLE:
                 AmmoText.text = J_ItemManager.instance.magAmmo.ToString() + " / " + J_ItemManager.instance.ammoRemain.ToString();
 
-                Debug.Log("RIFLE");
+                //Debug.Log("RIFLE");
                 break;
             case STATE.AXE:
-               // Debug.Log("AXE");
+                //Debug.Log("AXE");
                 AmmoText.text = ""; 
 
                 break;
             case STATE.GRENADE:
-                Debug.Log("GRENADE");
+                //Debug.Log("GRENADE");
                 AmmoText.text = J_ItemManager.instance.remainGrenade.ToString();
 
                 break;
@@ -186,14 +191,30 @@ public class ItemChangeButtonManager : MonoBehaviour
     }
     public void POTION_Button()
     {
+        Debug.Log("Drink Potion!!");
+        
+        if(J_ItemManager.instance.remainPotion >0)
+        {
+            if (MN_UIManager.Instance.CurrentHealth < 200)
+            {
+                MN_UIManager.Instance.CurrentHealth += 20;
+                J_ItemManager.instance.remainPotion--;
+            }
+            else
+            {
+                Debug.Log("체력 만땅");
+            }
+        }
+        else
+        {
+            Debug.Log("포션부족");
+        }
 
-        ChangeState(STATE.POTION);
 
-        //Debug.Log("Drink Potion!!");
     }
     public void OnbuttonClickPotion()
     {
-        itemManager.Use(GameObject.Find("Player"));
+        //itemManager.Use(GameObject.Find("Player"));
         //Potion_Text.text = J_ItemManager.instance.remainPotion.ToString();
     }
 }
