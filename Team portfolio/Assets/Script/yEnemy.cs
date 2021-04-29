@@ -177,7 +177,7 @@ public class yEnemy : yLivingEntity
                 {
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     // 애니메이션 스피드 맞춰준다
-                    myAnim.speed = NavSpeed / 3;
+                    myAnim.speed = NavSpeed*2 / 3;
                     // 플레이어쪽으로 이동
                     myNavAgent.SetDestination(targetEntity.transform.position);
                     //myNavAgent.destination = targetEntity.transform.position;
