@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class yGrenade : MonoBehaviour
 {
-    public float damage = 75.0f;        // 수류탄 데미지
+    public float damage = 105.0f;        // 수류탄 데미지
     public GameObject ExplosionEffect;   // 수류탄이 터졌을 때 이펙트
     public Vector3 LastPosition = Vector3.zero;
 
@@ -43,9 +43,13 @@ public class yGrenade : MonoBehaviour
                 // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
                 if (target != null)
                 {
+                    //yield return new WaitForSeconds(1.0f);
+
                     // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
                     target.OnDamage(damage, hit.point, hit.normal);
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+
+                    
                 }
             }
 
