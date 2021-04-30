@@ -8,12 +8,21 @@ public class J_TimeBomb : MonoBehaviour
 
     float timer = 5.0f;
     bool IsPlanted = false;
+    bool soundOn = false;
     public void SetPlanted(bool b) { this.IsPlanted = b; }
+
+    public AudioSource audioSource;
+    public AudioClip timerSound;
+
+    void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsPlanted)
+        if (IsPlanted)
         {
             PlantBomb();
         }
@@ -21,6 +30,11 @@ public class J_TimeBomb : MonoBehaviour
 
     void PlantBomb()
     {
+        if(!soundOn)
+        {
+            PlayTimeBombSound();
+            soundOn = true;
+        }
         StartCoroutine(SetTimer());
     }
 
@@ -35,6 +49,7 @@ public class J_TimeBomb : MonoBehaviour
         {
             Explosion();
             IsPlanted = false;
+            soundOn = false;
         }
         yield return null;
     }
@@ -44,5 +59,10 @@ public class J_TimeBomb : MonoBehaviour
         Instantiate(explosionEffect, transform.position, Quaternion.identity);
         GetComponent<J_Explode>().IndirectExplosion(transform.position);
         Destroy(gameObject);
+    }
+
+    void PlayTimeBombSound()
+    {
+        Sound.I.PlayEffectSound(timerSound, audioSource);
     }
 }

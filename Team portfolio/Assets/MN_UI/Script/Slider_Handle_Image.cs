@@ -45,7 +45,14 @@ public class Slider_Handle_Image : MonoBehaviour
             childText.text = (int)value + "%";
             yield return null;
         }
-        SceneManager.LoadScene("PlayScene");
+        //yGameManager.instance.RestartGame();
+        SecondCanvas_GameStart second = FindObjectOfType<SecondCanvas_GameStart>();
+
+        if(second.IsOnGameStart)
+            SceneManager.LoadScene("PlayScene");
+        else if(second.IsOnLoadStart)
+            yGameManager.instance.RestartGame();
+
         StopPlus = true;
     }
     IEnumerator SpriteZombie()

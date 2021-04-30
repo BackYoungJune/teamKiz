@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MenuButtonsChangeColor : MonoBehaviour
+public class StartMenuButtons: MonoBehaviour
 {
     Button myButton;
 
