@@ -17,6 +17,8 @@ public class yPlayerHealth : yLivingEntity
     // Start is called before the first frame update
     void Start()
     {
+
+        Sound.I.SetMusicVolume(1f);
         health = MN_UIManager.Instance.CurrentHealth;
         // 사용할 컴포넌트를 가져오기
         myAnim = GetComponentInChildren<Animator>();

@@ -11,6 +11,8 @@ public class yPlayerAxe : MonoBehaviour
     public Animator playerAnimator;     // 애니메이터 컴포넌트
     public bool Attack = false; // 공격 여부확인
 
+    //Sound
+    public AudioClip[] Swing;
     void Awake()
     {
         // 사용할 컴포넌트들을 가져오기
@@ -35,6 +37,7 @@ public class yPlayerAxe : MonoBehaviour
     {
         if (playerInput.fire2 && !playerInput.tab)
         {
+            
             // 도끼를 휘두르는 애니메이션 실행
             playerAnimator.SetTrigger("Attack");
             Attack = true;
@@ -50,5 +53,11 @@ public class yPlayerAxe : MonoBehaviour
 
         //playerAnimator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandMount.position);
         //playerAnimator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandMount.rotation);
+    }
+
+    void PlaySwingSound()
+    {
+        int i = Random.Range(0, Swing.Length);
+        Sound.I.PlayEffectSound(Swing[i], GetComponent<AudioSource>());
     }
 }

@@ -17,6 +17,7 @@ public class J_Barrel : MonoBehaviour
 
     yCameraMove CameraMove;
 
+
     // Start is called before the first frame update
     void Start()
     {

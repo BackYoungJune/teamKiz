@@ -32,12 +32,17 @@ public class yRiple : MonoBehaviour
 
     J_ItemManager itemManager;
 
+    //Sound
+    public AudioClip FireSound;
+    public AudioClip ReloadSound;
+    public AudioSource myAudioSource;
+
     // Start is called before the first frame update
     void OnEnable()
     {
         // 총 상태 초기화
         // 현재 탄창을 가득 채우기
-
+        myAudioSource = GetComponent<AudioSource>();
         itemManager = FindObjectOfType<J_ItemManager>();
         //itemManager.magAmmo = itemManager.magCapacity;
 
@@ -57,6 +62,7 @@ public class yRiple : MonoBehaviour
         // && 마지막 총 발사 시점에서 timeBetFire 이상의 시간이 지남
         if (myState == STATE.READY && Time.time >= lastFireTime + timeBetFire && itemManager.magAmmo > 0)
         {
+            Sound.I.PlayEffectSound(FireSound, myAudioSource);
             // 마지막 총 발사 시점 갱신
             lastFireTime = Time.time;
             // 실제 발사 처리 실행
@@ -64,6 +70,7 @@ public class yRiple : MonoBehaviour
             return true;
         }
         return false;
+
     }
 
     void Shot()
@@ -129,7 +136,7 @@ public class yRiple : MonoBehaviour
     {
         // 현재 상태를 재장전 중 상태로 전환
         myState = STATE.RELOADING;
-
+        Sound.I.PlayEffectSound(ReloadSound, myAudioSource);
         // 재장전 소요 시간 만큼 처리를 쉬기
         yield return new WaitForSeconds(reloadTime);
 

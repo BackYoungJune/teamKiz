@@ -87,6 +87,11 @@ public class Sound : MonoBehaviour
         EffectSound.pitch = pitch;
         EffectSound.PlayOneShot(eff);
     }
+    public void PlayEffectSound(AudioClip eff,AudioSource audioSource, float pitch = 1.0f)
+    {
+        audioSource.pitch = pitch;
+        audioSource.PlayOneShot(eff);
+    }
 
     public void PlayEffectVolume(GameObject obj, AudioClip eff)
     {

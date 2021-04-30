@@ -41,6 +41,8 @@ public class yPlayerMovement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         myAnim = GetComponentInChildren<Animator>();
         SwtichWeapon = GetComponentInChildren<J_SwtichWeapon>();
+
+        //Sound.I.PlayBGM(bgm);
     }
 
     void FixedUpdate()

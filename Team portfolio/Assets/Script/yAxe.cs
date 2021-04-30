@@ -12,6 +12,7 @@ public class yAxe : MonoBehaviour
     private float lastAttackTime = 0f; // 마지막 공격 시점
     public yPlayerAxe playerAxe;
 
+
     private void OnTriggerStay(Collider other)
     {
         // 최근 공격 시점에서 timeBetAttack 이상 시간이 지났고 gameObject.Tag가 Enemy이고 플레이어가 마우스 왼쪽버튼을 눌렀다면 실행한다
