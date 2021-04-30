@@ -35,6 +35,9 @@ public class ItemChangeButtonManager : MonoBehaviour
 
     bool IsRifle = true;
 
+    public AudioClip PotionAudio;
+    public AudioSource myAudioSource;
+
     private void Awake()
     {
         Cursor.visible = false;
@@ -75,6 +78,8 @@ public class ItemChangeButtonManager : MonoBehaviour
         // 무기 스위칭에 사용할 변수
         swtichWeapon = FindObjectOfType<J_SwtichWeapon>();
         //itemManager = FindObjectOfType<J_ItemManager>();
+
+        myAudioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -200,6 +205,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         {
             MN_UIManager.Instance.UsePotion(20f);
             J_ItemManager.instance.remainPotion--;
+            Sound.I.PlayEffectSound(PotionAudio, myAudioSource);
         }
         else
         {
