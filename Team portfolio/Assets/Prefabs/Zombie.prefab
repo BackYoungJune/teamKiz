@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6416098597838288243}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.038, z: -0}
+  m_LocalPosition: {x: 0, y: 3.597, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children: []
   m_Father: {fileID: 6548974401307827227}
@@ -1319,6 +1319,7 @@ MonoBehaviour:
   AttackTime: 1
   HitClip: {fileID: 8300000, guid: c3d8accfc053f004ca665a1c8c4a6919, type: 3}
   DeathClip: {fileID: 8300000, guid: b86f03005ed394911b43027aeaaedeb7, type: 3}
+  myAudioSource: {fileID: 0}
 --- !u!208 &3907072562172663488
 NavMeshObstacle:
   m_ObjectHideFlags: 0
