@@ -175,9 +175,10 @@ public class yEnemy : yLivingEntity
             case STATE.SEARCHING:
                 if (!dead)
                 {
-                    myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     // 애니메이션 스피드 맞춰준다
-                    myAnim.speed = NavSpeed*2 / 3;
+                    myAnim.speed = NavSpeed / 3;
+                    myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
+                    
                     // 플레이어쪽으로 이동
                     myNavAgent.SetDestination(targetEntity.transform.position);
                     //myNavAgent.destination = targetEntity.transform.position;
@@ -191,6 +192,8 @@ public class yEnemy : yLivingEntity
                     dir.Normalize();
                     // Enemy를 플레이어쪽으로 부드럽게 회전하도록 한다
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.smoothDeltaTime * 3.0f);
+                    // 애니메이션 스피드 맞춰준다
+                    myAnim.speed = NavSpeed / 3;
                     myAnim.SetFloat("Speed", myNavAgent.velocity.magnitude / myNavAgent.speed);
                     
                     // 플레이어쪽으로 이동
