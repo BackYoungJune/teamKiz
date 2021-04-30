@@ -65,13 +65,7 @@ public class yGrenade : MonoBehaviour
                 {
                     CameraMove.ChangeState(yCameraMove.STATE.Shake);
                 }
-            }
-
-            if(hit.transform.gameObject.tag == "Wall")
-            {
-
-            }
-            
+            }    
         }
         explosionEffect();
     }

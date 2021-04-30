@@ -66,7 +66,7 @@ public class yPlayerGrenade : MonoBehaviour
         /* 유석 
          UI 처음 수류탄 갯수 갱신 (GrenadeRemain)
         */
-        MN_UIManager.Instance.Granade = itemManager.remainGrenade;
+        //MN_UIManager.Instance.Granade = itemManager.remainGrenade;
 
         //V0 = rigid.velocity;
 
