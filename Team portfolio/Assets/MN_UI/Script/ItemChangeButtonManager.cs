@@ -35,6 +35,8 @@ public class ItemChangeButtonManager : MonoBehaviour
 
     bool IsRifle = true;
 
+    public AudioClip PotionAudio;   // 포션사운드
+
     private void Awake()
     {
         Cursor.visible = false;

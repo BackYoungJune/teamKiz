@@ -9,13 +9,13 @@ public class J_Breakable : MonoBehaviour
     
     [SerializeField]
     GameObject[] itemList;
-
     public void DestructObject()
     {
         newDestroyedVersion = Instantiate(DestroyedVersion, transform.position, transform.rotation);
         Destroy(gameObject);
         DestroyDebris();
         SpawnItem(Random.Range(0, 2));
+
     }
     void DestroyDebris()
     {
@@ -33,7 +33,5 @@ public class J_Breakable : MonoBehaviour
         Instantiate(itemList[Random.Range(0, 4)], transform.position, transform.rotation);
         Debug.Log("SpawnItem!!");
     }
-
-    // Fracture Object의 rigidbody 전부 제거하고
-    // 총알과 충돌한 Fracture만 add rigidbody 해서 부서지도록
+ 
 }
