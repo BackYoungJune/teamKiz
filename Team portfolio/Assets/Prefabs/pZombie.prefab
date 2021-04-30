@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 3573486658265825684}
   - component: {fileID: 3573486658265825687}
   - component: {fileID: 3573486658265825686}
-  - component: {fileID: 4779825930737432427}
   - component: {fileID: 2880990473951874742}
   m_Layer: 12
   m_Name: pZombie
@@ -144,7 +143,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3573486658265825705}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.16
+  m_Radius: 0.37
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -157,22 +156,6 @@ NavMeshAgent:
   m_BaseOffset: -0.02
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!208 &4779825930737432427
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3573486658265825705}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.24, y: 1, z: 0.24}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.92, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!114 &2880990473951874742
 MonoBehaviour:
   m_ObjectHideFlags: 0

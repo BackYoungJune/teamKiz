@@ -1229,7 +1229,6 @@ GameObject:
   - component: {fileID: 6548974401307827226}
   - component: {fileID: 6548974401307827229}
   - component: {fileID: 6548974401307827228}
-  - component: {fileID: 3907072562172663488}
   - component: {fileID: 3364003048810470220}
   m_Layer: 12
   m_Name: Zombie
@@ -1278,7 +1277,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6548974401307827231}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.2
+  m_Radius: 0.52
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1320,22 +1319,6 @@ MonoBehaviour:
   HitClip: {fileID: 8300000, guid: c3d8accfc053f004ca665a1c8c4a6919, type: 3}
   DeathClip: {fileID: 8300000, guid: b86f03005ed394911b43027aeaaedeb7, type: 3}
   myAudioSource: {fileID: 0}
---- !u!208 &3907072562172663488
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548974401307827231}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.26, y: 1, z: 0.26}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0.81, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!82 &3364003048810470220
 AudioSource:
   m_ObjectHideFlags: 0
