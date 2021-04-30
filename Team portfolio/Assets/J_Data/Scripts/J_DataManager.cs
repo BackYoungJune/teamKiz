@@ -22,6 +22,9 @@ public class J_DataManager : MonoBehaviour
         }
     }
 
+    //세이브한 데이터가 있는지 확인
+    public bool IsNone { get; set; }
+
     private void Start()
     {
         string startItemPath = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
@@ -40,12 +43,13 @@ public class J_DataManager : MonoBehaviour
         if (jsonData.ToString() == string.Empty && jsonData1.ToString() == string.Empty)
         {
             Debug.Log(2);
-
+            IsNone = true;  
             StartLoadItemData();
             StartLoadPlayData();
         }
         else
         {
+            IsNone = false;
             // 세이브 데이터가 있으면 세이브 데이터 로드
             Debug.Log(1);
             LoadItemDataFromJson();
