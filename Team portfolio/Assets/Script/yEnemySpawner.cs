@@ -23,7 +23,7 @@ public class yEnemySpawner : MonoBehaviour
     public float scoreMin = 80f; // 최소 점수
 
     public List<yEnemy> enemies = new List<yEnemy>(); // 생성된 적들을 담는 리스트
-    public int wave; // 현재 웨이브
+    public int wave = 1; // 현재 웨이브
 
     Transform spawnPoint;   // 스폰 포인트 결정
     public bool ChangedWave = true;    // 웨이브 생성 조건

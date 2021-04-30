@@ -81,18 +81,18 @@ public class J_ItemManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        // 게임 시작시 아이템 개수 셋팅
-        ammoRemain = 200;
-        magCapacity = 25;
-        magAmmo = magCapacity;
-        remainGrenade = 2;
-        remainPotion = 5;
-        remainArmor = 3;
-        //유석 추가
-        //PlusScore = 100;
-        remainMoney = 1000;
-        remainScore = 0;
-        IsHeadShotKill = false;
+        //// 게임 시작시 아이템 개수 셋팅
+        //ammoRemain = 200;
+        //magCapacity = 25;
+        //magAmmo = magCapacity;
+        //remainGrenade = 2;
+        //remainPotion = 5;
+        //remainArmor = 3;
+        ////유석 추가
+        ////PlusScore = 100;
+        //remainMoney = 1000;
+        //remainScore = 0;
+        //IsHeadShotKill = false;
 
         if (Potion_Text != null && Granade_Text != null)
         {
@@ -100,12 +100,7 @@ public class J_ItemManager : MonoBehaviour
             Granade_Text.text = remainGrenade.ToString();
         }
 
-        J_DataManager.instance.SaveItemDataToJson();
-
-    }
-
-    private void Update()
-    {
+        Debug.Log("게임 시작 시 아이템 초기화");
 
     }
 }

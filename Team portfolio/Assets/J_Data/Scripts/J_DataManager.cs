@@ -22,6 +22,37 @@ public class J_DataManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        string startItemPath = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
+        string startPlayPath = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+
+        string itemPath = Path.Combine(Application.dataPath, "J_Data/itemData.json"); 
+        string playPath = Path.Combine(Application.dataPath, "J_Data/playData.json");
+        string jsonData = File.ReadAllText(itemPath);
+        string jsonData1 = File.ReadAllText(playPath);
+
+        Debug.Log(jsonData.ToString());
+        Debug.Log(jsonData1.ToString());
+
+
+        // 세이브 데이터가 없으면 초기 데이터 로드
+        if (jsonData.ToString() == string.Empty && jsonData1.ToString() == string.Empty)
+        {
+            Debug.Log(2);
+
+            StartLoadItemData();
+            StartLoadPlayData();
+        }
+        else
+        {
+            // 세이브 데이터가 있으면 세이브 데이터 로드
+            Debug.Log(1);
+            LoadItemDataFromJson();
+            LoadPlayDataFromJson();
+        }
+    }
+
     // 현재 아이템 정보를 Json 파일로 저장
     [ContextMenu("Save ItemData")]
     public void SaveItemDataToJson()
@@ -55,10 +86,10 @@ public class J_DataManager : MonoBehaviour
         J_ItemManager.instance.remainGrenade = itemData.s_remainGrenade;
         J_ItemManager.instance.remainArmor = itemData.s_remainArmor;
         J_ItemManager.instance.remainMoney = itemData.s_remainMoney;
-
     }
 
 
+    [ContextMenu("Save PlayData")]
     // 플레이 데이터를 Json으로 저장
     public void SavePlayDataToJson()
     {
@@ -68,6 +99,7 @@ public class J_DataManager : MonoBehaviour
         // spawnTrigger 저장
         GameObject trigger = GameObject.Find("Triggers");
         yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+        playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
         for (int i = 0; i < spawnTriggers.Length; i++)
             playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
 
@@ -78,12 +110,111 @@ public class J_DataManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(playData, true);
         string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
         File.WriteAllText(path, jsonData);
+
+        Debug.Log("SavePlayData");
     }
 
     // 플레이 데이터를 불러옴
+    [ContextMenu("Load PlayData")]
     public void LoadPlayDataFromJson()
     {
         string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+        string jsonData = File.ReadAllText(path);
+        playData = JsonUtility.FromJson<PlayData>(jsonData);
+
+        //Debug.Log(2);
+
+        yEnemySpawner spawner = FindObjectOfType<yEnemySpawner>();
+       // Debug.Log(spawner.wave);
+        spawner.wave = playData.s_wave;
+
+        GameObject trigger = GameObject.Find("Triggers");
+        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+        for (int i = 0; i < spawnTriggers.Length; i++)
+            spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
+
+        GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+        
+        Debug.Log("LoadPlayDataFromJson");
+    }
+
+
+
+    ///////////////////////////////////// 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void StartSaveItemData()
+    {
+        // 아이템 개수 저장
+        itemData.s_remainPotion = J_ItemManager.instance.remainPotion;
+        itemData.s_ammoRemain = J_ItemManager.instance.ammoRemain;
+        itemData.s_magCapacity = J_ItemManager.instance.magCapacity;
+        itemData.s_magAmmo = J_ItemManager.instance.magAmmo;
+        itemData.s_remainGrenade = J_ItemManager.instance.remainGrenade;
+        itemData.s_remainArmor = J_ItemManager.instance.remainArmor;
+        itemData.s_remainMoney = J_ItemManager.instance.remainMoney;
+
+        string jsonData = JsonUtility.ToJson(itemData, true);
+        string path = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
+        File.WriteAllText(path, jsonData);
+    }
+
+    public void StartLoadItemData()
+    {
+        string path = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
+        string jsonData = File.ReadAllText(path);
+        itemData = JsonUtility.FromJson<ItemData>(jsonData);
+
+        J_ItemManager.instance.remainPotion = itemData.s_remainPotion;
+        J_ItemManager.instance.ammoRemain = itemData.s_ammoRemain;
+        J_ItemManager.instance.magCapacity = itemData.s_magCapacity;
+        J_ItemManager.instance.magAmmo = itemData.s_magAmmo;
+        J_ItemManager.instance.remainGrenade = itemData.s_remainGrenade;
+        J_ItemManager.instance.remainArmor = itemData.s_remainArmor;
+        J_ItemManager.instance.remainMoney = itemData.s_remainMoney;
+    }
+
+
+    public void StartSavePlayData()
+    {
+        // 현재 웨이브 저장
+        playData.s_wave = FindObjectOfType<yEnemySpawner>().wave;   // wave 저장
+
+        // spawnTrigger 저장
+        GameObject trigger = GameObject.Find("Triggers");
+        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+        playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
+        for (int i = 0; i < spawnTriggers.Length; i++)
+            playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
+
+        // 현재 위치 저장
+        playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
+
+
+        string jsonData = JsonUtility.ToJson(playData, true);
+        string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+        File.WriteAllText(path, jsonData);
+
+        Debug.Log("SavePlayData");
+    }
+
+    public void StartLoadPlayData()
+    {
+        string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
         string jsonData = File.ReadAllText(path);
         playData = JsonUtility.FromJson<PlayData>(jsonData);
 
@@ -95,7 +226,9 @@ public class J_DataManager : MonoBehaviour
         for (int i = 0; i < spawnTriggers.Length; i++)
             spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
 
-        GameObject.Find("Player").GetComponent<Transform>().position = playData.s_pos;
+        GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+
+        Debug.Log("LoadPlayDataFromJson");
     }
 }
 
@@ -111,6 +244,7 @@ public class ItemData
     public int s_remainMoney;
 }
 
+[System.Serializable]
 public class PlayData
 {
     public int s_wave;              // 웨이브 정보

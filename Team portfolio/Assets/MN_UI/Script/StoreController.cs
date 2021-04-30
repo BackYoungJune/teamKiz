@@ -427,6 +427,9 @@ public class StoreController : MonoBehaviour
         Item_Canvas.SetActive(true);
         StoreOn.SetActive(false);
         ChangeState(STATE.NOT);
+
+        J_DataManager.instance.SaveItemDataToJson();
+        J_DataManager.instance.SavePlayDataToJson();
     }
 }
 
