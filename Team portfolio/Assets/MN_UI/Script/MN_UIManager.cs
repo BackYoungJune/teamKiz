@@ -60,14 +60,15 @@ public class MN_UIManager : MonoBehaviour
     private void Awake()
     {
         IsDead = false;
-
+        IsHit = false;
     }
 
     public void UpdatePlayerHealth(float Health)
     {
         if (Health < 0)
             IsHit = true;
-        Debug.Log(IsHit);
+
+        //Debug.Log(IsHit);
         CurrentHealth += Health;
         //Debug.Log("Player Health = " + CurrentHealth);
 

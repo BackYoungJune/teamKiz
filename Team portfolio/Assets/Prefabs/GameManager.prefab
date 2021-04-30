@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5060453130375727214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5060453130375727208}
+  - component: {fileID: 5060453130375727209}
+  - component: {fileID: 5060453130375727210}
+  - component: {fileID: 5060453130375727211}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5060453130375727208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060453130375727214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.57, y: 1.3199997, z: -9.34}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5060453130375727209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060453130375727214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c328486ab06c56b4fb3dc98f739b4a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5060453130375727210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060453130375727214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0848d4a1192e9346876003094f00783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+    s_remainPotion: 0
+    s_ammoRemain: 0
+    s_magCapacity: 0
+    s_magAmmo: 0
+    s_remainGrenade: 0
+    s_remainArmor: 0
+    s_remainMoney: 0
+--- !u!114 &5060453130375727211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060453130375727214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a545697b5b48b741ae671db9281c9de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  potionInfo: {fileID: 11400000, guid: ba9d45f4841c9ac4c9cb67c4db3995f3, type: 2}
+  ammoInfo: {fileID: 11400000, guid: 3ef212310f7a3fc479676ae58e735b81, type: 2}
+  grenadeInfo: {fileID: 11400000, guid: 62982294486ffbd45831cbb2d22c72e8, type: 2}
+  Granade_Text: {fileID: 0}
+  Potion_Text: {fileID: 0}
