@@ -25,7 +25,11 @@ public class GameOver : MonoBehaviour
     }
     public void RestartButton()
     {
-        SceneManager.LoadScene("PlayScene");
+        //SceneManager.LoadScene("PlayScene");
+        //J_DataManager.instance.LoadPlayDataFromJson();
+
+        yGameManager.instance.RestartGame();
+        
     }
     public void HomeButton()
     {

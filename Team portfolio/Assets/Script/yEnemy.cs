@@ -36,7 +36,10 @@ public class yEnemy : yLivingEntity
 
     float NavSpeed;     // 네브메시 스피드
 
-    bool isGrenade = false;
+    public AudioClip HitClip;       // Hit시 오디오 클립
+    public AudioClip DeathClip;     // Death시 오디오 클립
+
+    public AudioSource myAudioSource;   // Enemy 오디오 소스
 
     void Awake()
     {
@@ -45,14 +48,13 @@ public class yEnemy : yLivingEntity
         myAnim = GetComponentInChildren<Animator>();
         myAnimEvent = GetComponentInChildren<yAnimEvent>();
         myRangeSys = GetComponentInChildren<yRangeSystem>();
+        myAudioSource = GetComponent<AudioSource>();
         //rigid = GetComponent<Rigidbody>();
         // RangeSystem Sphere 범위 안에 들어오면 OnBattle 실행
         myRangeSys.battle = OnBattle;
         // 공격시 이벤트 실행
         myAnimEvent.Attack1 += OnAttackTarget;
         myAnimEvent.Attack2 += OnAttackTarget;
-
-
     }
 
     // 적 AI의 초기 스펙을 결정하는 셋업 메서드
@@ -291,6 +293,8 @@ public class yEnemy : yLivingEntity
         myAnim.speed = 1;
         // 사망 애니메이션 재생
         myAnim.SetTrigger("Die");
+        // 사망 오디오 재생
+        Sound.I.PlayEffectSound(DeathClip, myAudioSource);
         // 스테이트 변경
         ChangeState(STATE.ESCAPE);
 
@@ -309,6 +313,8 @@ public class yEnemy : yLivingEntity
         if (!dead)
         {
             myAnim.SetTrigger("Damage"); // 공격 받을 시 애니메이션 재생
+            // 공격 받을 시 오디오 재생
+            Sound.I.PlayEffectSound(HitClip, myAudioSource);
         }
 
         if (!dead && !targetEntity)
@@ -328,7 +334,6 @@ public class yEnemy : yLivingEntity
 
     IEnumerator OnReact(Vector3 reactVec, bool isGrenade)
     {
-        isGrenade = true;
         yield return new WaitForSeconds(0.1f);
 
         if (isGrenade && !dead)

@@ -34,17 +34,18 @@ public class yGameManager : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
-        // 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
-        if (instance != this)
-        {
-            // 자신을 파괴
-            Destroy(gameObject);
-        }
+        //// 씬에 싱글톤 오브젝트가 된 다른 GameManager 오브젝트가 있다면
+        //if (instance != this)
+        //{
+        //    // 자신을 파괴
+        //    Destroy(gameObject);
+        //}
     }
 
     private void Start()
     {
         // 플레이어 캐릭터의 사망 이벤트 발생시 게임 오버
+        Debug.Log("yGameManager.Start()");
         FindObjectOfType<yPlayerHealth>().onDeath += EndGame;
     }
 
@@ -69,6 +70,11 @@ public class yGameManager : MonoBehaviour
         /* 게임오버 UI 활성화 */
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
+
     public void LoadBossScene()
     {
         SceneManager.LoadScene("BossRoom");
@@ -76,7 +82,8 @@ public class yGameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     { 
-        J_DataManager.instance.LoadItemDataFromJson();
+        //J_DataManager.instance.LoadItemDataFromJson();
+        //J_DataManager.instance.LoadPlayDataFromJson();
         Debug.Log("SceneLoaded");
     }
 }

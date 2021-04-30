@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class SecondCanvas_GameStart : MonoBehaviour
 {
-    bool IsOnGameStart = false;
+    public bool IsOnGameStart = false;
+    public bool IsOnLoadStart= false;
     GameObject secondCanvas;
     Image secondImage;
 
@@ -24,7 +25,7 @@ public class SecondCanvas_GameStart : MonoBehaviour
     void Update()
     {
         
-        if(IsOnGameStart)
+        if(IsOnGameStart || IsOnLoadStart)
         {
            // if (secondCanvas) return;
             
@@ -37,6 +38,11 @@ public class SecondCanvas_GameStart : MonoBehaviour
     public void OnStartGame()
     {
         IsOnGameStart = true;
+    }
+    public void OnLoadGame()
+    {
+        if(!J_DataManager.instance.IsNone)
+            IsOnLoadStart = true;
     }
 
     IEnumerator BackgroundAlphaPlus()

@@ -95,6 +95,7 @@ public class J_Barrel : MonoBehaviour
                     // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
                     target.HitByGrenade(transform.position);
                 }
+
             }
         }
 

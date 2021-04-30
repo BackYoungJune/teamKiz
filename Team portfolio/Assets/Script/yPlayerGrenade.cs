@@ -28,16 +28,13 @@ public class yPlayerGrenade : MonoBehaviour
     public float throwTime = 1.0f;    // 던지는 소요 시간
     float lastFireTime; // 수류탄을 마지막으로 발사한 시점
 
-    public Transform m_Target;
-    public float m_InitialAngle = 30f; // 처음 날라가는 각도
-    //private Rigidbody m_Rigidbody;
-
     J_ItemManager itemManager;
-    LayerMask ClickMask;
-    float time;
-    Vector3 V0;
-    //Rigidbody rigid;
 
+    public AudioClip PinClip;
+    public AudioSource myAudioSource;
+
+    //Sound
+    public AudioClip PinSound;
     void Awake()
     {
         // 사용할 컴포넌트들을 가져오기
@@ -45,6 +42,7 @@ public class yPlayerGrenade : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerAnimEvent = GetComponent<yPlayerAnimEvent>();
         itemManager = GetComponent<J_ItemManager>();
+        myAudioSource = GetComponent<AudioSource>();
         //rigid = GetComponent<Rigidbody>();
 
         // 수류탄 던지는 동작중에 던지는 프레임까지 오면 이벤트를 실행한다
@@ -156,6 +154,11 @@ public class yPlayerGrenade : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
+    void PlayGranadePinSound()
+    {
+        Sound.I.PlayEffectSound(PinSound, GetComponent<AudioSource>());
+    }
     //public void Line()
     //{
     //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -247,4 +250,10 @@ public class yPlayerGrenade : MonoBehaviour
     //}
 
 
+=======
+    void PinOut()
+    {
+        Sound.I.PlayEffectSound(PinClip, myAudioSource);
+    }
+>>>>>>> e8ba20ba98d7feba00175c8da74371f1ca0f7f47
 }

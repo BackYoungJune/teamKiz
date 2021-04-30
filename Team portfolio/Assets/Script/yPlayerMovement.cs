@@ -18,7 +18,7 @@ public class yPlayerMovement : MonoBehaviour
     public Transform myHips;    // 플레이어 상체
     public ySpringArm myArm;    // 카메라 스프링 암
 
-    //public LayerMask Layer;
+    // public LayerMask Layer;
         
     Vector3 MoveVec;      // 플레이어 프레임당 이동거리
     Vector3 dodgeVec;     // 플레이어 닷지 이동거리
@@ -42,7 +42,7 @@ public class yPlayerMovement : MonoBehaviour
         myAnim = GetComponentInChildren<Animator>();
         SwtichWeapon = GetComponentInChildren<J_SwtichWeapon>();
 
-        //Sound.I.PlayBGM(bgm);
+        Sound.I.PlayBGM(bgm);
     }
 
     void FixedUpdate()
@@ -172,7 +172,7 @@ public class yPlayerMovement : MonoBehaviour
     void Jump()
     {
         // 점프시 로직
-        if (playerInput.jump && jumpCount < 1)
+        if (playerInput.jump && jumpCount < 1 && dodgeCount < 1)
         {
             rigid.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
             jumpCount++;
@@ -183,7 +183,7 @@ public class yPlayerMovement : MonoBehaviour
     void Dodge()
     {
         // 점프키가 눌리고 플레이어가 움직이면 닷지를 실행한다
-        if (playerInput.dodge && dodgeCount < 1)
+        if (playerInput.dodge && dodgeCount < 1 && jumpCount < 1)
         {
             // 닷지시 로직
             dodgeVec = MoveVec;

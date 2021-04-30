@@ -10,10 +10,5 @@ public class ExplosionSound : MonoBehaviour
     {
         Sound.I.PlayEffectSound(ExplodeSound, GetComponent<AudioSource>());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
