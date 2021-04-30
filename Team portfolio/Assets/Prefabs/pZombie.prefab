@@ -26,6 +26,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2880990473951874742}
+  Blood: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+  Hair: []
 --- !u!1 &3573486657999337273
 GameObject:
   m_ObjectHideFlags: 0

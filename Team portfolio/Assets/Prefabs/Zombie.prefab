@@ -4674,6 +4674,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 6548974401307827228}
+  Blood: {fileID: 1000013355911406, guid: d32aa916f50cac94db11e6f19821a58f, type: 3}
+  Hair:
+  - {fileID: 6548974402077665192}
+  - {fileID: 6548974401181888022}
+  - {fileID: 6548974400806219594}
+  - {fileID: 6548974402823802656}
+  - {fileID: 6548974402051496028}
 --- !u!1 &6548974402823802659
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,11 +5,13 @@ using UnityEngine;
 public class yEnemyHead : MonoBehaviour
 {
     public yEnemy enemy;
+    public GameObject Blood;
+    public Transform[] Hair;
 
     public void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         enemy.OnDamage(damage, hitPoint, hitNormal);
-
+        Instantiate(Blood, transform.position, transform.rotation);
         if (enemy.dead)
         {
             Collider[] enemyColliders = GetComponents<Collider>();
@@ -22,6 +24,14 @@ public class yEnemyHead : MonoBehaviour
 
                 enemyColliders[i].enabled = false;
             }
+            Destroy(gameObject);
+            for(int i = 0; i < Hair.Length; i++)
+            {
+                Destroy(Hair[i].gameObject);
+            }
+
+            //Destroy(Hair.gameObject);
+            //Destroy(Eyes.gameObject);
         }
     }
 
