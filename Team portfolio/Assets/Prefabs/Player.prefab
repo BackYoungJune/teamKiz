@@ -414,7 +414,7 @@ MonoBehaviour:
   BulletCaseTransform: {fileID: 6579960330827059593}
   muzzleFlashTransform: {fileID: 6850821865662908354}
   muzzleFlashEffect: {fileID: 199458, guid: 6e66cfad8a92e0241b4a46214fb0d191, type: 3}
-  timeBetFire: 0.3
+  timeBetFire: 0.12
   reloadTime: 1.8
   bullet: {fileID: 5439700753742635735, guid: fed8efe5938401143bc2bdc2522f2da4, type: 3}
   bulletCase: {fileID: 4362657251999731927, guid: 4cb20e8abae957146a8b78e670d3fe74,
