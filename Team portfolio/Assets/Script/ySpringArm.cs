@@ -22,8 +22,6 @@ public class ySpringArm : MonoBehaviour
 
     public bool ControllerRotate = true;
 
-    int count = 0;
-
     // Start is called before the first frame update
     void Awake()
     {
