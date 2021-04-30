@@ -4692,13 +4692,8 @@ GameObject:
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
   - component: {fileID: 6414262400434175790}
-<<<<<<< HEAD
-  - component: {fileID: 1431414907947671351}
-  - component: {fileID: 5085660449639314315}
-=======
   - component: {fileID: 44799215969249875}
   - component: {fileID: 3261767095623110503}
->>>>>>> e8ba20ba98d7feba00175c8da74371f1ca0f7f47
   m_Layer: 0
   m_Name: WFX_Explosion LandMine
   m_TagString: Untagged
@@ -9429,9 +9424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 3
-<<<<<<< HEAD
---- !u!82 &1431414907947671351
-=======
 --- !u!114 &44799215969249875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9446,7 +9438,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExplodeSound: {fileID: 8300000, guid: 07be378463ae3cb41a03b73e59274a13, type: 3}
 --- !u!82 &3261767095623110503
->>>>>>> e8ba20ba98d7feba00175c8da74371f1ca0f7f47
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9542,22 +9533,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-<<<<<<< HEAD
---- !u!114 &5085660449639314315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90a2cab8d52150f43b53f4e4daacdf72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ExplodeSound: {fileID: 8300000, guid: 07be378463ae3cb41a03b73e59274a13, type: 3}
-=======
->>>>>>> e8ba20ba98d7feba00175c8da74371f1ca0f7f47
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
