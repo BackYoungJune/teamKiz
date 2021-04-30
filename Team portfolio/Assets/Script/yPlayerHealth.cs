@@ -45,7 +45,7 @@ public class yPlayerHealth : yLivingEntity
     {
         // LivingEntity의 RestoreHealth() 실행 (체력 증가)
         base.RestoreHealth(newHealth);
-        Debug.Log("base.health "+ base.health);
+        //Debug.Log("base.health "+ base.health);
         /* 체력 UI갱신 */
 
        
