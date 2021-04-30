@@ -89,8 +89,7 @@ public class ItemChangeButtonManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Tab))
         {
-           // Debug.Log(Armor_Text.text);
-
+            // Debug.Log(Armor_Text.text);
             MyMoney = J_ItemManager.instance.remainMoney;
             myArmor = J_ItemManager.instance.remainArmor;
             myPotion = J_ItemManager.instance.remainPotion;

@@ -12,7 +12,7 @@ public class BloodEffect_UI : MonoBehaviour
     }
 
     public STATE myState = STATE.NORMAL;
-    GameObject panel;
+   // GameObject panel;
     GameObject BloodPanel;
     private void Awake()
     {
@@ -20,8 +20,8 @@ public class BloodEffect_UI : MonoBehaviour
 
         myImage = GetComponent<Image>();
         myImage.color = new Color(0f, 0f, 0f, 0f);
-        panel = GameObject.Find("BloodEffect");
-        panel.SetActive(false);
+        //panel = GameObject.Find("BloodEffect");
+        //panel.SetActive(false);
 
         BloodPanel.SetActive(false);
     }
@@ -47,10 +47,12 @@ public class BloodEffect_UI : MonoBehaviour
                 break;
             case STATE.START:
                 StartCoroutine(ChangeAlphaFirst());
-                panel.SetActive(true);
+                //panel.SetActive(true);
                 break;
             case STATE.STOP:
-                panel.SetActive(false);
+                MN_UIManager.Instance.IsHit = false;
+
+                //panel.SetActive(false);
 
                 break;
 
@@ -99,7 +101,6 @@ public class BloodEffect_UI : MonoBehaviour
             yield return null;
         }
         ChangeState(STATE.STOP);
-        MN_UIManager.Instance.IsHit = false;
         Debug.Log(MN_UIManager.Instance.IsHit);
     }
 }

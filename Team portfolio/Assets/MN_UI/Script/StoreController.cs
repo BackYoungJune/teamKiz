@@ -7,6 +7,7 @@ public class StoreController : MonoBehaviour
 {
     Text MyMoney;
     Text myArmor;
+    Text myMainArmor;
     Text myPotion;
     Text myGranade;
     Text myBullet;
@@ -49,6 +50,7 @@ public class StoreController : MonoBehaviour
 
         MyMoney = GameObject.Find("MyMoney").GetComponent<Text>();
         myArmor = GameObject.Find("Armor_Text").GetComponent<Text>();
+        myMainArmor = GameObject.Find("Armor_MainText").GetComponent<Text>();
         myPotion = GameObject.Find("Potion_Text").GetComponent<Text>();
         myGranade = GameObject.Find("Granade_Text").GetComponent<Text>();
         myBullet = GameObject.Find("Bullet_Text").GetComponent<Text>();
@@ -65,6 +67,7 @@ public class StoreController : MonoBehaviour
 
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
         myArmor.text = J_ItemManager.instance.remainArmor.ToString();
+        myMainArmor.text = "X " + J_ItemManager.instance.remainArmor.ToString();
         myPotion.text = J_ItemManager.instance.remainPotion.ToString();
         myGranade.text = J_ItemManager.instance.remainGrenade.ToString();
         myBullet.text = J_ItemManager.instance.ammoRemain.ToString();
@@ -91,11 +94,12 @@ public class StoreController : MonoBehaviour
 
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
-        //myArmor.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
+        myArmor.text = J_ItemManager.instance.remainArmor.ToString();
+        myMainArmor.text = "X " + J_ItemManager.instance.remainArmor.ToString();
         myPotion.text = J_ItemManager.instance.remainPotion.ToString();
         myGranade.text = J_ItemManager.instance.remainGrenade.ToString();
         myBullet.text = J_ItemManager.instance.ammoRemain.ToString();
-        //HowMany.text = J_ItemManager.instance.ammoRemain.ToString();
+        HowMany.text = J_ItemManager.instance.ammoRemain.ToString();
 
         StateProcess();
     }
