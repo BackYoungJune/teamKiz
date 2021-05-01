@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3821932612303175411}
   - component: {fileID: 3821932612303175415}
   m_Layer: 8
-  m_Name: item_Armour
+  m_Name: item_Armor
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

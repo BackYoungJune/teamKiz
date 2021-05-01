@@ -39,8 +39,8 @@ public class J_DataManager : MonoBehaviour
         string jsonData = File.ReadAllText(itemPath);
         string jsonData1 = File.ReadAllText(playPath);
 
-        Debug.Log(jsonData.ToString());
-        Debug.Log(jsonData1.ToString());
+        //Debug.Log(jsonData.ToString());
+       // Debug.Log(jsonData1.ToString());
 
 
         // 세이브 데이터가 없으면 초기 데이터 로드
