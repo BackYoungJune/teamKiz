@@ -31,6 +31,9 @@ public class StartMenuButtons: MonoBehaviour
         myButton.image.sprite = StartImage.sprite;
         myButton.image.color = StartColor;
     }
-
+    public void QuitButtonClick()
+    {
+        Application.Quit();
+    }
 
 }

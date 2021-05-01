@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 665924661}
   - component: {fileID: 665924660}
   m_Layer: 5
-  m_Name: Armor_Text
+  m_Name: Armor_MainText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4473404896743943180}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -186,7 +186,7 @@ RectTransform:
   - {fileID: 4473404896457599347}
   - {fileID: 4473404896825625945}
   m_Father: {fileID: 4473404896743943180}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.6039216}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -561,7 +561,7 @@ RectTransform:
   m_Children:
   - {fileID: 4473404895845946129}
   m_Father: {fileID: 4473404896743943180}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseEvent: {fileID: 0}
+  mouseEvent: {fileID: 4473404896101403206}
   myState: 1
   buttonName: 0
 --- !u!114 &4473404896101403206
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseEvent: {fileID: 0}
+  mouseEvent: {fileID: 4473404896457599345}
   myState: 1
   buttonName: 2
 --- !u!114 &4473404896457599345
@@ -957,9 +957,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 665924659}
   - {fileID: 4473404895283598800}
   - {fileID: 4473404895867911926}
-  - {fileID: 665924659}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1042,6 +1042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myState: 0
   ItemImages: []
+  PotionAudio: {fileID: 0}
 --- !u!1 &4473404896825625944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseEvent: {fileID: 0}
+  mouseEvent: {fileID: 4473404896825625951}
   myState: 1
   buttonName: 3
 --- !u!114 &4473404896825625951
@@ -1294,7 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd3501e5a1f3294fb0fc962cb0a94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseEvent: {fileID: 0}
+  mouseEvent: {fileID: 4473404896877476372}
   myState: 1
   buttonName: 1
 --- !u!114 &4473404896877476372

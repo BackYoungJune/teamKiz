@@ -38,6 +38,7 @@ public class GameOver : MonoBehaviour
     }
     public void QuitButton()
     {
-        Debug.Log("아직 기능 없음");
+        Application.Quit();
+        //Debug.Log("아직 기능 없음");
     }
 }

@@ -21,7 +21,7 @@ public class ItemChangeButtonManager : MonoBehaviour
 
     Text Granade_Text;
     Text Potion_Text;
-    Text Armor_Text;
+    Text Armor_MainText;
 
     J_SwtichWeapon swtichWeapon;
     J_ItemManager itemManager;
@@ -62,7 +62,7 @@ public class ItemChangeButtonManager : MonoBehaviour
 
         Granade_Text = GameObject.Find("Granade_Text").GetComponent<Text>();
         Potion_Text = GameObject.Find("Potion_Text").GetComponent<Text>();
-        Armor_Text = GameObject.Find("Armor_Text").GetComponent<Text>();
+        Armor_MainText = GameObject.Find("Armor_MainText").GetComponent<Text>();
 
         //수류탄 개수에 사용할 변수
         Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
@@ -70,7 +70,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         //Armor_Text.text = "aaaaaaaaa";
         //포션 개수에 사용할 변수
         Potion_Text.text = "";
-        Armor_Text.text = "X " + J_ItemManager.instance.remainArmor.ToString();
+        Armor_MainText.text = "X " + J_ItemManager.instance.remainArmor.ToString();
 
         ItemButtons.SetActive(false);
 
@@ -86,7 +86,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        Armor_Text.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
+        Armor_MainText.text = "X "+ J_ItemManager.instance.remainArmor.ToString();
 
 
         if (Input.GetKey(KeyCode.Tab))
