@@ -99,6 +99,7 @@ public class J_ActionController : MonoBehaviour
             if(!storeOpened)
             {
                 hitInfo.transform.GetComponent<J_VendingMachine>().OpenStore();     // 상점 열기
+                hitInfo.transform.GetComponent<J_VendingMachine>().DestroyMachine();
                 InfoDisappear();
                 storeOpened = true;
             }
