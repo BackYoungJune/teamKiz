@@ -1,9 +1,9 @@
 {
-    "s_remainPotion": 9,
-    "s_ammoRemain": 412,
+    "s_remainPotion": 7,
+    "s_ammoRemain": 539,
     "s_magCapacity": 30,
-    "s_magAmmo": 30,
-    "s_remainGrenade": 10,
-    "s_remainArmor": 6,
-    "s_remainMoney": 30
+    "s_magAmmo": 21,
+    "s_remainGrenade": 12,
+    "s_remainArmor": 0,
+    "s_remainMoney": 270
 }

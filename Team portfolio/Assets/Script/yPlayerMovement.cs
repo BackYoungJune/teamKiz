@@ -45,7 +45,7 @@ public class yPlayerMovement : MonoBehaviour
         SwtichWeapon = GetComponentInChildren<J_SwtichWeapon>();
         myAudioSource = GetComponent<AudioSource>();
 
-        //Sound.I.PlayBGM(bgm);
+        Sound.I.PlayBGM(bgm);
     }
 
     void FixedUpdate()
