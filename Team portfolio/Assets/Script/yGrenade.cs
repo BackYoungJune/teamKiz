@@ -53,7 +53,32 @@ public class yGrenade : MonoBehaviour
                 }
             }
 
-            if(hit.transform.gameObject.tag == "Player")
+            // 첫번째 Enemy와 충돌한 경우
+            if (hit.transform.gameObject.tag == "Boss")
+            {
+                Debug.Log("Boss");
+                // 레이가 어떤 물체와 충돌한 경우
+
+                // 충돌한 상대방으로부터 IDamageable 오브젝트 가져오기 시도
+                IDamageable target = hit.collider.GetComponent<IDamageable>();
+
+                // Enemy가 튕겨나오게 하는 함수
+                hit.transform.GetComponent<yEnemy>().HitByGrenade(transform.position);
+
+                // 상대방으로부터 IDamageable 오브젝트를 가져오는 데 성공했다면
+                if (target != null)
+                {
+                    //yield return new WaitForSeconds(1.0f);
+
+                    // 상대방의 OnDamage 함수를 실행시켜 상대방에 데미지 주기
+                    target.OnDamage(damage, hit.point, hit.normal);
+                    // damaage - 탄알의 데미지,  hit.point - 레이가 충돌한 위치, hit.normal - 레이가 충돌한 표면의 방향
+
+
+                }
+            }
+
+            if (hit.transform.gameObject.tag == "Player")
             {
                 Debug.Log("Player");
 

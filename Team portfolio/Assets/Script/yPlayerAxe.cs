@@ -39,13 +39,25 @@ public class yPlayerAxe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
+        if (storeController != null)
         {
-            
+            if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
+            {
+
+                // 도끼를 휘두르는 애니메이션 실행
+                playerAnimator.SetTrigger("Attack");
+                Attack = true;
+            }
+        }
+        if (playerInput.fire2 && !playerInput.tab)
+        {
+
             // 도끼를 휘두르는 애니메이션 실행
             playerAnimator.SetTrigger("Attack");
             Attack = true;
         }
+
+
     }
 
     // 애니메이터의 IK 갱신
