@@ -38,7 +38,7 @@ public class Slider_Handle_Image : MonoBehaviour
     }
     IEnumerator SliderPlus()
     {
-        while(mySlider.value < 1f)
+        while (mySlider.value < 1f)
         {
             mySlider.value += Time.deltaTime * 0.1f;
             float value = mySlider.value * 100f;
@@ -48,8 +48,20 @@ public class Slider_Handle_Image : MonoBehaviour
         //yGameManager.instance.RestartGame();
         SecondCanvas_GameStart second = FindObjectOfType<SecondCanvas_GameStart>();
 
-        if(second.IsOnGameStart)
+        if (second.IsOnGameStart)
+        {
+            J_DataManager j_data = FindObjectOfType<J_DataManager>();
+
+            if (!J_DataManager.instance.IsNone)
+            {
+                Debug.Log("data Deleta !!");
+                j_data.DeleteItemData();
+                j_data.DeletePlayData();
+
+            }
+
             SceneManager.LoadScene("PlayScene");
+        }
         else if(second.IsOnLoadStart)
             SceneManager.LoadScene("PlayScene");
 

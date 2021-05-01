@@ -28,10 +28,14 @@ public class J_ActionController : MonoBehaviour
     yPlayerInput playerInput;
     J_ItemManager itemManager;
 
+    public AudioSource audioSource;
+    public AudioClip itemPickSound;
+
     private void Start()
     {
         playerInput = GetComponentInParent<yPlayerInput>();
         itemManager = FindObjectOfType<J_ItemManager>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,8 +90,8 @@ public class J_ActionController : MonoBehaviour
                 {
                     J_ItemManager.instance.remainMoney += hitItem.restore;                
                 }
-                
 
+                Sound.I.PlayEffectSound(itemPickSound, audioSource);    // 아이템 획득 소리
                 Debug.Log(hitInfo.transform.GetComponent<J_ItemPickup>().item.itemName + " 획득 ");
                 Destroy(hitInfo.transform.gameObject);
                 InfoDisappear();

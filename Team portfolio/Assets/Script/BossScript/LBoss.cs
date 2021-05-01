@@ -11,7 +11,9 @@ public class LBoss : yLivingEntity
     { 
         CREATE, FLEX, APPROACHING, LEAPATTACK, THROWING, ATTACK, CHARGE, ROAR, GROGGY,DIE
     }
-
+    public AudioSource myAudio;
+    public GameObject Particle1;
+    public GameObject Particle2;
     public GameObject firstCamera;
     public GameObject myCamera;
     //메시 콜라이더 업데이트부 애니메이션 재생에 따라서 콜라이더도 계속 움직여준다.
@@ -76,6 +78,8 @@ public class LBoss : yLivingEntity
 
     void Awake()
     {
+        myAudio = GetComponentInChildren<AudioSource>();
+
         //myCamera.SetActive(false);
         mySTATE = STATE.CREATE;
         myFLAG = FLAG.NORMAL;
@@ -87,6 +91,7 @@ public class LBoss : yLivingEntity
         bossAnimEvent.FlexEnd += () => 
         {
             myFLAG = FLAG.HEAVY;
+            Particle1.SetActive(true);
             ChangeState(STATE.APPROACHING);
         };
         //코루틴을 호출해서 패턴의 움직임을 구현하고, 패턴이 종료되면 APPROACH체인지 스테이트 호출
@@ -114,6 +119,8 @@ public class LBoss : yLivingEntity
         }
         trapTrigger.onCollision += () =>
         {
+            Particle1.SetActive(false);
+
             base.OnDamage(6000f, Vector3.zero, Vector3.zero);
 
             MN_UIManager.Instance.UpdateBossHealth(6000f);
@@ -295,6 +302,7 @@ public class LBoss : yLivingEntity
                 {
                     roarEnd = false;
                     myFLAG = FLAG.RAGE;
+                    Particle2.SetActive(true);
                     ChangeState(STATE.APPROACHING);
                 }
                 break;

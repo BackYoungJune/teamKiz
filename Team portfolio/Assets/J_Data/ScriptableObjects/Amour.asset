@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9af0b74ba996fa47ade2ae96ccf60b4, type: 3}
   m_Name: Amour
   m_EditorClassIdentifier: 
-  itemName: Amour
+  itemName: Armor
   itemImage: {fileID: 0}
   itemPrefab: {fileID: 4164513161732193858, guid: 2d128fa61c505cd42a3ef1d4f29c7d4f,
     type: 3}

@@ -21,7 +21,14 @@ public class LBossAnimEvent : MonoBehaviour
     public VoidDelVoid ThrowingEnd;
     public VoidDelVoid GroggyEnd;
     public VoidDelVoid Groggy;
-
+    public AudioSource myAudio;
+    public AudioClip roarSound;
+    public AudioClip attackSound1;
+    public AudioClip attackSound2;
+    public AudioClip leapSound;
+    public AudioClip leapAttackSound;
+    public AudioClip throwSound;
+    public AudioClip groggySound;
     //Roar
     public void OnRoarEnd()
     {
@@ -101,5 +108,38 @@ public class LBossAnimEvent : MonoBehaviour
     public void OnGroggy()
     {
         Groggy?.Invoke();
+    }
+
+    public void RoarSound()
+    {
+        Sound.I.PlayEffectSound(roarSound, myAudio);
+    }
+    public void FlexSound()
+    {
+        Sound.I.PlayEffectSound(roarSound, myAudio,0.5f);
+    }
+    public void AttackSound1()
+    {
+        Sound.I.PlayEffectSound(attackSound1, myAudio);
+    }
+    public void AttackSound2()
+    {
+        Sound.I.PlayEffectSound(attackSound2, myAudio);
+    }
+    public void LeapSound()
+    {
+        Sound.I.PlayEffectSound(leapSound, myAudio);
+    }
+    public void LeapAttackSound()
+    {
+        Sound.I.PlayEffectSound(leapAttackSound, myAudio);
+    }
+    public void ThrowSound()
+    {
+        Sound.I.PlayEffectSound(throwSound, myAudio);
+    }
+    public void GroggySound()
+    {
+        Sound.I.PlayEffectSound(groggySound, myAudio);
     }
 }
