@@ -19,7 +19,9 @@ public class J_Money : MonoBehaviour
         if(other.tag == "Player")
         {
             StartCoroutine(GetMoney());
-        }
+            GameObject Money_Text = Resources.Load("Money_Canvas") as GameObject;
+            Instantiate(Money_Text);
+            }
     }
 
     IEnumerator GetMoney()

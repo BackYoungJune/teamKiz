@@ -43,12 +43,12 @@ public class MN_UIManager : MonoBehaviour
     public bool OnDamage { get;  set; }
     public bool IsDead { get; set; }
     public bool IsHit { get; set; }
-    public int ammo { get; set; }
-    public int MaxAmmo { get; set;}
-    public int Potions { get; set; }
-    public int Granade { get; set; }
+    //public int ammo { get; set; }
+    //public int MaxAmmo { get; set; }
+    //public int Potions { get; set; }
+    //public int Granade { get; set; }
 
-   
+
     //플레이어 체력 갱신
 
 
@@ -79,11 +79,11 @@ public class MN_UIManager : MonoBehaviour
     }
 
     // 한번에 맥스와 현재 창탄 수를 가져온다
-    public void UpdateAmmos(int MaxAmmo,int ammo)
-    {
-        this.ammo = ammo;
-        this.MaxAmmo = MaxAmmo;
-    }
+    //public void UpdateAmmos(int MaxAmmo,int ammo)
+    //{
+    //    this.ammo = ammo;
+    //    this.MaxAmmo = MaxAmmo;
+    //}
     public void UsePotion(float heal)
     {
         Debug.Log("IsDead" + IsDead);

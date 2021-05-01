@@ -70,7 +70,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         Armor_MainText = GameObject.Find("Armor_MainText").GetComponent<Text>();
 
         //수류탄 개수에 사용할 변수
-        Granade_Text.text = MN_UIManager.Instance.Granade.ToString();
+        Granade_Text.text = J_ItemManager.instance.remainGrenade.ToString();
         //아머 개수에 사용할 변수
         //Armor_Text.text = "aaaaaaaaa";
         //포션 개수에 사용할 변수

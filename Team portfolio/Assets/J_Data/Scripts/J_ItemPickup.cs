@@ -24,7 +24,7 @@ public class J_ItemPickup : MonoBehaviour, J_IItem
             {
                 J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
                 itemManager.ammoRemain += item.restore;     // 남은 전체 탄약 추가
-                MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);     // 아이템 획득 시 UI 갱신
+               // MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);     // 아이템 획득 시 UI 갱신
             }
 
             if (item.itemType == J_Item.ItemType.Equiment)

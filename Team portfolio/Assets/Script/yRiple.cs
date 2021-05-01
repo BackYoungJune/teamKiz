@@ -47,7 +47,7 @@ public class yRiple : MonoBehaviour
         //itemManager.magAmmo = itemManager.magCapacity;
 
         // 총알 채워진거 UI로 가져오기 
-        MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
+        //MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
 
         // 총의 현재 상태를 총을 쏠 준비가 된 상태로 변경
         myState = STATE.READY;
@@ -91,14 +91,14 @@ public class yRiple : MonoBehaviour
         StartCoroutine(ShotEffect(Bullet.hitPosition));
         // 남은 탄알 수를 -1
         itemManager.magAmmo--;
-        MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
+        //MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
 
         if (itemManager.magAmmo <= 0)
         {
             // 탄창에 남은 탄알이 없다면 총의 현재 상태를 Empty로 갱신
 
             // UI 탄약 갱신
-            MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, 0);
+            //MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, 0);
 
             myState = STATE.EMPTY;
 
@@ -159,7 +159,7 @@ public class yRiple : MonoBehaviour
         myState = STATE.READY;
 
         // UI 탄약 갱신
-        MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
+        //MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);
 
     }
 }

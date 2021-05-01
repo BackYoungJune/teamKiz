@@ -16,7 +16,8 @@ public class MoneyText_Anim : MonoBehaviour
     }
     public void OnDestroyTEXT()
     {
-        Destroy(this.gameObject);
+        J_ItemManager.instance.remainMoney += 1000;
+        Destroy(this.transform.parent.gameObject);
     }
     
 }
