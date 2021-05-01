@@ -11,6 +11,13 @@ public class BossStage_UI_Manager : MonoBehaviour
     GameObject GameOverUI;
     GameObject GameWin;
 
+    public AudioSource audiosource;
+    public AudioClip AUDIOGameOver;
+    public AudioClip AUDIOHit;
+    
+
+    
+    
     public enum STATE
     {
         GAMESTART,PLAY,PLAYER_DEAD,BOSS_DEAD
@@ -42,6 +49,7 @@ public class BossStage_UI_Manager : MonoBehaviour
 
         if (MN_UIManager.Instance.WinGame)
         {
+
             StateChange(STATE.BOSS_DEAD);
 
         }
@@ -63,6 +71,7 @@ public class BossStage_UI_Manager : MonoBehaviour
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
+                    audiosource.PlayOneShot(AUDIOGameOver);
 
                     GameObject allclose1 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
@@ -79,6 +88,7 @@ public class BossStage_UI_Manager : MonoBehaviour
                 {
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
+                    audiosource.PlayOneShot(AUDIOGameOver);
 
                     GameObject allclose2 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
@@ -92,20 +102,20 @@ public class BossStage_UI_Manager : MonoBehaviour
                 break;
         }
     }
-    void StateProcess()
-    {
-        switch (myState)
-        {
-            case STATE.GAMESTART:
-                break;
-            case STATE.PLAY:
-                break;
-            case STATE.PLAYER_DEAD:
-                break;
-            case STATE.BOSS_DEAD:
-                break;
-        }
-    }
+    //void StateProcess()
+    //{
+    //    switch (myState)
+    //    {
+    //        case STATE.GAMESTART:
+    //            break;
+    //        case STATE.PLAY:
+    //            break;
+    //        case STATE.PLAYER_DEAD:
+    //            break;
+    //        case STATE.BOSS_DEAD:
+    //            break;
+    //    }
+    //}
 
 
     public void OnClick_RestartButton()

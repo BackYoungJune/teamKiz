@@ -7,6 +7,14 @@ public class GameOver : MonoBehaviour
 {
     GameObject myPanel;
 
+    public AudioSource audiosource;
+    public AudioClip AUDIOGameOver;
+
+    enum STATE
+    {
+        NORMAL,START
+    }
+    STATE myState = STATE.NORMAL;
     private void Awake()
     {
         myPanel = GameObject.Find("GameOver_Panel");
@@ -21,6 +29,20 @@ public class GameOver : MonoBehaviour
             myPanel.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            ChangeState(STATE.START);
+
+        }
+    }
+    void ChangeState(STATE S)
+    {
+        if (S == myState)
+            return;
+        myState = S;
+        switch(myState)
+        {
+            case STATE.START:
+                audiosource.PlayOneShot(AUDIOGameOver);
+                break;
         }
     }
     public void RestartButton()
