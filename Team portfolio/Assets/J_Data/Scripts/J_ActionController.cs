@@ -141,8 +141,6 @@ public class J_ActionController : MonoBehaviour
     {
         if(moveScene)
         {
-            if (J_DataManager.instance != null)
-            J_DataManager.instance.SaveItemDataToJson();
             yGameManager.instance.LoadBossScene();
         }
     }

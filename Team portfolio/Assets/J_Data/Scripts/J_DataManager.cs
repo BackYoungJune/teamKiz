@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class J_DataManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class J_DataManager : MonoBehaviour
 
     //세이브한 데이터가 있는지 확인
     public bool IsNone { get; set; }
+
+    // 플레이씬인지 확인
+    bool isPlayScene = false;
 
     private void Start()
     {
@@ -97,63 +101,77 @@ public class J_DataManager : MonoBehaviour
     // 플레이 데이터를 Json으로 저장
     public void SavePlayDataToJson()
     {
-        // 현재 웨이브 저장
-        playData.s_wave = FindObjectOfType<yEnemySpawner>().wave;   // wave 저장
-
-        // spawnTrigger 저장
-        GameObject trigger = GameObject.Find("Triggers");
-        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
-        playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
-        for (int i = 0; i < spawnTriggers.Length; i++)
-            playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
-
-        // 현재 위치 저장
-        playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
+        // 현재 씬이 PlayScene인지 검사
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+            isPlayScene = true;
+        else
+            isPlayScene = false;
 
 
-        string jsonData = JsonUtility.ToJson(playData, true);
-        string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
-        File.WriteAllText(path, jsonData);
+        if (isPlayScene)
+        {
+            // 현재 웨이브 저장
+            playData.s_wave = FindObjectOfType<yEnemySpawner>().wave;   // wave 저장
 
-        Debug.Log("SavePlayData");
+            // spawnTrigger 저장
+            GameObject trigger = GameObject.Find("Triggers");
+            yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+            playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
+            for (int i = 0; i < spawnTriggers.Length; i++)
+                playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
+
+            // 현재 위치 저장
+            playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
+
+            string jsonData = JsonUtility.ToJson(playData, true);
+            string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+            File.WriteAllText(path, jsonData);
+        }
+        else
+            Debug.Log("no playerData");
     }
 
     // 플레이 데이터를 불러옴
     [ContextMenu("Load PlayData")]
     public void LoadPlayDataFromJson()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
-        string jsonData = File.ReadAllText(path);
-        playData = JsonUtility.FromJson<PlayData>(jsonData);
+        // 현재 씬이 PlayScene인지 검사
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+            isPlayScene = true;
+        else
+            isPlayScene = false;
 
-        //Debug.Log(2);
-
-        yEnemySpawner spawner = FindObjectOfType<yEnemySpawner>();
-       // Debug.Log(spawner.wave);
-        spawner.wave = playData.s_wave;
-
-        GameObject trigger = GameObject.Find("Triggers");
-        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
-        for (int i = 0; i < spawnTriggers.Length; i++)
-            spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
-
-        GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+        Debug.Log("현재 플레이신인지? " + isPlayScene);
         
-        Debug.Log("LoadPlayDataFromJson");
+        if (isPlayScene)
+        {
+            string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+            string jsonData = File.ReadAllText(path);
+            playData = JsonUtility.FromJson<PlayData>(jsonData);
+
+
+            yEnemySpawner spawner = FindObjectOfType<yEnemySpawner>();
+            spawner.wave = playData.s_wave;
+
+            GameObject trigger = GameObject.Find("Triggers");
+            yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+            for (int i = 0; i < spawnTriggers.Length; i++)
+                spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
+
+            GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+        }
+        else
+            Debug.Log("no playerData");
     }
 
 
 
+
+
+
+
     ///////////////////////////////////// 
-    
-
-
-
-
-
-
-
-
+    // Start Data는 고정
 
 
 
