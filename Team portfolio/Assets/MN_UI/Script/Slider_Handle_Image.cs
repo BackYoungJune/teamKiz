@@ -51,7 +51,7 @@ public class Slider_Handle_Image : MonoBehaviour
         if(second.IsOnGameStart)
             SceneManager.LoadScene("PlayScene");
         else if(second.IsOnLoadStart)
-            yGameManager.instance.RestartGame();
+            SceneManager.LoadScene("PlayScene");
 
         StopPlus = true;
     }

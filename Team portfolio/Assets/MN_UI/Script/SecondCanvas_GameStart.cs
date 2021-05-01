@@ -41,8 +41,10 @@ public class SecondCanvas_GameStart : MonoBehaviour
     }
     public void OnLoadGame()
     {
-        if(!J_DataManager.instance.IsNone)
-            IsOnLoadStart = true;
+        IsOnGameStart = true;
+
+        //if (!J_DataManager.instance.IsNone)
+        //    IsOnLoadStart = true;
     }
 
     IEnumerator BackgroundAlphaPlus()
