@@ -22,8 +22,9 @@ public class J_ItemPickup : MonoBehaviour, J_IItem
 
             if (item.itemType == J_Item.ItemType.Ammo)
             {
-                J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
-                itemManager.ammoRemain += item.restore;     // 남은 전체 탄약 추가
+                //Debug.Log(11111111);
+                //J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
+                //itemManager.ammoRemain += item.restore;     // 남은 전체 탄약 추가
                // MN_UIManager.Instance.UpdateAmmos(itemManager.ammoRemain, itemManager.magAmmo);     // 아이템 획득 시 UI 갱신
             }
 

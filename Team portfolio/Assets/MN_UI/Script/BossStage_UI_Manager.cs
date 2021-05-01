@@ -92,6 +92,8 @@ public class BossStage_UI_Manager : MonoBehaviour
 
                     GameObject allclose2 = GameObject.Find("AllClose");
                     GameObject ItemCanvas = GameObject.Find("Item_Canvas");
+                    ItemCanvas.SetActive(false);
+
                     //ItemCanvas.SetActive(false);
                     allclose2.SetActive(false);
 

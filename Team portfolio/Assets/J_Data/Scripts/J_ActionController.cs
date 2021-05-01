@@ -73,6 +73,10 @@ public class J_ActionController : MonoBehaviour
                 // pick ammo
                 if(hitItem.itemType == J_Item.ItemType.Ammo)
                 {
+                    Debug.Log(11111111);
+                    J_ItemManager itemManager = FindObjectOfType<J_ItemManager>();
+                    itemManager.ammoRemain += 100;     // 남은 전체 탄약 추가
+
                     hitInfo.transform.GetComponent<J_ItemPickup>().Use(this.gameObject);
                 }
                 // pick armour
