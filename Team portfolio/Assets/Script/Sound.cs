@@ -37,6 +37,19 @@ public class Sound : MonoBehaviour
         }
     }
 
+    //AudioSource _musicRun= null;
+    //public AudioSource MusicRun
+    //{
+    //    get
+    //    {
+    //        if (_musicRun == null)
+    //        {
+    //            _musicRun = GetComponent<AudioSource>();
+    //        }
+    //        return _musicRun;
+    //    }
+    //}
+
     AudioSource _effectsound = null;
     public AudioSource EffectSound
     {
@@ -65,6 +78,13 @@ public class Sound : MonoBehaviour
         MusicPlayer.clip = bgm;
         MusicPlayer.loop = bLoop;
         MusicPlayer.Play();
+    }
+
+    public void PlayRun(AudioSource audioSource, bool bLoop)
+    {
+        audioSource.loop = bLoop;
+        audioSource.volume = 1.0f;
+        audioSource.Play();
     }
 
     public void SetMusicVolume(float v)

@@ -20,7 +20,7 @@ public class yPlayerMovement : MonoBehaviour
 
     // public LayerMask Layer;
         
-    Vector3 MoveVec;      // 플레이어 프레임당 이동거리
+    public Vector3 MoveVec;      // 플레이어 프레임당 이동거리
     Vector3 dodgeVec;     // 플레이어 닷지 이동거리
     public bool isAir { get; private set; }
     public bool isDodge { get; private set; }
@@ -36,6 +36,9 @@ public class yPlayerMovement : MonoBehaviour
 
     public AudioSource myAudioSource;
 
+    public float timeBetRun = 0.2f; // run 소리 간격
+    float lastRunTime; // run 소리를 마지막으로 나온 시점
+
     void Awake()
     {
         // 사용할 컴포넌트들을 받아온다
@@ -45,7 +48,7 @@ public class yPlayerMovement : MonoBehaviour
         SwtichWeapon = GetComponentInChildren<J_SwtichWeapon>();
         myAudioSource = GetComponent<AudioSource>();
 
-        //Sound.I.PlayBGM(bgm);
+        Sound.I.PlayBGM(bgm);
     }
 
     void FixedUpdate()
@@ -140,12 +143,17 @@ public class yPlayerMovement : MonoBehaviour
         // x y 움직인 Vector를 하나에 합친다
         MoveVec = MoveXDistance + MoveYDistance;
 
-        if (MoveVec != Vector3.zero)
-        {
-            // run 사운드를 실행시킨다
-            //Sound.I.PlayEffectSound(RunSound, myAudioSource);
-            //Debug.Log("Run");
-        }
+        //if (MoveVec != Vector3.zero && Time.time >= lastRunTime + timeBetRun)
+        //{
+        //    // 마지막 Run 소리 시점 갱신
+        //    lastRunTime = Time.time;
+
+        //    // run 사운드를 실행시킨다
+        //    Sound.I.PlayEffectSound(RunSound, myAudioSource);
+        //    Debug.Log("Run");
+        //}
+
+        
 
         // Dodge시에는 dodgeVec로 움직인다
         if (isDodge)
