@@ -75,14 +75,22 @@ public class yPlayerGrenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
+        if (storeController != null)
         {
-            Fire();
-
-
-            //Vector3 velocity = GetVelocity(transform.position, m_Target.position, Quaternion.Euler(new Vector3(0, Camera.main.transform.forward, 0));
-            //m_Rigidbody.velocity = velocity;
+            if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
+            {
+                Fire();
+            }
         }
+        else
+        {
+            if (playerInput.fire2 && !playerInput.tab)
+            {
+                Fire();
+            }
+        }
+
+            
 
         if(myState == STATE.EMPTY && J_ItemManager.instance.remainGrenade > 0)
         {
