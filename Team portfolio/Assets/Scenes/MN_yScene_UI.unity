@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 856c9c1a501a0f24ba29dcd3190adc91, type: 2}
+--- !u!82 &34311656 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2097526706, guid: 8b15b1fb63177c44090f5854e19fceea,
+    type: 3}
+  m_PrefabInstance: {fileID: 1078154809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &39388409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1998,11 +2004,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1222211913947740945, guid: 6e069d5bff71d6f4a8bfac1f18cb0eee,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 3180
-      objectReference: {fileID: 0}
     - target: {fileID: 1641464846266616429, guid: 6e069d5bff71d6f4a8bfac1f18cb0eee,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2123,6 +2124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Store_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1641464847280506599, guid: 6e069d5bff71d6f4a8bfac1f18cb0eee,
+        type: 3}
+      propertyPath: audiosource
+      value: 
+      objectReference: {fileID: 34311656}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e069d5bff71d6f4a8bfac1f18cb0eee, type: 3}
 --- !u!1001 &3557176981686043665
@@ -2201,6 +2207,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4473404896743943176, guid: 49c9bb591e7671a44afccb5067db8330,
+        type: 3}
+      propertyPath: AudioSource
+      value: 
+      objectReference: {fileID: 34311656}
     - target: {fileID: 4473404896743943179, guid: 49c9bb591e7671a44afccb5067db8330,
         type: 3}
       propertyPath: m_Name

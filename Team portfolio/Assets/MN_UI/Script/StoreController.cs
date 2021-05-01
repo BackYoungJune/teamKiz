@@ -23,7 +23,11 @@ public class StoreController : MonoBehaviour
     GameObject Main_Canvas;
     GameObject Item_Canvas;
 
-    
+    public AudioSource audiosource;
+    public AudioClip AUDIOBuy;
+    public AudioClip AUDIOSell;
+    public AudioClip AUDIOOpen;
+
 
     int GrandePrice = 20;
     int PotionPrice = 20;
@@ -116,7 +120,7 @@ public class StoreController : MonoBehaviour
             case STATE.NORAML:
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
-
+                audiosource.PlayOneShot(AUDIOOpen);
                 Main_Canvas.SetActive(false);
                 Item_Canvas.SetActive(false);
                 StoreOn.SetActive(true);
@@ -289,6 +293,7 @@ public class StoreController : MonoBehaviour
             Sell_UI.SetActive(true);
             myMax.text = J_ItemManager.instance.remainGrenade.ToString();
             ChangeState(STATE.GRANADE);
+
         }
 
     }
@@ -303,6 +308,7 @@ public class StoreController : MonoBehaviour
         {
             Sell_UI.SetActive(true);
             myMax.text = J_ItemManager.instance.ammoRemain.ToString();
+
             ChangeState(STATE.BULLET);
 
         }
@@ -313,6 +319,7 @@ public class StoreController : MonoBehaviour
         IsAssecpt = true;
         //ChangeState(STATE.NORAML);
         //Sell_UI.SetActive(false);
+        audiosource.PlayOneShot(AUDIOSell);
 
     }
     public void SellCloseButton()
@@ -332,6 +339,8 @@ public class StoreController : MonoBehaviour
         {
             J_ItemManager.instance.remainArmor++;
             J_ItemManager.instance.remainMoney -= ArmorPrice;
+            audiosource.PlayOneShot(AUDIOBuy);
+
         }
         else
         {
@@ -347,6 +356,8 @@ public class StoreController : MonoBehaviour
         {
             J_ItemManager.instance.remainPotion++;
             J_ItemManager.instance.remainMoney -= PotionPrice;
+            audiosource.PlayOneShot(AUDIOBuy);
+
         }
         else
         {
@@ -363,6 +374,8 @@ public class StoreController : MonoBehaviour
         {
             J_ItemManager.instance.remainGrenade++;
             J_ItemManager.instance.remainMoney -= GrandePrice;
+            audiosource.PlayOneShot(AUDIOBuy);
+
         }
         else
         {
@@ -379,6 +392,8 @@ public class StoreController : MonoBehaviour
         {
             J_ItemManager.instance.ammoRemain += 50;
             J_ItemManager.instance.remainMoney -= BulletPrice;
+            audiosource.PlayOneShot(AUDIOBuy);
+
         }
         else
         {
@@ -427,6 +442,7 @@ public class StoreController : MonoBehaviour
         Item_Canvas.SetActive(true);
         StoreOn.SetActive(false);
         ChangeState(STATE.NOT);
+        audiosource.PlayOneShot(AUDIOOpen);
 
         J_DataManager.instance.SaveItemDataToJson();
         J_DataManager.instance.SavePlayDataToJson();

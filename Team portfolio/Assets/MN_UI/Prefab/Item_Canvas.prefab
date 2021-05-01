@@ -1042,7 +1042,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myState: 0
   ItemImages: []
-  PotionAudio: {fileID: 0}
+  AudioSource: {fileID: 0}
+  AUDIOPotion: {fileID: 8300000, guid: 63c07188dfff4c840bb8b7ad52be88b3, type: 3}
+  AUDIORiple: {fileID: 8300000, guid: ddfc6df8273be3842a35f58ca0d8e719, type: 3}
+  AUDIOAXE: {fileID: 8300000, guid: 289b8c83b5747d44eb75c55347124193, type: 3}
+  AUDIOGranade: {fileID: 8300000, guid: 75db1ab1dc3fe4e488cd1a59f6cda0e2, type: 3}
 --- !u!1 &4473404896825625944
 GameObject:
   m_ObjectHideFlags: 0

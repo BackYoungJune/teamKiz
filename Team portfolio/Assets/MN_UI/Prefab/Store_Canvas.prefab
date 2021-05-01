@@ -5032,6 +5032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc08414d51aa4de4e9bbe781ef3ce6a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiosource: {fileID: 0}
+  AUDIOBuy: {fileID: 8300000, guid: eb8ce6fe5ca67cb4d8932bc4eb21df64, type: 3}
+  AUDIOSell: {fileID: 8300000, guid: f363a775adb7bc04d956985d86aabf4e, type: 3}
+  AUDIOOpen: {fileID: 8300000, guid: ce3d56ce26a2beb4e8de034b712293ea, type: 3}
 --- !u!1 &1641464847293071559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6172,6 +6176,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3180}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

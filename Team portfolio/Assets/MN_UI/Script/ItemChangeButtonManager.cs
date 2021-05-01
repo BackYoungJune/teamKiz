@@ -32,10 +32,15 @@ public class ItemChangeButtonManager : MonoBehaviour
     int myGranade;
     int myBullet;
 
+    public AudioSource AudioSource;
+    public AudioClip AUDIOPotion;
+    public AudioClip AUDIORiple;
+    public AudioClip AUDIOAXE;
+    public AudioClip AUDIOGranade;
+
+
 
     bool IsRifle = true;
-
-    public AudioClip PotionAudio;   // 포션사운드
 
     private void Awake()
     {
@@ -134,23 +139,25 @@ public class ItemChangeButtonManager : MonoBehaviour
             case STATE.HAND:
                 NowWeaponImage.sprite = ItemImages[3].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.FIST);
-
                 break;
             case STATE.RIFLE:
                 NowWeaponImage.sprite = ItemImages[0].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.GUN);
+                AudioSource.PlayOneShot(AUDIORiple);
 
                 break;
             case STATE.AXE:
                 NowWeaponImage.sprite = ItemImages[1].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.AXE);
                 Debug.Log(swtichWeapon.myWeapon);
+                AudioSource.PlayOneShot(AUDIOAXE);
 
 
                 break;
             case STATE.GRENADE:
                 NowWeaponImage.sprite = ItemImages[2].GetComponent<Image>().sprite;
                 swtichWeapon.ChangeState(J_SwtichWeapon.HOLDING_WEAPON.GRENADE);
+                AudioSource.PlayOneShot(AUDIOGranade);
 
                 break;
 
@@ -202,6 +209,7 @@ public class ItemChangeButtonManager : MonoBehaviour
         {
             MN_UIManager.Instance.UsePotion(20f);
             J_ItemManager.instance.remainPotion--;
+            AudioSource.PlayOneShot(AUDIOPotion);
         }
         else
         {
