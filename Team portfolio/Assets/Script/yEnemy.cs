@@ -38,6 +38,7 @@ public class yEnemy : yLivingEntity
 
     public AudioClip HitClip;       // Hit시 오디오 클립
     public AudioClip DeathClip;     // Death시 오디오 클립
+    public AudioClip AttackClip;     // Attack시 오디오 클립
 
     public AudioSource myAudioSource;   // Enemy 오디오 소스
 
@@ -222,6 +223,8 @@ public class yEnemy : yLivingEntity
         // 거리가 짧아지면 실행
         if (myNavAgent.remainingDistance <= myNavAgent.stoppingDistance && !dead && myState == STATE.BATTLE)
         {
+            //Attack Sound 실행
+            Sound.I.PlayEffectSound(AttackClip, myAudioSource);
             // 확률에따라 Attack1, Attack2 실행
             if (Random.Range(0, 10) > 3)
             {

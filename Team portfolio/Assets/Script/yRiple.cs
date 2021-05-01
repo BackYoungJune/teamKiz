@@ -35,6 +35,7 @@ public class yRiple : MonoBehaviour
     //Sound
     public AudioClip FireSound;
     public AudioClip ReloadSound;
+    public AudioClip AmmoEmptySound;
     public AudioSource myAudioSource;
 
     // Start is called before the first frame update
@@ -69,6 +70,14 @@ public class yRiple : MonoBehaviour
             Shot();
             return true;
         }
+        if(Time.time >= lastFireTime + timeBetFire)
+        {
+            // 마지막 총 발사 시점 갱신
+            lastFireTime = Time.time;
+            // Empty 사운드 재생
+            Sound.I.PlayEffectSound(AmmoEmptySound, myAudioSource);
+        }
+            
         return false;
 
     }

@@ -187,6 +187,7 @@ MonoBehaviour:
   AttackTime: 0.5
   HitClip: {fileID: 8300000, guid: c3d8accfc053f004ca665a1c8c4a6919, type: 3}
   DeathClip: {fileID: 8300000, guid: b86f03005ed394911b43027aeaaedeb7, type: 3}
+  AttackClip: {fileID: 8300000, guid: 280d3c09b1ed88f41ad569c8ec1572d8, type: 3}
   myAudioSource: {fileID: 0}
 --- !u!82 &2284983482706530447
 AudioSource:

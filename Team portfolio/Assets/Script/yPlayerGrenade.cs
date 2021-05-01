@@ -33,6 +33,8 @@ public class yPlayerGrenade : MonoBehaviour
     public AudioClip PinClip;
     public AudioSource myAudioSource;
 
+    StoreController storeController;    // 상점 컨트롤러
+
     void Awake()
     {
         // 사용할 컴포넌트들을 가져오기
@@ -47,6 +49,8 @@ public class yPlayerGrenade : MonoBehaviour
         playerAnimEvent.shoot = OnShoot;
 
         //MN_UIManager.Instance.Granade = itemManager.remainGrenade;
+
+        storeController = FindObjectOfType<StoreController>();
     }
 
     private void OnEnable()
@@ -71,7 +75,7 @@ public class yPlayerGrenade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput.fire2)
+        if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
         {
             Fire();
 

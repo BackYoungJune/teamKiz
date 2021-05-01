@@ -15,6 +15,8 @@ public class yPlayerShooter : MonoBehaviour
     public float defaultFov = 60.0f;    // 평소 카메라 view
     float fovSpeed = 10.0f;     // 카메라 전환 속도
 
+    StoreController storeController;    // 상점 컨트롤러
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,6 +24,7 @@ public class yPlayerShooter : MonoBehaviour
         playerInput = GetComponentInParent<yPlayerInput>();
         playerAnimator = GetComponent<Animator>();
         CameraMove = FindObjectOfType<yCameraMove>();
+        storeController = FindObjectOfType<StoreController>();
     }
 
     void OnEnable()
@@ -63,7 +66,7 @@ public class yPlayerShooter : MonoBehaviour
     {
         //입력을 감지하고 총 발사하거나 재장전
         //입력을 감지하고 총을 발사하거나 재장전
-        if (playerInput.fire && !playerInput.tab)
+        if (playerInput.fire && !playerInput.tab && !storeController.StopFire)
         {
             // 발사 입력 감지 시 총 발사
             if (Riple.Fire())

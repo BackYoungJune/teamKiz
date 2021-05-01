@@ -13,11 +13,15 @@ public class yPlayerAxe : MonoBehaviour
 
     //Sound
     public AudioClip[] Swing;
+
+    StoreController storeController;    // 상점 컨트롤러
+
     void Awake()
     {
         // 사용할 컴포넌트들을 가져오기
         playerInput = GetComponentInParent<yPlayerInput>();
         playerAnimator = GetComponent<Animator>();
+        storeController = FindObjectOfType<StoreController>();
     }
 
     void OnEnable()
@@ -35,7 +39,7 @@ public class yPlayerAxe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerInput.fire2 && !playerInput.tab)
+        if (playerInput.fire2 && !playerInput.tab && !storeController.StopFire)
         {
             
             // 도끼를 휘두르는 애니메이션 실행

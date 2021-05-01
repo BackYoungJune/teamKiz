@@ -32,7 +32,9 @@ public class yPlayerMovement : MonoBehaviour
     public GameObject RifleLeftHandle;
 
     public AudioClip bgm;
-    public AudioClip fireSound;
+    public AudioClip RunSound;
+
+    public AudioSource myAudioSource;
 
     void Awake()
     {
@@ -41,8 +43,9 @@ public class yPlayerMovement : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         myAnim = GetComponentInChildren<Animator>();
         SwtichWeapon = GetComponentInChildren<J_SwtichWeapon>();
+        myAudioSource = GetComponent<AudioSource>();
 
-        Sound.I.PlayBGM(bgm);
+        //Sound.I.PlayBGM(bgm);
     }
 
     void FixedUpdate()
@@ -137,12 +140,21 @@ public class yPlayerMovement : MonoBehaviour
         // x y 움직인 Vector를 하나에 합친다
         MoveVec = MoveXDistance + MoveYDistance;
 
+        if (MoveVec != Vector3.zero)
+        {
+            // run 사운드를 실행시킨다
+            //Sound.I.PlayEffectSound(RunSound, myAudioSource);
+            //Debug.Log("Run");
+        }
+
         // Dodge시에는 dodgeVec로 움직인다
         if (isDodge)
             MoveVec = dodgeVec;
 
         if (isBorder)
             MoveVec = Vector3.zero;
+
+        
 
         // 리지드바디를 이용해 게임 오브젝트 위치 변경
         rigid.MovePosition(rigid.position + MoveVec);

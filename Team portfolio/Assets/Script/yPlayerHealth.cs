@@ -15,6 +15,10 @@ public class yPlayerHealth : yLivingEntity
     /* -유석- 체력 UI 받기*/
     /* -유석- 보호막 UI 받기*/
     // Start is called before the first frame update
+
+    public AudioClip HitSound;
+    public AudioSource myAudioSource;
+
     void Start()
     {
 
@@ -24,6 +28,7 @@ public class yPlayerHealth : yLivingEntity
         myAnim = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<yPlayerMovement>();
         playerShooter = GetComponentInChildren<yPlayerShooter>();
+        myAudioSource = GetComponent<AudioSource>();
         /* 체력 UI 컴포넌트 가져오기*/
         MN_UIManager.Instance.UpdatePlayerHealth(startHealth);
     }
@@ -81,6 +86,8 @@ public class yPlayerHealth : yLivingEntity
 
         // 애니메이터의 Hit 트리거를 발동시켜 Hit 애니메이션 재생
         myAnim.SetTrigger("Hit");
+        // Hit 사운드 재생
+        Sound.I.PlayEffectSound(HitSound, myAudioSource);
 
         /* 체력 UI갱신 */ //  + potion먹으면
         /* 보호막 UI갱신 */

@@ -38,6 +38,8 @@ public class StoreController : MonoBehaviour
     int changePrice = 0;
     float changeValue = 0f;
     bool IsAssecpt = false;
+
+    public bool StopFire = false;
     public enum STATE
     {
         NOT,NORAML, ARMOR, POTION, GRANADE, BULLET
@@ -95,7 +97,7 @@ public class StoreController : MonoBehaviour
         {
             ChangeState(STATE.NORAML);
 
-
+            StopFire = true;
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
         myArmor.text = J_ItemManager.instance.remainArmor.ToString();
@@ -446,6 +448,8 @@ public class StoreController : MonoBehaviour
 
         J_DataManager.instance.SaveItemDataToJson();
         J_DataManager.instance.SavePlayDataToJson();
+
+        StopFire = false;
     }
 }
 
