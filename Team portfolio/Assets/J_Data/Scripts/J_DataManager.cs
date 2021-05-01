@@ -141,8 +141,6 @@ public class J_DataManager : MonoBehaviour
         else
             isPlayScene = false;
 
-        Debug.Log("현재 플레이신인지? " + isPlayScene);
-        
         if (isPlayScene)
         {
             string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
@@ -229,44 +227,60 @@ public class J_DataManager : MonoBehaviour
 
     public void StartSavePlayData()
     {
-        // 현재 웨이브 저장
-        playData.s_wave = FindObjectOfType<yEnemySpawner>().wave;   // wave 저장
+        // 현재 씬이 PlayScene인지 검사
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+            isPlayScene = true;
+        else
+            isPlayScene = false;
 
-        // spawnTrigger 저장
-        GameObject trigger = GameObject.Find("Triggers");
-        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
-        playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
-        for (int i = 0; i < spawnTriggers.Length; i++)
-            playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
+        if (isPlayScene)
+        {
+            // 현재 웨이브 저장
+            playData.s_wave = FindObjectOfType<yEnemySpawner>().wave;   // wave 저장
 
-        // 현재 위치 저장
-        playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
+            // spawnTrigger 저장
+            GameObject trigger = GameObject.Find("Triggers");
+            yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+            playData.s_spawnTriggers = new bool[spawnTriggers.Length];      // 스폰트리거의 개수 만큼 할당
+            for (int i = 0; i < spawnTriggers.Length; i++)
+                playData.s_spawnTriggers[i] = spawnTriggers[i].Enabled;
+
+            // 현재 위치 저장
+            playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
 
 
-        string jsonData = JsonUtility.ToJson(playData, true);
-        string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
-        File.WriteAllText(path, jsonData);
+            string jsonData = JsonUtility.ToJson(playData, true);
+            string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+            File.WriteAllText(path, jsonData);
+        }
 
-        Debug.Log("SavePlayData");
     }
 
     public void StartLoadPlayData()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
-        string jsonData = File.ReadAllText(path);
-        playData = JsonUtility.FromJson<PlayData>(jsonData);
+        // 현재 씬이 PlayScene인지 검사
+        if (SceneManager.GetActiveScene().name == "PlayScene")
+            isPlayScene = true;
+        else
+            isPlayScene = false;
+
+        if (isPlayScene)
+        {
+            string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+            string jsonData = File.ReadAllText(path);
+            playData = JsonUtility.FromJson<PlayData>(jsonData);
 
 
-        FindObjectOfType<yEnemySpawner>().wave = playData.s_wave;
+            FindObjectOfType<yEnemySpawner>().wave = playData.s_wave;
 
-        GameObject trigger = GameObject.Find("Triggers");
-        yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
-        for (int i = 0; i < spawnTriggers.Length; i++)
-            spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
+            GameObject trigger = GameObject.Find("Triggers");
+            yTrigger[] spawnTriggers = trigger.GetComponentsInChildren<yTrigger>();
+            for (int i = 0; i < spawnTriggers.Length; i++)
+                spawnTriggers[i].Enabled = playData.s_spawnTriggers[i];
 
-        GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+            GameObject.Find("Player").GetComponent<Transform>().localPosition = playData.s_pos;
+        }
 
-        Debug.Log("LoadPlayDataFromJson");
     }
 }
 
