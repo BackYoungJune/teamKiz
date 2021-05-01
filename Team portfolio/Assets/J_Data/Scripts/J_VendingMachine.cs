@@ -11,9 +11,11 @@ public class J_VendingMachine : MonoBehaviour
         StoreController store = FindObjectOfType<StoreController>();
         store.ChangeState(StoreController.STATE.NORAML);
     }
-    void CloseStore()
+
+    public void DestroyMachine()
     {
-        // 상점을 닫을 때 추가할 코드
-        //FindObjectOfType<J_ActionController>().storeOpened = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.None;     // 로테이션, 포지션 고정 해제
+        rb.AddForce(Vector3.forward * 120.0f);
     }
 }

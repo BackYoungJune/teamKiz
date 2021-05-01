@@ -164,8 +164,24 @@ public class J_DataManager : MonoBehaviour
             Debug.Log("no playerData");
     }
 
+    [ContextMenu("Delete ItemData")]
+    public void DeleteItemData()
+    {
+        string path = Path.Combine(Application.dataPath, "J_Data/itemData.json");
+        string jsonData = File.ReadAllText(path);
+        jsonData = string.Empty;
+        File.WriteAllText(path, jsonData);
+    }
 
 
+    [ContextMenu("Delete PlayData")]
+    public void DeletePlayData()
+    {
+        string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+        string jsonData = File.ReadAllText(path);
+        jsonData = string.Empty;
+        File.WriteAllText(path, jsonData);
+    }
 
 
 
