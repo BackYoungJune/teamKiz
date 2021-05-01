@@ -7,6 +7,8 @@ public class LCollapsObj : MonoBehaviour
     // Start is called before the first frame update
     public Transform Boss;
     public Animator bossAnim;
+    public AudioSource myAudio;
+    public AudioClip CrashSound;
     bool collapsFlag;
     void Awake()
     {
@@ -30,6 +32,7 @@ public class LCollapsObj : MonoBehaviour
     {
         if (other.gameObject.tag == "Boss" && collapsFlag)
         {
+            Sound.I.PlayEffectSound(CrashSound, myAudio);
             bossAnim.SetTrigger("Groggy");
             Boss.GetComponent<LBoss>().OnDamage(30000f, Vector3.zero, Vector3.zero);
             Destroy(this.gameObject);

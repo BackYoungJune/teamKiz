@@ -9,6 +9,8 @@ public class LFallingObj : MonoBehaviour
     public Transform[] components = new Transform[4];
     bool destroy = false;
     float startDestroy=0;
+    public AudioSource myAudio;
+    public AudioClip CrashSound;
     // Start is called before the first frame update
     void Update()
     {
@@ -31,6 +33,7 @@ public class LFallingObj : MonoBehaviour
     {
         if(collision.gameObject.tag == "Boss")
         {
+            Sound.I.PlayEffectSound(CrashSound, myAudio);
             parent.onCollision?.Invoke();
             this.transform.GetComponent<SphereCollider>().enabled = false;
             for(int i =0; i<4; i++)
