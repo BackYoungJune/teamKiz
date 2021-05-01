@@ -40,6 +40,7 @@ public class StoreController : MonoBehaviour
     bool IsAssecpt = false;
 
     public bool StopFire = false;
+
     public enum STATE
     {
         NOT,NORAML, ARMOR, POTION, GRANADE, BULLET
@@ -96,8 +97,6 @@ public class StoreController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             ChangeState(STATE.NORAML);
-
-            StopFire = true;
         }
         MyMoney.text = J_ItemManager.instance.remainMoney.ToString();
         myArmor.text = J_ItemManager.instance.remainArmor.ToString();
@@ -126,6 +125,8 @@ public class StoreController : MonoBehaviour
                 Main_Canvas.SetActive(false);
                 Item_Canvas.SetActive(false);
                 StoreOn.SetActive(true);
+
+                StopFire = true;
                 break;
             case STATE.ARMOR:
                 changeValue = 1f / J_ItemManager.instance.remainArmor;
@@ -438,7 +439,7 @@ public class StoreController : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
+        StopFire = false;
 
         Main_Canvas.SetActive(true);
         Item_Canvas.SetActive(true);
@@ -448,8 +449,6 @@ public class StoreController : MonoBehaviour
 
         J_DataManager.instance.SaveItemDataToJson();
         J_DataManager.instance.SavePlayDataToJson();
-
-        StopFire = false;
     }
 }
 

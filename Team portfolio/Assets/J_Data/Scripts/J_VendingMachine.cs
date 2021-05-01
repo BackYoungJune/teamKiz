@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class J_VendingMachine : MonoBehaviour
 {
+    
     public void OpenStore()
     {
         // 상점 여는 코드 추가
