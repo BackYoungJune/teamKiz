@@ -89,25 +89,29 @@ public class yPlayerShooter : MonoBehaviour
             }
         }
 
-        if (playerInput.fire && !playerInput.tab)
+        else
         {
-            // 발사 입력 감지 시 총 발사
-            if (Riple.Fire())
+            if (playerInput.fire && !playerInput.tab)
             {
-                // 발사 성공 시에만 발사 애니메이션 재생
-                playerAnimator.SetTrigger("Fire");
+                // 발사 입력 감지 시 총 발사
+                if (Riple.Fire())
+                {
+                    // 발사 성공 시에만 발사 애니메이션 재생
+                    playerAnimator.SetTrigger("Fire");
+                }
             }
-        }
 
-        else if (playerInput.reload && !playerInput.tab)
-        {
-            // 재장전 입력 감지 시 재장전
-            if (Riple.Reload())
+            else if (playerInput.reload && !playerInput.tab)
             {
-                // 재장전 성공 시에만 재장전 애니메이션 재생
-                playerAnimator.SetTrigger("Reload");
+                // 재장전 입력 감지 시 재장전
+                if (Riple.Reload())
+                {
+                    // 재장전 성공 시에만 재장전 애니메이션 재생
+                    playerAnimator.SetTrigger("Reload");
+                }
             }
         }
+        
 
 
     }

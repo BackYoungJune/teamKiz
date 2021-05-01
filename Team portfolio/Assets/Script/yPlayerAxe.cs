@@ -49,13 +49,17 @@ public class yPlayerAxe : MonoBehaviour
                 Attack = true;
             }
         }
-        if (playerInput.fire2 && !playerInput.tab)
+        else
         {
+            if (playerInput.fire2 && !playerInput.tab)
+            {
 
-            // 도끼를 휘두르는 애니메이션 실행
-            playerAnimator.SetTrigger("Attack");
-            Attack = true;
+                // 도끼를 휘두르는 애니메이션 실행
+                playerAnimator.SetTrigger("Attack");
+                Attack = true;
+            }
         }
+        
 
 
     }
