@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 
+
 public class J_DataManager : MonoBehaviour
 {
     public ItemData itemData;
@@ -31,11 +32,11 @@ public class J_DataManager : MonoBehaviour
 
     private void Start()
     {
-        string startItemPath = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
-        string startPlayPath = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+        string startItemPath = Path.Combine(Application.streamingAssetsPath, "J_Data/startItemData.json");
+        string startPlayPath = Path.Combine(Application.streamingAssetsPath, "J_Data/startPlayData.json");
 
-        string itemPath = Path.Combine(Application.dataPath, "J_Data/itemData.json"); 
-        string playPath = Path.Combine(Application.dataPath, "J_Data/playData.json");
+        string itemPath = Path.Combine(Application.streamingAssetsPath, "J_Data/itemData.json"); 
+        string playPath = Path.Combine(Application.streamingAssetsPath, "J_Data/playData.json");
         string jsonData = File.ReadAllText(itemPath);
         string jsonData1 = File.ReadAllText(playPath);
 
@@ -75,7 +76,7 @@ public class J_DataManager : MonoBehaviour
         itemData.s_remainMoney = J_ItemManager.instance.remainMoney;
 
         string jsonData = JsonUtility.ToJson(itemData, true);
-        string path = Path.Combine(Application.dataPath, "J_Data/itemData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/itemData.json");
         File.WriteAllText(path, jsonData);
     }
 
@@ -83,7 +84,7 @@ public class J_DataManager : MonoBehaviour
     [ContextMenu("Load ItemData")]
     public void LoadItemDataFromJson()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/itemData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/itemData.json");
         string jsonData = File.ReadAllText(path);
         itemData = JsonUtility.FromJson<ItemData>(jsonData);
 
@@ -124,7 +125,7 @@ public class J_DataManager : MonoBehaviour
             playData.s_pos = GameObject.Find("Player").GetComponent<Transform>().position;
 
             string jsonData = JsonUtility.ToJson(playData, true);
-            string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+            string path = Path.Combine(Application.streamingAssetsPath, "J_Data/playData.json");
             File.WriteAllText(path, jsonData);
         }
         else
@@ -143,7 +144,7 @@ public class J_DataManager : MonoBehaviour
 
         if (isPlayScene)
         {
-            string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+            string path = Path.Combine(Application.streamingAssetsPath, "J_Data/playData.json");
             string jsonData = File.ReadAllText(path);
             playData = JsonUtility.FromJson<PlayData>(jsonData);
 
@@ -165,7 +166,7 @@ public class J_DataManager : MonoBehaviour
     [ContextMenu("Delete ItemData")]
     public void DeleteItemData()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/itemData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/itemData.json");
         string jsonData = File.ReadAllText(path);
         jsonData = string.Empty;
         File.WriteAllText(path, jsonData);
@@ -175,7 +176,7 @@ public class J_DataManager : MonoBehaviour
     [ContextMenu("Delete PlayData")]
     public void DeletePlayData()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/playData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/playData.json");
         string jsonData = File.ReadAllText(path);
         jsonData = string.Empty;
         File.WriteAllText(path, jsonData);
@@ -192,7 +193,7 @@ public class J_DataManager : MonoBehaviour
 
 
 
-
+    [ContextMenu("save startItemData")]
     public void StartSaveItemData()
     {
         // 아이템 개수 저장
@@ -205,13 +206,13 @@ public class J_DataManager : MonoBehaviour
         itemData.s_remainMoney = J_ItemManager.instance.remainMoney;
 
         string jsonData = JsonUtility.ToJson(itemData, true);
-        string path = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/startItemData.json");
         File.WriteAllText(path, jsonData);
     }
 
     public void StartLoadItemData()
     {
-        string path = Path.Combine(Application.dataPath, "J_Data/startItemData.json");
+        string path = Path.Combine(Application.streamingAssetsPath, "J_Data/startItemData.json");
         string jsonData = File.ReadAllText(path);
         itemData = JsonUtility.FromJson<ItemData>(jsonData);
 
@@ -224,7 +225,7 @@ public class J_DataManager : MonoBehaviour
         J_ItemManager.instance.remainMoney = itemData.s_remainMoney;
     }
 
-
+    [ContextMenu("save startPlayData")]
     public void StartSavePlayData()
     {
         // 현재 씬이 PlayScene인지 검사
@@ -250,7 +251,7 @@ public class J_DataManager : MonoBehaviour
 
 
             string jsonData = JsonUtility.ToJson(playData, true);
-            string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+            string path = Path.Combine(Application.streamingAssetsPath, "J_Data/startPlayData.json");
             File.WriteAllText(path, jsonData);
         }
 
@@ -266,7 +267,7 @@ public class J_DataManager : MonoBehaviour
 
         if (isPlayScene)
         {
-            string path = Path.Combine(Application.dataPath, "J_Data/startPlayData.json");
+            string path = Path.Combine(Application.streamingAssetsPath, "J_Data/startPlayData.json");
             string jsonData = File.ReadAllText(path);
             playData = JsonUtility.FromJson<PlayData>(jsonData);
 
