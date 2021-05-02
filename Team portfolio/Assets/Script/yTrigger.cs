@@ -26,6 +26,9 @@ public class yTrigger : MonoBehaviour
             if (RemainZombies <= 0)
             {
                 Enabled = false;
+                TriggerOn = false;
+                // 돈 생성
+                SpawnMoney();
             }
         }
 
@@ -41,5 +44,14 @@ public class yTrigger : MonoBehaviour
             this.GetComponent<BoxCollider>().enabled = false;
             TriggerOn = true;
         }
+    }
+
+    private void SpawnMoney()
+    {
+        Transform playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        // 플레이어의 정면에 생성
+        Vector3 pos = playerTransform.forward * 7 + playerTransform.position;
+        GameObject money = Instantiate(Resources.Load("Prefabs/item_Money"), pos, Quaternion.Euler(new Vector3(-90.0f, 0f, 0f))) as GameObject;
+        money.GetComponent<Rigidbody>().AddForce(Vector3.up * 30);
     }
 }

@@ -3210,6 +3210,8 @@ MonoBehaviour:
     m_Bits: 3221225729
   actionText: {fileID: 0}
   storeOpened: 0
+  audioSource: {fileID: 0}
+  itemPickSound: {fileID: 8300000, guid: 683d052110309ff439bcfbd47a54a558, type: 3}
 --- !u!1 &6556004163866690782
 GameObject:
   m_ObjectHideFlags: 0

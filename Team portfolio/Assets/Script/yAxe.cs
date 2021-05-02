@@ -40,5 +40,11 @@ public class yAxe : MonoBehaviour
                 playerAxe.Attack = false;
             }
         }
+
+        // 도끼로 상자를 부술 수 있도록
+        if(other.tag == "BREAKABLE")
+        {
+            other.GetComponent<J_Breakable>().DestructObject();
+        }
     }
 }
